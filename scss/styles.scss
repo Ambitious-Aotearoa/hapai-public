@@ -1,0 +1,89 @@
+// scss/styles.scss
+
+// Toggle global options
+$enable-gradients: true;
+$enable-shadows: true;
+
+$offcanvas-box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175);
+
+// Include functions first
+@import "bootstrap/scss/functions";
+
+// Define your custom colors
+$custom-colors: (
+  "custom-primary-dark": #0F2424,
+  "custom-primary": #F29054,
+  "custom-accent-green":#B1CB8F,
+  "custom-accent-blue":#77A5BE,
+  "custom-accent-yellow":#F0E387,
+  "custom-neutral":#F9F6EE,
+  "custom-white":#fff,
+);
+
+// Override Bootstrap variables
+
+$success: #7952b3;
+$primary: #d9000b;
+
+// Import Bootstrap variables
+@import "bootstrap/scss/variables";
+
+// Merge the custom colors with the Bootstrap theme colors
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+// Override the $body-bg variable to use your custom color
+$body-bg: map-get($theme-colors, "custom-neutral"); 
+$body-color: map-get($theme-colors, "custom-primary-dark"); 
+
+
+
+// Import the rest of Bootstrap
+@import "bootstrap/scss/variables-dark";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/reboot";
+
+@import "bootstrap/scss/type";
+// @import "bootstrap/scss/images";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+// @import "bootstrap/scss/tables";
+// @import "bootstrap/scss/forms";
+@import "bootstrap/scss/buttons";
+@import "bootstrap/scss/transitions";
+@import "bootstrap/scss/dropdown";
+// @import "bootstrap/scss/button-group";
+// @import "bootstrap/scss/nav";
+// @import "bootstrap/scss/navbar"; // Requires nav
+// @import "bootstrap/scss/card";
+// @import "bootstrap/scss/breadcrumb";
+// @import "bootstrap/scss/accordion";
+// @import "bootstrap/scss/pagination";
+// @import "bootstrap/scss/badge";
+// @import "bootstrap/scss/alert";
+// @import "bootstrap/scss/progress";
+// @import "bootstrap/scss/list-group";
+@import "bootstrap/scss/close";
+// @import "bootstrap/scss/toasts";
+@import "bootstrap/scss/modal"; // Requires transitions
+// @import "bootstrap/scss/tooltip";
+@import "bootstrap/scss/popover";
+// @import "bootstrap/scss/carousel";
+// @import "bootstrap/scss/spinners";
+@import "bootstrap/scss/offcanvas"; // Requires transitions
+// @import "bootstrap/scss/placeholders";
+
+// Helpers
+// @import "bootstrap/scss/helpers";
+
+// Utilities
+@import "bootstrap/scss/utilities/api";
+
+// Custom styles
+@import "icon-list";
+
+body {
+  padding: 1.5rem;
+}
