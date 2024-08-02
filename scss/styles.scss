@@ -1,41 +1,72 @@
 // scss/styles.scss
+@import url("https://use.typekit.net/mpj1rai.css");
+@font-face {
+    font-family: 'founders_grotesklight';
+    src: url('../fonts/foundersgrotesk-light-webfont.woff2') format('woff2'),
+         url('../fonts/foundersgrotesk-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'tobiaslight';
+    src: url('../fonts/tobias-light-webfont.woff2') format('woff2'),
+         url('../fonts/tobias-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+$heading-font:'founders_grotesklight',  sans-serif;
+$body-font:'tobiaslight',  sans-serif;
+$button-font: "roc-grotesk-wide", sans-serif;
+
 
 // Toggle global options
-$enable-gradients: true;
+$enable-gradients: false;
 $enable-shadows: true;
 
-$offcanvas-box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175);
+
 
 // Include functions first
 @import "bootstrap/scss/functions";
 
 // Define your custom colors
-$custom-colors: (
-  "custom-primary-dark": #0F2424,
-  "custom-primary": #F29054,
-  "custom-accent-green":#B1CB8F,
-  "custom-accent-blue":#77A5BE,
-  "custom-accent-yellow":#F0E387,
-  "custom-neutral":#F9F6EE,
-  "custom-white":#fff,
-);
+$custom-dark: #0F2424;
+$custom-primary: #F29054;
+$custom-accent-green:#B1CB8F;
+$custom-accent-blue:#77A5BE;
+$custom-accent-yellow:#F0E387;
+$custom-neutral:#F9F6EE;
+$custom-white:#fff;
+
+
 
 // Override Bootstrap variables
+$primary: $custom-dark;
+$secondary:$custom-primary;
+$success:$custom-accent-blue;
+$dark:$custom-primary;
+$light:$custom-neutral;
 
-$success: #7952b3;
-$primary: #d9000b;
+$body-bg: $custom-neutral;
+$body-color: $custom-dark; 
+
+
 
 // Import Bootstrap variables
 @import "bootstrap/scss/variables";
 
-// Merge the custom colors with the Bootstrap theme colors
-$theme-colors: map-merge($theme-colors, $custom-colors);
-
-// Override the $body-bg variable to use your custom color
-$body-bg: map-get($theme-colors, "custom-neutral"); 
-$body-color: map-get($theme-colors, "custom-primary-dark"); 
-
-
+////Buttons
+$border-radius: calc($font-size-base*1.25);
+$btn-border-width:0;
+$btn-font-family: $button-font;
+$btn-line-height:$font-size-base;
+$btn-padding-y:$font-size-base;
+$btn-padding-x:$font-size-base;
+$btn-font-weight:500;
 
 // Import the rest of Bootstrap
 @import "bootstrap/scss/variables-dark";
@@ -86,4 +117,8 @@ $body-color: map-get($theme-colors, "custom-primary-dark");
 
 body {
   padding: 1.5rem;
+}
+
+.btn{
+    text-transform: uppercase;
 }
