@@ -26,7 +26,7 @@ $button-font: "roc-grotesk-wide", sans-serif;
 
 // Toggle global options
 $enable-gradients: false;
-$enable-shadows: true;
+$enable-shadows: false;
 
 
 
@@ -34,7 +34,7 @@ $enable-shadows: true;
 @import "bootstrap/scss/functions";
 
 // Define your custom colors
-$custom-dark: #0F2424;
+$custom-dark: #122E2A;
 $custom-primary: #F29054;
 $custom-accent-green:#B1CB8F;
 $custom-accent-blue:#77A5BE;
@@ -42,35 +42,35 @@ $custom-accent-yellow:#F0E387;
 $custom-neutral:#F9F6EE;
 $custom-white:#fff;
 
-
-
 // Override Bootstrap variables
 $primary: $custom-dark;
-$secondary:$custom-primary;
-$success:$custom-accent-blue;
-$dark:$custom-primary;
+$secondary:$custom-accent-green;
+
+$success:$custom-primary;
+
+$dark:$custom-dark;
 $light:$custom-neutral;
 
 $body-bg: $custom-neutral;
 $body-color: $custom-dark; 
-
-
-
 // Import Bootstrap variables
 @import "bootstrap/scss/variables";
 
 ////Buttons
-$border-radius: calc($font-size-base*1.25);
-$btn-border-width:0;
+$btn-border-radius: calc($font-size-base*1.25);
 $btn-font-family: $button-font;
 $btn-line-height:$font-size-base;
-$btn-padding-y:$font-size-base;
-$btn-padding-x:$font-size-base;
 $btn-font-weight:500;
+$btn-font-size:calc($font-size-base*0.875);
+
+
+
 
 // Import the rest of Bootstrap
 @import "bootstrap/scss/variables-dark";
 @import "bootstrap/scss/maps";
+
+
 @import "bootstrap/scss/mixins";
 @import "bootstrap/scss/utilities";
 @import "bootstrap/scss/root";
@@ -82,7 +82,32 @@ $btn-font-weight:500;
 @import "bootstrap/scss/grid";
 // @import "bootstrap/scss/tables";
 // @import "bootstrap/scss/forms";
+
+
 @import "bootstrap/scss/buttons";
+
+
+.btn-light {
+    $btn-light-bg: $custom-neutral;
+    $btn-light-hover-bg: darken($btn-light-bg, 10%);
+    @include button-variant(
+        $btn-light-bg,
+        $btn-light-bg,
+        $hover-background: $btn-light-hover-bg
+    )
+}
+
+.btn-primary{
+    $btn-light-bg: $custom-dark;
+    $btn-light-hover-bg: red;
+    @include button-variant(
+        $btn-light-bg,
+        $btn-light-bg,
+        $hover-background: $btn-light-hover-bg
+    )
+}
+
+
 @import "bootstrap/scss/transitions";
 @import "bootstrap/scss/dropdown";
 // @import "bootstrap/scss/button-group";
@@ -115,10 +140,24 @@ $btn-font-weight:500;
 // Custom styles
 @import "icon-list";
 
-body {
-  padding: 1.5rem;
-}
-
+///General Button style
 .btn{
     text-transform: uppercase;
+    padding:calc($font-size-base*1.2) calc($font-size-base*1.07);
+    padding-bottom:calc($font-size-base*0.95);
+    border-width:0;
+    &[class*="btn-outline"] {
+        border-width: 1px;
+    }
+}
+
+.custom-primary{
+    background-color: $custom-dark;
+    color:$custom-accent-green;
+    &.--light{
+        background-color:$custom-accent-green; 
+        h1, h2, h3, h4, p, a:not(.btn), li{
+            color:$custom-dark;
+        }
+    }
 }
