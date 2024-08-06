@@ -37,8 +37,21 @@ $enable-gradients: false;
 $enable-shadows: false;
 
 
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * 0.938,
+  2: $spacer * 1.875,
+  3: $spacer * 2.5,
+  4: $spacer * 3.75,
+  5: $spacer * 5,
+);
 
+$new-spacer:(
+    6: $spacer * 7.5,
+);
 
+$spacers:map-merge($spacers, $new-spacer);
 
 
 
@@ -143,7 +156,11 @@ $btn-font-weight:500;
 // Helpers
 // @import "bootstrap/scss/helpers";
 // Utilities
+
+
 @import "bootstrap/scss/utilities/api";
+
+
 // Custom styles
 @import "icon-list";
 
@@ -154,8 +171,8 @@ $btn-font-weight:500;
 
  @mixin responsive-btn($size) {
     padding:calc($size*1.2) calc($size*1.07);
-    padding-bottom:calc($size*1.2);
-    margin-top:calc($size*2);
+    padding-bottom:$size;
+    margin-top:calc($size*1.5);
     font-size:calc($size*0.85);
     border-radius:calc($size*1.25);
 }
@@ -174,76 +191,14 @@ $btn-font-weight:500;
     @include media-breakpoint-up(highRes){
         @include responsive-btn(2rem);
     }
-}
-
-
-
-////PADDING///////
-///Padding top/bottom left/right
-@mixin custom-x-y($padding-x: $cpx, $padding-y:$cpy) {
-    width: 100%;
-    padding-right: $padding-x;
-    padding-left: $padding-x;
-    padding-top: $padding-y;
-    padding-bottom: $padding-y;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-//Padding Let and Right
-@mixin custom-x($padding-l: $cpl, $padding-r:$cpr) {
-    padding-right: $padding-r;
-    padding-left: $padding-l;
-}
-
-//Padding top and bottom
-@mixin custom-y($padding-t: $cpt, $padding-b:$cpb) {
-    padding-top: $padding-t;
-    padding-bottom: $padding-b;
-}
-  
-//Padding all
-@mixin custom-all( 
-    $padding-t: $cpt, $padding-r:$cpyr, $padding-b:$cpb,  $padding-l: $cpl){
-    padding-right: $padding-r;
-    padding-left: $padding-l;
-    padding-top: $padding-t;
-    padding-bottom: $padding-b;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-// Usage
-.c-container-padding {
-    @include custom-x-y(1.875rem, 2.5rem);
-    @include media-breakpoint-up(highRes){
-        @include custom-x-y(3.75rem, 5rem);
+    transition: border-top-left-radius .2s ease-in-out;
+    &:hover{
+        border-top-left-radius: 0;
+       
     }
 }
-.c-right{
-    @include custom-x(0, 2.5rem);
-    @include media-breakpoint-up(highRes){
-        @include custom-x(0, 5rem);
-    }
-}
-.c-left{
-    @include custom-x(2.5rem, 0);
-    @include media-breakpoint-up(highRes){
-        @include custom-x(5rem, 0);
-    }
-}
-.c-top{
-    @include custom-y(2.5rem, 0);
-    @include media-breakpoint-up(highRes){
-        @include custom-y(5rem, 0);
-    }
-}
-.c-bottom{
-    @include custom-y(0, 2.5rem);
-    @include media-breakpoint-up(highRes){
-        @include custom-y(0, 5rem);
-    }
-}
+
+
 
 
 ////Fonts sizes///////
@@ -254,7 +209,10 @@ p, a:not(.btn), li{
 }
 .medium-text{
     font-family:$heading-font;
-    font-size:calc($font-size-base*2);
+    font-size:calc($font-size-base*1.2);
+    @include media-breakpoint-up(sm){
+        font-size:calc($font-size-base*2);
+    }
     @include media-breakpoint-up(highRes){
         font-size:calc($font-size-base*4);
     }
@@ -262,14 +220,69 @@ p, a:not(.btn), li{
 
 
 
+
+
+
+
+.image-mask{
+    position: relative;
+    display: flex;
+    min-height: 80vh;
+    svg.cnr-animation{
+        fill:$custom-neutral;
+        position: absolute;
+        bottom: -1px;
+        right: -1px;
+        width: 30%;
+        transform-origin: bottom right;
+        transform: scale(1);
+        transition: transform .2s ease-in-out;
+    }
+
+    &.mask-hover-add{
+       svg.cnr-animation{
+        transform: scale(0);
+       }
+
+        &:hover{
+            svg.cnr-animation{
+                transform: scale(1);
+            }
+        }
+    }
+
+    &.mask-hover-remove{
+        &:hover{
+            svg.cnr-animation{
+                transform: scale(0);
+            }
+        }
+    }
+}
+
+.img-fit{
+    width: 100%;
+    height:80vh;
+    object-fit: cover;
+    object-position: 50% 50%;
+    position: absolute;
+    z-index: 0;
+    @include media-breakpoint-up(sm){
+        height:100%;
+    }
+}
+
+
 ////container sizing
 .custom-primary{
-    @include custom-x-y(1.875rem, 1.875rem);
-    margin: 50vw 0;
+    width: 100%;
     &.--light{
         background-color:$custom-accent-green; 
         h1, h2, h3, h4, p, a:not(.btn), li{
             color:$custom-dark;
+        }
+        .image-mask svg.cnr-animation{
+            fill:$custom-accent-green;
         }
     }
     &.--dark-green{
@@ -278,27 +291,14 @@ p, a:not(.btn), li{
         h1, h2, h3, h4, p, a:not(.btn), li{
             color:$custom-accent-green;
         }
-    }
-
-    @include media-breakpoint-up(highRes){
-        @include custom-x-y(3.75rem, 3.75rem);
+        .svg-ribbon{
+            fill:$custom-accent-green;
+        }
     }
 
 }
 
-.image-mask{
-    min-height:35vw;
+.button-group{
+    z-index: 1;
     position: relative;
-    display: flex;
-    background-size: cover;
-    background-position: center;
-    svg{
-        fill:$custom-accent-green;
-        position: absolute;
-        bottom: -1px;
-        right: -1px;
-        width: 30%;
-    }
 }
-
-
