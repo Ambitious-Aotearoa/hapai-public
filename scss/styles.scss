@@ -31,9 +31,14 @@ $font-family-base:$body-font;
 $font-weight-base:300;
 $line-height-base:1.25;
 
+
 // Toggle global options
 $enable-gradients: false;
 $enable-shadows: false;
+
+
+
+
 
 
 
@@ -68,6 +73,12 @@ $grid-breakpoints: (
   xxl: 1920px
 );
 
+$cust-grid-breakpoints:(
+    highRes:3480px
+);
+
+$grid-breakpoints:map-merge($grid-breakpoints, $cust-grid-breakpoints);
+
 $container-max-widths: (
   sm: 768px,
   md: 1024px,
@@ -77,36 +88,23 @@ $container-max-widths: (
 );
 
 
-
-
 // Import Bootstrap variables
 @import "bootstrap/scss/variables";
 
-
-
 ////Buttons
-$btn-border-radius: calc($font-size-base*1.25);
 $btn-font-family: $button-font;
 $btn-line-height:$font-size-base;
 $btn-font-weight:500;
-$btn-font-size:calc($font-size-base*0.875);
+
 
 
 // Import the rest of Bootstrap
 @import "bootstrap/scss/variables-dark";
 @import "bootstrap/scss/maps";
-
-
 @import "bootstrap/scss/mixins";
-
-
 @import "bootstrap/scss/utilities";
-
-
-
 @import "bootstrap/scss/root";
 @import "bootstrap/scss/reboot";
-
 @import "bootstrap/scss/type";
 @import "bootstrap/scss/images";
 @import "bootstrap/scss/containers";
@@ -117,19 +115,7 @@ $btn-font-size:calc($font-size-base*0.875);
 
 @import "bootstrap/scss/buttons";
 ///General Button style
-.btn{
-    text-transform: uppercase;
-    padding:calc($font-size-base*1.2) calc($font-size-base*1.07);
-    padding-bottom:calc($font-size-base*0.95);
-    border-width:0;
-    margin-top:calc($font-size-base*2);
-    &[class*="btn-outline"] {
-        border-width: 1px;
-    }
-    &.btn-light{
-        --bs-btn-hover-bg:red; 
-    }
-}
+
 
 @import "bootstrap/scss/transitions";
 @import "bootstrap/scss/dropdown";
@@ -156,16 +142,43 @@ $btn-font-size:calc($font-size-base*0.875);
 
 // Helpers
 // @import "bootstrap/scss/helpers";
-
-
 // Utilities
 @import "bootstrap/scss/utilities/api";
-
 // Custom styles
 @import "icon-list";
 
 
 
+
+////BUTTONS///////
+
+ @mixin responsive-btn($size) {
+    padding:calc($size*1.2) calc($size*1.07);
+    padding-bottom:calc($size*1.2);
+    margin-top:calc($size*2);
+    font-size:calc($size*0.85);
+    border-radius:calc($size*1.25);
+}
+
+.btn{
+    text-transform: uppercase;
+    border-width:0;
+    @include responsive-btn(1rem);
+
+    &[class*="btn-outline"] {
+        border-width: 1px;
+    }
+    &.btn-light{
+        --bs-btn-hover-bg:red; 
+    }
+    @include media-breakpoint-up(highRes){
+        @include responsive-btn(2rem);
+    }
+}
+
+
+
+////PADDING///////
 ///Padding top/bottom left/right
 @mixin custom-x-y($padding-x: $cpx, $padding-y:$cpy) {
     width: 100%;
@@ -202,32 +215,62 @@ $btn-font-size:calc($font-size-base*0.875);
 
 // Usage
 .c-container-padding {
-    @include custom-x-y(30px, 40px);
+    @include custom-x-y(1.875rem, 2.5rem);
+    @include media-breakpoint-up(highRes){
+        @include custom-x-y(3.75rem, 5rem);
+    }
 }
 .c-right{
-    @include custom-x(0, 40px);
+    @include custom-x(0, 2.5rem);
+    @include media-breakpoint-up(highRes){
+        @include custom-x(0, 5rem);
+    }
 }
 .c-left{
-    @include custom-x(40px, 0);
+    @include custom-x(2.5rem, 0);
+    @include media-breakpoint-up(highRes){
+        @include custom-x(5rem, 0);
+    }
 }
 .c-top{
-    @include custom-y(40px, 0);
+    @include custom-y(2.5rem, 0);
+    @include media-breakpoint-up(highRes){
+        @include custom-y(5rem, 0);
+    }
 }
 .c-bottom{
-    @include custom-y(0, 40px);
+    @include custom-y(0, 2.5rem);
+    @include media-breakpoint-up(highRes){
+        @include custom-y(0, 5rem);
+    }
 }
+
+
+////Fonts sizes///////
+p, a:not(.btn), li{
+    @include media-breakpoint-up(highRes){
+        font-size:calc($font-size-base*2.5);
+    } 
+}
+.medium-text{
+    font-family:$heading-font;
+    font-size:calc($font-size-base*2);
+    @include media-breakpoint-up(highRes){
+        font-size:calc($font-size-base*4);
+    }
+}
+
+
 
 ////container sizing
 .custom-primary{
-    @include custom-x-y(30px, 30px);
+    @include custom-x-y(1.875rem, 1.875rem);
     margin: 50vw 0;
     &.--light{
         background-color:$custom-accent-green; 
         h1, h2, h3, h4, p, a:not(.btn), li{
             color:$custom-dark;
         }
-
-
     }
     &.--dark-green{
         background-color: $custom-dark;
@@ -236,11 +279,11 @@ $btn-font-size:calc($font-size-base*0.875);
             color:$custom-accent-green;
         }
     }
-}
 
-.medium-text{
-    font-size:calc($font-size-base*2);
-    font-family:$heading-font
+    @include media-breakpoint-up(highRes){
+        @include custom-x-y(3.75rem, 3.75rem);
+    }
+
 }
 
 .image-mask{
@@ -248,13 +291,14 @@ $btn-font-size:calc($font-size-base*0.875);
     position: relative;
     display: flex;
     background-size: cover;
-  background-position: center;
+    background-position: center;
     svg{
         fill:$custom-accent-green;
         position: absolute;
         bottom: -1px;
-        right: 0;
+        right: -1px;
         width: 30%;
     }
 }
+
 
