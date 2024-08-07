@@ -49,6 +49,8 @@ $spacers: (
 
 $new-spacer:(
     6: $spacer * 7.5,
+    7:10vw,
+    8:30vh
 );
 
 $spacers:map-merge($spacers, $new-spacer);
