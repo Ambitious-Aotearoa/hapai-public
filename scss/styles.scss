@@ -49,14 +49,12 @@ $spacers: (
 
 $new-spacer:(
     6: $spacer * 7.5,
-    7:10vw,
-    8:30vh
+    8pc:8%,
+    4pc:4%,
+    30vh:30vh
 );
 
 $spacers:map-merge($spacers, $new-spacer);
-
-
-
 
 // Include functions first
 @import "bootstrap/scss/functions";
@@ -83,7 +81,7 @@ $grid-breakpoints: (
   xs: 0,
   sm: 768px,
   md: 1024px,
-  lg: 1389px,
+  lg: 1366px,
   xl: 1600px,
   xxl: 1920px
 );
@@ -97,22 +95,20 @@ $grid-breakpoints:map-merge($grid-breakpoints, $cust-grid-breakpoints);
 $container-max-widths: (
   sm: 768px,
   md: 1024px,
-  lg: 1389px,
+  lg: 1366px,
   xl: 1600px,
   xxl: 1920px
 );
 
+$display-font-family:$heading-font;
+$display-line-height:1.15em;
 
 // Import Bootstrap variables
 @import "bootstrap/scss/variables";
-
 ////Buttons
 $btn-font-family: $button-font;
 $btn-line-height:$font-size-base;
 $btn-font-weight:500;
-
-
-
 // Import the rest of Bootstrap
 @import "bootstrap/scss/variables-dark";
 @import "bootstrap/scss/maps";
@@ -126,12 +122,7 @@ $btn-font-weight:500;
 @import "bootstrap/scss/grid";
 // @import "bootstrap/scss/tables";
 // @import "bootstrap/scss/forms";
-
-
 @import "bootstrap/scss/buttons";
-///General Button style
-
-
 @import "bootstrap/scss/transitions";
 @import "bootstrap/scss/dropdown";
 // @import "bootstrap/scss/button-group";
@@ -154,19 +145,16 @@ $btn-font-weight:500;
 // @import "bootstrap/scss/spinners";
 @import "bootstrap/scss/offcanvas"; // Requires transitions
 // @import "bootstrap/scss/placeholders";
-
 // Helpers
 // @import "bootstrap/scss/helpers";
 // Utilities
-
-
 @import "bootstrap/scss/utilities/api";
-
-
 // Custom styles
 @import "icon-list";
 
 
+
+///general custom
 .row{
     margin:0;
     overflow:hidden;
@@ -175,10 +163,98 @@ div{
     &.--h100{
         height:100%
     }
+    &.--w100{
+        width: 100%;
+    }
 }
 a{
     text-decoration: none;
 }
+p{
+    text-wrap:pretty;
+}
+
+
+
+////Headings/Typography
+$ch1:7.188rem;
+$ch2:4.063rem;
+$ch3:2.188rem;
+$ch4:2rem;
+$ch5:1.563rem;
+$ch6:1.25rem;
+
+[class*="cust-font"]{
+    font-family: $heading-font;
+    line-height:1.15em;
+}
+
+.cust-font-1{
+    font-size:calc($ch1*.45);
+    line-height:1em;
+}
+.cust-font-2{
+    font-size:calc($ch2*.6);
+    line-height:.91em;
+}   
+.cust-font-3{
+    font-size:calc($ch3*.9);
+}
+.cust-font-4{
+    font-size:calc($ch4*.9);
+}
+.cust-font-5{
+    font-size:calc($ch5*.9);
+}
+.cust-font-6{
+    font-size:calc($ch6*.9);
+}
+
+@include media-breakpoint-up(sm){
+    .cust-font-1{
+        font-size:$ch1;
+    }
+    .cust-font-2{
+        font-size:$ch2;
+    }
+    .cust-font-3{
+        font-size:$ch3;
+    }
+    .cust-font-4{
+        font-size:$ch4;
+    }
+    .cust-font-5{
+        font-size:$ch5;
+    }
+    .cust-font-6{
+        font-size:$ch6;
+    }
+}
+
+@include media-breakpoint-up(highRes){
+    .cust-font-1{
+        font-size:calc($ch1*2);
+    }
+    .cust-font-2{
+        font-size:calc($ch2*2);
+    }
+    .cust-font-3{
+        font-size:calc($ch3*2);
+    }
+    .cust-font-4{
+        font-size:calc($ch4*2);
+    }
+    .cust-font-5{
+        font-size:calc($ch5*2);
+    }
+    .cust-font-6{
+        font-size:calc($ch6*2);
+    }
+}
+
+
+
+
 
 ////BUTTONS///////
 
@@ -214,6 +290,7 @@ a{
 .button-group{
     z-index: 1;
     position: relative;
+    
 }
 
 
@@ -224,17 +301,7 @@ p, a:not(.btn), li{
     } 
 }
 
-h3,
-.medium-text{
-    font-family:$heading-font;
-    font-size:calc($font-size-base*1.2);
-    @include media-breakpoint-up(sm){
-        font-size:calc($font-size-base*2);
-    }
-    @include media-breakpoint-up(highRes){
-        font-size:calc($font-size-base*4);
-    }
-}
+
 
 
 
@@ -329,10 +396,10 @@ h3,
 
 .pod{
     &.pod-full{
-        position:absolute;
+        // position:absolute;
         width: 100%;
         height: 100%;
-        z-index: 1; 
+        // z-index: 1; 
     }
     &:hover{
         button{
