@@ -171,7 +171,7 @@ a{
     text-decoration: none;
 }
 p{
-    text-wrap:pretty;
+    text-wrap:balance;
 }
 
 
@@ -183,10 +183,12 @@ $ch3:2.188rem;
 $ch4:2rem;
 $ch5:1.563rem;
 $ch6:1.25rem;
+$ch7: 1rem;
 
 [class*="cust-font"]{
     font-family: $heading-font;
     line-height:1.15em;
+    text-wrap:pretty;
 }
 
 .cust-font-1{
@@ -208,6 +210,13 @@ $ch6:1.25rem;
 }
 .cust-font-6{
     font-size:calc($ch6*.9);
+}
+
+.cust-font-7{
+    font-size:calc($ch7*.9);
+    text-transform: uppercase;
+    color:$custom-primary;
+    font-family: $button-font;
 }
 
 @include media-breakpoint-up(sm){
@@ -250,8 +259,10 @@ $ch6:1.25rem;
     .cust-font-6{
         font-size:calc($ch6*2);
     }
+    p, a:not(.btn), li{
+        font-size:calc($font-size-base*2.5);
+    }
 }
-
 
 
 
@@ -292,15 +303,6 @@ $ch6:1.25rem;
     position: relative;
     
 }
-
-
-////Fonts sizes///////
-p, a:not(.btn), li{
-    @include media-breakpoint-up(highRes){
-        font-size:calc($font-size-base*2.5);
-    } 
-}
-
 
 
 
