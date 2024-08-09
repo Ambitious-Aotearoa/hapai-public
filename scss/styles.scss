@@ -40,7 +40,7 @@ $enable-shadows: false;
 $spacer: 1rem;
 $spacers: (
   0: 0,
-  1: $spacer * 0.938,
+  1: $spacer * 1.25,
   2: $spacer * 1.875,
   3: $spacer * 2.5,
   4: $spacer * 3.75,
@@ -49,12 +49,26 @@ $spacers: (
 
 $new-spacer:(
     6: $spacer * 7.5,
+    7: $spacer * 10,
     8pc:8%,
     4pc:4%,
-    30vh:30vh
+    30vh:30vh,
+    40vh:40vh,
+    50vh:50vh,
+    60vh:60vh,
+    40pc:40%,
+    50pc:50%,
+    6vw:6vw,
+    7vw:7vw,
+    8vw:8vw,
+    tri1:13.2px,
+    tri2:6.6px,
+    tri3:26.4px,
+    10px:10px,
 );
 
 $spacers:map-merge($spacers, $new-spacer);
+
 
 // Include functions first
 @import "bootstrap/scss/functions";
@@ -171,7 +185,7 @@ a{
     text-decoration: none;
 }
 p{
-    text-wrap:balance;
+    text-wrap:pretty;
 }
 
 
@@ -188,7 +202,10 @@ $ch7: 1rem;
 [class*="cust-font"]{
     font-family: $heading-font;
     line-height:1.15em;
-    text-wrap:pretty;
+    text-wrap:balance;
+    &.--body-font{
+        font-family: $body-font; 
+    }
 }
 
 .cust-font-1{
@@ -217,6 +234,10 @@ $ch7: 1rem;
     text-transform: uppercase;
     color:$custom-primary;
     font-family: $button-font;
+    font-weight: 500;
+    &.--light-weight{
+        font-weight:400;
+    }
 }
 
 @include media-breakpoint-up(sm){
@@ -258,6 +279,9 @@ $ch7: 1rem;
     }
     .cust-font-6{
         font-size:calc($ch6*2);
+    }
+    .cust-font-7{
+        font-size:calc($ch7*2);
     }
     p, a:not(.btn), li{
         font-size:calc($font-size-base*2.5);
@@ -302,6 +326,29 @@ $ch7: 1rem;
     z-index: 1;
     position: relative;
     
+}
+
+
+///Button icon - for color groups see .primary-custom groups
+.btn-icon{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    p{
+        margin-top:5px;
+        margin-right: 15px;
+    }
+    svg{
+        width:20px;
+        height:20px;
+    }
+
+    @include media-breakpoint-up(highRes){
+        svg{
+            width:40px;
+            height:40px;
+        }
+    }
 }
 
 
@@ -375,13 +422,25 @@ $ch7: 1rem;
 
 ////background and button combinations
 .custom-primary{
-    &.--light{
+    &.--light-green{
         background-color:$custom-accent-green; 
         h1, h2, h3, h4, p, a:not(.btn), li{
             color:$custom-dark;
         }
         .image-cnr svg.cnr-animation{
             fill:$custom-accent-green;
+        }
+        .btn-icon{
+            transition: all .2s ease-in-out;
+            svg{
+                stroke:$custom-dark;
+            }
+            &:hover{
+                p{color:$custom-neutral}
+                svg{
+                    stroke:$custom-neutral;
+                }
+            }
         }
     }
     &.--dark-green{
@@ -394,9 +453,34 @@ $ch7: 1rem;
             fill:$custom-accent-green;
         }
     }
+    &.--dark-green-neutral{
+        background-color: $custom-dark;
+        color:$custom-neutral;
+        h1, h2, h3, h4, p, a:not(.btn), li{
+            color:$custom-neutral;
+        }
+
+        .image-cnr svg.cnr-animation{
+            fill:$custom-dark;
+        }
+
+        .btn-icon{
+            transition: all .2s ease-in-out;
+            svg{
+                stroke:$custom-neutral;
+            }
+            &:hover{
+                p{color:$custom-accent-green}
+                svg{
+                    stroke:$custom-accent-green;
+                }
+            }
+        }
+    }
 }
 
 .pod{
+    position: relative;
     &.pod-full{
         // position:absolute;
         width: 100%;
