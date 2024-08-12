@@ -50,6 +50,7 @@ $spacers: (
 $new-spacer:(
     6: $spacer * 7.5,
     7: $spacer * 10,
+    21pc:21%,
     10pc:10%,
     9pc:9%,
     8pc:8%,
@@ -66,14 +67,19 @@ $new-spacer:(
     6vw:6vw,
     7vw:7vw,
     8vw:8vw,
+    20vw:20vw,
+    30vw:30vw,
     tri1:13.2px,
     tri2:6.6px,
     tri3:26.4px,
     10px:10px,
     15px:15px,
     50px:50px,
+    65px:65px,
+    70px:70px,
     100px:100px,
     200px:200px,
+    140px:140px,
 );
 
 $spacers:map-merge($spacers, $new-spacer);
@@ -231,7 +237,7 @@ $ch7: 1rem;
 }
 .cust-font-2{
     font-size:calc($ch2*.6);
-    line-height:.91em;
+    line-height:1em;
 }   
 .cust-font-3{
     font-size:calc($ch3*.9);
@@ -269,6 +275,9 @@ $ch7: 1rem;
     }
     .cust-font-4{
         font-size:$ch4;
+        &.--sm{
+            font-size:$ch5; 
+        }
     }
     .cust-font-5{
         font-size:$ch5;
@@ -277,6 +286,15 @@ $ch7: 1rem;
         font-size:$ch6;
     }
 }
+
+@include media-breakpoint-up(lg){
+    .cust-font-4{
+        &.--sm{
+            font-size:$ch4;
+        }
+    }
+}
+
 
 @include media-breakpoint-up(highRes){
     .cust-font-1{
@@ -290,6 +308,9 @@ $ch7: 1rem;
     }
     .cust-font-4{
         font-size:calc($ch4*2);
+        &.--sm{
+            font-size:$ch4*2;
+        }
     }
     .cust-font-5{
         font-size:calc($ch5*2);
