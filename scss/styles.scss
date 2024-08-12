@@ -223,6 +223,7 @@ $ch7: 1rem;
     font-family: $heading-font;
     line-height:1.15em;
     text-wrap:pretty;
+    margin-bottom: 0;
     &.--body-font{
         font-family: $body-font; 
     }
@@ -533,3 +534,22 @@ $ch7: 1rem;
     }
 }
 
+// .special{
+//     position: relative;
+//     .row{
+//         position: relative;
+//         overflow: visible;
+//     }
+
+    
+// }
+// .special::after{
+//     position: absolute;
+//     left:0;
+//     height:500vh;
+//     width: 1px;
+//     top: 0;
+//     z-index: 1;
+//     background-color: red;
+//     content: '';
+// }
