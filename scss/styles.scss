@@ -50,8 +50,13 @@ $spacers: (
 $new-spacer:(
     6: $spacer * 7.5,
     7: $spacer * 10,
+    10pc:10%,
+    9pc:9%,
     8pc:8%,
     4pc:4%,
+    6pc:6%,
+    5pc:5%,
+    3pc:3%,
     30vh:30vh,
     40vh:40vh,
     50vh:50vh,
@@ -65,6 +70,10 @@ $new-spacer:(
     tri2:6.6px,
     tri3:26.4px,
     10px:10px,
+    15px:15px,
+    50px:50px,
+    100px:100px,
+    200px:200px,
 );
 
 $spacers:map-merge($spacers, $new-spacer);
@@ -185,7 +194,12 @@ a{
     text-decoration: none;
 }
 p{
-    text-wrap:pretty;
+    @include media-breakpoint-up(lg){
+        text-wrap: balance;
+            &.--pretty{
+            text-wrap: pretty;
+        }
+    }
 }
 
 
@@ -202,9 +216,12 @@ $ch7: 1rem;
 [class*="cust-font"]{
     font-family: $heading-font;
     line-height:1.15em;
-    text-wrap:balance;
+    text-wrap:pretty;
     &.--body-font{
         font-family: $body-font; 
+    }
+    &.--balance{
+        text-wrap: balance;
     }
 }
 
@@ -360,7 +377,7 @@ $ch7: 1rem;
     svg.cnr-animation{
         fill:$custom-neutral;
         position: absolute;
-        bottom: -1px;
+        bottom: -2px;
         right: -1px;
         width: 30%;
         transform-origin: bottom right;
