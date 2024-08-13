@@ -31,7 +31,6 @@ $font-family-base:$body-font;
 $font-weight-base:300;
 $line-height-base:1.25;
 
-
 // Toggle global options
 $enable-gradients: false;
 $enable-shadows: false;
@@ -77,12 +76,14 @@ $new-spacer:(
     50px:50px,
     65px:65px,
     70px:70px,
-    100px:6.25rem,
+    100px:$spacer * 6.25,
     200px:200px,
     140px:140px,
 );
 
 $spacers:map-merge($spacers, $new-spacer);
+
+
 
 
 // Include functions first
@@ -185,16 +186,11 @@ $btn-font-weight:500;
 
 ///general custom
 /// 
-// body{
-//     $spacer:1rem;
-//     @include media-breakpoint-up(highRes){
-//         $spacer:2rem;
-//     }
-// }
 .row{
     margin:0;
     overflow:hidden;
 }
+
 div{
     &.--h100{
         height:100%
@@ -203,9 +199,11 @@ div{
         width: 100%;
     }
 }
+
 a{
     text-decoration: none;
 }
+
 p{
     @include media-breakpoint-up(lg){
         text-wrap: balance;
@@ -214,7 +212,6 @@ p{
         }
     }
 }
-
 
 
 ////Headings/Typography
@@ -329,9 +326,10 @@ $ch7: 1rem;
     .cust-font-7{
         font-size:calc($ch7*2);
     }
-    p, a:not(.btn), li{
+    p, a:not(.btn), li, input{
         font-size:calc($font-size-base*2.5);
     }
+
 }
 
 
@@ -541,23 +539,37 @@ $ch7: 1rem;
     }
 }
 
+
+@mixin responsive-input($size) {
+    padding:calc($size*1.2) calc($size*2);
+}
+
 footer{
     input{
         text-transform: uppercase;
-        border-width: 0;
+        border-width:0;
         transition: all .2s ease-in-out;
-        padding: 1rem 1.07rem;
-        border-radius: 1.25rem;
+        border-radius:1.25rem;
+        font-size: .85rem;
+        @include responsive-input(.9rem);
+        font-family: $button-font;
         &:hover,
         &:focus-visible{
             transition: all .2s ease-in-out;
             border-top-left-radius: 0;
             outline-color: $custom-accent-green;
         }
+        @include media-breakpoint-up(highRes){
+            border-radius:2.5rem;
+            font-size: 1.7rem;
+            @include responsive-input(1.4rem) 
+        }
     }
+
     ul{
         list-style: none;
     }
+
     .footer-nav{
         li{
             
@@ -568,14 +580,23 @@ footer{
                 line-height: 1.5em;
                 text-wrap: nowrap;
                 font-size:15px;
+                @include media-breakpoint-up(highRes){
+                    font-size:2rem
+                }
             }
         }
     }
+
+
     svg.bi{
         fill:$custom-neutral;
         width: 20px;
         height: 20px;
         margin-bottom: 5px;
+        @include media-breakpoint-up(highRes){
+            width: 40px;
+            height: 40px;
+        }
     }
 
     .footer-banner{
