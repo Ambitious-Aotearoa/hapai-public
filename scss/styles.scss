@@ -50,6 +50,8 @@ $new-spacer:(
     6: $spacer * 7.5,
     7: $spacer * 10,
     21pc:21%,
+    15pc:15%,
+    12pc:12%,
     10pc:10%,
     9pc:9%,
     8pc:8%,
@@ -67,7 +69,10 @@ $new-spacer:(
     7vw:7vw,
     8vw:8vw,
     10vw:10vw,
+    15vw:15vw,
+    21vw:21vw,
     20vw:20vw,
+    25vw:25vw,
     30vw:30vw,
     tri1:13.2px,
     tri2:6.6px,
@@ -84,7 +89,18 @@ $new-spacer:(
 );
 
 $spacers:map-merge($spacers, $new-spacer);
+$new-widths:(
+    2vw:2vw,
+    2p5vw:2.5vw,
+    3vw:3vw,
+    3p5vw:3.5vw,
+    4vw:4vw,
+    4p5vw:4.5vw,
+    5vw:5vw,
+    7p5vw:7.5vw,
+);
 
+$spacers:map-merge($spacers, $new-widths);
 
 
 
@@ -135,23 +151,38 @@ $container-max-widths: (
 $display-font-family:$heading-font;
 $display-line-height:1.15em;
 
+
+
+
 // Import Bootstrap variables
 @import "bootstrap/scss/variables";
 ////Buttons
 $btn-font-family: $button-font;
 $btn-line-height:$font-size-base;
 $btn-font-weight:500;
+
+
+
 // Import the rest of Bootstrap
 @import "bootstrap/scss/variables-dark";
 @import "bootstrap/scss/maps";
 @import "bootstrap/scss/mixins";
 @import "bootstrap/scss/utilities";
+
+
 @import "bootstrap/scss/root";
 @import "bootstrap/scss/reboot";
 @import "bootstrap/scss/type";
 @import "bootstrap/scss/images";
+
+
+
+
 @import "bootstrap/scss/containers";
 @import "bootstrap/scss/grid";
+
+
+
 // @import "bootstrap/scss/tables";
 // @import "bootstrap/scss/forms";
 @import "bootstrap/scss/buttons";
@@ -186,20 +217,15 @@ $btn-font-weight:500;
 
 
 
+
 ///general custom
 /// 
+/// b
+
+
 .row{
     margin:0;
-    overflow:hidden;
-}
 
-div{
-    &.--h100{
-        height:100%
-    }
-    &.--w100{
-        width: 100%;
-    }
 }
 
 a{
@@ -214,9 +240,12 @@ p{
         }
     }
 }
+
+
 .img-fluid{
     width: 100%;
 }
+
 
 
 ////Headings/Typography
@@ -231,13 +260,15 @@ $ch7: 1rem;
 [class*="cust-font"]{
     font-family: $heading-font;
     line-height:1.15em;
-    text-wrap:pretty;
     margin-bottom: 0;
     &.--body-font{
         font-family: $body-font; 
     }
     &.--balance{
         text-wrap: balance;
+    }
+    &.--pretty{
+        text-wrap: pretty;
     }
 }
 
@@ -341,7 +372,6 @@ $ch7: 1rem;
 
 
 ////BUTTONS///////
-
  @mixin responsive-btn($size) {
     padding:calc($size*1.2) calc($size*1.07);
     padding-bottom:$size;
@@ -415,6 +445,7 @@ $ch7: 1rem;
         transform-origin: bottom right;
         transform: scale(1);
         transition: transform .2s ease-in-out;
+        z-index: 2;
     }
     &.cnr-constant{
         svg.cnr-animation{
@@ -444,22 +475,7 @@ $ch7: 1rem;
 }
 
 
-/// image as a background image
-.img-fit-height{
-    &.col-md-6{
-        min-height:50vw;
-    }
-    @include media-breakpoint-up(xl){
-        &.col-md-6{
-            min-height:40vw;
-        }
-    }
-}
 
-.img-hero{
-    min-height:90vh
-
-}
 .img-fit{
     width: 100%;
     height:100%;
@@ -473,7 +489,79 @@ $ch7: 1rem;
 }
 
 
-////background and button combinations
+.responsive-img-height,
+.min-img-height-g2,
+.min-img-height-g1{
+    min-height:120vw;
+    @include media-breakpoint-up(sm){
+        min-height:60vw;
+    }
+}
+
+.responsive-img-height{
+    @include media-breakpoint-up(md){
+        min-height:100%;
+    }
+}
+
+.min-img-height-g1{
+    @include media-breakpoint-up(md){
+        min-height:40vw;
+    }
+    @include media-breakpoint-up(xl){
+        min-height:38vw;
+    }
+}
+
+.min-img-height-g2{
+    @include media-breakpoint-up(md){
+        min-height:35vw;
+        &.sm-side{
+            min-height:22vw
+        }
+    }
+    @include media-breakpoint-up(xl){
+        min-height:28vw;
+        &.sm-side{
+            min-height:19vw
+        }
+    }
+}
+
+//sections that act as buttons/links to other pages
+.pod{
+    position: relative;
+    .button-group{
+        z-index: 3;
+    }
+    &.pod-full{
+        display: block;
+        width: 100%;
+        
+        &:after{
+            content: '';
+            width: 100%;
+            height:100%;
+            top: 0;
+            left: 0;
+            position: absolute;
+            z-index: 1;
+            background: rgb(0,0,0);
+            background: linear-gradient(201deg, rgba(0,0,0,0) 0%, rgba(15,36,36,1) 100%);
+        }
+    }
+    &:hover{
+        button{
+            transition: all .2s ease-in-out;
+            border-top-left-radius: 0;       
+        }
+    }
+
+    
+    
+}
+
+////background and text combinations
 .custom-primary{
     &.--light-green{
         background-color:$custom-accent-green; 
@@ -532,33 +620,17 @@ $ch7: 1rem;
     }
 }
 
-.pod{
-    position: relative;
-    &.pod-full{
-        display: block;
-        width: 100%;
-        height: 100%; 
-    }
-
-    &.pod-flex{
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        height: 100%; 
-    }
-    &:hover{
-        button{
-            transition: all .2s ease-in-out;
-            border-top-left-radius: 0;       
-        }
-    }
-}
 
 
 @mixin responsive-input($size) {
     padding:calc($size*1.2) calc($size*2);
 }
 
+
+
+
+
+/////footer element, repeated all pages
 footer{
     input{
         text-transform: uppercase;
@@ -633,15 +705,15 @@ footer{
 
 }
 
-// .about{
-//     position: relative;
-//     &:after{
-//         content: '';
-//         position: absolute;
-//         width: 1px;
-//         height:5000vh;
-//         background-color: red;
-//         top: 0;
-//         left: calc(33.3333% + 10px)
-//     }
-// }
+.guide{
+    position: relative;
+    &:after{
+        content: '';
+        position: absolute;
+        width: 1px;
+        height:5000vh;
+        background-color: red;
+        top: 0;
+        left: calc(33.3333% + 10px)
+    }
+}
