@@ -97,7 +97,10 @@ $new-widths:(
     4vw:4vw,
     4p5vw:4.5vw,
     5vw:5vw,
+    6vw:6vw,
     7p5vw:7.5vw,
+    10vw:10vw,
+    11vw:11vw,
 );
 
 $spacers:map-merge($spacers, $new-widths);
@@ -122,6 +125,7 @@ $secondary:$custom-accent-green;
 $success:$custom-primary;
 $dark:$custom-dark;
 $light:$custom-neutral;
+
 $body-bg: $custom-neutral;
 $body-color: $custom-dark; 
 
@@ -249,11 +253,11 @@ p{
 
 
 ////Headings/Typography
-$ch1:7.188rem;
+$ch1:5.625rem;
 $ch2:4.063rem;
 $ch3:2.188rem;
 $ch4:2rem;
-$ch5:1.563rem;
+$ch5:1.625rem;
 $ch6:1.25rem;
 $ch7: 1rem;
 
@@ -273,7 +277,7 @@ $ch7: 1rem;
 }
 
 .cust-font-1{
-    font-size:calc($ch1*.45);
+    font-size:calc($ch1*.8);
     line-height:1em;
 }
 .cust-font-2{
@@ -296,7 +300,6 @@ $ch7: 1rem;
 .cust-font-7{
     font-size:calc($ch7*.9);
     text-transform: uppercase;
-    color:$custom-primary;
     font-family: $button-font;
     font-weight: 500;
     &.--light-weight{
@@ -328,7 +331,24 @@ $ch7: 1rem;
     }
 }
 
+
+@include media-breakpoint-up(md){
+    .cust-font-1{
+        font-size:calc($ch1*.8);
+    }
+    .cust-font-2{
+        &.hero-font{
+            font-size:calc($ch2*.8);
+        }
+    }
+}
+
 @include media-breakpoint-up(lg){
+    .cust-font-2{
+        &.hero-font{
+            font-size:$ch2;
+        }
+    }
     .cust-font-4{
         &.--sm{
             font-size:$ch4;
@@ -343,6 +363,9 @@ $ch7: 1rem;
     }
     .cust-font-2{
         font-size:calc($ch2*2);
+        &.hero-font{
+            font-size:calc($ch2*2);
+        }
     }
     .cust-font-3{
         font-size:calc($ch3*2);
@@ -441,7 +464,7 @@ $ch7: 1rem;
         position: absolute;
         bottom: -2px;
         right: -1px;
-        width: 30%;
+        width: 20%;
         transform-origin: bottom right;
         transform: scale(1);
         transition: transform .2s ease-in-out;
@@ -488,13 +511,27 @@ $ch7: 1rem;
     }
 }
 
-
+.responsive-hero,
 .responsive-img-height,
 .min-img-height-g2,
 .min-img-height-g1{
     min-height:120vw;
     @include media-breakpoint-up(sm){
         min-height:60vw;
+    }
+}
+
+
+
+.responsive-hero{
+    @include media-breakpoint-up(md){
+        min-height:50vw;
+    }
+    @include media-breakpoint-up(lg){
+        min-height:44vw;
+    }
+    @include media-breakpoint-up(xl){
+        min-height:30vw;
     }
 }
 
@@ -534,6 +571,13 @@ $ch7: 1rem;
     .button-group{
         z-index: 3;
     }
+
+    //for non image background pods
+    &.pod-flex{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
     &.pod-full{
         display: block;
         width: 100%;
@@ -556,9 +600,6 @@ $ch7: 1rem;
             border-top-left-radius: 0;       
         }
     }
-
-    
-    
 }
 
 ////background and text combinations
@@ -618,6 +659,14 @@ $ch7: 1rem;
             }
         }
     }
+    &.--yellow{
+        background-color: $custom-accent-yellow;
+        .image-cnr{
+            svg.cnr-animation{
+                fill:$custom-accent-yellow;
+            }
+        }
+    }
 }
 
 
@@ -625,10 +674,6 @@ $ch7: 1rem;
 @mixin responsive-input($size) {
     padding:calc($size*1.2) calc($size*2);
 }
-
-
-
-
 
 /////footer element, repeated all pages
 footer{
@@ -705,15 +750,15 @@ footer{
 
 }
 
-.guide{
-    position: relative;
-    &:after{
-        content: '';
-        position: absolute;
-        width: 1px;
-        height:5000vh;
-        background-color: red;
-        top: 0;
-        left: calc(33.3333% + 10px)
-    }
-}
+// .guide{
+//     position: relative;
+//     &:after{
+//         content: '';
+//         position: absolute;
+//         width: 1px;
+//         height:5000vh;
+//         background-color: red;
+//         top: 0;
+//         left: calc(66%)
+//     }
+// }
