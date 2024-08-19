@@ -478,7 +478,7 @@ $ch7: 1rem;
     svg.cnr-animation{
         fill:$custom-neutral;
         position: absolute;
-        bottom: -2px;
+        bottom: -1px;
         right: -1px;
         width: 20%;
         transform-origin: bottom right;
@@ -657,6 +657,8 @@ $ch7: 1rem;
             fill:$custom-accent-green;
         }
     }
+
+
     &.--dark-green-neutral{
         background-color: $custom-dark;
         color:$custom-neutral;
@@ -686,6 +688,14 @@ $ch7: 1rem;
         .image-cnr{
             svg.cnr-animation{
                 fill:$custom-accent-yellow;
+            }
+        }
+    }
+    &.--orange{
+        background-color:$custom-primary;
+        .image-cnr{
+            svg.cnr-animation{
+                fill:$custom-primary
             }
         }
     }
@@ -781,6 +791,6 @@ footer{
 //         height:5000vh;
 //         background-color: red;
 //         top: 0;
-//         left: calc(66%)
+//         left: 35%
 //     }
 // }
