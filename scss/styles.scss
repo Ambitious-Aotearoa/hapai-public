@@ -90,6 +90,7 @@ $new-spacer:(
 
 $spacers:map-merge($spacers, $new-spacer);
 $new-widths:(
+    1vw:1vw,
     2vw:2vw,
     2p5vw:2.5vw,
     3vw:3vw,
@@ -445,6 +446,10 @@ $ch7: 1rem;
     position: relative;
     
 }
+button{
+    background-color: transparent;
+    border-width: 0;
+}
 
 
 ///Button icon - for color groups see .primary-custom groups
@@ -457,14 +462,38 @@ $ch7: 1rem;
         margin-right: 15px;
     }
     svg{
+        transition: all .2s ease-in-out;
         width:20px;
         height:20px;
+        stroke:$primary
+    }
+    &:hover{
+        svg{
+            transition: all .2s ease-in-out;
+            margin-left: 2rem;
+        }
     }
 
     @include media-breakpoint-up(highRes){
         svg{
             width:40px;
             height:40px;
+        }
+    }
+}
+
+.btn-linkedin{
+    svg{
+        width: 40px;
+        height: 40px;
+        fill: $primary;
+        stroke:none
+    }
+    &:hover{
+        svg{
+            transition: all .2s ease-in-out;
+            fill: $success;
+            margin-left: 0;
         }
     }
 }
@@ -514,6 +543,21 @@ $ch7: 1rem;
 }
 
 
+.image-cnr button svg{
+    transition: all .2s ease-in-out;
+}
+
+.image-cnr:hover{
+    button{
+        transition: all .2s ease-in-out;
+        svg{
+            transition: all .2s ease-in-out;
+            margin-left: 2rem;
+        }
+    }
+}
+
+
 
 .img-fit{
     width: 100%;
@@ -529,9 +573,11 @@ $ch7: 1rem;
 
 .responsive-hero,
 .responsive-img-height,
-// .responsive-img-height-2,
 .min-img-height-g2,
 .min-img-height-g1{
+    svg.cnr-animation{
+        bottom: -2px;
+    }
     min-height:120vw;
     @include media-breakpoint-up(sm){
         min-height:60vw;
@@ -681,6 +727,16 @@ $ch7: 1rem;
                     stroke:$custom-accent-green;
                 }
             }
+            &.--orange{
+                &:hover{
+                    p{
+                        color: $success;
+                    }
+                    svg{
+                        stroke: $success;
+                    }
+                }
+            }
         }
     }
     &.--yellow{
@@ -690,12 +746,28 @@ $ch7: 1rem;
                 fill:$custom-accent-yellow;
             }
         }
+        .btn-icon{
+
+            svg{
+                stroke:$primary
+            }
+        }
     }
+
     &.--orange{
         background-color:$custom-primary;
         .image-cnr{
             svg.cnr-animation{
                 fill:$custom-primary
+            }
+        }
+    }
+
+    &.--blue{
+        background-color:$custom-accent-blue;
+        .image-cnr{
+            svg.cnr-animation{
+                fill:$custom-accent-blue;
             }
         }
     }
@@ -709,6 +781,9 @@ $ch7: 1rem;
 
 /////footer element, repeated all pages
 footer{
+    p{
+        text-wrap: wrap;
+    }
     input{
         text-transform: uppercase;
         border-width:0;
@@ -782,15 +857,32 @@ footer{
 
 }
 
-// .guide{
-//     position: relative;
-//     &:after{
-//         content: '';
-//         position: absolute;
-//         width: 1px;
-//         height:5000vh;
-//         background-color: red;
-//         top: 0;
-//         left: 35%
-//     }
-// }
+.guide{
+    position: relative;
+    &:after{
+        content: '';
+        position: absolute;
+        width: 1px;
+        height:5000vh;
+        background-color: red;
+        top: 0;
+        left: calc(33.333%)
+    }
+    &:before{
+        content: '';
+        position: absolute;
+        width: 1px;
+        height:5000vh;
+        background-color: blue;
+        top: 0;
+        left: calc(33.333% + 16px)
+    }
+}
+
+.same-height-wrapper{
+    .same-height{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
