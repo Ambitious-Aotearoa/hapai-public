@@ -1,91 +1,98 @@
-$(document).ready(function() {
-    function equalizeInnerHeights(elements) {
-        var maxHeight = 0;
 
-        elements.css('height', 'auto');
 
-        elements.each(function() {
-            var thisHeight = $(this).height();
-            if (thisHeight > maxHeight) {
-                maxHeight = thisHeight;
-            }
-            // Log the height of each inner element
-            //console.log('Inner element height:', thisHeight);
-        });
+// function updateElementHeights(selectors) {
+//     const desktopWidth = 1024;
 
-        // Log the maximum height for inner elements
-        // console.log('Max inner height:', maxHeight);
+//     if (window.innerWidth >= desktopWidth) {
+//         selectors.forEach(selector => {
+//             const elements = document.querySelectorAll(selector);
+//             let maxHeight = 0;
 
-        elements.height(maxHeight);
+//             // Reset heights to auto to recalculate
+//             elements.forEach(el => {
+//                 el.style.height = 'auto'; // Reset height to auto
+//             });
 
-        // Log the applied height to ensure it's being set correctly
-        // elements.each(function() {
-        //     console.log('Applied inner height:', $(this).height());
-        // });
-    }
+//             // Calculate the tallest height
+//             elements.forEach(el => {
+//                 const elementHeight = el.offsetHeight;
+//                 if (elementHeight > maxHeight) {
+//                     maxHeight = elementHeight;
+//                 }
+//             });
 
-    function equalizeHeights(wrapper) {
-        $(wrapper).each(function() {
-            var maxHeight = 0;
-            var elements = $(this).find('.same-height');
+//             // Apply the tallest height to all elements
+//             elements.forEach(el => {
+//                 el.style.height = `${maxHeight}px`;
+//             });
+//         });
+//     } else {
+//         // Reset styles for mobile
+//         selectors.forEach(selector => {
+//             const elements = document.querySelectorAll(selector);
+//             elements.forEach(el => {
+//                 el.style.height = ''; // Reset height to auto
+//             });
+//         });
+//     }
+// }
 
-            // Reset heights to auto to ensure proper calculation
-            elements.css('height', 'auto');
+// // List of selectors for elements you want to target
+// const selectors = ['.same-height h3', '.same-height p:not(button p)'];
 
-            // Force a reflow to recalculate heights
-            elements.each(function() {
-                $(this).height('auto');
+// // Run on page load
+// updateElementHeights(selectors);
+
+// // Run on window resize
+// window.addEventListener('resize', () => updateElementHeights(selectors));
+
+
+function updateElementHeights() {
+    const desktopWidth = 1024;
+
+    // Select all .same-height-wrapper containers
+    const wrappers = document.querySelectorAll('.same-height-wrapper');
+
+    wrappers.forEach(wrapper => {
+        const selectors = ['h3', 'p:not(button p)']; // List of child elements to target within each wrapper
+
+        selectors.forEach(selector => {
+            const elements = wrapper.querySelectorAll(selector);
+            let maxHeight = 0;
+
+            // Reset heights to auto to recalculate
+            elements.forEach(el => {
+                el.style.height = 'auto'; // Reset height to auto
             });
 
-            // Find the maximum height within the current wrapper
-            elements.each(function() {
-                var thisHeight = $(this).height();
-                if (thisHeight > maxHeight) {
-                    maxHeight = thisHeight;
+            // Calculate the tallest height
+            elements.forEach(el => {
+                const elementHeight = el.offsetHeight;
+                if (elementHeight > maxHeight) {
+                    maxHeight = elementHeight;
                 }
             });
 
-            // Set all elements within the current wrapper to the maximum height
-            elements.height(maxHeight);
-
-            // Log the applied height to ensure it's being set correctly
-            // elements.each(function() {
-            //     console.log('Applied height:', $(this).height());
-            // });
-
-            // Equalize heights for inner elements
-            equalizeInnerHeights($(this).find('.same-height h3'));
-            equalizeInnerHeights($(this).find('.same-height p:not(button p)'));
+            // Apply the tallest height to all elements within the wrapper
+            elements.forEach(el => {
+                el.style.height = `${maxHeight}px`;
+            });
         });
-    }
-
-    function resetHeights(wrapper) {
-        $(wrapper).find('.same-height').css('height', 'auto');
-        // Force a reflow to recalculate heights
-        $(wrapper).find('.same-height').each(function() {
-            $(this).height('auto');
-        });
-    }
-
-    function handleResizeOrOrientationChange() {
-        //console.log('Resize or orientation change detected.');
-        equalizeAll();
-    }
-
-    function equalizeAll() {
-        //console.log('Equalizing all heights...');
-        equalizeHeights('.same-height-wrapper');
-    }
-
-    // Run on page load
-    //console.log('Page loaded.');
-    equalizeAll();
-
-    // Run on window resize and orientation change
-    $(window).on('resize orientationchange', function() {
-        setTimeout(handleResizeOrOrientationChange, 100); // Allow some time for layout to stabilize
     });
 
-    // Trigger resize/orientationchange on load
-    $(window).trigger('resize');
-});
+    // Reset styles for mobile
+    if (window.innerWidth < desktopWidth) {
+        wrappers.forEach(wrapper => {
+            const elements = wrapper.querySelectorAll('h3, p:not(button p)');
+            elements.forEach(el => {
+                el.style.height = ''; // Reset height to auto
+            });
+        });
+    }
+}
+
+// Run on page load
+updateElementHeights();
+
+// Run on window resize
+window.addEventListener('resize', updateElementHeights);

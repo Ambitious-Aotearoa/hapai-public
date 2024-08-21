@@ -470,7 +470,7 @@ button{
     &:hover{
         svg{
             transition: all .2s ease-in-out;
-            margin-left: 2rem;
+            margin-left:.5rem;
         }
     }
 
@@ -552,7 +552,7 @@ button{
         transition: all .2s ease-in-out;
         svg{
             transition: all .2s ease-in-out;
-            margin-left: 2rem;
+            margin-left: .5rem;
         }
     }
 }
@@ -603,11 +603,6 @@ button{
         min-height:100%;
     }
 }
-// .responsive-img-height-2{
-//     @include media-breakpoint-up(lg){
-//         min-height:100%;
-//     }
-// }
 
 .min-img-height-g1{
     @include media-breakpoint-up(md){
@@ -622,15 +617,12 @@ button{
     @include media-breakpoint-up(md){
         min-height:35vw;
         &.sm-side{
-            min-height:22vw
+            .img-fit{
+                height: 65%;
+            }
         }
     }
-    @include media-breakpoint-up(xl){
-        min-height:28vw;
-        &.sm-side{
-            min-height:19vw
-        }
-    }
+
 }
 
 //sections that act as buttons/links to other pages
@@ -884,5 +876,17 @@ footer{
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+
+    }
+}
+
+.logo-wrapper{
+    img{
+        max-width: 200px;
+    }
+    @include media-breakpoint-up(highRes){
+        img{
+            max-width: 400px;
+        }
     }
 }
