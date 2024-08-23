@@ -114,6 +114,8 @@ $custom-accent-blue:#77A5BE;
 $custom-accent-yellow:#F0E387;
 $custom-neutral:#F9F6EE;
 $custom-white:#fff;
+$custom-dark-grey:#989A9A;
+$custom-light-grey:#CED7D7;
 
 
 
@@ -169,7 +171,9 @@ $display-line-height:1.15em;
 
 $new-colors:(
     "accent-blue":$custom-accent-blue,
-    "accent-yellow":$custom-accent-yellow
+    "accent-yellow":$custom-accent-yellow,
+    "custom-grey":$custom-light-grey,
+    "custom-dark-grey":$custom-dark-grey,
 );
 
 $theme-colors:map-merge($theme-colors, $new-colors);
@@ -573,6 +577,7 @@ button{
 
 .responsive-hero,
 .responsive-img-height,
+.min-img-height-g3,
 .min-img-height-g2,
 .min-img-height-g1{
     svg.cnr-animation{
@@ -604,6 +609,12 @@ button{
     }
 }
 
+.min-img-height-g3{
+    @include media-breakpoint-up(md){
+        min-height:45vw;
+    }
+}
+
 .min-img-height-g1{
     @include media-breakpoint-up(md){
         min-height:40vw;
@@ -613,6 +624,8 @@ button{
     }
 }
 
+
+///set of three images, slightly taller than width
 .min-img-height-g2{
     @include media-breakpoint-up(md){
         min-height:35vw;
@@ -622,8 +635,10 @@ button{
             }
         }
     }
-
 }
+
+
+
 
 //sections that act as buttons/links to other pages
 .pod{
@@ -887,6 +902,28 @@ footer{
     @include media-breakpoint-up(highRes){
         img{
             max-width: 400px;
+        }
+    }
+}
+
+
+.padlock{
+    width: 15px;
+    height:19px;
+    margin-right:20px;
+    @include media-breakpoint-up(highRes){
+        width: 30px;
+        height:38px;
+        margin-right:40px;
+    }
+}
+
+.same-height{
+    .padlock{
+        margin-right: 0;
+        margin-left: 20px;
+        @include media-breakpoint-up(highRes){
+            margin-left:40px;
         }
     }
 }
