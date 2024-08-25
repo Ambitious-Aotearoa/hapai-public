@@ -298,7 +298,7 @@ $ch7: 1rem;
 }
 
 .cust-font-1{
-    font-size:calc($ch1*.8);
+    font-size:calc($ch1*.59);
     line-height:1em;
 }
 .cust-font-2{
@@ -324,7 +324,7 @@ $ch7: 1rem;
     font-family: $button-font;
     font-weight: 500;
     &.--light-weight{
-        font-weight:400;
+        font-weight:300;
     }
 }
 
@@ -355,7 +355,7 @@ $ch7: 1rem;
 
 @include media-breakpoint-up(md){
     .cust-font-1{
-        font-size:calc($ch1*.8);
+        font-size:calc($ch1*.65);
     }
     .cust-font-2{
         &.hero-font{
@@ -365,6 +365,9 @@ $ch7: 1rem;
 }
 
 @include media-breakpoint-up(lg){
+    .cust-font-1{
+        font-size:6vw;
+    }
     .cust-font-2{
         &.hero-font{
             font-size:$ch2;
@@ -376,12 +379,14 @@ $ch7: 1rem;
         }
     }
 }
+// @include media-breakpoint-up(xl){
+//     .cust-font-1{
+//         font-size:calc($ch1*1.051);
+//     }
+// }
 
 
 @include media-breakpoint-up(highRes){
-    .cust-font-1{
-        font-size:calc($ch1*2);
-    }
     .cust-font-2{
         font-size:calc($ch2*2);
         &.hero-font{
@@ -419,7 +424,7 @@ $ch7: 1rem;
  @mixin responsive-btn($size) {
     padding:calc($size*1.2) calc($size*1.07);
     padding-bottom:$size;
-    margin-top:calc($size*1.5);
+    margin-top:calc($size*2.2);
     font-size:calc($size*0.85);
     border-radius:calc($size*1.25);
 }
@@ -508,6 +513,7 @@ button{
 //hover effect on images and divs
 .image-cnr{
     position: relative;
+    overflow: hidden;
     svg.cnr-animation{
         fill:$custom-neutral;
         position: absolute;
@@ -518,12 +524,25 @@ button{
         transform: scale(1);
         transition: transform .2s ease-in-out;
         z-index: 2;
+
     }
     &.cnr-constant{
         svg.cnr-animation{
             transform: scale(1);
-        }      
+        } 
+
+        &.top-left{
+            svg.cnr-animation{
+                bottom: unset;
+                right:unset;
+                left: -1px;
+                top:-1px;
+                transform: rotate(180deg);
+                transform-origin: unset;
+            }
+        }  
     }
+
 
     &.cnr-hover-add{
        svg.cnr-animation{
@@ -570,10 +589,29 @@ button{
     object-position: 50% 50%;
     position: absolute;
     z-index: 0;
+    &.index-negative{
+        z-index: -1; 
+    }
     @include media-breakpoint-up(sm){
         height:100%;
     }
 }
+
+
+.home-hero{
+    min-height: 80vh;
+    @include media-breakpoint-up(sm){
+        min-height:80vw;
+
+    }
+    @include media-breakpoint-up(md){
+        min-height:unset;
+    }
+    @include media-breakpoint-up(lg){
+        min-height:unset;
+    }
+}
+
 
 .responsive-hero,
 .responsive-img-height,
