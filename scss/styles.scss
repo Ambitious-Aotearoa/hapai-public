@@ -34,7 +34,7 @@ $line-height-base:1.25;
 // Toggle global options
 $enable-gradients: false;
 $enable-shadows: false;
-
+$enable-negative-margins: true;
 
 $spacer: 1rem;
 $spacers: (
@@ -313,6 +313,9 @@ $ch7: 1rem;
     &.--light-text{
         font-weight: 300;
     }
+    p{
+        font-size:inherit
+    }
 }
 
 .cust-font-1{
@@ -362,7 +365,7 @@ $ch7: 1rem;
             font-size:$ch5; 
         }
     }
-    .cust-font-5, .cust-font-5 p{
+    .cust-font-5{
         font-size:$ch5;
     }
     .cust-font-6{
@@ -527,7 +530,7 @@ button{
         }
     }
 
-    @include media-breakpoint-up(highRes){
+    @include media-breakpoint-up(xxl){
         svg{
             width:40px;
             height:40px;
@@ -540,13 +543,34 @@ button{
         width: 40px;
         height: 40px;
         fill: $primary;
-        stroke:none
+        stroke:none;
+        circle{
+            fill:$light;
+        }
+        &.other{
+            path{
+                fill:none;
+                stroke:$primary;
+                stroke-width: 1.5;
+            }
+        }
     }
+
     &:hover{
         svg{
             transition: all .2s ease-in-out;
             fill: $success;
             margin-left: 0;
+        }
+    }
+
+    @include media-breakpoint-up(highRes){
+        svg{
+            width:80px;
+            height:80px;
+            &.other{
+                stroke-width: 3;
+            }
         }
     }
 }
@@ -660,7 +684,7 @@ a:hover{
     }
 }
 
-
+.img-3-col-style,
 .responsive-hero,
 .responsive-img-height,
 .min-img-height-g3,
@@ -714,11 +738,32 @@ a:hover{
 ///set of three images, slightly taller than width
 .min-img-height-g2{
     @include media-breakpoint-up(md){
-        min-height:35vw;
+        min-height:33.5vw;
         &.sm-side{
             .img-fit{
                 height: 65%;
             }
+        }
+    }
+}
+
+
+
+
+
+
+///set of three images, slightly taller than width
+.img-3-col-style{
+    @include media-breakpoint-up(md){
+        min-height:33.5vw;
+    }
+}
+
+.diff-heights{
+    .col:first-of-type,
+    .col:nth-of-type(2n + 1){
+        .img-fit{
+            height: 65%;
         }
     }
 }
@@ -763,8 +808,25 @@ a:hover{
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ////background and text combinations
 .custom-primary{
+    position: relative;
     &.--light-green{
         background-color:$custom-accent-green; 
         h1, h2, h3, h4, p, a:not(.btn), li{
@@ -797,6 +859,20 @@ a:hover{
         }
     }
 
+    &.--yellow{
+        background-color: $custom-accent-yellow;
+        .image-cnr{
+            svg.cnr-animation{
+                fill:$custom-accent-yellow;
+            }
+        }
+        .btn-icon{
+
+            svg{
+                stroke:$primary
+            }
+        }
+    }
 
     &.--dark-green-neutral{
         background-color: $custom-dark;
@@ -832,20 +908,8 @@ a:hover{
             }
         }
     }
-    &.--yellow{
-        background-color: $custom-accent-yellow;
-        .image-cnr{
-            svg.cnr-animation{
-                fill:$custom-accent-yellow;
-            }
-        }
-        .btn-icon{
 
-            svg{
-                stroke:$primary
-            }
-        }
-    }
+
 
     &.--orange{
         background-color:$custom-primary;
@@ -1006,10 +1070,18 @@ footer{
 
 .same-height{
     .padlock{
+        width: 1.5em;
+        height:1.5em;
         margin-right: 0;
-        margin-left: 20px;
-        @include media-breakpoint-up(highRes){
-            margin-left:40px;
+    }
+}
+
+
+
+.alt-pad{
+    @include media-breakpoint-up(md){
+        .col:nth-of-type(2n){
+            margin-left:16.66666667% ;
         }
     }
 }

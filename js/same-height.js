@@ -9,25 +9,29 @@ function updateElementHeights() {
 
     selectors.forEach((selector) => {
       const elements = wrapper.querySelectorAll(selector)
-      let maxHeight = 0
 
       // Reset heights to auto to recalculate
       elements.forEach((el) => {
         el.style.height = 'auto' // Reset height to auto
       })
 
-      // Calculate the tallest height
-      elements.forEach((el) => {
-        const elementHeight = el.offsetHeight
-        if (elementHeight > maxHeight) {
-          maxHeight = elementHeight
-        }
-      })
+      // Apply same height in groups of three
+      for (let i = 0; i < elements.length; i += 3) {
+        let maxHeight = 0
 
-      // Apply the tallest height to all elements within the wrapper
-      elements.forEach((el) => {
-        el.style.height = `${maxHeight}px`
-      })
+        // Calculate the tallest height in the current group of three
+        for (let j = i; j < i + 3 && j < elements.length; j++) {
+          const elementHeight = elements[j].offsetHeight
+          if (elementHeight > maxHeight) {
+            maxHeight = elementHeight
+          }
+        }
+
+        // Apply the tallest height to the current group of three
+        for (let j = i; j < i + 3 && j < elements.length; j++) {
+          elements[j].style.height = `${maxHeight}px`
+        }
+      }
     })
   })
 
