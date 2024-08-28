@@ -206,7 +206,7 @@ $btn-font-weight:500;
 
 
 // @import "bootstrap/scss/tables";
-// @import "bootstrap/scss/forms";
+@import "bootstrap/scss/forms";
 @import "bootstrap/scss/buttons";
 @import "bootstrap/scss/transitions";
 @import "bootstrap/scss/dropdown";
@@ -241,10 +241,6 @@ $btn-font-weight:500;
 
 
 ///general custom
-/// 
-/// b
-
-
 
 .row{
     margin:0;
@@ -262,7 +258,12 @@ p{
             text-wrap: pretty;
         }
     }
+    a:hover{
+       border-bottom: 1px solid;
+    }
 }
+
+//list styles
 .list-unstyled.border-style{
     li{
         padding: 1em 0;
@@ -272,16 +273,63 @@ p{
         justify-content: space-between;
         align-items: center;
         width: 100%;
-        p:first-of-type{
+        p{
             margin-right:20px;
         }
         &:last-of-type{
             border-bottom-width: 0;
         }
+        div{
+            p{
+                text-align: right;
+                margin: 0;
+            }
+        }
+    }
+}
+
+/// margins for flex col groups 
+@include media-breakpoint-up(md){
+    .left-m{
+
+        left:20px
+    }
+    .right-m{
+        right:20px
     }
 }
 
 
+// forms
+.style-1{
+    input, textarea{
+        border-width: 0;
+        border-bottom-width: 1px;
+        border-radius:0;
+        &:focus{
+            box-shadow: none;
+        }
+        &:focus-visible{
+            outline-color:$secondary
+        }
+    }
+}
+textarea#customer-message{
+    height:100px
+}
+// @include media-breakpoint-up(xl){
+//         .form-floating>.form-control, .form-floating>.form-control-plaintext, .form-floating>.form-select {
+//             height: calc(6rem + calc(var(--bs-border-width)* 2));
+//          min-height: calc(6rem + calc(var(--bs-border-width)* 2));
+//            line-height: 3.25;
+//         }
+//         .form-floating>.form-control:focus, .form-floating>.form-control:not(:placeholder-shown), .form-floating>.form-control-plaintext:focus, .form-floating>.form-control-plaintext:not(:placeholder-shown) {
+//             padding-top: 6rem;
+//             padding-bottom: 6rem;
+//         }
+// }
+
+///Images
 .img-fluid{
     width: 100%;
 }
@@ -303,6 +351,9 @@ $ch7: 1rem;
     margin-bottom: 0;
     &.--body-font{
         font-family: $body-font; 
+    }
+    &.--heading-font{
+        font-family: $heading-font; 
     }
     &.--balance{
         text-wrap: balance;
@@ -427,7 +478,7 @@ $ch7: 1rem;
     .cust-font-7{
         font-size:calc($ch7*1.3);
     }
-    p, a:not(.btn), li, input{
+    p, a:not(.btn), li, input, label, .form-control{
         font-size:calc($font-size-base*1.2);
     }
 }
@@ -458,7 +509,7 @@ $ch7: 1rem;
     .cust-font-7{
         font-size:calc($ch7*2.3);
     }
-    p, a:not(.btn), li, input{
+    p, a:not(.btn), li, input, label, .form-control{
         font-size:calc($font-size-base*2.8);
     }
 
@@ -593,9 +644,16 @@ button{
         transform: scale(1);
         transition: transform .2s ease-in-out;
         z-index: 2;
+
+        @include media-breakpoint-up(md){
+            &.right-m{
+                right: 19px;
+            }
+        }
         @include media-breakpoint-up(lg){
             max-width: 9vw;
         }
+
 
     }
     &.cnr-constant{
@@ -635,6 +693,13 @@ button{
             }
         }
     }
+
+    .img-wrap{
+        position: relative;
+        width: calc(100% - 20px);
+        height: 100%;
+        overflow: hidden;
+    }
 }
 
 
@@ -667,7 +732,9 @@ a:hover{
     @include media-breakpoint-up(sm){
         height:100%;
     }
+
 }
+
 
 
 .home-hero{
@@ -687,6 +754,7 @@ a:hover{
 .img-3-col-style,
 .responsive-hero,
 .responsive-img-height,
+.min-img-height-g4,
 .min-img-height-g3,
 .min-img-height-g2,
 .min-img-height-g1{
@@ -722,6 +790,15 @@ a:hover{
 .min-img-height-g3{
     @include media-breakpoint-up(md){
         min-height:45vw;
+    }
+}
+
+.min-img-height-g4{
+    @include media-breakpoint-up(md){
+        min-height:50vw;
+    }
+    @include media-breakpoint-up(xxl){
+        min-height:40vw;
     }
 }
 
@@ -856,6 +933,20 @@ a:hover{
         }
         .svg-ribbon{
             fill:$custom-accent-green;
+        }
+        .image-cnr{
+            svg.cnr-animation{
+                fill:$primary
+            }
+        }
+
+        .list-unstyled.border-style{
+            li{
+                border-bottom:1px solid $custom-accent-green;
+                p:not(.cust-font-7){
+                    color: $light;
+                }
+            }
         }
     }
 
@@ -1065,6 +1156,15 @@ footer{
         width: 30px;
         height:38px;
         margin-right:40px;
+    }
+}
+
+.quote, .quote rect{
+    width: 50px;
+    height: 50px;
+    @include media-breakpoint-up(highRes){
+        width: 100px;
+        height: 100px;
     }
 }
 

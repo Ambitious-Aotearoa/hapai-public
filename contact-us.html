@@ -1,46 +1,124 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" type="image/x-icon" href="images/favicon.svg">
-        <link rel="stylesheet" href="css/styles.css">
-        <title>Contact us IPANZ</title>
-    </head>
-    <body>
-        <main class="contact us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="images/favicon.svg">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Contact us IPANZ</title>
+  </head>
+  <body>
+    <main class="contact-us">
+      <div class="px-1 px-md-2 px-highRes-4 pb-3 pb-lg-2p5vw custom-primary --yellow">
+        <div class="d-flex flex-column flex-md-row flex-wrap flex-md-nowrap">
+          <div class="my-4 my-lg-4vw d-flex align-items-center col col-sm-12 col-md-5">
+            <div>
+              <h1 class="cust-font-1 pb-50px pb-lg-4vw">Contact us</h1>
+              <p class="cust-font-6 --body-font">Hāpai Public brings members together from across the public sector. To learn more subscribe to our newsletter or get in touch below.</p>
+            </div>
+          </div>
+          <div class="col col-sm-12 col-md-6 offset-md-1 image-cnr cnr-constant responsive-hero">
+            <img src="images/placeholder-image.jpg" class="img-fit" alt="placeholder image">
+            <svg class="cnr-animation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 186 164" fill="none">
+              <path d="M40 147C28 159 8.66667 163 0.5 163.5H186V0.5C142.333 44.3333 52 135 40 147Z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
 
-            <div class="
-                custom-primary --yellow
-                px-1 px-md-2 px-highRes-4 
-                pb-2 pb-md-3 pb-lg-3vw">
-                <div class="d-flex flex-column flex-md-row  flex-wrap flex-md-nowrap">
-                    <div class="
-                    pe-md-3 pe-lg-11vw
-                    my-50px my-lg-4vw
-                    d-flex
-                    align-items-center
-                    col col-sm-12 col-md-6
-                    ">
-                        <div>
-                            <h1 class="cust-font-1 pb-50px pb-lg-4vw">Contact Us</h1>
-                            <p class="p-0 m-0">Hāpai Public brings members together from across the public sector. To learn more subscribe to our newsletter or get in touch below. </p>
+      <div class="px-1 px-md-2 px-highRes-4 py-4 py-md-7vw">
+        <div class="d-flex flex-column flex-wrap flex-md-row flex-md-nowrap">
+          <div class="p-0 col-12 col-md-6">
+            <div>
+              <h2 class="cust-font-7 mt-0 mb-2 my-md-2vw">Physical address</h2>
+              <p class="cust-font-4">
+                Level 3 <br>
+                Rutherford House <br>
+                23 Lambton Quay <br>
+                Wellington 6011
+              </p>
+            </div>
 
-                        </div>
-                    </div>
-                    <div class="
-                    col col-sm-12 col-md-6
-                    image-cnr cnr-constant responsive-hero">
-                        <img src="images/placeholder-image.jpg" class="img-fit" alt="placeholder image">
-                        <svg class="cnr-animation"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 186 164" fill="none">
-                            <path d="M40 147C28 159 8.66667 163 0.5 163.5H186V0.5C142.333 44.3333 52 135 40 147Z"/>
-                        </svg>
-                    </div>
-                </div>
-            </div> 
-        </main>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-    <script type="module" src="js/main.js"></script>
-</body>
-</html> 
+            <div class="mt-4 mt-lg-4vw">
+              <h2 class="cust-font-7 mb-2 mb-lg-2vw">Mailing address</h2>
+              <p class="cust-font-4">
+                Institute of Public Professionals <br>
+                PO Box 5032 <br>
+                Lambton Quay <br>
+                Wellington 6104
+              </p>
+            </div>
+          </div>
+
+          <div class="p-0 col-12 col-md-6 mt-4 mt-md-0">
+            <h2 class="cust-font-2 mb-2 mb-lg-2vw">Get in touch</h2>
+            <p>For general enquiries, please get in touch below or call us on <a href="tel:+6427493930">021 493 930</a></p>
+
+            <form class="d-flex flex-column flex-wrap flex-md-row style-1">
+              <div class="form-floating mb-1 mb-lg-1vw col-12 col-lg-6 pe-lg-1">
+                <input type="text" class="form-control" id="first-name" placeholder="First Name">
+                <label for="first-name">First Name</label>
+              </div>
+              <div class="form-floating mb-1 mb-lg-1vw col-12 col-lg-6 pe-lg-1">
+                <input type="tel" class="form-control" id="last-name" placeholder="Last Name">
+                <label for="last-name">Last Name</label>
+              </div>
+
+              <div class="form-floating mb-1 mb-lg-1vw col-12 col-lg-6 pe-lg-1">
+                <input type="email" class="form-control" id="customer-email" placeholder="name@example.com">
+                <label for="customer-email">Email address</label>
+              </div>
+              <div class="form-floating mb-1 mb-lg-1vw col-12 col-lg-6 pe-lg-1">
+                <input type="tel" class="form-control" id="customer-phone" placeholder="Phone">
+                <label for="customer-phone">Phone</label>
+              </div>
+              <div class="form-floating mb-1 mb-lg-1vw col-12 pe-lg-1">
+                <input type="text" class="form-control" id="customer-organisation" placeholder="Organisation">
+                <label for="customer-organisation">Organisation</label>
+              </div>
+
+              <div class="form-floating mb-1 mb-lg-1vw col-12 pe-lg-1">
+                <textarea class="form-control" id="customer-message" placeholder="Message"></textarea>
+                <label for="customer-message">Message</label>
+              </div>
+
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="px-1 px-md-2 px-highRes-4 pt-4 pt-md-7vw border-top border-primary">
+        <div class="row pb-4 pb-md-5vw">
+          <div class="p-0 col-12">
+            <h2 class="cust-font-2">Looking for something else?</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="px-1 px-md-2 px-highRes-4  pb-md-7vw">
+        <div class="d-flex flex-column flex-md-row flex-wrap flex-md-nowrap">
+          <div class="col col-sm-12 col-md-6 image-cnr cnr-constant responsive-hero">
+            <img src="images/placeholder-image.jpg" class="img-fit" alt="placeholder image">
+            <svg class="cnr-animation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 186 164" fill="none">
+              <path d="M40 147C28 159 8.66667 163 0.5 163.5H186V0.5C142.333 44.3333 52 135 40 147Z"/>
+            </svg>
+          </div>
+
+          <div class="col col-sm-12 col-md-5 offset-md-1 col-lg-4 my-4 my-lg-4vw d-flex flex-column align-items-center">
+            <div class="border-bottom border-success pb-1 pb-md-5vw w-100">
+              <h2 class="cust-font-5  pb-3 pb-lg-3vw">Journal enquiries</h2>
+              <p class="">Contact our editor Kathy Catton on <a href="mailto:editor@ipans.org.nz">editor@ipans.org.nz</a></p>
+            </div>
+            <div class=" pt-3 pt-md-5vw w-100">
+              <h2 class="cust-font-5 pb-1 pb-lg-3vw">Event enquiries</h2>
+              <p class="">Contact us at <a href="mailto:events@ipans.org.nz">events@ipans.org.nz</a> or phone <a href="tel:+64278291890">027 829 1890</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

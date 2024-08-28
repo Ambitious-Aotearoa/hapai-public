@@ -5,7 +5,7 @@ function updateElementHeights() {
   const wrappers = document.querySelectorAll('.same-height-wrapper')
 
   wrappers.forEach((wrapper) => {
-    const selectors = ['.same-height h3', '.same-height h2', '.same-height p:not(.btn-icon p, .no-height)'] // List of child elements to target within each wrapper
+    const selectors = ['.same-height h3', '.same-height h2', '.same-height p:not(.btn-icon p, .no-height, p.other-height)', 'p.other-height'] // List of child elements to target within each wrapper
 
     selectors.forEach((selector) => {
       const elements = wrapper.querySelectorAll(selector)
@@ -38,7 +38,7 @@ function updateElementHeights() {
   // Reset styles for mobile
   if (window.innerWidth < desktopWidth) {
     wrappers.forEach((wrapper) => {
-      const elements = wrapper.querySelectorAll('.same-height h3, .same-height h2, .same-height p:not(.btn-icon p, .no-height)')
+      const elements = wrapper.querySelectorAll('.same-height h3, .same-height h2, .same-height p:not(.btn-icon p, .no-height), p.other-height')
       elements.forEach((el) => {
         el.style.height = '' // Reset height to auto
       })
