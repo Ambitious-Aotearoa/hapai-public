@@ -14,7 +14,7 @@ $(document).ready(function () {
 function filterSelection(c) {
     if (c === "all") c = "";
     
-    $(".accordion-item").each(function () {
+    $(".filter-item").each(function () {
       $(this).removeClass("show");
       if ($(this).hasClass(c) || c === "") {
         $(this).addClass("show");
@@ -23,7 +23,6 @@ function filterSelection(c) {
 }
 
 //scroll to clicked section on mobile
-
 $(document).ready(function () {
     $("#btnContainer .btn").click(function () {
       var filter = $(this).data("filter");
@@ -31,11 +30,11 @@ $(document).ready(function () {
       if (filter === "all") {
         $("html, body").animate(
           {
-            scrollTop: $(".accordion").offset().top,
+            scrollTop: $(".filter-wrapper").offset().top,
           },300 
         );
       } else {
-        var target = $(".accordion-item." + filter).first();
+        var target = $(".filter-item." + filter).first();
         if (target.length) {
           var navHeight = 0; // Adjust this if you have a fixed header
           $("html, body").animate({
@@ -45,5 +44,6 @@ $(document).ready(function () {
         }
       }
     });
-  });
+});
+
   
