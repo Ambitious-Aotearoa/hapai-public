@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" href="images/favicon.svg">
+        <link rel="stylesheet" href="css/styles.css">
+        <title>FAQs IPANZ</title>
+    </head>
+    <body class="faq-page">
+        <main>
+            <!-- hero -->
+            <div class="hero custom-primary --dark-green-neutral px-1 px-md-2 px-highRes-4 py-4 py-md-7vw">
+                <div class="d-flex">
+                    <div class="col-sm-5 pb-sm-4vw pt-sm-3vw">
+                        <h1 class="cust-font-1">Frequently asked questions</h1>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        <!-- accordion -->
+        <div class="px-1 px-md-2 px-highRes-4 py-4 py-lg-5vw">
+            <h2 class="mb-4 mb-lg-3p5vw cust-font-3 col-md-6">Find out answers to questions about memberships, events and more.</h2>
+            
+            <div class="d-flex flex-column flex-wrap flex-md-nowrap flex-md-row accordion-filter">
+
+                <div id="btnContainer" class="d-flex flex-column align-items-start col-12 col-md-3 cust-font-5">
+                    <div><button class="btn active m-0 px-0 py-1 py-lg-2vw" data-filter="all"> Show all</button></div>
+                    <div><button class="btn m-0 px-0 py-1 py-lg-2vw" data-filter="membership">Membership</button></div>
+                    <div><button class="btn m-0 px-0 py-1 py-lg-2vw" data-filter="events-training">Events and Training </button></div>
+                    <div><button class="btn m-0 px-0 py-1 py-lg-2vw" data-filter="newsletter">Newsletter</button></div>
+                    <div><button class="btn m-0 px-0 py-1 py-lg-2vw" data-filter="payments">Payments</button></div>
+                    <div><button class="btn m-0 px-0 py-1 py-lg-2vw" data-filter="our-role">Our role</button></div>
+                </div>
+            
+            
+                <div class="accordion open col-12 col-md-8 offset-md-1">
+                    <div class="accordion-item membership">
+                      <h3 class="accordion-header py-3 py-lg-3vw" id="panelsStayOpen-headingOne">
+                        <button class="accordion-button cust-font-5" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                            I thought my organisation was a corporate member of Hāpai Public but it’s not on your list, what should I do? 
+                        </button>
+                      </h3>
+                      <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                        <div class="pb-3 pb-lg-3vw ">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis omnis corporis reprehenderit, officiis cum consectetur nostrum mollitia deleniti. Nisi corrupti doloribus repellendus quos, dolores vitae delectus eaque voluptatum in modi?</p>
+                        </div>
+                      </div>
+                    </div>
+            
+                    <div class="accordion-item events-training">
+                      <h3 class="accordion-header  py-3 py-lg-3vw" id="panelsStayOpen-headingTwo">
+                        <button class="accordion-button collapsed cust-font-5" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                            How to a register for an event? 
+                        </button>
+                      </h3>
+                      <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+                        <div class="pb-3 pb-lg-3vw">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis omnis corporis reprehenderit, officiis cum consectetur nostrum mollitia deleniti. Nisi corrupti doloribus repellendus quos, dolores vitae delectus eaque voluptatum in modi?</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis omnis corporis reprehenderit, officiis cum consectetur nostrum mollitia deleniti. Nisi corrupti doloribus repellendus quos, dolores vitae delectus eaque voluptatum in modi?</p>
+                        </div>
+                      </div>
+                    </div>
+            
+                    <div class="accordion-item newsletter">
+                      <h3 class="accordion-header py-3 py-lg-3vw" id="panelsStayOpen-headingThree">
+                        <button class="accordion-button collapsed cust-font-5" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                            How do I sign up to the 3-weekly Newsletter? 
+                        </button>
+                      </h3>
+                      <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                        <div class="pb-3 pb-lg-3vw">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis omnis corporis reprehenderit, officiis cum consectetur nostrum mollitia deleniti. Nisi corrupti doloribus repellendus quos, dolores vitae delectus eaque voluptatum in modi?</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis omnis corporis reprehenderit, officiis cum consectetur nostrum mollitia deleniti. Nisi corrupti doloribus repellendus quos, dolores vitae delectus eaque voluptatum in modi?</p>
+                        </div>
+                      </div>
+                    </div>
+            
+                    <div class="accordion-item payments">
+                        <h3 class="accordion-header  py-3 py-lg-3vw" id="panelsStayOpen-headingFour">
+                          <button class="accordion-button collapsed cust-font-5" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+                            What forms of payment do you accept for membership subscriptions and events/training? 
+                          </button>
+                        </h3>
+                        <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
+                          <div class="pb-3 pb-lg-3vw">
+                            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.pb-3 pb-lg-3vw</code>, though the transition does limit overflow.
+                          </div>
+                        </div>
+                    </div>
+            
+                    <div class="accordion-item our-role">
+                        <h3 class="accordion-header  py-3 py-lg-3vw" id="panelsStayOpen-headingFive">
+                          <button class="accordion-button collapsed cust-font-5" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false" aria-controls="panelsStayOpen-collapseFive">
+                            What’s the difference between Hāpai Public and the Public Service Commission? 
+                          </button>
+                        </h3>
+                        <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFive">
+                          <div class="pb-3 pb-lg-3vw">
+                            <p>The Commission leads the public sector, ensuring that the Public Service system is focused on delivering the outcomes and services that New Zealanders want, need and expect while maintaining high levels of trust and confidence. The Commission provides leadership and oversight of the Public Service, ensuring that it carries out its purpose. It is a public sector agency. Hāpai Public is a not-for-profit membership-based organisation. Our purpose is to promote a strong public sector – we do this by working alongside the public sector, providing a community of learning and practice about public service. We are independent: we sit outside the public sector. </p>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+            <!--cta -->
+            <div class="px-1 px-md-2 px-highRes-4 py-2 py-highRes-5">
+                <div class="d-flex flex-column flex-md-row flex-wrap flex-md-nowrap custom-primary --orange px-1 px-md-2 px-highRes-4 py-2 px-highRes-5">
+                    <div class="pe-md-3 pe-lg-11vw d-flex flex-column justify-content-between col col-sm-12 col-md-6">
+                        <p class="cust-font-4 hero-font">Our strategic direction is set and monitored by a governance board who are elected by you, our members.</p>
+                        <div>
+                            <a class="btn btn-primary" role="button" href="who-we-are.html">Learn more</a>
+                        </div>
+                    </div>
+
+                    <div class="col col-sm-12 col-md-6 mt-1 mt-md-0 image-cnr cnr-constant responsive-hero">
+                        <img src="images/placeholder-image.jpg" class="img-fit" alt="placeholder image">
+                        <svg class="cnr-animation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 186 164" fill="none">
+                            <path d="M40 147C28 159 8.66667 163 0.5 163.5H186V0.5C142.333 44.3333 52 135 40 147Z"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script type="module" src="js/main.js"></script>
+        <script type="module" src="js/accordion-filter.js"></script>
+    </body>
+</html>
