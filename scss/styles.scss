@@ -6,19 +6,32 @@
          url('../fonts/foundersgrotesk-light-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    font-display: auto;
 
 }
 @font-face {
     font-family: 'tobiaslight';
     src: url('../fonts/tobias-light-webfont.woff2') format('woff2'),
-         url('../fonts/tobias-light-webfont.woff') format('woff');
-    font-weight: normal;
+         url('../fonts/tobias-light-webfont.woff') format('woff'),
+         url('../fonts/tobias-light.oft') format('oft');
+    font-weight: 300;
     font-style: normal;
+    font-display: auto;
+}
 
+@font-face {
+    font-family: 'tobiasmedium';
+    src: url('../fonts/tobias-medium-webfont.woff2') format('woff2'),
+         url('../fonts/tobias-medium-webfont.woff') format('woff'),
+         url('../fonts/tobias-medium.oft') format('oft');
+    font-weight:500;
+    font-style: normal;
+    font-display: auto;
 }
 
 $body-font:'founders_grotesklight',  sans-serif;
 $heading-font:'tobiaslight',  sans-serif;
+$heading-font-bold:'tobiasmedium',  sans-serif;
 $button-font: "roc-grotesk-wide", sans-serif;
 
 
@@ -160,14 +173,19 @@ $container-max-widths: (
 $display-font-family:$heading-font;
 $display-line-height:1.15em;
 
-
-
+$accordion-border-radius: 0;
+$accordion-icon-color: $success;
+$accordion-icon-active-color:$success;
+$accordion-button-active-bg: $light;
+$accordion-border-color:$custom-dark-grey;
+$accordion-border-width:0;
+$accordion-padding-x:0;
+$accordion-padding-y:0;
+$accordion-button-icon:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' stroke='#{$accordion-icon-color}' fill='none'><path d='M-0.00390625 10H10.4989V20.5028'/><path d='M21 10L10.4972 10L10.4972 -0.502773'/></svg>");
+$accordion-button-active-icon:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' stroke='#{$accordion-icon-color}' fill='none'><path d='M3.07422 2.5752L10.5008 10.0018L3.07422 17.4284'/><path d='M17.9258 17.4268L10.4992 10.0002L17.9258 2.5736'/></svg>");
 
 // Import Bootstrap variables
 @import "bootstrap/scss/variables";
-
-
-
 
 $new-colors:(
     "accent-blue":$custom-accent-blue,
@@ -182,7 +200,6 @@ $theme-colors:map-merge($theme-colors, $new-colors);
 $btn-font-family: $button-font;
 $btn-line-height:$font-size-base;
 $btn-font-weight:500;
-
 
 
 // Import the rest of Bootstrap
@@ -215,7 +232,13 @@ $btn-font-weight:500;
 // @import "bootstrap/scss/navbar"; // Requires nav
 // @import "bootstrap/scss/card";
 // @import "bootstrap/scss/breadcrumb";
-// @import "bootstrap/scss/accordion";
+
+
+
+@import "bootstrap/scss/accordion";
+
+
+
 // @import "bootstrap/scss/pagination";
 // @import "bootstrap/scss/badge";
 // @import "bootstrap/scss/alert";
@@ -317,17 +340,7 @@ p{
 textarea#customer-message{
     height:100px
 }
-// @include media-breakpoint-up(xl){
-//         .form-floating>.form-control, .form-floating>.form-control-plaintext, .form-floating>.form-select {
-//             height: calc(6rem + calc(var(--bs-border-width)* 2));
-//          min-height: calc(6rem + calc(var(--bs-border-width)* 2));
-//            line-height: 3.25;
-//         }
-//         .form-floating>.form-control:focus, .form-floating>.form-control:not(:placeholder-shown), .form-floating>.form-control-plaintext:focus, .form-floating>.form-control-plaintext:not(:placeholder-shown) {
-//             padding-top: 6rem;
-//             padding-bottom: 6rem;
-//         }
-// }
+
 
 ///Images
 .img-fluid{
@@ -349,6 +362,7 @@ $ch7: 1rem;
     font-family: $heading-font;
     line-height:1.15em;
     margin-bottom: 0;
+    font-weight: 300;
     &.--body-font{
         font-family: $body-font; 
     }
@@ -887,20 +901,6 @@ a:hover{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ////background and text combinations
 .custom-primary{
     position: relative;
@@ -1023,107 +1023,13 @@ a:hover{
 
 
 
-@mixin responsive-input($size) {
-    padding:calc($size*1.2) calc($size*2);
-}
 
-/////footer element, repeated all pages
-footer{
-    p{
-        text-wrap: wrap;
-    }
-    input{
-        text-transform: uppercase;
-        border-width:0;
-        transition: all .2s ease-in-out;
-        border-radius:1.25rem;
-        font-size: .85rem;
-        @include responsive-input(.9rem);
-        font-family: $button-font;
-        &:hover,
-        &:focus-visible{
-            transition: all .2s ease-in-out;
-            border-top-left-radius: 0;
-            outline-color: $custom-accent-green;
+
+.alt-pad{
+    @include media-breakpoint-up(md){
+        .col:nth-of-type(2n){
+            margin-left:16.66666667% ;
         }
-        @include media-breakpoint-up(highRes){
-            border-radius:2.5rem;
-            font-size: 1.7rem;
-            @include responsive-input(1.4rem) 
-        }
-    }
-
-    ul{
-        list-style: none;
-    }
-
-    .footer-nav{
-        li{
-            font-family: $button-font;
-            a{
-                color: $custom-neutral;
-                text-transform: uppercase;
-                line-height: 1.5em;
-                text-wrap: nowrap;
-                font-size:15px;
-                @include media-breakpoint-up(highRes){
-                    font-size:2rem
-                }
-            }
-        }
-    }
-
-
-    svg.bi{
-        fill:$custom-neutral;
-        width: 20px;
-        height: 20px;
-        margin-bottom: 5px;
-        @include media-breakpoint-up(highRes){
-            width: 40px;
-            height: 40px;
-        }
-    }
-
-    .footer-banner{
-        width: 100%;
-        display:none;
-        @include media-breakpoint-up(md){
-            display: block;
-        }
-    }
-
-    .footer-nav-wrapper{
-        background-image: url(../images/footer-pattern.svg);
-        background-size: auto 100%;
-        background-position: 100% 100%;
-        background-repeat: no-repeat;
-        @include media-breakpoint-up(md){
-            background-size: 0 0;
-        }
-    }
-
-}
-
-.guide{
-    position: relative;
-    &:after{
-        content: '';
-        position: absolute;
-        width: 1px;
-        height:5000vh;
-        background-color: red;
-        top: 0;
-        left: calc(33.333%)
-    }
-    &:before{
-        content: '';
-        position: absolute;
-        width: 1px;
-        height:5000vh;
-        background-color: blue;
-        top: 0;
-        left: calc(33.333% + 16px)
     }
 }
 
@@ -1132,10 +1038,16 @@ footer{
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-
+        .padlock{
+            width: 1.5em;
+            height:1.5em;
+            margin-right: 0;
+        }
     }
 }
 
+
+// Partners logos
 .logo-wrapper{
     img{
         max-width: 200px;
@@ -1148,6 +1060,8 @@ footer{
 }
 
 
+
+// icons
 .padlock{
     width: 15px;
     height:19px;
@@ -1168,20 +1082,182 @@ footer{
     }
 }
 
-.same-height{
-    .padlock{
-        width: 1.5em;
-        height:1.5em;
-        margin-right: 0;
-    }
+.faq-cross{
+    fill: none;
+    stroke-width: 1.5;
 }
 
 
 
-.alt-pad{
-    @include media-breakpoint-up(md){
-        .col:nth-of-type(2n){
-            margin-left:16.66666667% ;
+// faq filter/accordion
+.accordion-filter{
+    #btnContainer{
+        div{
+            width: 100%;
+            border-bottom: 1px solid $success;
+            &:last-of-type{
+                border-bottom-width: 0;
+            }
         }
+        .btn{
+            font-size: inherit;
+            font-family: inherit;
+            text-transform: unset;
+            text-align: left;
+            line-height: inherit;
+
+            &.active{
+                font-family:$heading-font-bold;
+            }
+        }
+   }
+    .accordion{
+        .accordion-item{
+            display: none; 
+            border-bottom-width:1px;
+            .accordion-button{
+                text-wrap: balance;
+                    align-items: flex-start;
+                    &:after{
+                        margin-top: 5px;
+                        background-size: 20px;
+                        width: 20px;
+                        height: 20px;
+                        @include media-breakpoint-up(highRes){
+                            width: 40px;
+                            height: 40px;
+                            margin-top: 10px;
+                            background-size: 40px;
+                        }
+                    }
+                &:focus{
+                    box-shadow: none;
+                }
+            }
+        }
+        .show {
+            display: block;
+        }
+    
+
     }
 }
+
+
+// specific pages
+.faq-page{
+    .hero{
+        background-image: url('/images/faq-hero.svg');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: 50% 100%;
+    }
+}
+
+
+
+
+
+// @mixin responsive-input($size) {
+//     padding:calc($size*1.2) calc($size*2);
+// }
+
+/////footer element, repeated all pages
+// footer{
+//     p{
+//         text-wrap: wrap;
+//     }
+//     input{
+//         text-transform: uppercase;
+//         border-width:0;
+//         transition: all .2s ease-in-out;
+//         border-radius:1.25rem;
+//         font-size: .85rem;
+//         @include responsive-input(.9rem);
+//         font-family: $button-font;
+//         &:hover,
+//         &:focus-visible{
+//             transition: all .2s ease-in-out;
+//             border-top-left-radius: 0;
+//             outline-color: $custom-accent-green;
+//         }
+//         @include media-breakpoint-up(highRes){
+//             border-radius:2.5rem;
+//             font-size: 1.7rem;
+//             @include responsive-input(1.4rem) 
+//         }
+//     }
+
+//     ul{
+//         list-style: none;
+//     }
+
+//     .footer-nav{
+//         li{
+//             font-family: $button-font;
+//             a{
+//                 color: $custom-neutral;
+//                 text-transform: uppercase;
+//                 line-height: 1.5em;
+//                 text-wrap: nowrap;
+//                 font-size:15px;
+//                 @include media-breakpoint-up(highRes){
+//                     font-size:2rem
+//                 }
+//             }
+//         }
+//     }
+
+
+//     svg.bi{
+//         fill:$custom-neutral;
+//         width: 20px;
+//         height: 20px;
+//         margin-bottom: 5px;
+//         @include media-breakpoint-up(highRes){
+//             width: 40px;
+//             height: 40px;
+//         }
+//     }
+
+//     .footer-banner{
+//         width: 100%;
+//         display:none;
+//         @include media-breakpoint-up(md){
+//             display: block;
+//         }
+//     }
+
+//     .footer-nav-wrapper{
+//         background-image: url(../images/footer-pattern.svg);
+//         background-size: auto 100%;
+//         background-position: 100% 100%;
+//         background-repeat: no-repeat;
+//         @include media-breakpoint-up(md){
+//             background-size: 0 0;
+//         }
+//     }
+
+// }
+
+// .guide{
+//     position: relative;
+//     &:after{
+//         content: '';
+//         position: absolute;
+//         width: 1px;
+//         height:5000vh;
+//         background-color: red;
+//         top: 0;
+//         left: calc(33.333%)
+//     }
+//     &:before{
+//         content: '';
+//         position: absolute;
+//         width: 1px;
+//         height:5000vh;
+//         background-color: blue;
+//         top: 0;
+//         left: calc(33.333% + 16px)
+//     }
+// }
