@@ -22,28 +22,5 @@ function filterSelection(c) {
     });
 }
 
-//scroll to clicked section on mobile
 
-$(document).ready(function () {
-    $("#btnContainer .btn").click(function () {
-      var filter = $(this).data("filter");
-  
-      if (filter === "all") {
-        $("html, body").animate(
-          {
-            scrollTop: $(".accordion").offset().top,
-          },300 
-        );
-      } else {
-        var target = $(".accordion-item." + filter).first();
-        if (target.length) {
-          var navHeight = 0; // Adjust this if you have a fixed header
-          $("html, body").animate({
-              scrollTop: target.offset().top - navHeight,
-            },300 
-          );
-        }
-      }
-    });
-  });
   

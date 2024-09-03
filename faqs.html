@@ -18,16 +18,15 @@
                 </div>
             </div>
 
-
-
+            <div class="px-1 px-md-2 px-highRes-4 pt-4 pt-lg-5vw">
+                <h2 class="mb-4 mb-lg-3p5vw cust-font-3 col-md-6">Find out answers to questions about memberships, events and more.</h2>
+            </div>
 
         <!-- accordion -->
-        <div class="px-1 px-md-2 px-highRes-4 py-4 py-lg-5vw">
-            <h2 class="mb-4 mb-lg-3p5vw cust-font-3 col-md-6">Find out answers to questions about memberships, events and more.</h2>
-            
-            <div class="d-flex flex-column flex-wrap flex-md-nowrap flex-md-row accordion-filter">
+        <div class="px-1 px-md-2 px-highRes-4 pb-4 pb-lg-5vw">
+            <div class="d-flex flex-column flex-wrap flex-md-nowrap flex-md-row content-filter">
 
-                <div id="btnContainer" class="d-flex flex-column align-items-start col-12 col-md-3 cust-font-5">
+                <div id="btnContainer" class="d-flex flex-column align-items-start col-12 col-md-3 cust-font-5 side-buttons pt-md-2">
                     <div><button class="btn active m-0 px-0 py-1 py-lg-2vw" data-filter="all"> Show all</button></div>
                     <div><button class="btn m-0 px-0 py-1 py-lg-2vw" data-filter="membership">Membership</button></div>
                     <div><button class="btn m-0 px-0 py-1 py-lg-2vw" data-filter="events-training">Events and Training </button></div>
@@ -37,8 +36,8 @@
                 </div>
             
             
-                <div class="accordion open col-12 col-md-8 offset-md-1">
-                    <div class="accordion-item membership">
+                <div class="accordion open filter-wrapper col-12 col-md-8 offset-md-1 mt-2 mt-md-0">
+                    <div class="accordion-item filter-item membership">
                       <h3 class="accordion-header py-3 py-lg-3vw" id="panelsStayOpen-headingOne">
                         <button class="accordion-button cust-font-5" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
                             I thought my organisation was a corporate member of Hāpai Public but it’s not on your list, what should I do? 
@@ -51,7 +50,7 @@
                       </div>
                     </div>
             
-                    <div class="accordion-item events-training">
+                    <div class="accordion-item filter-item events-training">
                       <h3 class="accordion-header  py-3 py-lg-3vw" id="panelsStayOpen-headingTwo">
                         <button class="accordion-button collapsed cust-font-5" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
                             How to a register for an event? 
@@ -65,7 +64,7 @@
                       </div>
                     </div>
             
-                    <div class="accordion-item newsletter">
+                    <div class="accordion-item filter-item newsletter">
                       <h3 class="accordion-header py-3 py-lg-3vw" id="panelsStayOpen-headingThree">
                         <button class="accordion-button collapsed cust-font-5" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
                             How do I sign up to the 3-weekly Newsletter? 
@@ -79,7 +78,7 @@
                       </div>
                     </div>
             
-                    <div class="accordion-item payments">
+                    <div class="accordion-item filter-item payments">
                         <h3 class="accordion-header  py-3 py-lg-3vw" id="panelsStayOpen-headingFour">
                           <button class="accordion-button collapsed cust-font-5" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
                             What forms of payment do you accept for membership subscriptions and events/training? 
@@ -92,7 +91,7 @@
                         </div>
                     </div>
             
-                    <div class="accordion-item our-role">
+                    <div class="accordion-item filter-item our-role">
                         <h3 class="accordion-header  py-3 py-lg-3vw" id="panelsStayOpen-headingFive">
                           <button class="accordion-button collapsed cust-font-5" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false" aria-controls="panelsStayOpen-collapseFive">
                             What’s the difference between Hāpai Public and the Public Service Commission? 
@@ -112,7 +111,8 @@
 
             <!--cta -->
             <div class="px-1 px-md-2 px-highRes-4 py-2 py-highRes-5">
-                <div class="d-flex flex-column flex-md-row flex-wrap flex-md-nowrap custom-primary --orange px-1 px-md-2 px-highRes-4 py-2 px-highRes-5">
+
+                <div class="d-flex flex-column flex-md-row flex-wrap flex-md-nowrap custom-primary --orange px-1 px-md-2 px-highRes-4 py-2 py-highRes-5">
                     <div class="pe-md-3 pe-lg-11vw d-flex flex-column justify-content-between col col-sm-12 col-md-6">
                         <p class="cust-font-4 hero-font">Our strategic direction is set and monitored by a governance board who are elected by you, our members.</p>
                         <div>
@@ -130,7 +130,7 @@
             </div>
         </main>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script type="module" src="../js/main.js"></script>
-        <script type="module" src="../js/accordion-filter.js"></script>
+        <script type="module" src="js/main.js"></script>
+        <script type="module" src="js/same-height-filter.js"></script>
     </body>
 </html>
