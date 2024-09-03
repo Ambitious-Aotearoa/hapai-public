@@ -1,40 +1,28 @@
+
 $(document).ready(function () {
-    // Check if #btnContainer is present
-    if ($("#btnContainer").length) {
-        filterSelection("all");
+    // Check if any #btnContainer exists on the page
+    if ($('[id^="btnContainer"]').length) {
+        // Initialize filters for each container
+        $('[id^="btnContainer"]').each(function () {
+            var containerId = $(this).attr('id');
+            console.log('Initializing filter for container:', containerId);
+            filterSelection(containerId, "all");
+          
+            // Add event listeners to buttons within each container
+            $('#' + containerId + ' .btn').click(function () {
+                console.log('Button clicked in container:', containerId);
+                $('#' + containerId + ' .btn').removeClass('active'); // Remove active class from all buttons in the container
+                $(this).addClass('active'); // Add active class to the clicked button
+            
+                var filter = $(this).data('filter');
+                console.log('Filtering with criteria:', filter);
+                filterSelection(containerId, filter);
 
-        // Add event listeners to buttons
-        $("#btnContainer .btn").click(function () {
-            $("#btnContainer .btn").removeClass("active"); // Remove active class from all buttons
-            $(this).addClass("active"); // Add active class to the clicked button
-
-            var filter = $(this).data("filter");
-            filterSelection(filter);
-
-            // Recalculate heights after filtering
-            setTimeout(updateElementHeights, 100); // Delay to ensure DOM is updated
-        });
-
-        // Scroll to clicked section on mobile
-        $("#btnContainer .btn").click(function () {
-            var filter = $(this).data("filter");
-
-            if (filter === "all") {
-                $("html, body").animate({
-                    scrollTop: $(".filter-wrapper").offset().top,
-                }, 300);
-            } else {
-                var target = $(".filter-item." + filter).first();
-                if (target.length) {
-                    var navHeight = 0; // Adjust this if you have a fixed header
-                    $("html, body").animate({
-                        scrollTop: target.offset().top - navHeight,
-                    }, 300);
-                }
-            }
+                // Call the scroll function based on the filter
+                scrollToFilter(containerId, filter);
+            });
         });
     }
-
     // Check if .same-height-wrapper is present
     if ($(".same-height-wrapper").length) {
         updateElementHeights();
@@ -44,19 +32,39 @@ $(document).ready(function () {
     }
 });
 
-function filterSelection(c) {
-    if (c === "all") c = "";
-
-    $(".filter-item").each(function () {
-        $(this).removeClass("show");
-        if ($(this).hasClass(c) || c === "") {
-            $(this).addClass("show");
+function filterSelection(containerId, filter) {
+    if (filter === "all") filter = "";
+  
+    console.log('Filtering items in container:', containerId);
+    $('#' + containerId).next('.filter-wrapper').find('.filter-item').each(function () {
+        console.log('Checking item:', $(this).attr('class'));
+        $(this).removeClass('show');
+        if ($(this).hasClass(filter) || filter === "") {
+            $(this).addClass('show');
         }
     });
-
-    // Recalculate heights after filtering
-    setTimeout(updateElementHeights, 100); // Delay to ensure DOM is updated
 }
+
+function scrollToFilter(containerId, filter) {
+    var navHeight = 0 // Adjust this if you have a fixed header
+
+    if (filter === "all") {
+        // Scroll to the top of the filter wrapper, adjusted for the fixed header
+        $("html, body").animate({
+            scrollTop: $('#' + containerId).next('.filter-wrapper').offset().top - navHeight
+        }, 300);
+    } else {
+        var target = $('#' + containerId).next('.filter-wrapper').find('.filter-item.' + filter).first();
+        if (target.length) {
+            // Scroll to the target item, adjusted for the fixed header
+            $("html, body").animate({
+                scrollTop: target.offset().top - navHeight
+            }, 300);
+        }
+    }
+}
+
+
 
 function updateElementHeights() {
     const desktopWidth = 1024;
@@ -103,5 +111,7 @@ function updateElementHeights() {
                 el.style.height = ''; // Reset height to auto
             });
         });
+
+
     }
 }

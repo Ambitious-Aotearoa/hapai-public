@@ -492,7 +492,7 @@ $ch7: 1rem;
     .cust-font-7{
         font-size:calc($ch7*1.3);
     }
-    p, a:not(.btn), li, input, label, .form-control{
+    p, a:not(.btn), li, input, label, .form-control, button .btn{
         font-size:calc($font-size-base*1.2);
     }
 }
@@ -541,6 +541,13 @@ $ch7: 1rem;
     border-radius:calc($size*1.25);
 }
 
+
+@mixin thin-btn($size) {
+    padding:calc($size*.6) calc($size*1.07);
+    padding-bottom:calc($size*.4);
+}
+
+
 .btn{
     text-transform: uppercase;
     border-width:0;
@@ -553,8 +560,16 @@ $ch7: 1rem;
     &.btn-light{
         --bs-btn-hover-bg:#B1CB8F; 
     }
+
+    &.thin-pad{
+        @include thin-btn(1rem); 
+    }
+
     @include media-breakpoint-up(highRes){
         @include responsive-btn(2rem);
+        &.thin-pad{
+            @include thin-btn(2rem); 
+        }
     }
     &:hover{
         border-top-left-radius: 0;
@@ -848,6 +863,12 @@ a:hover{
     }
 }
 
+.filter-wrapper .img-3-col-style{
+    @include media-breakpoint-up(md){
+        min-height:30vw;
+    }
+}
+
 .diff-heights{
     @include media-breakpoint-up(md){
         .col:first-of-type,
@@ -1106,16 +1127,6 @@ a:hover{
 
 .content-filter{
     .side-buttons{
-        .btn{
-            font-size: inherit;
-            font-family: inherit;
-            text-transform: unset;
-            text-align: left;
-            line-height: inherit;
-            &.active{
-                font-family:$heading-font-bold;
-            }
-        }
         div{
             width: 100%;
             border-bottom: 1px solid $success;
@@ -1126,14 +1137,12 @@ a:hover{
    }
 
    &.top-buttons{
-        .btn{
-            padding:13px 20px 10px;
-
-        }
         div{
-            padding-right: 20px;
+            padding-right: 10px;
             margin-bottom: 10px;
-            
+            @include media-breakpoint-up(md){
+                padding-right: 1vw;
+            }
         }
         .btn-light{
             border: 1px solid $light;
@@ -1146,7 +1155,37 @@ a:hover{
 
    }
 
+   &.lg-btns{
+    div{
+        width: 100%;
+        border-bottom: 1px solid $custom-light-grey;
+        &:last-of-type{
+            border-bottom-width: 0;
+        }
+        .btn{
+            padding:1.5rem 10px 2rem;
+            @include media-breakpoint-up(highRes){
+                padding:3rem 20px 4rem;
+            }
+        }
+    }
+   }
 
+   .side-buttons,
+   &.lg-btns{
+    .btn{
+        font-size: inherit;
+        font-family: inherit;
+        text-transform: unset;
+        text-align: left;
+        line-height: inherit;
+        &.active{
+            font-family:$heading-font-bold;
+        }
+    }
+   }
+
+   
     .accordion{
         .accordion-item{
             border-bottom-width:1px;

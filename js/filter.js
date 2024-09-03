@@ -1,61 +1,58 @@
 $(document).ready(function () {
-    filterSelection("all");
-  
-    // Add event listeners to buttons
-    $("#btnContainer .btn").click(function () {
-      $("#btnContainer .btn").removeClass("active"); // Remove active class from all buttons
-      $(this).addClass("active"); // Add active class to the clicked button
-  
-      var filter = $(this).data("filter");
-      filterSelection(filter);
-    });
+    // Check if any #btnContainer exists on the page
+    if ($('[id^="btnContainer"]').length) {
+        // Initialize filters for each container
+        $('[id^="btnContainer"]').each(function () {
+            var containerId = $(this).attr('id');
+            console.log('Initializing filter for container:', containerId);
+            filterSelection(containerId, "all");
+          
+            // Add event listeners to buttons within each container
+            $('#' + containerId + ' .btn').click(function () {
+                console.log('Button clicked in container:', containerId);
+                $('#' + containerId + ' .btn').removeClass('active'); // Remove active class from all buttons in the container
+                $(this).addClass('active'); // Add active class to the clicked button
+            
+                var filter = $(this).data('filter');
+                console.log('Filtering with criteria:', filter);
+                filterSelection(containerId, filter);
+
+                // Call the scroll function based on the filter
+                scrollToFilter(containerId, filter);
+            });
+        });
+    }
 });
+
+function filterSelection(containerId, filter) {
+    if (filter === "all") filter = "";
   
-function filterSelection(c) {
-    if (c === "all") c = "";
-    
-    $(".filter-item").each(function () {
-      $(this).removeClass("show");
-      if ($(this).hasClass(c) || c === "") {
-        $(this).addClass("show");
-      }
+    console.log('Filtering items in container:', containerId);
+    $('#' + containerId).next('.filter-wrapper').find('.filter-item').each(function () {
+        console.log('Checking item:', $(this).attr('class'));
+        $(this).removeClass('show');
+        if ($(this).hasClass(filter) || filter === "") {
+            $(this).addClass('show');
+        }
     });
 }
 
-// scroll to clicked section on mobile
-$(document).ready(function () {
-    $("#btnContainer .btn").click(function () {
-      var filter = $(this).data("filter");
-  
-      if (filter === "all") {
+// Scroll to clicked section on mobile
+function scrollToFilter(containerId, filter) {
+    if (filter === "all") {
         $("html, body").animate(
-          {
-            scrollTop: $(".filter-wrapper").offset().top,
-          },300 
+            {
+                scrollTop: $('#' + containerId).next('.filter-wrapper').offset().top,
+            },
+            300
         );
-      } else {
-        var target = $(".filter-item." + filter).first();
+    } else {
+        var target = $('#' + containerId).next('.filter-wrapper').find('.filter-item.' + filter).first();
         if (target.length) {
-          var navHeight = 0; // Adjust this if you have a fixed header
-          $("html, body").animate({
-              scrollTop: target.offset().top - navHeight,
-            },300 
-          );
+            var navHeight = 200; // Adjust this if you have a fixed header
+            $("html, body").animate({
+                scrollTop: target.offset().top + navHeight,
+            }, 300);
         }
-      }
-    });
-});
-
-function filterSelection(c) {
-    if (c === "all") c = "";
-
-    $(".filter-item").each(function () {
-        $(this).removeClass("show");
-        if ($(this).hasClass(c) || c === "") {
-            $(this).addClass("show");
-        }
-    });
-
-    // Recalculate heights after filtering
-    setTimeout(updateElementHeights, 100); // Delay to ensure DOM is updated
+    }
 }
