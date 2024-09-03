@@ -275,11 +275,13 @@ a{
 }
 
 p{
-
-        text-wrap: balance;
-            &.--pretty{
-            text-wrap: pretty;
-        }
+    text-wrap: pretty;
+    // @include media-breakpoint-up(xxl){
+    //     text-wrap: pretty;
+    // }
+    //         &.--pretty{
+    //         text-wrap: pretty;
+    //     }
 
     a:hover{
        border-bottom: 1px solid;
