@@ -841,10 +841,6 @@ a:hover{
 }
 
 
-
-
-
-
 ///set of three images, slightly taller than width
 .img-3-col-style{
     @include media-breakpoint-up(md){
@@ -854,12 +850,12 @@ a:hover{
 
 .diff-heights{
     @include media-breakpoint-up(md){
-    .col:first-of-type,
-    .col:nth-of-type(2n + 1){
-        .img-fit{
-            height: 65%;
+        .col:first-of-type,
+        .col:nth-of-type(2n + 1){
+            .img-fit{
+                height: 65%;
+            }
         }
-    }
     }
 }
 
@@ -1037,6 +1033,18 @@ a:hover{
     }
 }
 
+// filter for different sections
+.filter-wrapper{
+    .filter-item{
+        display: none;
+    }
+    .show {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+
 .same-height-wrapper{
     .same-height{
         display: flex;
@@ -1094,8 +1102,20 @@ a:hover{
 
 
 // faq filter/accordion
-.accordion-filter{
-    #btnContainer{
+
+
+.content-filter{
+    .side-buttons{
+        .btn{
+            font-size: inherit;
+            font-family: inherit;
+            text-transform: unset;
+            text-align: left;
+            line-height: inherit;
+            &.active{
+                font-family:$heading-font-bold;
+            }
+        }
         div{
             width: 100%;
             border-bottom: 1px solid $success;
@@ -1103,18 +1123,30 @@ a:hover{
                 border-bottom-width: 0;
             }
         }
-        .btn{
-            font-size: inherit;
-            font-family: inherit;
-            text-transform: unset;
-            text-align: left;
-            line-height: inherit;
+   }
 
+   &.top-buttons{
+        .btn{
+            padding:13px 20px 10px;
+
+        }
+        div{
+            padding-right: 20px;
+            margin-bottom: 10px;
+            
+        }
+        .btn-light{
+            border: 1px solid $light;
+            &:hover,
             &.active{
-                font-family:$heading-font-bold;
+                background-color: transparent;
+                border: 1px solid $primary
             }
         }
+
    }
+
+
     .accordion{
         .accordion-item{
             border-bottom-width:1px;
@@ -1138,22 +1170,11 @@ a:hover{
                 }
             }
         }
-
-    
-
     }
 }
 
 
-// filter for different sections
-.filter-wrapper{
-    .filter-item{
-        display: none;
-    }
-    .show {
-        display: block;
-    }
-}
+
 
 
 // specific pages

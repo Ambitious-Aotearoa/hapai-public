@@ -22,7 +22,7 @@ function filterSelection(c) {
     });
 }
 
-//scroll to clicked section on mobile
+// scroll to clicked section on mobile
 $(document).ready(function () {
     $("#btnContainer .btn").click(function () {
       var filter = $(this).data("filter");
@@ -46,4 +46,16 @@ $(document).ready(function () {
     });
 });
 
-  
+function filterSelection(c) {
+    if (c === "all") c = "";
+
+    $(".filter-item").each(function () {
+        $(this).removeClass("show");
+        if ($(this).hasClass(c) || c === "") {
+            $(this).addClass("show");
+        }
+    });
+
+    // Recalculate heights after filtering
+    setTimeout(updateElementHeights, 100); // Delay to ensure DOM is updated
+}
