@@ -275,12 +275,12 @@ a{
 }
 
 p{
-    @include media-breakpoint-up(lg){
+
         text-wrap: balance;
             &.--pretty{
             text-wrap: pretty;
         }
-    }
+
     a:hover{
        border-bottom: 1px solid;
     }
@@ -363,6 +363,7 @@ $ch7: 1rem;
     line-height:1.15em;
     margin-bottom: 0;
     font-weight: 300;
+    text-wrap: balance;
     &.--body-font{
         font-family: $body-font; 
     }
@@ -1223,6 +1224,12 @@ a:hover{
         background-repeat: no-repeat;
         background-size: 100%;
         background-position: 50% 100%;
+    }
+}
+
+.who-we-are-page{
+    .content-filter .side-buttons div:first-of-type{
+        border-top:1px solid;
     }
 }
 
