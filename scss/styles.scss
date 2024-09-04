@@ -607,6 +607,7 @@ button{
         stroke:$primary
     }
     &:hover{
+        transition: all .2s ease-in-out;
         svg{
             transition: all .2s ease-in-out;
             margin-left:.5rem;
@@ -614,6 +615,12 @@ button{
     }
 
     @include media-breakpoint-up(xxl){
+        svg{
+            width:30px;
+            height:30px;
+        }
+    }
+    @include media-breakpoint-up(highRes){
         svg{
             width:40px;
             height:40px;
@@ -734,17 +741,16 @@ button{
     }
 }
 
-
-a button svg{
-    transition: all .2s ease-in-out;
+a svg,
+button svg{
+    transition: margin .2s ease-in-out;
 }
 
 a:hover{
     .btn-icon,
     button{
-        transition: all .2s ease-in-out;
         svg{
-            transition: all .2s ease-in-out;
+            transition: margin .2s ease-in-out;
             margin-left: .5rem;
         }
     }
@@ -1109,13 +1115,17 @@ a:hover{
     }
 }
 
-.quote, .quote rect{
+.quote{
     width: 50px;
     height: 50px;
     @include media-breakpoint-up(highRes){
         width: 100px;
         height: 100px;
     }
+}
+.quote rect{
+    width: 50px;
+    height: 50px;
 }
 
 .faq-cross{
