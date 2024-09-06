@@ -66,52 +66,127 @@ function scrollToFilter(containerId, filter) {
 
 
 
+// function updateElementHeights() {
+//     const desktopWidth = 1024;
+
+//     // Select all .same-height-wrapper containers
+//     const wrappers = document.querySelectorAll('.same-height-wrapper');
+
+//     wrappers.forEach((wrapper) => {
+//         const selectors = ['.same-height h3', '.same-height h2', '.same-height p:not(.btn-icon p, .no-height, p.other-height)', 'p.other-height']; // List of child elements to target within each wrapper
+
+//         selectors.forEach((selector) => {
+//             const elements = wrapper.querySelectorAll(selector);
+
+//             // Reset heights to auto to recalculate
+//             elements.forEach((el) => {
+//                 el.style.height = 'auto'; // Reset height to auto
+//             });
+
+//             // Apply same height in groups of three
+//             for (let i = 0; i < elements.length; i += 3) {
+//                 let maxHeight = 0;
+
+//                 // Calculate the tallest height in the current group of three
+//                 for (let j = i; j < i + 3 && j < elements.length; j++) {
+//                     const elementHeight = elements[j].offsetHeight;
+//                     if (elementHeight > maxHeight) {
+//                         maxHeight = elementHeight;
+//                     }
+//                 }
+
+//                 // Apply the tallest height to the current group of three
+//                 for (let j = i; j < i + 3 && j < elements.length; j++) {
+//                     elements[j].style.height = `${maxHeight}px`;
+//                 }
+//             }
+//         });
+//     });
+
+//     // Reset styles for mobile
+//     if (window.innerWidth < desktopWidth) {
+//         wrappers.forEach((wrapper) => {
+//             const elements = wrapper.querySelectorAll('.same-height h3, .same-height h2, .same-height p:not(.btn-icon p, .no-height), p.other-height');
+//             elements.forEach((el) => {
+//                 el.style.height = ''; // Reset height to auto
+//             });
+//         });
+
+
+//     }
+// }
+
+
 function updateElementHeights() {
     const desktopWidth = 1024;
+    const tabletWidth = 768;
 
     // Select all .same-height-wrapper containers
     const wrappers = document.querySelectorAll('.same-height-wrapper');
+    const wrappersTablet = document.querySelectorAll('.same-height-wrapper.tablet-style');
 
-    wrappers.forEach((wrapper) => {
-        const selectors = ['.same-height h3', '.same-height h2', '.same-height p:not(.btn-icon p, .no-height, p.other-height)', 'p.other-height']; // List of child elements to target within each wrapper
+    // Reset heights for all wrappers
+    const resetHeights = (elements) => {
+        elements.forEach((el) => {
+            el.style.height = 'auto'; // Reset height to auto
+        });
+    };
 
-        selectors.forEach((selector) => {
-            const elements = wrapper.querySelectorAll(selector);
+    // Apply same height in groups of three (desktop)
+    const applySameHeightGroups = (elements, groupSize) => {
+        for (let i = 0; i < elements.length; i += groupSize) {
+            let maxHeight = 0;
 
-            // Reset heights to auto to recalculate
-            elements.forEach((el) => {
-                el.style.height = 'auto'; // Reset height to auto
-            });
-
-            // Apply same height in groups of three
-            for (let i = 0; i < elements.length; i += 3) {
-                let maxHeight = 0;
-
-                // Calculate the tallest height in the current group of three
-                for (let j = i; j < i + 3 && j < elements.length; j++) {
-                    const elementHeight = elements[j].offsetHeight;
-                    if (elementHeight > maxHeight) {
-                        maxHeight = elementHeight;
-                    }
-                }
-
-                // Apply the tallest height to the current group of three
-                for (let j = i; j < i + 3 && j < elements.length; j++) {
-                    elements[j].style.height = `${maxHeight}px`;
+            // Calculate the tallest height in the current group
+            for (let j = i; j < i + groupSize && j < elements.length; j++) {
+                const elementHeight = elements[j].offsetHeight;
+                if (elementHeight > maxHeight) {
+                    maxHeight = elementHeight;
                 }
             }
-        });
-    });
 
-    // Reset styles for mobile
-    if (window.innerWidth < desktopWidth) {
+            // Apply the tallest height to the current group
+            for (let j = i; j < i + groupSize && j < elements.length; j++) {
+                elements[j].style.height = `${maxHeight}px`;
+            }
+        }
+    };
+
+    // Process desktop and tablet styles
+    const processWrappers = (wrappers, groupSize) => {
         wrappers.forEach((wrapper) => {
-            const elements = wrapper.querySelectorAll('.same-height h3, .same-height h2, .same-height p:not(.btn-icon p, .no-height), p.other-height');
-            elements.forEach((el) => {
-                el.style.height = ''; // Reset height to auto
+            const selectors = ['.same-height h3', '.same-height h2', '.same-height p:not(.btn-icon p, .no-height, p.other-height)', 'p.other-height'];
+            selectors.forEach((selector) => {
+                const elements = wrapper.querySelectorAll(selector);
+                resetHeights(elements);
+                applySameHeightGroups(elements, groupSize);
             });
         });
+    };
 
+    // Desktop view (1024px and above)
+    if (window.innerWidth >= desktopWidth) {
+        processWrappers(wrappers, 3);
+    }
 
+    // Tablet view (768px to 1023px)
+    if (window.innerWidth >= tabletWidth && window.innerWidth < desktopWidth) {
+        processWrappers(wrappersTablet, 2);
+    }
+
+    // Mobile view (below 768px) - reset heights
+    if (window.innerWidth < tabletWidth) {
+        wrappersTablet.forEach((wrapper) => {
+            const elements = wrapper.querySelectorAll('.same-height h3, .same-height h2, .same-height p:not(.btn-icon p, .no-height), p.other-height');
+            resetHeights(elements);
+        });
+
+        wrappers.forEach((wrapper) => {
+            const elements = wrapper.querySelectorAll('.same-height h3, .same-height h2, .same-height p:not(.btn-icon p, .no-height), p.other-height');
+            resetHeights(elements);
+        });
     }
 }
+
+
+

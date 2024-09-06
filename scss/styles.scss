@@ -276,12 +276,9 @@ a{
 
 p{
     text-wrap: pretty;
-    // @include media-breakpoint-up(xxl){
-    //     text-wrap: pretty;
-    // }
-    //         &.--pretty{
-    //         text-wrap: pretty;
-    //     }
+    &.--btn-font{
+        font-family: $button-font;
+    }
 
     a:hover{
        border-bottom: 1px solid;
@@ -415,6 +412,7 @@ $ch7: 1rem;
     &.--light-weight{
         font-weight:300;
     }
+
 }
 
 @include media-breakpoint-up(sm){
@@ -993,6 +991,9 @@ a:hover{
                 stroke:$primary
             }
         }
+        .events-style  a:hover{
+            border: 1px solid $custom-accent-yellow;
+        }
     }
 
     &.--dark-green-neutral{
@@ -1048,6 +1049,10 @@ a:hover{
                 fill:$custom-accent-blue;
             }
         }
+        .events-style a:hover{
+            border: 1px solid $custom-accent-blue;
+        }
+        
     }
 }
 
@@ -1225,6 +1230,71 @@ a:hover{
     }
 }
 
+.events-style{
+    .large-cust-font{
+        font-size: 75px;
+        line-height: 1em;
+        transition: all .2s ease-in-out;
+        border-bottom:1px solid $light;
+        @include media-breakpoint-up(lg){
+            font-size: 150px;
+        }
+        @include media-breakpoint-up(highRes){
+            font-size: 300px;
+        }
+    }
+    .add-border{
+        transition: all .2s ease-in-out;
+        border-bottom: 1px solid $light;
+    }
+
+    a{
+        position: relative;
+        overflow: hidden;
+        transition: all .2s ease-in-out;
+        border: 1px solid $light;
+
+        svg.cnr-animation{
+            fill:$custom-neutral;
+            position: absolute;
+            bottom: -1px;
+            right: -1px;
+            width: 20%;
+            transform-origin: bottom right;
+            transform: scale(1);
+            z-index: 2;
+            @include media-breakpoint-up(lg){
+                max-width: 9vw;
+            }
+        }
+
+       
+        svg.cnr-animation{
+            transition: all .2s ease-in-out;
+            transform: scale(0);
+        }
+
+
+        &:hover{
+            border: 1px solid $custom-accent-blue;
+            background-color: $light;
+            transition: all .2s ease-in-out;
+            .large-cust-font{
+                transition: all .2s ease-in-out;
+                border-bottom:1px solid $primary;
+            }
+            .add-border{
+                transition: all .2s ease-in-out;
+                border-bottom: 1px solid $primary;
+            }
+
+            svg.cnr-animation{
+                transition: all .2s ease-in-out;
+                transform: scale(1);
+            }
+        }
+    }
+}
 
 
 
