@@ -707,7 +707,8 @@ button{
                 transform: rotate(180deg);
                 transform-origin: unset;
             }
-        }  
+        } 
+
     }
 
 
@@ -1007,6 +1008,18 @@ a:hover{
             fill:$custom-dark;
         }
 
+        .swiper-controls-wrapper{
+            .swiper-button-prev,
+            .swiper-button-next{
+                    svg {
+                        path{
+                            stroke:$light
+                        }
+            
+                    }
+                }
+            }
+
         .btn-icon{
             transition: all .2s ease-in-out;
             svg{
@@ -1298,6 +1311,87 @@ a:hover{
 
 
 
+// swiper js sliders
+
+.swiper-slide{
+    height: unset;
+}
+
+.swiper-controls-wrapper{
+    position: relative;
+    padding-bottom: 10px;
+    .swiper-button-prev:after,
+    .swiper-button-next:after{
+        display: none;
+    }
+    .swiper-button-prev,
+    .swiper-button-next{
+        top: 0;
+        height:unset;
+        width: unset;
+        svg {
+            width: 30px;
+            height: 30px;
+            path{
+                stroke:$primary
+            }
+
+        }
+    }
+
+    .swiper-button-next{
+        left:50px;
+        right:unset;
+    }
+
+    .swiper-button-prev{
+        left: 0;
+        right: auto;
+    }
+
+
+    @include media-breakpoint-up(md){
+
+        .swiper-button-prev{
+            left:unset;
+            right:calc(2vw + 40px );
+        }
+        .swiper-button-next{
+            left:unset;
+            right:2vw;
+        }
+    }
+
+
+
+
+    @include media-breakpoint-up(highRes){
+        .swiper-button-prev,
+        .swiper-button-next{
+            svg{
+                width: 60px;
+                height: 60px;
+            }
+        }
+        .swiper-button-prev{
+            right:calc(2vw + 80px );
+        }
+    }
+}
+.home-page,
+.past-events-slider{
+    .swiper-slide{
+        height: unset;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+.home-page .swiper-slide{
+    justify-content: flex-end;
+}
+
+
 
 // specific pages
 .faq-page{
@@ -1315,6 +1409,34 @@ a:hover{
     }
 }
 
+.home-page{
+    .image-cnr{
+        position: relative;
+    }
+    @include media-breakpoint-up(md){
+        .image-cnr.cnr-constant{
+            svg.cnr-animation{
+                bottom: unset;
+                right:unset;
+                left: -1px;
+                top:-1px;
+                transform: rotate(180deg);
+                transform-origin: unset;
+            } 
+    }
+        .swiper-controls-wrapper{
+            .swiper-button-next{
+                right:unset;
+                left:40px;
+            }
+            .swiper-button-prev{
+                right:unset;
+                left:0vw
+            }
+        }
+    }
+
+}
 
 
 

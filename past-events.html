@@ -4,11 +4,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="images/favicon.svg" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="css/styles.css" />
     <title>Past Events IPANZ</title>
   </head>
+
+  
   <body>
-    <main class="past-events">
+
+    <main class="past-events-page">
       <!-- past events hero -->
       <div class="custom-primary --dark-green-neutral px-1 px-md-2 px-highRes-4 pb-2 pb-md-3 pb-lg-3vw">
         <div class="d-flex flex-column flex-md-row flex-wrap flex-md-nowrap">
@@ -28,19 +32,50 @@
       </div>
 
       <!-- past events under hero -->
-      <div class="px-1 px-md-2 px-highRes-4 py-4 py-md-6vw">
+      <div class="px-1 px-md-2 px-highRes-4 py-4 py-md-6vw custom-primary">
         <div class="d-flex flex-column flex-md-row flex-wrap flex-md-nowrap">
-          <div class="col col-sm-12 col-md-5 mb-4">
-            <h2 class="cust-font-7 pb-1 pb-highRes-2">What people are saying</h2>
-          </div>
-          <div class="col col-sm-12 col-md-7">
-            <div class="px-1 px-md-2 px-highRes-4 border-start border-accent-yellow">
-              <p class="cust-font-5">"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa itaque dolorum temporibus repudiandae et animi voluptas dolorem! Culpa ullam aperiam, itaque ex dolorem quis labore maiores ratione reiciendis exercitationem asperiores."</p>
-              <p class="cust-font-7 --light-text pt-3 pt-lg-3vw">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <div class="col col-sm-12 col-md-5 col-lg-4 mb-md-0 d-flex flex-column justify-content-between mb-2">  
+                <h2 class="cust-font-7 pb-3 pb-highRes-2">What people are saying</h2>        
+                <div class="swiper-controls-wrapper">
+                    <div class="swiper-button-next">                                
+                        <svg viewBox="0 0 20 20" fill="none">
+                            <path
+                                d="M10.0287 19.0574C15.0151 19.0574 19.0574 15.0151 19.0574 10.0287C19.0574 5.04229 15.0151 1 10.0287 1C5.04229 1 1 5.04229 1 10.0287C1 15.0151 5.04229 19.0574 10.0287 19.0574Z"
+                                stroke-miterlimit="10" 
+                            />
+                            <path d="M8.51172 13.7119L12.7204 10.0288L8.51172 6.34204" stroke-miterlimit="10"  />
+                        </svg>
+                    </div> 
+                    <div class="swiper-button-prev">
+                        <svg viewBox="0 0 20 20" fill="none">
+                            <path
+                                d="M10.0299 1.0002C5.04347 1.0002 1.00118 5.04249 1.00118 10.0289C1.00118 15.0153 5.04347 19.0576 10.0299 19.0576C15.0163 19.0576 19.0586 15.0153 19.0586 10.0289C19.0586 5.04249 15.0163 1.0002 10.0299 1.0002Z"
+                                stroke-miterlimit="10" 
+                            />
+                            <path d="M11.5469 6.34598L7.3382 10.029L11.5469 13.7158" stroke-miterlimit="10"  />
+                        </svg>
+
+                    </div>
+                </div> 
             </div>
-          </div>
+            <div class="col-12 col-md-7 col-lg-8 border-start border-accent-yellow px-1 px-md-2vw">        
+                <div class="swiper past-events-slider">
+                    <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <p class="cust-font-5">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. Vivamus interdum dictum convallis. Curabitur ac est sed mi imperdiet scelerisque elementum id ante. Duis ornare, dui non mattis tincidunt, eros ex vulputate odio, sed fermentum est mauris vel libero. Curabitur laoreet maximus consectetur. In mattis finibus odio, nec facilisis quam tempor auctor."</p>
+                        <p class="cust-font-7 --light-text pt-3 pt-lg-3vw">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <p class="cust-font-5">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. Vivamus interdum dictum convallis. Curabitur ac est sed mi imperdiet scelerisque elementum id ante. Duis ornare,"</p>
+                        <p class="cust-font-7 --light-text pt-3 pt-lg-3vw">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+            </div>
+            </div>
         </div>
       </div>
+
+
 
       <div class="container-fluid px-1 px-highRes-3 pt-4 pt-lg-7vw custom-primary --yellow">
         <div class="row d-flex flex-column flex-md-row p-0 m-0">
@@ -159,7 +194,14 @@
         </div>
       </div>
     </main>
+
+
+
+
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script type="module" src="js/same-height-filter.js"></script>
+    <script type="module" src="js/sliders.js"></script>
+
   </body>
 </html>
