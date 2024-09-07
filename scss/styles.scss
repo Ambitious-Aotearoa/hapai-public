@@ -776,6 +776,8 @@ a:hover{
 
 
 
+
+
 .home-hero{
     min-height: 80vh;
     @include media-breakpoint-up(sm){
@@ -788,6 +790,15 @@ a:hover{
     @include media-breakpoint-up(lg){
         min-height:unset;
     }
+}
+
+.training-slider-img{
+    min-height: 50vh;
+
+    @include media-breakpoint-up(sm){
+        min-height:auto;
+    }
+
 }
 
 .img-3-col-style,
@@ -1092,7 +1103,7 @@ a:hover{
         justify-content: space-between;
     }
 }
-
+.same-height-wrapper-two-col,
 .same-height-wrapper{
     .same-height{
         display: flex;
@@ -1280,8 +1291,6 @@ a:hover{
                 max-width: 9vw;
             }
         }
-
-       
         svg.cnr-animation{
             transition: all .2s ease-in-out;
             transform: scale(0);
@@ -1309,7 +1318,56 @@ a:hover{
     }
 }
 
+.events-style-two{
+    .zero-ten a{
+        background-color: $custom-accent-blue;
+        background-image: url('/images/side-pattern-one.png');
+    }
+    .bg-organisation a,
+    .ten-plus a{
+        background-color: $success;
+        background-image: url('/images/side-pattern-one.png');
+    }
+    .bg-individual a,
+    .all-levels a{
+        background-color: $secondary;
+        background-image: url('/images/side-pattern-one.png');
+        
+    }
+    a{
+        position: relative;
+        overflow: hidden;
+        background-size: 25%;
+        background-position: 100% 100%;
+        background-repeat: repeat-y;
+        svg.cnr-animation{
+            fill:$custom-neutral;
+            position: absolute;
+            bottom: -1px;
+            right: -1px;
+            width: 20%;
+            transform-origin: bottom right;
+            transform: scale(1);
+            z-index: 2;
+            @include media-breakpoint-up(lg){
+                max-width: 9vw;
+            }
+        }
 
+        svg.cnr-animation{
+            transition: all .2s ease-in-out;
+            transform: scale(0);
+        }
+
+
+        &:hover{
+            svg.cnr-animation{
+                transition: all .2s ease-in-out;
+                transform: scale(1);
+            }
+        }
+    }
+}
 
 // swiper js sliders
 
@@ -1317,13 +1375,14 @@ a:hover{
     height: unset;
 }
 
+.swiper-button-disabled p{
+    opacity: 50%;
+}
+
 .swiper-controls-wrapper{
     position: relative;
     padding-bottom: 10px;
-    .swiper-button-prev:after,
-    .swiper-button-next:after{
-        display: none;
-    }
+
     .swiper-button-prev,
     .swiper-button-next{
         top: 0;
@@ -1378,6 +1437,83 @@ a:hover{
         }
     }
 }
+
+.training-slider{
+    .flex-styles{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        @include media-breakpoint-up(sm){
+            flex-direction: row;
+            .col:not(.image-cnr){
+                div{
+                    p{
+                        text-wrap: balance;
+                    }
+                }
+            }
+        }
+        @include media-breakpoint-up(lg){
+            .col:not(.image-cnr){
+                div{
+                    max-width:90%
+                }
+            }
+        }
+        @include media-breakpoint-up(xl){
+            .col:not(.image-cnr){
+                div{
+                    max-width:70%
+                }
+            }
+        }
+    }
+
+
+
+   .swiper-slide.swiper-slide-next{
+    .flex-styles{
+        
+        @include media-breakpoint-up(md){
+            flex-direction: row-reverse;
+            .col:not(.image-cnr){
+                text-align: right;
+                div{
+                    margin-left: auto;
+                }
+            }
+        }
+    }
+   }
+}
+
+
+
+.middle-space{
+    @include media-breakpoint-up(md){
+        .col:first-of-type{
+            > div{
+                padding-right: 30px;
+            }
+        }
+        .col:last-of-type{
+            > div{padding-left: 30px;}
+        }
+    }
+    @include media-breakpoint-up(highRes){
+        .col:first-of-type{
+            > div{
+                padding-right: 60px;
+            }
+        }
+        .col:last-of-type{
+            > div{padding-left: 60px;}
+        }
+    }
+}
+
+
+
 .home-page,
 .past-events-slider{
     .swiper-slide{

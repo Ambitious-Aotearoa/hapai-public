@@ -2,13 +2,6 @@ var swiper = new Swiper(".past-events-slider", {
     slidesPerView: 1,
     spaceBetween: 0,
     loop: true,
-    // autoplay: {
-    //   delay: 9000,
-
-    // },
-    // pagination: {
-    //   el: '.swiper-pagination',
-    // },
 
     navigation: {
         nextEl: ".swiper-button-next",
@@ -27,3 +20,30 @@ var swiper = new Swiper(".past-events-slider", {
         prevEl: ".swiper-button-prev",
       },
   });
+
+  var swiper = new Swiper(".training-slider", {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    loop:true,
+    // watchSlidesProgress: true ,
+    keyboard: {
+        enabled: true,
+      },
+    breakpoints: {
+        1024: {
+          slidesPerView: 2,
+        //   slidesPerGroup: 2,
+        },
+      },
+
+    navigation: {
+        nextEl: ".button-next",
+        prevEl: ".button-prev",
+      },
+  });
+
+//   $(".swiper").find("a").off("mousedown").on("mousedown", function(e){ e.preventDefault(); e.stopImmediatePropagation(); });
+// $(".swiper a").off("mousedown").on("mousedown", function(e) {
+//     e.preventDefault();
+//     e.stopImmediatePropagation();
+//   });
