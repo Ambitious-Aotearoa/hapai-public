@@ -226,10 +226,18 @@ $btn-font-weight:500;
 @import "bootstrap/scss/forms";
 @import "bootstrap/scss/buttons";
 @import "bootstrap/scss/transitions";
+$dropdown-link-hover-bg:$primary;
 @import "bootstrap/scss/dropdown";
 // @import "bootstrap/scss/button-group";
-// @import "bootstrap/scss/nav";
-// @import "bootstrap/scss/navbar"; // Requires nav
+
+$navbar-light-active-color:$secondary;
+$navbar-light-toggler-border-color:$light;
+$navbar-toggler-border-radius:0;
+$navbar-toggler-focus-width: 0;
+$navbar-toggler-padding-y:0;
+$navbar-toggler-padding-x:0;
+@import "bootstrap/scss/nav";
+@import "bootstrap/scss/navbar"; // Requires nav
 // @import "bootstrap/scss/card";
 // @import "bootstrap/scss/breadcrumb";
 
@@ -1379,6 +1387,13 @@ a:hover{
     opacity: 50%;
 }
 
+.swiper-button-prev,
+.swiper-button-next{
+    &::after{
+        display: none;
+    }
+}
+
 .swiper-controls-wrapper{
     position: relative;
     padding-bottom: 10px;
@@ -1394,7 +1409,6 @@ a:hover{
             path{
                 stroke:$primary
             }
-
         }
     }
 
@@ -1573,6 +1587,109 @@ a:hover{
     }
 
 }
+
+.nav-change .bg-change{
+    background-color: $primary;
+}
+
+nav{
+    .navbar-collapse.bg-primary{
+        a{
+            color: #526D52;
+            &.dropdown-item{
+                color:$secondary;
+                &:hover{
+                    color: #526D52;
+                }
+            }
+        }
+        p{
+            color: $secondary;
+        }
+    }
+
+    .navbar-nav{
+        a:hover{
+            color: $secondary;
+        }
+    }
+
+    .dropdown-menu{
+        border-width: 0;
+        border-radius: 0;
+        background-color: transparent;
+    }
+
+    .dropdown-toggle:after{
+        display: none;
+    }
+    .contact-nav{
+        opacity: 0;
+    }
+    .collapsing {
+        position: relative;
+        height: 0;
+        overflow: hidden;
+        transition: height 0s ease;
+    }
+
+    .navbar-toggler{
+        transform: rotate(0deg);
+        border-width: 0;
+    }
+    .navbar-toggler:focus{
+        transform: rotate(90deg);
+    }
+    .navbar-toggler.collapsed{
+        transform: rotate(0deg);
+    }
+
+    .navbar-collapse.show{
+        min-height: calc(100vh - 80px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        .contact-nav{
+            opacity: 1;
+        }
+    }
+
+    @include media-breakpoint-up(md){
+        .dropdown{
+            position: unset;
+        }
+        .dropdown-menu.show{
+            position: absolute;
+        }
+    
+        .dropdown-menu[data-bs-popper]{
+            top: unset;
+            bottom: 60px;
+            left: 39%;
+            padding: 0;
+            margin:0
+        }
+        .contact-nav{
+            text-align: right;
+        }
+        .navbar-collapse.show{
+            flex-direction: row;
+            justify-content: unset;
+            align-items: flex-end;
+            transition: all 0s;
+        }
+        
+    }
+    @include media-breakpoint-up(lg){
+        .dropdown-menu[data-bs-popper]{
+
+            bottom: 7vw;
+
+        }
+    }
+}
+
 
 
 
