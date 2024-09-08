@@ -279,19 +279,25 @@ $navbar-toggler-padding-x:0;
 }
 
 a{
-    text-decoration: none;
+    text-decoration: none;  
 }
 
-p{
-    text-wrap: pretty;
-    &.--btn-font{
-        font-family: $button-font;
+p {
+    white-space: pretty; // Use correct CSS property for pretty wrapping
+  
+    &.--btn-font {
+      font-family: $button-font;
     }
+  
+    a {
+        white-space: nowrap;
+      &:hover {
+        border-bottom: 1px solid;
+      }
+    }
+  }
+  
 
-    a:hover{
-       border-bottom: 1px solid;
-    }
-}
 
 //list styles
 .list-unstyled.border-style{
@@ -813,6 +819,10 @@ a:hover{
 .who-slider-img{
     min-height:70vw;
     width: 70%;
+
+    &.image-cnr img{
+        border-right: 1px solid $custom-accent-yellow;
+    }
     @include media-breakpoint-up(sm){
         min-height:calc(90vw / 2);
         width: 50%;
