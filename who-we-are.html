@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="images/favicon.svg" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="css/styles.css" />
     <title>Who we are | IPANZ</title>
   </head>
@@ -100,7 +101,84 @@
           </div>
         </div>
 
-        <div class="bg-accent-yellow p-7vw"></div>
+        <div class="custom-primary --yellow row py-4 py-lg-7vw px-0">
+            <div class="px-1 px-md-2 px-highRes-4  ">
+                <div class="d-flex co-12 flex-md-row justify-content-between mb-4">
+                    <p class="cust-font-7">Our History</p>
+                    <div class="d-flex flex-row">
+                        <div class="button-prev pe-1 pe-md-2 pe-lg-2vw">
+                            <p class="cust-font-7">Previous</p>
+                        </div>
+                        <div class="button-next">
+                            <p class="cust-font-7">Next</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ps-1 ps-sm-4 ps-md-5 ps-lg-7vw pe-0">
+                <div class="swiper who-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="col-12 ">
+                                <div class="image-cnr cnr-constant who-slider-img ">
+                                    <img src="images/placeholder-image.jpg" class="img-fit" alt="placeholder image" />
+                                    <svg class="cnr-animation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 186 164" fill="none">
+                                        <path d="M40 147C28 159 8.66667 163 0.5 163.5H186V0.5C142.333 44.3333 52 135 40 147Z" />
+                                    </svg>
+                                </div>
+                
+                                <div class="col same-height border-top border-primary pt-4 pt-lg-4vw mt-4 mt-lg-4vw">
+                                    <div class="h-100 d-flex flex-column justify-content-md-between">
+                                        <p class="cust-font-2 pb-3 pb-lg-3vw no-height">1934</p>
+                                        <h2 class="cust-font-5 pb-2 pb-lg-2vw col-sm-9">We were formed by public servants for public servants</h2>
+                                        <p class="col-10">For 90 years, we’ve been supporting public sector professionals to explore what it means to ‘do’ public service. Our story starts in 1934 when a group of public servants in Christchurch got together, moved by a desire to learn something of the broader background and common principles of public administration. Together, they formed the Canterbury Public Service Administration Society.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="col-12 ">
+                                <div class="image-cnr cnr-constant who-slider-img ">
+                                    <img src="images/placeholder-image.jpg" class="img-fit" alt="placeholder image" />
+                                    <svg class="cnr-animation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 186 164" fill="none">
+                                        <path d="M40 147C28 159 8.66667 163 0.5 163.5H186V0.5C142.333 44.3333 52 135 40 147Z" />
+                                    </svg>
+                                </div>
+                
+                                <div class="col same-height border-top border-primary pt-4 pt-lg-4vw mt-4 mt-lg-4vw">
+                                    <div class="h-100 d-flex flex-column justify-content-md-between">
+                                        <p class="cust-font-2 pb-3 pb-lg-3vw no-height">1936</p>
+                                        <h2 class="cust-font-5 pb-2 pb-lg-2vw col-sm-9">Interest in exploring these ideas spread throughout New Zealand</h2>
+                                        <p class="col-10">Interest in exploring the work of public administration outside of the ordinary work of a department spread. Similar societies quickly cropped up in Wellington, Dunedin and Auckland. In 1936 these groups joined forces to become one national organisation called the New Zealand Institute of Public Administration. The name later changed to the Institute of Public Administration New Zealand or IPANZ for short.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="swiper-slide">
+                            <div class="col-12 ">
+                                <div class="image-cnr cnr-constant who-slider-img ">
+                                    <img src="images/placeholder-image.jpg" class="img-fit" alt="placeholder image" />
+                                    <svg class="cnr-animation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 186 164" fill="none">
+                                        <path d="M40 147C28 159 8.66667 163 0.5 163.5H186V0.5C142.333 44.3333 52 135 40 147Z" />
+                                    </svg>
+                                </div>
+                
+                                <div class="col same-height border-top border-primary pt-4 pt-lg-4vw mt-4 mt-lg-4vw">
+                                    <div class="h-100 d-flex flex-column justify-content-md-between">
+                                        <p class="cust-font-2 pb-3 pb-lg-3vw no-height">2024</p>
+                                        <h2 class="cust-font-5 pb-2 pb-lg-2vw col-sm-9">IPANZ became Hāpai Public, Institute of Public Professionals</h2>
+                                        <p class="col-10">In 2024, IPANZ adopted a new name: Hāpai Public, Institute of Public Professionals. Nearly ninety years on, Hāpai Public continues to hold a special place working alongside the New Zealand public sector and is Aotearoa’s leading professional organisation for public servants.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                  
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
 
         <!-- ///green light block -->
         <div class="px-1 px-md-2 px-highRes-4 py-2 py-highRes-5 pb-0">
@@ -267,6 +345,8 @@
 
     </main>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script type="module" src="js/same-height-filter.js"></script>
+    <script type="module" src="js/sliders.js"></script>
   </body>
 </html>

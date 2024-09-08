@@ -802,11 +802,26 @@ a:hover{
 
 .training-slider-img{
     min-height: 50vh;
+   
 
     @include media-breakpoint-up(sm){
         min-height:auto;
     }
 
+}
+
+.who-slider-img{
+    min-height:70vw;
+    width: 70%;
+    @include media-breakpoint-up(sm){
+        min-height:calc(90vw / 2);
+        width: 50%;
+    }
+
+    @include media-breakpoint-up(md){
+        min-height:calc(33.33vw / 1.5);
+        width: 50%;
+    }
 }
 
 .img-3-col-style,
@@ -1499,6 +1514,20 @@ a:hover{
         }
     }
    }
+}
+
+.who-slider{
+    .swiper-slide{
+        img,h2,p{
+           opacity: .5;
+        }
+    }
+
+    .swiper-slide.swiper-slide-active{
+        img,h2,p{
+            opacity: 1;
+        }
+    }
 }
 
 

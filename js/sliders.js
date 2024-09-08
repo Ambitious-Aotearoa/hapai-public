@@ -42,6 +42,29 @@ var swiper = new Swiper(".past-events-slider", {
       },
   });
 
+  var swiper = new Swiper(".who-slider", {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    loop:true,
+    // watchSlidesProgress: true,
+    keyboard: {
+        enabled: true,
+    },
+    breakpoints: {
+        768: {
+            slidesPerView: 1.1,
+          },
+        1024: {
+          slidesPerView: 2.2,
+        },
+      },
+
+    navigation: {
+        nextEl: ".button-next",
+        prevEl: ".button-prev",
+      },
+  });
+
 //   $(".swiper").find("a").off("mousedown").on("mousedown", function(e){ e.preventDefault(); e.stopImmediatePropagation(); });
 // $(".swiper a").off("mousedown").on("mousedown", function(e) {
 //     e.preventDefault();
