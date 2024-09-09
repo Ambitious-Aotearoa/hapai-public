@@ -1129,13 +1129,33 @@ a:hover{
 .filter-wrapper{
     .filter-item{
         display: flex;
+        flex-direction: column;
+        a{
+            width:100%;
+        }
     }
     .show {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        a{
+            width:100%;
+        }
+        
     }
 }
+
+.same-height-wrapper-filter .filter-wrapper{
+    .filter-item{
+        justify-content: space-between;
+
+    }
+    .show {
+        justify-content: space-between;
+        
+    }
+}
+
+
 
 .same-height-wrapper-two-col,
 .same-height-wrapper{
@@ -1264,6 +1284,9 @@ a:hover{
    
     .accordion{
         .accordion-item{
+            .accordion-header{
+                width: 100%;
+            }
             border-bottom-width:1px;
             .accordion-button{
                 text-wrap: balance;
