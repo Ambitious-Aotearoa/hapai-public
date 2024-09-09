@@ -1128,7 +1128,7 @@ a:hover{
 // filter for different sections
 .filter-wrapper{
     .filter-item{
-        display: none;
+        display: flex;
     }
     .show {
         display: flex;
@@ -1136,6 +1136,7 @@ a:hover{
         justify-content: space-between;
     }
 }
+
 .same-height-wrapper-two-col,
 .same-height-wrapper{
     .same-height{
@@ -1599,20 +1600,27 @@ a:hover{
 }
 
 .home-page{
+
     .image-cnr{
         position: relative;
     }
-    @include media-breakpoint-up(md){
-        .image-cnr.cnr-constant{
-            svg.cnr-animation{
-                bottom: unset;
-                right:unset;
-                left: -1px;
-                top:-1px;
-                transform: rotate(180deg);
-                transform-origin: unset;
-            } 
+
+    .hero{
+        @include media-breakpoint-up(md){
+            .image-cnr.cnr-constant{
+                svg.cnr-animation{
+                    bottom: unset;
+                    right:unset;
+                    left: -1px;
+                    top:-1px;
+                    transform: rotate(180deg);
+                    transform-origin: unset;
+                } 
+            }
+        }
     }
+    
+    @include media-breakpoint-up(md){
         .swiper-controls-wrapper{
             .swiper-button-next{
                 right:unset;
