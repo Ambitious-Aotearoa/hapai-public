@@ -282,6 +282,10 @@ a{
     text-decoration: none;  
 }
 
+div p:last-of-type{
+    margin-bottom:0;
+}
+
 p {
     white-space: pretty; // Use correct CSS property for pretty wrapping
   
