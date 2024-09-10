@@ -6,12 +6,11 @@ function updateElementHeights() {
     const desktopWidth = 1024;
 
     // Select all .same-height-wrapper containers
-    const wrappers = document.querySelectorAll('.same-height-wrapper');
+    const wrappers = document.querySelectorAll('.same-height-wrapper-2col');
     const selectors = [
         '.same-height h3',
         '.same-height h2',
         '.same-height .add-height',
-        '.same-height .add-height-other',
     ];
 
     wrappers.forEach((wrapper) => {
@@ -24,7 +23,7 @@ function updateElementHeights() {
                 const elements = wrapper.querySelectorAll(selector);
                 // Filter out elements with display: none
                 const visibleElements = Array.from(elements).filter(el => getComputedStyle(el).display !== 'none');
-                applyEqualHeight(visibleElements, 3);
+                applyEqualHeight(visibleElements, 2);
             });
         }
     });
