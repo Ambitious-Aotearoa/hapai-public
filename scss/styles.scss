@@ -396,7 +396,7 @@ $ch7: 1rem;
     &.--light-text{
         font-weight: 300;
     }
-    p{
+    p, a{
         font-size:inherit
     }
 }
@@ -514,6 +514,10 @@ $ch7: 1rem;
     p, a:not(.btn), li, input, label, .form-control, button .btn{
         font-size:calc($font-size-base*1.2);
     }
+    [class*="cust-font"] a{
+        font-size:inherit
+    }
+    
 }
 
 
@@ -667,6 +671,31 @@ button{
             transition: all .2s ease-in-out;
             fill: $success;
             margin-left: 0;
+            &.other{
+                path{
+                    stroke:$success;
+                }
+            }
+        }
+    }
+
+
+    &.--yellow{
+        svg{
+            circle{
+                fill: $custom-accent-yellow;
+            }
+        }
+
+        &:hover{
+            circle{
+                fill: $secondary;
+            }
+            svg{
+                transition: all .2s ease-in-out;
+                fill: $dark;
+            }
+
         }
     }
 
@@ -677,22 +706,6 @@ button{
             &.other{
                 stroke-width: 3;
             }
-        }
-    }
-    &.--yellow{
-        circle{
-            fill: $custom-accent-yellow;
-        }
-        &:hover{
-            circle{
-                fill: $secondary;
-            }
-            svg{
-                transition: all .2s ease-in-out;
-                fill: $dark;
-
-            }
-
         }
     }
 }
@@ -1442,6 +1455,10 @@ a:hover{
                 transition: all .2s ease-in-out;
                 transform: scale(1);
             }
+            .btn{
+                border-top-left-radius: 0;
+                transition: all .2s ease-in-out;
+            }
         }
     }
 }
@@ -1589,22 +1606,22 @@ a:hover{
 .middle-space{
     @include media-breakpoint-up(md){
         .col:first-of-type{
-            > div{
+            .ex-pad{
                 padding-right: 30px;
             }
         }
         .col:last-of-type{
-            > div{padding-left: 30px;}
+            .ex-pad{padding-left: 30px;}
         }
     }
     @include media-breakpoint-up(highRes){
         .col:first-of-type{
-            > div{
+            .ex-pad{
                 padding-right: 60px;
             }
         }
         .col:last-of-type{
-            > div{padding-left: 60px;}
+            .ex-pad{padding-left: 60px;}
         }
     }
 }
