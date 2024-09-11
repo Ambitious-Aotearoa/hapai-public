@@ -679,6 +679,22 @@ button{
             }
         }
     }
+    &.--yellow{
+        circle{
+            fill: $custom-accent-yellow;
+        }
+        &:hover{
+            circle{
+                fill: $secondary;
+            }
+            svg{
+                transition: all .2s ease-in-out;
+                fill: $dark;
+
+            }
+
+        }
+    }
 }
 
 
@@ -1530,7 +1546,7 @@ a:hover{
         @include media-breakpoint-up(xl){
             .col:not(.image-cnr){
                 div{
-                    max-width:70%
+                    max-width:100%
                 }
             }
         }
