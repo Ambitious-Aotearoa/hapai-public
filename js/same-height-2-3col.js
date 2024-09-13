@@ -1,5 +1,5 @@
 // Constants for breakpoints
-const DESKTOP_WIDTH = 1366;
+const DESKTOP_WIDTH = 1024;
 const TABLET_WIDTH = 768;
 
 // Common selectors to target elements
@@ -12,11 +12,11 @@ const selectors = [
 // Main function to update element heights based on screen width
 function updateElementHeights() {
     const width = window.innerWidth;
-    const wrappers = document.querySelectorAll('.same-height-wrapper-col');
+    const wrappers = document.querySelectorAll('.same-height-wrapper-2-3col');
 
     wrappers.forEach((wrapper) => {
         if (width >= DESKTOP_WIDTH) {
-            adjustHeights(wrapper, selectors, 4); // 4 columns for desktop
+            adjustHeights(wrapper, selectors, 3); // 3 columns for desktop
         } else if (width >= TABLET_WIDTH) {
             adjustHeights(wrapper, selectors, 2); // 2 columns for tablet
         } else {
