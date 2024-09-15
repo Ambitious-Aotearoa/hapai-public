@@ -1,23 +1,59 @@
-//from 768 2 close, from 1366 4 cols
 // Constants for breakpoints
-const DESKTOP_WIDTH = 1366
+const DESKTOP_LG_WIDTH = 1366
+const DESKTOP_WIDTH = 1024
 const TABLET_WIDTH = 768
 
 // Common selectors to target elements
-const selectors = ['.same-height h3', '.same-height h2', '.same-height .add-height']
+const selectors = ['.same-height h3', '.same-height h2', '.same-height .add-height', '.add-height-other']
 
 // Main function to update element heights based on screen width
 function updateElementHeights() {
   const width = window.innerWidth
-  const wrappers = document.querySelectorAll('.same-height-wrapper-4col')
 
-  wrappers.forEach((wrapper) => {
+  // Helper function to apply the correct column layout
+  function handleWrapper(wrapper, desktopCols, tabletCols) {
     if (width >= DESKTOP_WIDTH) {
-      adjustHeights(wrapper, selectors, 4) // 4 columns for desktop
+      adjustHeights(wrapper, selectors, desktopCols) // Apply desktop columns
     } else if (width >= TABLET_WIDTH) {
-      adjustHeights(wrapper, selectors, 2) // 2 columns for tablet
+      adjustHeights(wrapper, selectors, tabletCols) // Apply tablet columns
     } else {
       resetElementHeights(wrapper, selectors.join(', ')) // Reset for mobile
+    }
+  }
+
+  // For 2 columns on tablet and 3 columns on desktop
+  const wrappers2To3 = document.querySelectorAll('.same-height-wrapper-2-3col')
+  wrappers2To3.forEach((wrapper) => handleWrapper(wrapper, 3, 2))
+
+  // For 2 columns on tablet and 4 columns on large desktop
+  const wrappers4 = document.querySelectorAll('.same-height-wrapper-4col')
+  wrappers4.forEach((wrapper) => {
+    if (width >= DESKTOP_LG_WIDTH) {
+      adjustHeights(wrapper, selectors, 4)
+    } else if (width >= TABLET_WIDTH) {
+      adjustHeights(wrapper, selectors, 2)
+    } else {
+      resetElementHeights(wrapper, selectors.join(', '))
+    }
+  })
+
+  // For 2 columns only on desktop (1024px and up)
+  const wrappers2 = document.querySelectorAll('.same-height-wrapper-2col')
+  wrappers2.forEach((wrapper) => {
+    if (width >= DESKTOP_WIDTH) {
+      adjustHeights(wrapper, selectors, 2)
+    } else {
+      resetElementHeights(wrapper, selectors.join(', '))
+    }
+  })
+
+  // For 3 columns on desktop
+  const wrappers3 = document.querySelectorAll('.same-height-wrapper')
+  wrappers3.forEach((wrapper) => {
+    if (width >= DESKTOP_WIDTH) {
+      adjustHeights(wrapper, selectors, 3)
+    } else {
+      resetElementHeights(wrapper, selectors.join(', '))
     }
   })
 }
@@ -61,7 +97,6 @@ function applyEqualHeight(elements, groupSize) {
   }
 }
 
+// Run on page load and window resize
 updateElementHeights()
-// Run on page load and resize
-
 window.addEventListener('resize', updateElementHeights)
