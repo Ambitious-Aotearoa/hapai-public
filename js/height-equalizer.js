@@ -23,8 +23,15 @@ function updateElementHeights() {
 
   // For 2 columns on tablet and 3 columns on desktop
   const wrappers2To3 = document.querySelectorAll('.same-height-wrapper-2-3col')
-  wrappers2To3.forEach((wrapper) => handleWrapper(wrapper, 3, 2))
-
+  wrappers2To3.forEach((wrapper) => {
+    if (width >= DESKTOP_LG_WIDTH) {
+      adjustHeights(wrapper, selectors, 3)
+    } else if (width >= TABLET_WIDTH) {
+      adjustHeights(wrapper, selectors, 2)
+    } else {
+      resetElementHeights(wrapper, selectors.join(', '))
+    }
+  })
   // For 2 columns on tablet and 4 columns on large desktop
   const wrappers4 = document.querySelectorAll('.same-height-wrapper-4col')
   wrappers4.forEach((wrapper) => {
