@@ -270,6 +270,13 @@ $navbar-toggler-padding-x:0;
 .row{
     margin:0;
 
+
+}
+
+.col{
+    div{
+        width: 100%;
+    }
 }
 
 a{
@@ -1071,6 +1078,9 @@ a:hover{
                 }
             }
         }
+        .side-buttons div{
+            border-color: $primary;
+        }
     }
     &.--dark-green{
         background-color: $custom-dark;
@@ -1411,6 +1421,16 @@ a:hover{
             &:focus{
                 box-shadow: none;
             }
+        }
+    }
+    
+    &.full-accordion{
+        .accordion-item{
+            border-top-width: 0;
+            
+        }
+        .list-unstyled.border-style li{
+            border-color: $custom-dark-grey
         }
     }
 }
