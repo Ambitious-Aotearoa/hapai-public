@@ -11,17 +11,17 @@ document.querySelectorAll('[data-bs-toggle="popover"]')
   })
 
 
-//   $(document).ready(function() {
-//     // When the collapse menu is shown
-//     $('.navbar-collapse').on('shown.bs.collapse', function() {
-//       $('.navbar').addClass('nav-change');
-//     });
+  $(document).ready(function() {
+    // When the collapse menu is shown
+    $('.navbar-collapse').on('shown.bs.collapse', function() {
+      $('.navbar').addClass('nav-change');
+    });
   
-//     // When the collapse menu is hidden
-//     $('.navbar-collapse').on('hidden.bs.collapse', function() {
-//       $('.navbar').removeClass('nav-change');
-//     });
-//   });
+    // When the collapse menu is hidden
+    $('.navbar-collapse').on('hidden.bs.collapse', function() {
+      $('.navbar').removeClass('nav-change');
+    });
+  });
   
 
   
