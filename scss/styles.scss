@@ -1871,7 +1871,6 @@ footer{
         transition: all .2s ease-in-out;
         border-radius:1.25rem;
         font-size: .85rem;
-        @include responsive-input(.9rem);
         font-family: $button-font;
         &:hover,
         &:focus-visible{
@@ -1882,7 +1881,6 @@ footer{
         @include media-breakpoint-up(highRes){
             border-radius:2.5rem;
             font-size: 1.7rem;
-            @include responsive-input(1.4rem) 
         }
     }
 
