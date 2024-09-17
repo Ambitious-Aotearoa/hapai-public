@@ -207,21 +207,12 @@ $btn-font-weight:500;
 @import "bootstrap/scss/containers";
 @import "bootstrap/scss/grid";
 
-
-
-// @import "bootstrap/scss/tables";
-
-
-
 @import "bootstrap/scss/forms";
-
-
 
 @import "bootstrap/scss/buttons";
 @import "bootstrap/scss/transitions";
 $dropdown-link-hover-bg:$primary;
 @import "bootstrap/scss/dropdown";
-// @import "bootstrap/scss/button-group";
 
 $navbar-light-active-color:$secondary;
 $navbar-light-toggler-border-color:$light;
@@ -234,10 +225,7 @@ $navbar-toggler-padding-x:0;
 // @import "bootstrap/scss/card";
 // @import "bootstrap/scss/breadcrumb";
 
-
-
 @import "bootstrap/scss/accordion";
-
 
 
 // @import "bootstrap/scss/pagination";
@@ -247,6 +235,8 @@ $navbar-toggler-padding-x:0;
 // @import "bootstrap/scss/list-group";
 @import "bootstrap/scss/close";
 // @import "bootstrap/scss/toasts";
+$modal-content-border-radius:0;
+
 @import "bootstrap/scss/modal"; // Requires transitions
 // @import "bootstrap/scss/tooltip";
 @import "bootstrap/scss/popover";
@@ -265,19 +255,18 @@ $navbar-toggler-padding-x:0;
 
 
 
+
+
 ///general custom
 
 .row{
     margin:0;
-
-
 }
 
-.col{
-    div{
-        width: 100%;
-    }
+.relative{
+    position: relative;
 }
+
 
 a{
     text-decoration: none;  
@@ -301,6 +290,9 @@ p {
       }
     }
   }
+
+
+
   
 
 
@@ -1185,6 +1177,9 @@ a:hover{
                 fill:$custom-primary
             }
         }
+        .side-buttons div{
+            border-color: $light;
+        }
     }
 
     &.--blue{
@@ -1213,6 +1208,10 @@ a:hover{
     }
 }
 
+
+
+
+
 // filter for different sections
 // faq page and all filtered items
 .filter-wrapper{
@@ -1233,15 +1232,47 @@ a:hover{
 }
 
 
+// .filter-wrapper-other{
+//     .filter-item{
+//         display:none;
+//         &.show{
+//             display:flex
+//         }
+//     }
+// }
+
 .filter-wrapper-other{
-    .filter-item{
-        display:none;
-        &.show{
-            display:flex
+    position: relative;
+    
+    .filter-item {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateY(20px);  /* Starting point for transition */
+        transition: opacity 0.4s ease, transform 0.4s ease, visibility 0s 0.4s;  /* Delays visibility change after the transition ends */
+        
+        &.show {
+            position: relative;
+            visibility: visible;
+            display: flex;
+            opacity: 1;
+            transform: translateY(0);  /* End point for transition */
+            transition: opacity 0.4s ease, transform 0.4s ease;  /* Transition in sync with opacity */
+            
+            &.img-fit {
+                position: absolute;
+                top: 0;
+                left: 0;
+                transform: scale(1);  /* Add scale effect for images */
+                transition: opacity 0.4s ease, transform 0.4s ease, visibility 0s;
+            }
         }
     }
-
 }
+
+
 
 
 
@@ -1330,7 +1361,6 @@ a:hover{
 
 
 
-// faq filter/accordion
 
 
 .content-filter{
@@ -1342,6 +1372,10 @@ a:hover{
                 border-bottom-width: 0;
             }
         }
+        .btn,
+        .btn.active{
+            transition: all .2s ease-in-out;
+          }
    }
 
    &.top-buttons{
@@ -1680,13 +1714,13 @@ a:hover{
 
 .who-slider{
     .swiper-slide{
-        img,h2,p{
+        img,h2,h3,p{
            opacity: .5;
         }
     }
 
     .swiper-slide.swiper-slide-active{
-        img,h2,p{
+        img,h2,h3,p{
             opacity: 1;
         }
     }
@@ -1938,7 +1972,35 @@ nav{
 
 
 
+#team{
+    .modal-header{
+        border-bottom-width: 0;
+    }
+    .modal-content{
+        width: 75% ;
+        margin-left: auto;
+        margin-right:0;
+    }
 
+    .bg-popout{
+        background-image: url('/images/background-pop-out.svg');
+        background-position: 0 100%;
+        background-repeat: no-repeat;
+        background-repeat: repeat-x;
+        background-size: contain;
+        height: 10vw;
+    }
+
+    .filter-item{
+        transition: opacity .2s ease-in-out;
+        &:hover{
+            opacity: 0.8;
+            transition: opacity .2s ease-in-out;
+        }
+    }
+
+
+}
 
 
 // @mixin responsive-input($size) {
