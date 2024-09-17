@@ -220,6 +220,7 @@ $navbar-toggler-border-radius:0;
 $navbar-toggler-focus-width: 0;
 $navbar-toggler-padding-y:0;
 $navbar-toggler-padding-x:0;
+
 @import "bootstrap/scss/nav";
 @import "bootstrap/scss/navbar"; // Requires nav
 // @import "bootstrap/scss/card";
@@ -1824,151 +1825,6 @@ a:hover{
 
 
 
-nav{
-    .navbar-collapse.bg-primary{
-        a{
-            color: #526D52;
-            &.dropdown-item{
-                color:$secondary;
-                &:hover{
-                    color: #526D52;
-                }
-            }
-        }
-        p{
-            color: $secondary;
-        }
-    }
-
-    .navbar-nav{
-        a:hover{
-            color: $secondary;
-        }
-    }
-
-    .dropdown-menu{
-        border-width: 0;
-        border-radius: 0;
-        background-color: transparent;
-    }
-
-    .dropdown-toggle:after{
-        display: none;
-    }
-    .contact-nav{
-        opacity: 0;
-    }
-    .collapsing {
-        position: relative;
-        height: 0;
-        overflow: hidden;
-        transition: height 0s ease;
-    }
-
-    .navbar-toggler{
-        border-width: 0;
-    }
-
-
-    .navbar-collapse.show{
-        min-height: calc(100vh - 80px);
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: flex-start;
-        .contact-nav{
-            opacity: 1;
-        }
-    }
-
-    @include media-breakpoint-up(md){
-        .dropdown{
-            position: unset;
-        }
-        .dropdown-menu.show{
-            position: absolute;
-        }
-    
-        .dropdown-menu[data-bs-popper]{
-            top: unset;
-            bottom: 60px;
-            left: 39%;
-            padding: 0;
-            margin:0
-        }
-        .contact-nav{
-            text-align: right;
-        }
-        .navbar-collapse.show{
-            flex-direction: row;
-            justify-content: unset;
-            align-items: flex-end;
-            transition: all 0s;
-        }
-        
-    }
-    @include media-breakpoint-up(lg){
-        .dropdown-menu[data-bs-popper]{
-
-            bottom: 7vw;
-
-        }
-    }
-}
-
-
-
-
-
-#burger{
-    width: 20px;
-    stroke:$primary;
-    @include media-breakpoint-up(highRes){
-        width: 40px;
-    }
-}
-
-#logo{
-    fill:$primary;
-    width: 200px;
-    @include media-breakpoint-up(highRes){
-        width: 400px;
-    }
-}
-
-.nav-change {
-    .bg-change{
-        background-color: $primary;
-
-        #logo{
-            fill:$light;
-        }
-        #burger{
-            stroke:$light;
-            overflow: visible;
-        }
-    
-        // .navbar-toggler{
-        //     .hide-me{
-        //         display: none;
-        //     }
-
-        //     .line-top{
-        //         transform-origin: 0% 100%;
-        //         transform: rotate(45deg)
-        //     }
-
-        //     .line-bottom{
-        //         transform-origin: 0% 100%;
-        //         transform: rotate(-45deg)
-        //     }
-        
-        // }
-    }
-    
-
-}
-
 
 
 
@@ -2003,106 +1859,293 @@ nav{
 }
 
 
-// @mixin responsive-input($size) {
-//     padding:calc($size*1.2) calc($size*2);
-// }
 
 /////footer element, repeated all pages
-// footer{
-//     p{
-//         text-wrap: wrap;
-//     }
-//     input{
-//         text-transform: uppercase;
-//         border-width:0;
-//         transition: all .2s ease-in-out;
-//         border-radius:1.25rem;
-//         font-size: .85rem;
-//         @include responsive-input(.9rem);
-//         font-family: $button-font;
-//         &:hover,
-//         &:focus-visible{
-//             transition: all .2s ease-in-out;
-//             border-top-left-radius: 0;
-//             outline-color: $custom-accent-green;
-//         }
-//         @include media-breakpoint-up(highRes){
-//             border-radius:2.5rem;
-//             font-size: 1.7rem;
-//             @include responsive-input(1.4rem) 
-//         }
-//     }
+footer{
+    p{
+        text-wrap: wrap;
+    }
+    input{
+        text-transform: uppercase;
+        border-width:0;
+        transition: all .2s ease-in-out;
+        border-radius:1.25rem;
+        font-size: .85rem;
+        @include responsive-input(.9rem);
+        font-family: $button-font;
+        &:hover,
+        &:focus-visible{
+            transition: all .2s ease-in-out;
+            border-top-left-radius: 0;
+            outline-color: $custom-accent-green;
+        }
+        @include media-breakpoint-up(highRes){
+            border-radius:2.5rem;
+            font-size: 1.7rem;
+            @include responsive-input(1.4rem) 
+        }
+    }
 
-//     ul{
-//         list-style: none;
-//     }
+    ul{
+        list-style: none;
+    }
 
-//     .footer-nav{
-//         li{
-//             font-family: $button-font;
-//             a{
-//                 color: $custom-neutral;
-//                 text-transform: uppercase;
-//                 line-height: 1.5em;
-//                 text-wrap: nowrap;
-//                 font-size:15px;
-//                 @include media-breakpoint-up(highRes){
-//                     font-size:2rem
-//                 }
-//             }
-//         }
-//     }
+    .footer-nav{
+        li{
+            font-family: $button-font;
+            a{
+                color: $custom-neutral;
+                text-transform: uppercase;
+                line-height: 1.5em;
+                text-wrap: nowrap;
+                font-size:15px;
+                @include media-breakpoint-up(highRes){
+                    font-size:2rem
+                }
+            }
+        }
+    }
 
 
-//     svg.bi{
-//         fill:$custom-neutral;
-//         width: 20px;
-//         height: 20px;
-//         margin-bottom: 5px;
-//         @include media-breakpoint-up(highRes){
-//             width: 40px;
-//             height: 40px;
-//         }
-//     }
+    svg.bi{
+        fill:$custom-neutral;
+        width: 20px;
+        height: 20px;
+        margin-bottom: 5px;
+        @include media-breakpoint-up(highRes){
+            width: 40px;
+            height: 40px;
+        }
+    }
 
-//     .footer-banner{
-//         width: 100%;
-//         display:none;
-//         @include media-breakpoint-up(md){
-//             display: block;
-//         }
-//     }
+    .footer-banner{
+        width: 100%;
+        display:none;
+        @include media-breakpoint-up(md){
+            display: block;
+        }
+    }
 
-//     .footer-nav-wrapper{
-//         background-image: url(../images/footer-pattern.svg);
-//         background-size: auto 100%;
-//         background-position: 100% 100%;
-//         background-repeat: no-repeat;
-//         @include media-breakpoint-up(md){
-//             background-size: 0 0;
-//         }
-//     }
+    .footer-nav-wrapper{
+        background-image: url(../images/footer-pattern.svg);
+        background-size: auto 100%;
+        background-position: 100% 100%;
+        background-repeat: no-repeat;
+        @include media-breakpoint-up(md){
+            background-size: 0 0;
+        }
+    }
 
-// }
+}
 
-// .guide{
-//     position: relative;
-//     &:after{
-//         content: '';
-//         position: absolute;
-//         width: 1px;
-//         height:5000vh;
-//         background-color: red;
-//         top: 0;
-//         left: calc(33.333%)
-//     }
-//     &:before{
-//         content: '';
-//         position: absolute;
-//         width: 1px;
-//         height:5000vh;
-//         background-color: blue;
-//         top: 0;
-//         left: calc(33.333% + 16px)
-//     }
-// }
+
+
+
+
+
+
+///nav dropdown and content styling
+nav{
+    .navbar-collapse.bg-primary{
+        a{
+            color: #526D52;
+            &.dropdown-item{
+                color:$secondary;
+                &:hover{
+                    color: #526D52;
+                }
+            }
+        }
+        p{
+            color: $secondary;
+        }
+    }
+
+    .navbar-nav{
+        a:hover{
+            color: $secondary;
+        }
+    }
+
+    .dropdown-menu{
+        border-width: 0;
+        border-radius: 0;
+        background-color: transparent;
+    }
+
+    .dropdown-toggle:after{
+        display: none;
+    }
+
+    .navbar-toggler{
+        border-width: 0;
+    }
+
+    .nav-item{
+        .dropdown-item{
+            font-size: 1.5rem;
+        }
+    }
+
+
+    @include media-breakpoint-up(md){
+        .nav-item{
+            padding-top: .5rem;
+            .dropdown-item{
+                padding-top: .5em;
+            }
+        }
+        .dropdown{
+            position: unset;
+        }
+        .dropdown-menu.show{
+            position: absolute;
+        }
+    
+        .dropdown-menu[data-bs-popper]{
+            top: unset;
+            bottom: 0;
+            left: 40%;
+            padding: 0;
+            margin:0
+        }
+        .contact-nav{
+            text-align: right;
+        }
+        
+    }
+
+    @include media-breakpoint-up(md){
+        .dropdown-menu[data-bs-popper]{
+            bottom: 4vw;
+        }
+    }
+
+    @include media-breakpoint-up(lg){
+        .nav-item{
+            .dropdown-item{
+                padding-top: 1em;
+            }
+        }
+    }
+
+    @include media-breakpoint-up(highRes){
+        .nav-item{
+            padding-top: 5rem;
+            .dropdown-item{
+                font-size: 4rem;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+//logo, hamburger and top background color changes on hamburger toggle
+.navbar{
+    .navbar-nav,
+    .contact-nav{
+        opacity: 0;
+    }
+    .collapsing {
+        position: relative;
+        height: 0;
+        overflow: hidden;
+        transition: height .3s ease;
+    }
+    .navbar-collapse.show{
+        min-height: calc(100vh - 80px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+       .navbar-nav,
+        .contact-nav{
+            transition: opacity .1s ease;
+            opacity: 1;
+        }
+    }
+    .bg-change{
+        background-color: $light;
+    }
+    
+    #logo{
+        fill:$primary;
+        width: 200px;
+        @include media-breakpoint-up(highRes){
+            width: 400px;
+        }
+    }
+
+    #burger{
+        width: 20px;
+        height: 15px;
+        line{
+            stroke:$primary;
+            transition: all 0.5s ease-in-out;
+        }
+        .hide-me {
+            opacity: 1;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .line-top,
+        .line-bottom {
+            transform-origin: 50% 50%;
+        }
+
+        &.cross{
+            .hide-me {
+                opacity: 0;
+              }
+              .line-top {
+                transform: rotate(45deg) translateY(7px);
+              }
+              .line-bottom {
+                transform: rotate(-45deg) translateY(-7px);
+              }
+        }
+    }
+
+
+    .bg-change, #logo{
+        transition: all .4s ease-in-out;
+    }
+
+    &.nav-change {
+        .bg-change{
+            background-color: $primary;
+            transition: background-color .2s ease-in-out;
+            #logo{
+                fill:$light;
+                transition:fill .2s ease-in-out;
+            }
+            #burger{
+                line{
+                    stroke:$light;
+                }
+                overflow: visible;
+            }
+        }
+    }
+
+    @include media-breakpoint-up(md){
+        .navbar-collapse.show{
+            flex-direction: row;
+            justify-content: unset;
+            align-items: flex-end;
+        }
+    }
+
+    @include media-breakpoint-up(highRes){
+        .navbar-collapse.show{
+            min-height: calc(100vh - 120px);
+        }
+    }
+    
+}
