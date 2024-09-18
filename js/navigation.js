@@ -21,6 +21,8 @@ function getNavHeight(){
     var navHeight = $('nav').outerHeight()
     console.log(navHeight)
     $('.hero').css('padding-top', navHeight)
+    // $('.modal:not(#cartSummary)').css('padding-top', navHeight)
+
 }
 getNavHeight()
 window.addEventListener('resize', getNavHeight)
