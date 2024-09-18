@@ -8,11 +8,19 @@ $(document).ready(function() {
     $('.navbar-collapse').on('hide.bs.collapse', function() {
       $('.navbar').removeClass('nav-change');
     });
-  });
+});
   
 
-  const burger = document.getElementById('burger');
-
+const burger = document.getElementById('burger');
 burger.addEventListener('click', function() {
   this.classList.toggle('cross');
 });
+
+
+function getNavHeight(){
+    var navHeight = $('nav').outerHeight()
+    console.log(navHeight)
+    $('.hero').css('padding-top', navHeight)
+}
+getNavHeight()
+window.addEventListener('resize', getNavHeight)
