@@ -576,6 +576,8 @@ $ch7: 1rem;
 }
 
 
+
+
 @mixin thin-btn($size) {
     padding:calc($size*.6) calc($size*1.07);
     padding-bottom:calc($size*.4);
@@ -605,11 +607,16 @@ $ch7: 1rem;
             @include thin-btn(2rem); 
         }
     }
+
     &:hover{
         border-top-left-radius: 0;
         transition: all .2s ease-in-out;
     }
 }
+
+
+
+
 
 .button-group{
     z-index: 1;
@@ -1803,17 +1810,16 @@ a:hover{
 }
 
 
-//who we are page
+//modals
 #team{
     .modal-header{
         border-bottom-width: 0;
     }
     .modal-content{
-        width: 75% ;
+        width: 95% ;
         margin-left: auto;
         margin-right:0;
     }
-
     .bg-popout{
         background-image: url('/images/background-pop-out.svg');
         background-position: 0 100%;
@@ -1830,7 +1836,16 @@ a:hover{
             transition: opacity .2s ease-in-out;
         }
     }
+    @include media-breakpoint-up(md){
+        .modal-content{
+            width: 75% ;
+        }
+    }
 }
+
+
+
+
 
 
 
@@ -1947,11 +1962,11 @@ footer{
 }
 
 
-
+////---------NAVIGATION AND MODALS
 
 nav{
     .navbar-collapse.bg-primary{
-        a{
+        a:not(.btn-light){
             color: #526D52;
             &.dropdown-item{
                 color:$secondary;
@@ -2124,8 +2139,18 @@ nav{
     }
 
 
-    .bg-change, #logo{
+    .bg-change, #logo,  #basket{
         transition: all .4s ease-in-out;
+    }
+
+    #basket{
+        width: 22px;
+        stroke:$primary;
+        stroke-width: 1.5;
+        fill:none;
+        @include media-breakpoint-up(highRes){
+            width: 44px;
+        }
     }
 
 
@@ -2133,9 +2158,15 @@ nav{
         .bg-change{
             background-color: $primary;
             transition: background-color .2s ease-in-out;
+            #main-btn{
+                background-color: $light;
+                color: $primary;
+            }
+            #basket{
+                stroke:$light;
+            }
             #logo{
                 fill:$light;
-                transition:fill .2s ease-in-out;
             }
             #burger{
                 line{
@@ -2174,6 +2205,77 @@ nav{
                     stroke:$light;
                 }
             }
+        }
+    }
+}
+
+@mixin counter-btn($size) {
+    padding:calc($size*0.8) calc($size*1.2);
+    padding-bottom:$size;
+    margin-right:calc($size*0.5);
+    margin-top:calc($size*2.2);
+    font-size:calc($size*1.2);
+    border-radius:calc($size*1.25);
+}
+
+#cartSummary{
+    .modal-content{
+        width: 95% ;
+        margin-left: auto;
+        margin-right:0;
+    }
+    .modal-header{
+        border-bottom-width: 0;
+    }
+
+    .cart-item{
+        border-bottom: 1px solid $primary;
+        span{
+            font-family: $button-font;
+            font-weight: 500;
+        }
+        &:last-of-type{
+           border-bottom:none
+        }
+
+    }
+
+    .cart-counter{
+        border:1px solid $primary;
+        font-family:$body-font;
+        &.bg-primary{
+            color: $light;
+        }
+        svg{
+            width: 10px;
+            height: 10px;
+            fill: none;
+            stroke: $light;
+            stroke-width: 1.5
+        }
+        @include counter-btn(1rem);
+        @include media-breakpoint-up(highRes){
+            @include counter-btn(2rem);
+            svg{
+                width: 40px;
+                height: 40px;
+            }
+        }
+    }
+    @include media-breakpoint-up(md){
+        .modal-content{
+            width: 50% ;
+        }
+    }
+    @include media-breakpoint-up(lg){
+        .modal-content{
+            width: 30% ;
+        }
+    }
+
+    @include media-breakpoint-up(highRes){
+        .btn-close{
+            background-size:2em;
         }
     }
 }
