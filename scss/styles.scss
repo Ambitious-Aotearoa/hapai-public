@@ -833,8 +833,6 @@ a:hover{
 }
 
 .gallery-wrapper{
-
-
     .gallery-image{
         position: relative;
         overflow: hidden;
@@ -1039,6 +1037,7 @@ a:hover{
         stroke:$light;
     }
     &:hover{
+        .btn,
         button{
             transition: all .2s ease-in-out;
             border-top-left-radius: 0;       
@@ -1198,9 +1197,7 @@ a:hover{
 }
 
 
-
-
-
+//padding options
 .alt-pad{
     @include media-breakpoint-up(md){
         .col:nth-of-type(2n){
@@ -1208,8 +1205,28 @@ a:hover{
         }
     }
 }
-
-
+.middle-space{
+    @include media-breakpoint-up(md){
+        .col:first-of-type{
+            .ex-pad{
+                padding-right: 30px;
+            }
+        }
+        .col:last-of-type{
+            .ex-pad{padding-left: 30px;}
+        }
+    }
+    @include media-breakpoint-up(highRes){
+        .col:first-of-type{
+            .ex-pad{
+                padding-right: 60px;
+            }
+        }
+        .col:last-of-type{
+            .ex-pad{padding-left: 60px;}
+        }
+    }
+}
 
 
 
@@ -1232,15 +1249,6 @@ a:hover{
     }
 }
 
-
-// .filter-wrapper-other{
-//     .filter-item{
-//         display:none;
-//         &.show{
-//             display:flex
-//         }
-//     }
-// }
 
 .filter-wrapper-other{
     position: relative;
@@ -1272,10 +1280,6 @@ a:hover{
         }
     }
 }
-
-
-
-
 
 
 .same-height-wrapper-filter .filter-wrapper{
@@ -1729,29 +1733,6 @@ a:hover{
 
 
 
-.middle-space{
-    @include media-breakpoint-up(md){
-        .col:first-of-type{
-            .ex-pad{
-                padding-right: 30px;
-            }
-        }
-        .col:last-of-type{
-            .ex-pad{padding-left: 30px;}
-        }
-    }
-    @include media-breakpoint-up(highRes){
-        .col:first-of-type{
-            .ex-pad{
-                padding-right: 60px;
-            }
-        }
-        .col:last-of-type{
-            .ex-pad{padding-left: 60px;}
-        }
-    }
-}
-
 
 
 .home-page,
@@ -1822,12 +1803,7 @@ a:hover{
 }
 
 
-
-
-
-
-
-
+//who we are page
 #team{
     .modal-header{
         border-bottom-width: 0;
@@ -1854,9 +1830,27 @@ a:hover{
             transition: opacity .2s ease-in-out;
         }
     }
-
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1943,6 +1937,18 @@ footer{
 
 
 ///nav dropdown and content styling
+/// 
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+
+
+
 nav{
     .navbar-collapse.bg-primary{
         a{
@@ -2038,12 +2044,6 @@ nav{
 }
 
 
-
-
-
-
-
-
 //logo, hamburger and top background color changes on hamburger toggle
 .navbar{
     .navbar-nav,
@@ -2064,7 +2064,7 @@ nav{
         align-items: flex-start;
        .navbar-nav,
         .contact-nav{
-            transition: opacity .1s ease;
+            transition: opacity .01s ease;
             opacity: 1;
         }
     }
@@ -2108,12 +2108,26 @@ nav{
                 transform: rotate(-45deg) translateY(-7px);
               }
         }
+
+        @include media-breakpoint-up(highRes){
+            width: 40px;
+            height: 30px; 
+            &.cross{
+                  .line-top {
+                    transform: rotate(45deg) translateY(7px);
+                  }
+                  .line-bottom {
+                    transform: rotate(-45deg) translateY(-7px);
+                  }
+            }
+        }
     }
 
 
     .bg-change, #logo{
         transition: all .4s ease-in-out;
     }
+
 
     &.nav-change {
         .bg-change{
@@ -2146,4 +2160,20 @@ nav{
         }
     }
     
+}
+
+.primary-nav{
+    .navbar{
+        .bg-change{
+            background-color: $primary;
+            #logo{
+                fill:$light;
+            }
+            #burger{
+                line{
+                    stroke:$light;
+                }
+            }
+        }
+    }
 }
