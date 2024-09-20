@@ -2227,12 +2227,14 @@ nav{
 
 .primary-nav{
     .navbar{
+        #basket{
+            stroke:$light;
+        }
         .bg-change{
             background-color: $primary;
             #logo{
                 fill:$light;
             }
-            #basket,
             #burger{
                 line{
                     stroke:$light;
@@ -2255,7 +2257,25 @@ nav{
                 }
             }
         }
+        &.nav-change{
+            .bg-change{
+                background-color: $primary;
+                #logo{
+                    fill:$light;
+                }
+
+                #basket{
+                    stroke:$light;
+                }
+                #burger{
+                   line{
+                    stroke:$light;
+                   }
+                }
+            }
+        }
     }
+
 }
 
 
