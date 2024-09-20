@@ -666,34 +666,40 @@ button{
     }
 }
 
+.btn-share,
 .btn-linkedin{
     svg{
         width: 40px;
         height: 40px;
+    }
+    &:hover{
+        svg{
+            transition: all .2s ease-in-out;
+            margin-left: 0;
+        }
+    }
+
+
+    @include media-breakpoint-up(highRes){
+        svg{
+            width:80px;
+            height:80px;
+        }
+    }
+}
+
+.btn-linkedin{
+    svg{
         fill: $primary;
         stroke:none;
         circle{
             fill:$light;
         }
-        &.other{
-            path{
-                fill:none;
-                stroke:$primary;
-                stroke-width: 1.5;
-            }
-        }
     }
 
     &:hover{
         svg{
-            transition: all .2s ease-in-out;
             fill: $success;
-            margin-left: 0;
-            &.other{
-                path{
-                    stroke:$success;
-                }
-            }
         }
     }
 
@@ -710,22 +716,48 @@ button{
                 fill: $secondary;
             }
             svg{
-                transition: all .2s ease-in-out;
                 fill: $dark;
             }
-
         }
     }
 
-    @include media-breakpoint-up(highRes){
+}
+
+.btn-share{
+    svg{
+        stroke: $primary;
+        stroke-width: 1.5px;
+        fill:none;
+        circle{
+            fill:$light;
+            stroke:none;
+        }
+    }
+
+    &:hover{
         svg{
-            width:80px;
-            height:80px;
-            &.other{
-                stroke-width: 3;
+            stroke: $success;
+        }
+    }
+
+
+    &.--yellow{
+        svg{
+            circle{
+                fill: $custom-accent-yellow;
+            }
+        }
+
+        &:hover{
+            circle{
+                fill: $secondary;
+            }
+            svg{
+                stroke: $dark;
             }
         }
     }
+
 }
 
 
@@ -2278,4 +2310,88 @@ nav{
             background-size:2em;
         }
     }
+}
+.akoranga,
+.whanaungatanga,
+.kaitiakitanga{
+&.sm{
+    width: 100px;
+    height: 100px;
+    @include media-breakpoint-up(highRes){
+            width: 200px;
+            height: 200px;
+    }
+}
+}
+
+.kaitiakitanga{
+    .cls-1, .cls-2, .cls-3 {
+        fill: none;
+      }
+
+      .cls-2 {
+        stroke: #ecece6;
+        stroke-width: .8px;
+      }
+
+      .cls-2, .cls-3 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-3 {
+        stroke: #112424;
+        stroke-width: .6px;
+      }
+
+}
+
+
+.whanaungatanga{
+    .cls-1, .cls-2, .cls-3, .cls-4 {
+        fill: none;
+      }
+
+      .cls-2 {
+        stroke: #ecece6;
+        stroke-width: .8px;
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        stroke-miterlimit: 10;
+      }
+
+
+      .cls-3 {
+        stroke-width: .6px;
+      }
+
+      .cls-3, .cls-4 {
+        stroke: #112424;
+      }
+
+      .cls-4 {
+        stroke-width: .6px;
+      }
+
+}
+
+.akoranga{
+    .cls-1, .cls-2, .cls-3 {
+        fill: none;
+      }
+
+      .cls-2 {
+        stroke: #ecece6;
+        stroke-width: .8px;
+      }
+
+      .cls-2, .cls-3 {
+        stroke-miterlimit: 10;
+      }
+
+
+      .cls-3 {
+        stroke: #112424;
+        stroke-width: .6px;
+      }
 }
