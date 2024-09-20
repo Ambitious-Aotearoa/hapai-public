@@ -251,7 +251,7 @@ $modal-content-border-radius:0;
 
 @import "bootstrap/scss/utilities/api";
 // Custom styles
-@import "icon-list";
+// @import "icon-list";
 
 
 
@@ -2232,6 +2232,7 @@ nav{
             #logo{
                 fill:$light;
             }
+            #basket,
             #burger{
                 line{
                     stroke:$light;
@@ -2240,6 +2241,25 @@ nav{
         }
     }
 }
+
+.yellow-nav{
+    .navbar{
+        .bg-change{
+            background-color: $custom-accent-yellow;
+            #logo{
+                fill:$primary;
+            }
+            #burger{
+                line{
+                    stroke:$primary;
+                }
+            }
+        }
+    }
+}
+
+
+
 
 @mixin counter-btn($size) {
     padding:calc($size*0.8) calc($size*1.2);
@@ -2311,6 +2331,7 @@ nav{
         }
     }
 }
+
 .akoranga,
 .whanaungatanga,
 .kaitiakitanga{
