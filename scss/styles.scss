@@ -259,7 +259,9 @@ $modal-content-border-radius:0;
 
 
 ///general custom
-
+body{
+    position: relative;
+}
 .row{
     margin:0;
 }
@@ -2256,6 +2258,8 @@ nav{
     }
     }
 }
+
+
 
 .light-green-nav{
     .navbar{
