@@ -2248,34 +2248,26 @@ nav{
     .navbar{
         .bg-change{
             background-color: $custom-accent-yellow;
-            #logo{
-                fill:$primary;
-            }
-            #burger{
-                line{
-                    stroke:$primary;
-                }
-            }
         }
         &.nav-change{
             .bg-change{
                 background-color: $primary;
-                #logo{
-                    fill:$light;
-                }
-
-                #basket{
-                    stroke:$light;
-                }
-                #burger{
-                   line{
-                    stroke:$light;
-                   }
-                }
-            }
         }
     }
+    }
+}
 
+.light-green-nav{
+    .navbar{
+        .bg-change{
+            background-color: $secondary;
+        }
+        &.nav-change{
+            .bg-change{
+                background-color: $primary;
+        }
+    }
+    }
 }
 
 
