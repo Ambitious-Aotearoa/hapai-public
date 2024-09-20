@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" type="image/x-icon" href="images/favicon.svg" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="css/styles.css" />
+        <title>Hapai Public</title>
+    </head>
+    <body class="home-page">
+        <nav class="navbar navbar-expand-navBreak p-0 fixed-top">
+            <div class="container-fluid p-0">
+                <div class="d-flex flex-row justify-content-between p-1 px-md-2 px-highRes-4 w-100 bg-change">
+                    <a class="navbar-brand" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190 28" id="logo">
+                            <path
+                                d="M12.5071 12.0085C9.2502 13.069 6.19716 14.4901 3.23952 15.8597C2.12933 16.3749 1.06683 16.8686 0 17.3409V25.464C0.602803 25.2451 1.18826 25.0089 1.7607 24.7685C3.36095 24.0901 4.93518 23.356 6.45736 22.6476C9.3326 21.3123 12.0517 20.0501 14.8749 19.127C19.5195 17.6114 23.5397 17.4096 26.8356 18.5216V10.772C22.5422 9.89188 17.7328 10.2997 12.5071 12.0042V12.0085Z"
+                            />
+                            <path
+                                d="M12.5071 1.68294C9.2502 2.74341 6.19716 4.16452 3.23952 5.53412C2.12933 6.04932 1.06683 6.54306 0 7.01534V14.4043C1.06683 13.932 2.12933 13.4383 3.23952 12.9231C6.19282 11.5492 9.24587 10.1323 12.5071 9.07187C17.7371 7.3674 22.5422 6.95952 26.8356 7.83967V0.450733C22.5379 -0.429413 17.7328 -0.0215406 12.5071 1.68294Z"
+                            />
+                            <path d="M2.07728 3.08695C3.86401 2.25833 5.68977 1.41253 7.58491 0.626836V0H0V4.04867C0.715557 3.72238 1.42678 3.39178 2.07728 3.09125V3.08695Z" />
+                            <path d="M26.8359 25.4683V21.3123L25.9772 21.0203C24.867 20.6468 23.6224 20.4536 22.2737 20.4536C21.3239 20.4536 20.3135 20.5481 19.251 20.7327V25.464H26.8402L26.8359 25.4683Z" />
+                            <path
+                                d="M58.8493 21.9176H51.6156C51.8195 21.8876 53.1638 21.63 53.1638 18.6847V13.5154H44.794V18.6847C44.794 21.5742 46.0473 21.8919 46.2815 21.9176H39.0479C39.2517 21.8876 40.5917 21.63 40.5917 18.6847V5.92043C40.5917 3.12113 39.3081 2.74331 39.0479 2.6875H46.2815C46.0777 2.71755 44.794 3.03527 44.794 5.92043V10.8879H53.1638V5.92043C53.1638 3.09108 51.8802 2.74331 51.6156 2.6875H58.8493C58.6455 2.71755 57.3618 3.00521 57.3618 5.92043V18.6847C57.3618 21.5441 58.6151 21.8919 58.8493 21.9176Z"
+                            />
+                            <path
+                                d="M70.9528 22.5792C69.9337 22.4332 68.8799 21.5101 68.676 20.8189C67.9171 21.8278 66.1694 22.3473 64.5909 22.3473C62.171 22.3473 60.4189 20.9906 60.4189 18.8525C60.4189 16.5427 63.3939 14.6922 68.147 13.6833V12.5842C68.147 10.9097 67.5051 10.1026 66.2215 10.1026C64.734 10.1026 64.1225 10.884 64.1225 11.5452C64.1225 12.0088 64.3827 12.3523 64.7036 12.4983L61.0304 13.8851C60.8266 13.3956 60.6791 12.8461 60.6791 12.2664C60.6791 9.60883 63.6238 7.90435 66.5684 7.90435C70.4758 7.90435 71.8202 9.72475 71.8202 12.2664V17.6074C71.8202 19.342 72.6658 20.3209 74.1837 20.3209C74.2704 20.3209 74.4178 20.265 74.5046 20.265L70.9485 22.5749L70.9528 22.5792ZM61.9671 5.37125V3.63672H71.5036V5.37125H61.9671ZM68.1513 15.7098C65.1763 16.2851 63.923 17.3284 63.923 18.4532C63.923 19.3763 64.7123 20.0418 65.7878 20.0418C66.9544 20.0418 68.1513 19.2046 68.1513 17.8178V15.7098Z"
+                            />
+                            <path
+                                d="M81.5082 22.2613C80.4283 22.2613 79.4959 21.9737 79.0276 21.4799V24.1075C79.0276 26.7351 80.1638 27.0828 80.4587 27.1386H74.0707C74.2442 27.1086 75.324 26.851 75.324 24.1075V12.7901C75.324 10.3643 74.5087 9.96075 73.6891 9.96075H73.3682L78.7934 7.79688L78.8498 9.87488C79.7518 8.63409 81.3 7.9128 82.8439 7.9128C85.4416 7.9128 88.2084 9.93499 88.2084 14.6405C88.2084 19.3461 85.524 22.2613 81.4995 22.2613H81.5082ZM81.4778 10.7121C80.1074 10.7121 78.9712 11.9829 78.9712 13.8892V17.6717C78.9712 19.0284 79.7301 19.7497 81.1873 19.7497C83.1995 19.7497 84.249 17.8134 84.249 15.4477C84.249 12.7042 83.3469 10.7121 81.4778 10.7121Z"
+                            />
+                            <path
+                                d="M100.408 22.5791C99.3888 22.4332 98.3349 21.5101 98.1311 20.8188C97.3722 21.8278 95.6245 22.3473 94.0459 22.3473C91.6261 22.3473 89.874 20.9906 89.874 18.8525C89.874 16.5426 92.849 14.6922 97.602 13.6832V12.5841C97.602 10.9097 96.9602 10.1025 95.6765 10.1025C94.189 10.1025 93.5776 10.8839 93.5776 11.5451C93.5776 12.0088 93.8378 12.3523 94.1587 12.4982L90.4855 13.885C90.2817 13.3956 90.1342 12.846 90.1342 12.2664C90.1342 9.60878 93.0789 7.9043 96.0235 7.9043C99.9309 7.9043 101.275 9.7247 101.275 12.2664V17.6074C101.275 19.3419 102.121 20.3208 103.639 20.3208C103.725 20.3208 103.873 20.265 103.96 20.265L100.404 22.5748L100.408 22.5791ZM97.6064 15.7097C94.6314 16.285 93.3781 17.3283 93.3781 18.4532C93.3781 19.3763 94.1674 20.0417 95.2429 20.0417C96.4094 20.0417 97.6064 19.2045 97.6064 17.8178V15.7097Z"
+                            />
+                            <path
+                                d="M110.061 21.9179H103.413C103.617 21.8879 104.901 21.6303 104.901 18.8567V12.5927C104.901 10.3687 104.025 9.96509 103.209 9.96509H102.832L108.609 7.80122V18.861C108.609 21.5744 109.831 21.8922 110.066 21.9222L110.061 21.9179ZM106.501 6.41016C105.13 6.41016 104.224 5.45703 104.224 4.21624C104.224 2.97544 105.13 2.07812 106.501 2.07812C107.871 2.07812 108.778 3.00121 108.778 4.21624C108.778 5.43127 107.902 6.41016 106.501 6.41016Z"
+                            />
+                            <path
+                                d="M124.906 14.8421C123.974 14.8421 122.95 14.6961 122.313 14.4943V18.7105C122.313 21.5699 123.744 21.8876 124.004 21.9176H116.857C117.061 21.9176 118.375 21.66 118.375 18.7105V6.0063C118.375 3.14689 116.944 2.74331 116.653 2.6875H125.609C129.694 2.6875 131.997 5.46103 131.997 8.54799C131.997 12.0428 129.429 14.8421 124.91 14.8421H124.906ZM124.264 5.31506H122.308V11.841C122.863 12.0128 123.709 12.1587 124.468 12.1587C126.567 12.1587 127.734 10.7162 127.734 8.66391C127.734 6.72759 126.511 5.31506 124.264 5.31506Z"
+                            />
+                            <path
+                                d="M142.609 22.4633L142.578 20.3552C141.529 21.5702 139.777 22.3473 138.289 22.3473C135.692 22.3473 134.061 20.9048 134.061 17.5559V11.4335C134.061 8.66 132.457 8.40239 132.166 8.34229H137.795V16.7445C137.795 18.6507 138.524 19.5438 139.751 19.5438C141.269 19.5438 142.492 18.2171 142.492 16.5427V11.2317C142.492 8.63424 141.269 8.40239 141.035 8.34658H146.195V17.7019C146.195 19.9559 146.954 20.3294 147.769 20.3294H148.177L142.604 22.4676L142.609 22.4633Z"
+                            />
+                            <path
+                                d="M155.497 22.3214C152.696 22.3214 152.262 21.5142 151.269 21.5142C150.54 21.5142 149.985 21.862 149.577 22.3514V6.78785C149.577 4.07443 148.675 3.64079 147.799 3.64079H147.479L153.281 1.67871V9.64726C154.07 8.69412 155.497 7.91272 157.071 7.91272C159.782 7.91272 162.379 9.87481 162.379 14.5246C162.379 18.6247 159.639 22.3214 155.497 22.3214ZM155.792 10.7421C154.335 10.7421 153.255 12.0129 153.255 13.7732V17.7017C153.255 19.0283 154.07 19.7539 155.415 19.7539C157.457 19.7539 158.446 17.6759 158.446 15.2802C158.446 13.0262 157.544 10.7464 155.792 10.7464V10.7421Z"
+                            />
+                            <path
+                                d="M169.995 21.9176H163.373C163.576 21.8875 164.83 21.6299 164.83 18.8564V6.98944C164.83 4.24596 163.928 3.87244 163.021 3.87244H162.757L168.559 1.79443V18.8607C168.559 21.5183 169.696 21.8918 169.99 21.9219L169.995 21.9176Z"
+                            />
+                            <path
+                                d="M177.198 21.9179H170.55C170.754 21.8879 172.037 21.6303 172.037 18.8567V12.5927C172.037 10.3687 171.161 9.96509 170.346 9.96509H169.969L175.745 7.80122V18.861C175.745 21.5744 176.968 21.8922 177.202 21.9222L177.198 21.9179ZM173.638 6.41016C172.267 6.41016 171.361 5.45703 171.361 4.21624C171.361 2.97544 172.267 2.07812 173.638 2.07812C175.008 2.07812 175.914 3.00121 175.914 4.21624C175.914 5.43127 175.038 6.41016 173.638 6.41016Z"
+                            />
+                            <path
+                                d="M184.34 22.3513C180.316 22.3513 178.156 19.5219 178.156 15.7094C178.156 10.918 181.335 7.9126 184.982 7.9126C187.693 7.9126 189.592 9.75876 189.709 12.3863L186.153 13.8031C186.27 13.5155 186.357 13.1377 186.357 12.7341C186.357 11.4332 185.659 10.5402 184.431 10.5402C182.771 10.5402 181.721 12.3004 181.721 14.5244C181.721 17.1219 183.122 19.6336 185.776 19.6336C187.177 19.6336 188.781 18.9123 190.004 17.4697C189.423 20.5867 186.882 22.3513 184.345 22.3513H184.34Z"
+                            />
+                        </svg>
+                    </a>
+                    <div class="d-flex">
+                        <a id="main-btn" class="btn btn-primary d-none d-md-block m-0 me-1 me-highRes-2" role="button" href="/hapai-public/become-a-member">Join us</a>
+
+                        <svg viewBox="0 0 22 22" id="basket" class="me-1 me-highRes-2" role="button" data-bs-toggle="modal" data-bs-target="#cartSummary">
+                            <path
+                                d="M1 1H2.30616C2.55218 1 2.67519 1 2.77418 1.04524C2.86142 1.08511 2.93535 1.14922 2.98715 1.22995C3.04593 1.32154 3.06333 1.44332 3.09812 1.68686L3.57143 5M3.57143 5L4.62332 12.7314C4.75681 13.7125 4.82355 14.2031 5.0581 14.5723C5.26478 14.8977 5.56108 15.1564 5.91135 15.3174C6.30886 15.5 6.80394 15.5 7.79411 15.5H16.352C17.2945 15.5 17.7658 15.5 18.151 15.3304C18.4905 15.1809 18.7818 14.9398 18.9923 14.6342C19.2309 14.2876 19.3191 13.8247 19.4955 12.8988L20.8191 5.94969C20.8812 5.62381 20.9122 5.46087 20.8672 5.3335C20.8278 5.22177 20.7499 5.12768 20.6475 5.06802C20.5308 5 20.365 5 20.0332 5H3.57143ZM9 20C9 20.5523 8.55228 21 8 21C7.44772 21 7 20.5523 7 20C7 19.4477 7.44772 19 8 19C8.55228 19 9 19.4477 9 20ZM17 20C17 20.5523 16.5523 21 16 21C15.4477 21 15 20.5523 15 20C15 19.4477 15.4477 19 16 19C16.5523 19 17 19.4477 17 20Z"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                            <svg id="burger" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 16">
+                                <line class="line-top" y1="1.25" x2="22" y2="1.25" stroke-width="1.5" />
+                                <line class="hide-me" y1="8.25" x2="12" y2="8.25" stroke-width="1.5" />
+                                <line class="line-bottom" y1="15.25" x2="22" y2="15.25" stroke-width="1.5" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="collapse navbar-collapse custom-primary bg-primary py-0 px-1 px-lg-2 px-highRes-4" id="navbarNavDropdown">
+                    <ul class="navbar-nav col-md-9 mb-md-4vw">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle cust-font-2" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                About us
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                                <li><a class="dropdown-item" href="/hapai-public/who-we-are">Who we are</a></li>
+                                <li><a class="dropdown-item" href="/hapai-public/what-we-do">What we do</a></li>
+                                <li><a class="dropdown-item" href="/hapai-public/our-governance">Our governance</a></li>
+                                <li><a class="dropdown-item  " href="/hapai-public/our-identity">Our identity</a></li> 
+                                <li><a class="dropdown-item" href="/hapai-public/faqs">FAQs</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle cust-font-2" href="#" id="eventsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Events
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="eventsDropdown">
+                                <li><a class="dropdown-item" href="/hapai-public/upcoming-events">Upcoming events</a></li>
+                                <li><a class="dropdown-item" href="/hapai-public/past-events">Past events</a></li>
+                                <li><a class="dropdown-item" href="/hapai-public/training-development-events">Training & development</a></li>
+                                <li><a class="dropdown-item" href="/hapai-public/signature-events">Signature events</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle cust-font-2" href="#" id="insightsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Insights
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="insightsDropdown">
+                                <li><a class="dropdown-item" href="/hapai-public/resources">Resources</a></li>
+                                <li><a class="dropdown-item" href="/hapai-public/latest-insights">Perspectives</a></li>
+                                <li><a class="dropdown-item" href="/hapai-public/public-sector-journal">Public sector journal</a></li>
+                                <li><a class="dropdown-item" href="/hapai-public/why-public-service-matters">Why public services matter</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle cust-font-2" href="#" id="connectDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Connect
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="connectDropdown">
+                                <li><a class="dropdown-item" href="/hapai-public/our-networks">Our networks</a></li>
+                                <li>
+                                    <a class="dropdown-item" href="/hapai-public/our-networks-wellington">
+                                        New professionals -<br />
+                                        Whanganui-a-Tara-Wellington
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="/hapai-public/our-networks-auckland">
+                                        New professionals - <br />
+                                        Tāmakimakaurau Auckland
+                                    </a>
+                                </li>
+                                <li><a class="dropdown-item" href="/hapai-public/our-networks-public-networks">Public networks</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle cust-font-2" href="#" id="careersDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Careers
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="careersDropdown">
+                                <li><a class="dropdown-item" href="/hapai-public/start-your-career">Start your career</a></li>
+                                <li><a class="dropdown-item" href="/hapai-public/grow-your-career">Grow your career</a></li>
+                                <li><a class="dropdown-item" href="/hapai-public/member-stories">Member stories</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle cust-font-2" href="#" id="membershipDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Membership
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="membershipDropdown">
+                                <li><a class="dropdown-item" href="/hapai-public/become-a-member">Become a member</a></li>
+                                <li><a class="dropdown-item" href="/hapai-public/member-directory">Member directory</a></li>
+                                <li><a class="dropdown-item" href="/hapai-public/new-professionals">Join new professionals</a></li>
+                                <li><a class="dropdown-item" href="/hapai-public/member-benefits.html">Member benefits</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item cust-font-2">
+                            <a class="nav-link" href="/hapai-public/contact-us.html">Contact us</a>
+                        </li>
+                    </ul>
+
+                    <div class="contact-nav col-md-3 mt-2 mb-md-4vw">
+                        <p class="m-0"><a href="tel:+6421493930">021 493 930</a></p>
+                        <p><a href="mailto:info@ipanz.co.nz">info@ipanz.co.nz</a></p>
+                        <p>
+                            Level 2, Rutherford House, <br />
+                            23 Lambton Quay, Wellington 6011
+                        </p>
+                        <a class="btn btn-light mb-2 mb-md-0 mt-2 mt-highRes-4" role="button" href="/hapai-public/become-a-member">Become a member</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="modal" id="cartSummary" tabindex="-1" aria-labelledby="bookNow" aria-hidden="true" data-bs-keyboard="true">
+            <div class="modal-dialog modal-fullscreen modal-dialog-scrollable">
+                <div class="modal-content custom-primary --yellow">
+                    <div class="modal-header d-flex flex-row justify-content-between px-1 py-2 p-highRes-2vw">
+                        <p class="cust-font-5" id="bookNow">Book Now</p>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body d-flex flex-column p-0 justify-content-between">
+                        <div class="p-1 p-highRes-2vw">
+                            <div class="cart-item pb-1 pb-lg-1vw mb-2 mb-lg-2vw">
+                                <h2 class="cust-font-5 --body-font mb-1 mb-lg-1vw">Cart Item title</h2>
+                                <p class="member m-0"><span>$000.00</span> Member</p>
+                                <p class="non-member m-0"><span>$000.00</span> Non-member</p>
+                                <div class="d-flex flex-row">
+                                    <div class="cart-counter bg-primary" role="button">
+                                        <svg viewBox="0 0 8 8">
+                                            <path d="M0 4H8" />
+                                        </svg>
+                                    </div>
+                                    <div class="cart-counter" role="button">12</div>
+
+                                    <div class="cart-counter bg-primary" role="button">
+                                        <svg viewBox="0 0 8 8">
+                                            <path d="M0 4H8" />
+                                            <path d="M4 0L4 8" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="cart-item pb-1 pb-lg-1vw mb-2 mb-lg-2vw">
+                                <h2 class="cust-font-5 --body-font mb-1 mb-lg-1vw">Cart Item title</h2>
+                                <p class="member m-0"><span>$000.00</span> Member</p>
+                                <p class="non-member m-0"><span>$000.00</span> Non-member</p>
+                                <div class="d-flex flex-row">
+                                    <div class="cart-counter bg-primary" role="button">
+                                        <svg viewBox="0 0 8 8">
+                                            <path d="M0 4H8" />
+                                        </svg>
+                                    </div>
+                                    <div class="cart-counter" role="button">12</div>
+
+                                    <div class="cart-counter bg-primary" role="button">
+                                        <svg viewBox="0 0 8 8">
+                                            <path d="M0 4H8" />
+                                            <path d="M4 0L4 8" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="cart-item pb-1 pb-lg-1vw mb-2 mb-lg-2vw">
+                                <h2 class="cust-font-5 --body-font mb-1 mb-lg-1vw">Cart Item title</h2>
+                                <p class="member m-0"><span>$000.00</span> Member</p>
+                                <p class="non-member m-0"><span>$000.00</span> Non-member</p>
+                                <div class="d-flex flex-row">
+                                    <div class="cart-counter bg-primary" role="button">
+                                        <svg viewBox="0 0 8 8">
+                                            <path d="M0 4H8" />
+                                        </svg>
+                                    </div>
+                                    <div class="cart-counter" role="button">12</div>
+
+                                    <div class="cart-counter bg-primary" role="button">
+                                        <svg viewBox="0 0 8 8">
+                                            <path d="M0 4H8" />
+                                            <path d="M4 0L4 8" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex flex-row justify-content-between align-items-center p-1 p-highRes-2vw border-top border-primary">
+                            <p class="cust-font-5 --body-font">NZ$ 1400.00</p>
+                            <div class="btn btn-primary m-0" role="button">Add to cart</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <main>
+            <div class="container-fluid px-1 px-highRes-3 hero">
+                <div class="row flex-column flex-sm-row">
+                    <div class="col-12 col-md-4 py-lg-5vw d-flex flex-column justify-content-center p-0 pt-4 pt-md-0">
+                        <p class="cust-font-7 pb-50px pb-lg-4vw m-0 --balance col-xl-10">Institute of public professionals aotearoa new zealand</p>
+                        <h1 class="cust-font-1 hero-font --pretty p-0 m-0">Promoting a stronger public sector</h1>
+                        <div><a class="btn btn-outline-primary mt-70px mt-lg-8vw" role="button">Activate your membership</a></div>
+                    </div>
+
+                    <div class="col-12 col-md-8 m-0 p-0 mt-4 mt-md-0 image-cnr top-left cnr-constant d-flex align-items-end home-hero">
+                        <svg class="cnr-animation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 186 164" fill="none">
+                            <path d="M40 147C28 159 8.66667 163 0.5 163.5H186V0.5C142.333 44.3333 52 135 40 147Z" />
+                        </svg>
+                        <img src="images/hero-placeholder.jpg" class="img-fit index-negative" alt="placeholder image" />
+
+                        <div class="p-1 p-xl-3 p-highRes-5 bg-accent-yellow col-11 offset-1 offset-sm-4 col-sm-8 col-lg-7 offset-lg-5">
+                            <a href="">
+                                <h3 class="cust-font-4 mb-2">Public stories</h3>
+                                <p class="m-0">Becoming a member of Hāpai Public has helped me navigate... lorem ipsum testimonials... Becoming a member of Hapai Public has helped me navigate...</p>
+                                <div class="d-flex flex-column flex-lg-row justify-content-lg-between mt-2 mt-highRes-4">
+                                    <div>
+                                        <p class="cust-font-7">Member Name Here</p>
+                                        <p class="m-0">Position here</p>
+                                    </div>
+
+                                    <div class="btn-icon p-0 mt-1">
+                                        <p class="cust-font-7 --light-weight mb-0">Read more</p>
+                                        <svg viewBox="0 0 20 20" fill="none" stroke="#EDECE6">
+                                            <path
+                                                d="M10.0287 19.0574C15.0151 19.0574 19.0574 15.0151 19.0574 10.0287C19.0574 5.04229 15.0151 1 10.0287 1C5.04229 1 1 5.04229 1 10.0287C1 15.0151 5.04229 19.0574 10.0287 19.0574Z"
+                                                stroke-miterlimit="10"
+                                            />
+                                            <path d="M8.51172 13.7119L12.7204 10.0288L8.51172 6.34204" stroke-miterlimit="10" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-accent-yellow container-fluid px-1 px-md-2 px-highRes-4 pt-4 py-md-4 py-lg-7vw">
+                <div class="row flex-column flex-md-row">
+
+                    <div class="col col-sm-12 col-md-9 col-lg-3 d-flex flex-column justify-content-between mt-0 p-0 pb-4 pb-lg-0">
+                        <h2 class="cust-font-7 mb-3">What we do</h2>
+                        <p class="cust-font-4 m-0">As the independent national body for public sector professionals, we serve our members by building a community of learning and practice about public service.</p>
+                    </div>
+
+                    <div class="col col-sm-12 col-lg-8 offset-lg-1 mt-0 p-0">
+                        <div class="row d-flex flex-column flex-md-row">
+                            <div class="col col-sm-12 col-md-4 mt-0 p-0 px-md-10px px-highRes-1">
+                                <svg class="whanaungatanga sm" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100">
+                                        <polyline class="cls-4" points="-11.28 101.53 10.17 80.09 30.08 100 49.99 80.09 69.9 100 89.82 80.09 112.2 102.47"/>
+                                        <polyline class="cls-4" points="-11.17 81.3 10.17 59.96 30.08 79.88 49.99 59.96 69.9 79.88 89.82 59.97 111.71 81.86"/>
+                                        <polyline class="cls-4" points="-11.76 61.99 10.17 40.06 30.08 59.98 49.99 40.06 69.9 59.98 69.9 59.98 89.82 40.06 111.59 61.84"/>
+                                        <polyline class="cls-4" points="-11.16 41.27 10.17 19.94 30.08 39.85 49.99 19.94 69.9 39.85 69.9 39.86 89.82 19.94 111.37 41.5"/>
+                                        <polyline class="cls-4" points="-10.95 21.14 10.17 .03 30.08 19.94 49.99 .03 69.9 19.94 69.9 19.94 89.82 .03 111.92 22.14"/>
+                                  </svg>
+                                <h3 class="cust-font-5 pt-2 pb-1 m-0 pt-highRes-6 pb-highRes-4">Whanaungatanga</h3>
+                                <p class="m-0 pb-4 pb-md-0 col-lg-9">We connect people and ideas through member networking and events</p>
+                            </div>
+
+                            <div class="col col-sm-12 col-md-4 mt-0 p-0 px-md-10px px-highRes-1">
+                              <svg class="akoranga sm" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100">
+                                        <polyline class="cls-3" points="-112.24 407.71 -112.24 379.22 -83.75 379.22 -83.75 350.74 -55.27 350.74 -55.27 322.25 -26.78 322.25 -26.78 293.76 1.71 293.76 1.71 265.28 30.19 265.28 30.19 236.79 58.68 236.79 58.68 208.31 87.16 208.31 87.16 179.82 115.65 179.82 115.65 151.33 144.13 151.33 144.13 122.85 172.62 122.85 172.62 94.36 201.1 94.36 201.1 65.88 229.58 65.89 229.58 37.41 258.06 37.41 258.06 8.92 286.55 8.92 286.55 -19.57 315.03 -19.57 315.03 -48.05 343.52 -48.05 343.52 -76.54 372.01 -76.54 372.01 -105.02 400.49 -105.02"/>
+                                        <polyline class="cls-3" points="-126.48 393.46 -126.48 364.98 -97.99 364.98 -97.99 336.49 -69.51 336.49 -69.51 308.01 -41.02 308.01 -41.02 279.52 -12.54 279.52 -12.54 251.03 15.95 251.03 15.95 222.55 44.43 222.55 44.43 194.06 72.92 194.06 72.92 165.58 101.41 165.58 101.41 137.09 129.89 137.09 129.89 108.61 158.38 108.61 158.38 80.12 186.86 80.12 186.86 51.63 215.33 51.65 215.33 23.16 243.82 23.16 243.82 -5.32 272.31 -5.32 272.31 -33.81 300.79 -33.81 300.79 -62.29 329.28 -62.29 329.28 -90.78 357.76 -90.78 357.76 -119.27 386.25 -119.27"/>
+                                        <polyline class="cls-3" points="-140.87 379.07 -140.87 350.59 -112.39 350.59 -112.39 322.1 -83.9 322.1 -83.9 293.61 -55.42 293.61 -55.42 265.13 -26.93 265.13 -26.93 236.64 1.56 236.64 1.56 208.16 30.04 208.16 30.04 179.67 58.53 179.67 58.53 151.19 87.01 151.19 87.01 122.7 115.5 122.7 115.5 94.21 143.98 94.21 143.98 65.73 172.47 65.73 172.47 37.24 200.94 37.26 200.94 8.77 229.43 8.77 229.43 -19.71 257.91 -19.71 257.91 -48.2 286.4 -48.2 286.4 -76.69 314.88 -76.69 314.88 -105.17 343.37 -105.17 343.37 -133.66 371.86 -133.66"/>
+                                        <polyline class="cls-3" points="-155.12 364.83 -155.12 336.34 -126.63 336.34 -126.63 307.86 -98.14 307.86 -98.14 279.37 -69.66 279.37 -69.66 250.89 -41.17 250.89 -41.17 222.4 -12.69 222.4 -12.69 193.91 15.8 193.91 15.8 165.43 44.28 165.43 44.28 136.94 72.77 136.94 72.77 108.46 101.26 108.46 101.26 79.97 129.74 79.97 129.74 51.48 158.23 51.48 158.23 23 186.71 23 186.7 -5.47 215.18 -5.47 215.18 -33.96 243.67 -33.96 243.67 -62.44 272.16 -62.44 272.16 -90.93 300.64 -90.93 300.64 -119.42 329.13 -119.42 329.13 -147.9 357.61 -147.9"/>
+                                        <polyline class="cls-3" points="-169.51 350.44 -169.51 321.95 -141.02 321.95 -141.02 293.47 -112.54 293.47 -112.54 264.98 -84.05 264.98 -84.05 236.49 -55.56 236.49 -55.56 208.01 -27.08 208.01 -27.08 179.52 1.41 179.52 1.41 151.04 29.89 151.04 29.89 122.55 58.38 122.55 58.38 94.06 86.86 94.06 86.86 65.58 115.35 65.58 115.35 37.09 143.83 37.09 143.83 8.61 172.32 8.61 172.31 -19.86 200.79 -19.86 200.79 -48.35 229.28 -48.35 229.28 -76.84 257.76 -76.84 257.76 -105.32 286.25 -105.32 286.25 -133.81 314.73 -133.81 314.73 -162.29 343.22 -162.29"/>
+                                        <polyline class="cls-3" points="-183.78 336.16 -183.78 307.67 -155.3 307.67 -155.3 279.19 -126.81 279.19 -126.81 250.7 -98.33 250.7 -98.33 222.22 -69.84 222.22 -69.84 193.73 -41.36 193.73 -41.36 165.24 -12.87 165.24 -12.87 136.76 15.61 136.76 15.61 108.27 44.1 108.27 44.1 79.79 72.59 79.79 72.59 51.3 101.07 51.3 101.07 22.81 129.56 22.81 129.56 -5.67 158.03 -5.66 158.03 -34.14 186.51 -34.14 186.51 -62.63 215 -62.63 215 -91.11 243.49 -91.11 243.49 -119.6 271.97 -119.6 271.97 -148.09 300.46 -148.09 300.46 -176.57 328.94 -176.57"/>
+                                        <polyline class="cls-3" points="-198.18 321.77 -198.18 293.28 -169.69 293.28 -169.69 264.8 -141.21 264.8 -141.21 236.31 -112.72 236.31 -112.72 207.82 -84.23 207.82 -84.23 179.34 -55.75 179.34 -55.75 150.85 -27.26 150.85 -27.26 122.37 1.22 122.37 1.22 93.88 29.71 93.88 29.71 65.39 58.19 65.39 58.19 36.91 86.68 36.91 86.68 8.42 115.16 8.42 115.16 -20.06 143.64 -20.05 143.64 -48.53 172.12 -48.53 172.12 -77.02 200.61 -77.02 200.61 -105.51 229.09 -105.51 229.09 -133.99 257.58 -133.99 257.58 -162.48 286.06 -162.48 286.06 -190.96 314.55 -190.96"/>
+                                        <polyline class="cls-3" points="-212.42 307.52 -212.42 279.04 -183.93 279.04 -183.93 250.55 -155.45 250.55 -155.45 222.07 -126.96 222.07 -126.96 193.58 -98.48 193.58 -98.48 165.09 -69.99 165.09 -69.99 136.61 -41.51 136.61 -41.51 108.12 -13.02 108.12 -13.02 79.64 15.46 79.64 15.46 51.15 43.95 51.15 43.95 22.67 72.44 22.67 72.44 -5.82 100.92 -5.82 100.92 -34.31 129.41 -34.31 129.39 -34.29 129.39 -62.78 157.88 -62.78 157.88 -91.26 186.37 -91.26 186.37 -119.75 214.85 -119.75 214.85 -148.24 243.34 -148.24 243.34 -176.72 271.82 -176.72 271.82 -205.21 300.31 -205.21"/>
+                                        <polyline class="cls-3" points="-226.81 293.13 -226.81 264.65 -198.33 264.65 -198.33 236.16 -169.84 236.16 -169.84 207.67 -141.36 207.67 -141.36 179.19 -112.87 179.19 -112.87 150.7 -84.38 150.7 -84.38 122.22 -55.9 122.22 -55.9 93.73 -27.41 93.73 -27.41 65.24 1.07 65.24 1.07 36.76 29.56 36.76 29.56 8.27 58.04 8.27 58.04 -20.21 86.53 -20.21 86.53 -48.7 115 -48.68 115 -77.17 143.49 -77.17 143.49 -105.66 171.97 -105.66 171.97 -134.14 200.46 -134.14 200.46 -162.63 228.94 -162.63 228.94 -191.11 257.43 -191.11 257.43 -219.6 285.92 -219.6"/>
+                                        <polyline class="cls-3" points="-241.06 278.89 -241.06 250.4 -212.57 250.4 -212.57 221.92 -184.08 221.92 -184.08 193.43 -155.6 193.43 -155.6 164.95 -127.11 164.95 -127.11 136.46 -98.63 136.46 -98.63 107.97 -70.14 107.97 -70.14 79.49 -41.66 79.49 -41.66 51 -13.17 51 -13.17 22.52 15.32 22.52 15.32 -5.97 43.8 -5.97 43.8 -34.46 72.29 -34.46 72.29 -62.94 100.76 -62.93 100.76 -91.41 129.24 -91.41 129.24 -119.9 157.73 -119.9 157.73 -148.38 186.22 -148.38 186.22 -176.87 214.7 -176.87 214.7 -205.36 243.19 -205.36 243.19 -233.84 271.67 -233.84"/>
+                                        <polyline class="cls-3" points="-255.45 264.5 -255.45 236.01 -226.96 236.01 -226.96 207.53 -198.48 207.53 -198.48 179.04 -169.99 179.04 -169.99 150.55 -141.51 150.55 -141.51 122.07 -113.02 122.07 -113.02 93.58 -84.53 93.58 -84.53 65.1 -56.05 65.1 -56.05 36.61 -27.56 36.61 -27.56 8.12 .92 8.12 .92 -20.36 29.41 -20.36 29.41 -48.85 57.89 -48.85 57.89 -77.33 86.37 -77.32 86.37 -105.8 114.85 -105.8 114.85 -134.29 143.34 -134.29 143.34 -162.78 171.82 -162.78 171.82 -191.26 200.31 -191.26 200.31 -219.75 228.79 -219.75 228.79 -248.23 257.28 -248.23"/>
+                                        <polyline class="cls-3" points="30.97 550.92 30.97 522.43 59.46 522.43 59.46 493.95 87.94 493.95 87.94 465.46 116.43 465.46 116.43 436.97 144.92 436.97 144.92 408.49 173.4 408.49 173.4 380 201.89 380 201.89 351.52 230.37 351.52 230.37 323.03 258.86 323.03 258.86 294.55 287.34 294.54 287.34 266.06 315.83 266.06 315.83 237.57 344.32 237.57 344.32 209.09 372.79 209.1 372.79 180.62 401.27 180.62 401.27 152.13 429.76 152.13 429.76 123.64 458.24 123.64 458.24 95.16 486.73 95.16 486.73 66.67 515.22 66.67 515.22 38.19 543.7 38.19"/>
+                                        <polyline class="cls-3" points="16.73 536.67 16.73 508.19 45.22 508.19 45.22 479.7 73.7 479.7 73.7 451.22 102.19 451.22 102.19 422.73 130.67 422.73 130.67 394.25 159.16 394.25 159.16 365.76 187.64 365.76 187.64 337.27 216.13 337.27 216.13 308.79 244.62 308.79 244.62 280.3 273.1 280.3 273.1 251.82 301.59 251.82 301.59 223.33 330.07 223.33 330.07 194.84 358.54 194.86 358.54 166.37 387.03 166.37 387.03 137.89 415.52 137.89 415.52 109.4 444 109.4 444 80.92 472.49 80.92 472.49 52.43 500.97 52.43 500.97 23.94 529.46 23.94"/>
+                                        <polyline class="cls-3" points="2.34 522.28 2.34 493.8 30.82 493.8 30.82 465.31 59.31 465.31 59.31 436.83 87.8 436.82 87.8 408.34 116.28 408.34 116.28 379.85 144.77 379.85 144.77 351.37 173.25 351.37 173.25 322.88 201.74 322.88 201.74 294.4 230.22 294.4 230.22 265.91 258.71 265.91 258.71 237.42 287.19 237.42 287.19 208.94 315.68 208.94 315.68 180.45 344.15 180.47 344.15 151.98 372.64 151.98 372.64 123.5 401.12 123.5 401.12 95.01 429.61 95.01 429.61 66.52 458.09 66.52 458.09 38.04 486.58 38.04 486.58 9.55 515.07 9.55"/>
+                                        <polyline class="cls-3" points="-11.9 508.04 -11.9 479.55 16.58 479.55 16.58 451.07 45.07 451.07 45.07 422.58 73.55 422.58 73.55 394.1 102.04 394.1 102.04 365.61 130.52 365.61 130.52 337.12 159.01 337.12 159.01 308.64 187.49 308.64 187.49 280.15 215.98 280.15 215.98 251.67 244.47 251.67 244.47 223.18 272.95 223.18 272.95 194.69 301.44 194.69 301.44 166.21 329.92 166.21 329.91 137.74 358.4 137.74 358.4 109.25 386.88 109.25 386.88 80.77 415.37 80.77 415.37 52.28 443.85 52.28 443.85 23.79 472.34 23.79 472.34 -4.69 500.82 -4.69"/>
+                                        <polyline class="cls-3" points="-26.3 493.65 -26.3 465.16 2.19 465.16 2.19 436.68 30.67 436.68 30.67 408.19 59.16 408.19 59.16 379.7 87.65 379.7 87.65 351.22 116.13 351.22 116.13 322.73 144.62 322.73 144.62 294.25 173.1 294.25 173.1 265.76 201.59 265.76 201.59 237.27 230.07 237.27 230.07 208.79 258.56 208.79 258.56 180.3 287.04 180.3 287.04 151.82 315.53 151.82 315.52 123.35 344 123.35 344 94.86 372.49 94.86 372.49 66.37 400.97 66.37 400.97 37.89 429.46 37.89 429.46 9.4 457.95 9.4 457.95 -19.08 486.43 -19.08"/>
+                                        <polyline class="cls-3" points="-40.57 479.37 -40.57 450.88 -12.09 450.88 -12.09 422.4 16.4 422.4 16.4 393.91 44.88 393.91 44.88 365.43 73.37 365.43 73.37 336.94 101.85 336.94 101.85 308.45 130.34 308.45 130.34 279.97 158.82 279.97 158.82 251.48 187.31 251.48 187.31 223 215.8 223 215.8 194.51 244.28 194.51 244.28 166.03 272.77 166.03 272.77 137.54 301.24 137.55 301.24 109.07 329.73 109.07 329.73 80.58 358.21 80.58 358.21 52.1 386.7 52.1 386.7 23.61 415.18 23.61 415.18 -4.88 443.67 -4.88 443.67 -33.36 472.15 -33.36"/>
+                                        <polyline class="cls-3" points="-54.97 464.98 -54.97 436.49 -26.48 436.49 -26.48 408.01 2 408.01 2 379.52 30.49 379.52 30.49 351.03 58.98 351.03 58.98 322.55 87.46 322.55 87.46 294.06 115.95 294.06 115.95 265.58 144.43 265.58 144.43 237.09 172.92 237.09 172.92 208.61 201.4 208.6 201.4 180.12 229.89 180.12 229.89 151.63 258.37 151.63 258.37 123.15 286.85 123.16 286.85 94.68 315.33 94.68 315.33 66.19 343.82 66.19 343.82 37.7 372.3 37.7 372.3 9.22 400.79 9.22 400.79 -19.27 429.28 -19.27 429.28 -47.75 457.76 -47.75"/>
+                                        <polyline class="cls-3" points="-69.21 450.73 -69.21 422.25 -40.72 422.25 -40.72 393.76 -12.24 393.76 -12.24 365.28 16.25 365.28 16.25 336.79 44.73 336.79 44.73 308.3 73.22 308.3 73.22 279.82 101.7 279.82 101.7 251.33 130.19 251.33 130.19 222.85 158.68 222.85 158.68 194.36 187.16 194.36 187.16 165.88 215.65 165.88 215.65 137.39 244.13 137.39 244.13 108.9 272.62 108.9 272.6 108.92 272.6 80.43 301.09 80.43 301.09 51.95 329.58 51.95 329.58 23.46 358.06 23.46 358.06 -5.02 386.55 -5.02 386.55 -33.51 415.03 -33.51 415.03 -62 443.52 -62"/>
+                                        <polyline class="cls-3" points="-83.6 436.34 -83.6 407.86 -55.12 407.86 -55.12 379.37 -26.63 379.37 -26.63 350.88 1.85 350.88 1.85 322.4 30.34 322.4 30.34 293.91 58.83 293.91 58.83 265.43 87.31 265.43 87.31 236.94 115.8 236.94 115.8 208.46 144.28 208.46 144.28 179.97 172.77 179.97 172.77 151.48 201.25 151.48 201.25 123 229.74 123 229.74 94.51 258.21 94.53 258.21 66.04 286.7 66.04 286.7 37.55 315.18 37.55 315.18 9.07 343.67 9.07 343.67 -19.42 372.15 -19.42 372.15 -47.9 400.64 -47.9 400.64 -76.39 429.13 -76.39"/>
+                                        <polyline class="cls-3" points="-97.84 422.1 -97.84 393.61 -69.36 393.61 -69.36 365.13 -40.87 365.13 -40.87 336.64 -12.39 336.64 -12.39 308.16 16.1 308.16 16.1 279.67 44.58 279.67 44.58 251.18 73.07 251.18 73.07 222.7 101.55 222.7 101.55 194.21 130.04 194.21 130.04 165.73 158.53 165.73 158.53 137.24 187.01 137.24 187.01 108.75 215.5 108.75 215.5 80.27 243.97 80.28 243.97 51.8 272.46 51.8 272.46 23.31 300.94 23.31 300.94 -5.17 329.43 -5.17 329.43 -33.66 357.91 -33.66 357.91 -62.15 386.4 -62.15 386.4 -90.63 414.88 -90.63"/>
+                                        <polyline class="cls-3" points="45.22 565.16 45.22 536.67 73.7 536.67 73.7 508.19 102.19 508.19 102.19 479.7 130.67 479.7 130.67 451.22 159.16 451.22 159.16 422.73 187.64 422.73 187.64 394.24 216.13 394.24 216.13 365.76 244.62 365.76 244.62 337.27 273.1 337.27 273.1 308.79 301.59 308.79 301.59 280.3 330.07 280.3 330.07 251.82 358.56 251.82 358.56 223.33 387.03 223.34 387.03 194.86 415.52 194.86 415.52 166.37 444 166.37 444 137.89 472.49 137.89 472.49 109.4 500.97 109.4 500.97 80.92 529.46 80.92 529.46 52.43 557.94 52.43"/>
+                                        <polyline class="cls-3" points="88.24 608.19 88.24 579.7 116.73 579.7 116.73 551.22 145.21 551.22 145.21 522.73 173.7 522.73 173.7 494.24 202.19 494.24 202.19 465.76 230.67 465.76 230.67 437.27 259.16 437.27 259.16 408.79 287.64 408.79 287.64 380.3 316.13 380.3 316.13 351.82 344.61 351.81 344.61 323.33 373.1 323.33 373.1 294.84 401.59 294.84 401.59 266.36 430.07 266.36 430.06 266.37 430.06 237.89 458.54 237.89 458.54 209.4 487.03 209.4 487.03 180.92 515.51 180.91 515.51 152.43 544 152.43 544 123.94 572.49 123.94 572.49 95.46 600.97 95.46"/>
+                                        <polyline class="cls-3" points="73.85 593.79 73.85 565.31 102.34 565.31 102.34 536.82 130.82 536.82 130.82 508.34 159.31 508.34 159.31 479.85 187.79 479.85 187.79 451.36 216.28 451.36 216.28 422.88 244.76 422.88 244.76 394.39 273.25 394.39 273.25 365.91 301.74 365.91 301.74 337.42 330.22 337.42 330.22 308.94 358.71 308.94 358.71 280.45 387.19 280.45 387.19 251.96 415.66 251.98 415.66 223.49 444.15 223.49 444.15 195.01 472.64 195.01 472.64 166.52 501.12 166.52 501.12 138.04 529.61 138.04 529.61 109.55 558.09 109.55 558.09 81.06 586.58 81.06"/>
+                                        <polyline class="cls-3" points="59.61 579.55 59.61 551.07 88.09 551.07 88.09 522.58 116.58 522.58 116.58 494.1 145.07 494.09 145.07 465.61 173.55 465.61 173.55 437.12 202.04 437.12 202.04 408.64 230.52 408.64 230.52 380.15 259.01 380.15 259.01 351.67 287.49 351.67 287.49 323.18 315.98 323.18 315.98 294.69 344.46 294.69 344.46 266.21 372.95 266.21 372.95 237.72 401.42 237.74 401.42 209.25 429.91 209.25 429.91 180.77 458.39 180.77 458.39 152.28 486.88 152.28 486.88 123.79 515.37 123.79 515.37 95.31 543.85 95.31 543.85 66.82 572.34 66.82"/>
+                                        <polyline class="cls-3" points="-269.69 250.25 -269.69 221.77 -241.2 221.77 -241.2 193.28 -212.72 193.28 -212.72 164.8 -184.23 164.8 -184.23 136.31 -155.75 136.31 -155.75 107.82 -127.26 107.82 -127.26 79.34 -98.78 79.34 -98.78 50.85 -70.29 50.85 -70.29 22.37 -41.81 22.37 -41.81 -6.12 -13.32 -6.12 -13.32 -34.61 15.17 -34.61 15.17 -63.09 43.65 -63.09 43.65 -91.58 72.14 -91.58"/>
+                                        <polyline class="cls-3" points="-284.08 235.86 -284.08 207.38 -255.6 207.38 -255.6 178.89 -227.11 178.89 -227.11 150.4 -198.63 150.4 -198.63 121.92 -170.14 121.92 -170.14 93.43 -141.65 93.43 -141.65 64.95 -113.17 64.95 -113.17 36.46 -84.68 36.46 -84.68 7.97 -56.2 7.97 -56.2 -20.51 -27.71 -20.51 -27.71 -49 .77 -49 .77 -77.48 29.26 -77.48 29.26 -105.97 57.74 -105.97"/>
+                                        <polyline class="cls-3" points="-298.32 221.63 -298.32 193.14 -269.83 193.14 -269.83 164.65 -241.35 164.65 -241.35 136.17 -212.86 136.17 -212.86 107.68 -184.38 107.68 -184.38 79.2 -155.89 79.2 -155.89 50.71 -127.4 50.71 -127.4 22.23 -98.92 22.23 -98.92 -6.26 -70.43 -6.26 -70.43 -34.75 -41.95 -34.75 -41.95 -63.23 -13.46 -63.23 -13.46 -91.72 15.02 -91.72 15.02 -120.2 43.51 -120.2"/>
+                                        <polyline class="cls-3" points="-312.71 207.23 -312.71 178.75 -284.22 178.75 -284.22 150.26 -255.74 150.26 -255.74 121.78 -227.25 121.78 -227.25 93.29 -198.77 93.29 -198.77 64.8 -170.28 64.8 -170.28 36.32 -141.8 36.32 -141.8 7.83 -113.31 7.83 -113.31 -20.65 -84.83 -20.65 -84.83 -49.14 -56.34 -49.14 -56.34 -77.63 -27.85 -77.63 -27.85 -106.11 .63 -106.11 .63 -134.6 29.12 -134.6"/>
+                                        <polyline class="cls-3" points="-326.95 192.99 -326.95 164.51 -298.47 164.51 -298.47 136.02 -269.98 136.02 -269.98 107.53 -241.5 107.53 -241.5 79.05 -213.01 79.05 -213.01 50.56 -184.52 50.56 -184.52 22.08 -156.04 22.08 -156.04 -6.41 -127.55 -6.41 -127.55 -34.9 -99.07 -34.9 -99.07 -63.38 -70.58 -63.38 -70.58 -91.87 -42.1 -91.87 -42.1 -120.35 -13.61 -120.35 -13.61 -148.84 14.87 -148.84"/>
+                                        <polyline class="cls-3" points="-341.35 178.6 -341.35 150.11 -312.86 150.11 -312.86 121.63 -284.37 121.63 -284.37 93.14 -255.89 93.14 -255.89 64.65 -227.4 64.65 -227.4 36.17 -198.92 36.17 -198.92 7.68 -170.43 7.68 -170.43 -20.8 -141.95 -20.8 -141.95 -49.29 -113.46 -49.29 -113.46 -77.77 -84.97 -77.77 -84.97 -106.26 -56.49 -106.26 -56.49 -134.75 -28 -134.75 -28 -163.23 .48 -163.23"/>
+                                        <polyline class="cls-2" points="-127.08 925.83 -127.08 879.54 -80.79 879.54 -80.79 833.25 -34.5 833.25 -34.5 786.96 11.79 786.96 11.79 740.67 58.08 740.67 58.08 694.38 104.37 694.38 104.37 648.09 150.66 648.09 150.66 601.8 196.95 601.8 196.95 555.51 243.24 555.51 243.24 509.22 289.53 509.21 289.53 462.92 335.82 462.92 335.82 416.63 382.11 416.63 382.11 370.34 428.38 370.37 428.38 324.08 474.67 324.08 474.67 277.79 520.96 277.79 520.96 231.5 567.25 231.5 567.25 185.21 613.54 185.21 613.54 138.92 659.83 138.92 659.83 92.63 706.12 92.63"/>
+                                        <polyline class="cls-2" points="-150.22 902.68 -150.22 856.39 -103.93 856.39 -103.93 810.1 -57.64 810.1 -57.64 763.81 -11.35 763.81 -11.35 717.52 34.94 717.52 34.94 671.23 81.23 671.23 81.23 624.94 127.52 624.94 127.52 578.65 173.81 578.65 173.81 532.36 220.1 532.36 220.1 486.07 266.39 486.07 266.39 439.78 312.68 439.78 312.68 393.49 358.97 393.49 358.97 347.2 405.24 347.22 405.24 300.93 451.53 300.93 451.53 254.64 497.82 254.64 497.82 208.35 544.11 208.35 544.11 162.06 590.4 162.06 590.4 115.77 636.69 115.77 636.69 69.48 682.98 69.48"/>
+                                        <polyline class="cls-2" points="-173.61 879.3 -173.61 833.01 -127.32 833.01 -127.32 786.72 -81.03 786.72 -81.03 740.43 -34.74 740.42 -34.74 694.13 11.55 694.13 11.55 647.84 57.84 647.84 57.84 601.55 104.13 601.55 104.13 555.26 150.42 555.26 150.42 508.97 196.71 508.97 196.71 462.68 243 462.68 243 416.39 289.29 416.39 289.29 370.1 335.58 370.1 335.58 323.81 381.85 323.84 381.85 277.55 428.14 277.55 428.14 231.26 474.43 231.26 474.43 184.97 520.72 184.96 520.72 138.67 567.01 138.67 567.01 92.38 613.3 92.38 613.3 46.09 659.59 46.09"/>
+                                  </svg> 
+                                <h3 class="cust-font-5 pt-2 pb-1 m-0 pt-highRes-6 pb-highRes-4">Akoranga</h3>
+                                <p class="m-0 pb-4 pb-md-0 col-lg-9">We build capability within the public sector through training and development</p>
+                            </div>
+                            <div class="col col-sm-12 col-md-4 mt-0 p-0 px-md-10px px-highRes-1">
+                                <svg class="kaitiakitanga sm" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100">
+                                      <line class="cls-3" x1="26.09" y1="87.17" x2="34.76" y2="78.5"/>
+                                      <line class="cls-3" x1="34.76" y1="87.17" x2="26.09" y2="78.5"/>
+                                      <line class="cls-3" x1="26.09" y1="100.22" x2="34.76" y2="91.55"/>
+                                      <line class="cls-3" x1="34.76" y1="100.22" x2="26.09" y2="91.55"/>
+                                      <line class="cls-3" x1="39.14" y1="87.17" x2="47.81" y2="78.5"/>
+                                      <line class="cls-3" x1="47.81" y1="87.17" x2="39.14" y2="78.5"/>
+                                      <line class="cls-3" x1="39.14" y1="100.22" x2="47.81" y2="91.55"/>
+                                      <line class="cls-3" x1="47.81" y1="100.22" x2="39.14" y2="91.55"/>
+                                      <line class="cls-3" y1="8.89" x2="8.67" y2=".22"/>
+                                      <line class="cls-3" x1="8.67" y1="8.89" x2="0" y2=".22"/>
+                                      <line class="cls-3" y1="21.94" x2="8.67" y2="13.27"/>
+                                      <line class="cls-3" x1="8.67" y1="21.94" x2="0" y2="13.27"/>
+                                      <line class="cls-3" x1="13.04" y1="8.89" x2="21.71" y2=".22"/>
+                                      <line class="cls-3" x1="21.71" y1="8.89" x2="13.04" y2=".22"/>
+                                      <line class="cls-3" x1="13.04" y1="21.94" x2="21.71" y2="13.27"/>
+                                      <line class="cls-3" x1="21.71" y1="21.94" x2="13.04" y2="13.27"/>
+                                      <line class="cls-3" x1="26.09" y1="34.98" x2="34.76" y2="26.32"/>
+                                      <line class="cls-3" x1="34.76" y1="34.98" x2="26.09" y2="26.32"/>
+                                      <line class="cls-3" x1="26.09" y1="48.03" x2="34.76" y2="39.36"/>
+                                      <line class="cls-3" x1="34.76" y1="48.03" x2="26.09" y2="39.36"/>
+                                      <line class="cls-3" x1="39.14" y1="34.98" x2="47.81" y2="26.32"/>
+                                      <line class="cls-3" x1="47.81" y1="34.98" x2="39.14" y2="26.32"/>
+                                      <line class="cls-3" x1="39.14" y1="48.03" x2="47.81" y2="39.36"/>
+                                      <line class="cls-3" x1="47.81" y1="48.03" x2="39.14" y2="39.36"/>
+                                      <line class="cls-3" y1="61.07" x2="8.67" y2="52.4"/>
+                                      <line class="cls-3" x1="8.67" y1="61.07" x2="0" y2="52.4"/>
+                                      <line class="cls-3" y1="74.12" x2="8.67" y2="65.45"/>
+                                      <line class="cls-3" x1="8.67" y1="74.12" x2="0" y2="65.45"/>
+                                      <line class="cls-3" x1="13.04" y1="61.07" x2="21.71" y2="52.4"/>
+                                      <line class="cls-3" x1="21.71" y1="61.07" x2="13.04" y2="52.4"/>
+                                      <line class="cls-3" x1="13.04" y1="74.12" x2="21.71" y2="65.45"/>
+                                      <line class="cls-3" x1="21.71" y1="74.12" x2="13.04" y2="65.45"/>
+                                      <line class="cls-3" x1="78.28" y1="87.17" x2="86.95" y2="78.5"/>
+                                      <line class="cls-3" x1="86.95" y1="87.17" x2="78.28" y2="78.5"/>
+                                      <line class="cls-3" x1="78.28" y1="100.22" x2="86.95" y2="91.55"/>
+                                      <line class="cls-3" x1="86.95" y1="100.22" x2="78.28" y2="91.55"/>
+                                      <line class="cls-3" x1="91.33" y1="87.17" x2="100" y2="78.5"/>
+                                      <line class="cls-3" x1="100" y1="87.17" x2="91.33" y2="78.5"/>
+                                      <line class="cls-3" x1="91.33" y1="100.22" x2="100" y2="91.55"/>
+                                      <line class="cls-3" x1="100" y1="100.22" x2="91.33" y2="91.55"/>
+                                      <line class="cls-3" x1="52.19" y1="8.89" x2="60.86" y2=".22"/>
+                                      <line class="cls-3" x1="60.86" y1="8.89" x2="52.19" y2=".22"/>
+                                      <line class="cls-3" x1="52.19" y1="21.94" x2="60.86" y2="13.27"/>
+                                      <line class="cls-3" x1="60.86" y1="21.94" x2="52.19" y2="13.27"/>
+                                      <line class="cls-3" x1="65.24" y1="8.89" x2="73.9" y2=".22"/>
+                                      <line class="cls-3" x1="73.9" y1="8.89" x2="65.24" y2=".22"/>
+                                      <line class="cls-3" x1="65.24" y1="21.94" x2="73.9" y2="13.27"/>
+                                      <line class="cls-3" x1="73.9" y1="21.94" x2="65.24" y2="13.27"/>
+                                      <line class="cls-3" x1="78.28" y1="34.98" x2="86.95" y2="26.32"/>
+                                      <line class="cls-3" x1="86.95" y1="34.98" x2="78.28" y2="26.32"/>
+                                      <line class="cls-3" x1="78.28" y1="48.03" x2="86.95" y2="39.36"/>
+                                      <line class="cls-3" x1="86.95" y1="48.03" x2="78.28" y2="39.36"/>
+                                      <line class="cls-3" x1="91.33" y1="34.98" x2="100" y2="26.32"/>
+                                      <line class="cls-3" x1="100" y1="34.98" x2="91.33" y2="26.32"/>
+                                      <line class="cls-3" x1="91.33" y1="48.03" x2="100" y2="39.36"/>
+                                      <line class="cls-3" x1="100" y1="48.03" x2="91.33" y2="39.36"/>
+                                      <line class="cls-3" x1="52.19" y1="61.07" x2="60.86" y2="52.4"/>
+                                      <line class="cls-3" x1="60.86" y1="61.07" x2="52.19" y2="52.4"/>
+                                      <line class="cls-3" x1="52.19" y1="74.12" x2="60.86" y2="65.45"/>
+                                      <line class="cls-3" x1="60.86" y1="74.12" x2="52.19" y2="65.45"/>
+                                      <line class="cls-3" x1="65.24" y1="61.07" x2="73.9" y2="52.4"/>
+                                      <line class="cls-3" x1="73.9" y1="61.07" x2="65.24" y2="52.4"/>
+                                      <line class="cls-3" x1="65.24" y1="74.12" x2="73.9" y2="65.45"/>
+                                      <line class="cls-3" x1="73.9" y1="74.12" x2="65.24" y2="65.45"/>
+                                  </svg>
+                                <h3 class="cust-font-5 pt-2 pb-1 m-0 pt-highRes-6 pb-highRes-4">Kaitiakitanga</h3>
+                                <p class="m-0 pb-4 pb-md-0 col-lg-9">We build capability within the public sector through training and development</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid custom-primary --dark-green-neutral px-1 px-md-2 px-highRes-4 pt-4 pb-4 pt-lg-7vw pb-lg-5vw">
+                <div class="p-0 col-md-12 col-xl-7">
+                    <h2 class="cust-font-2">Events Calendar</h2>
+                </div>
+            </div>
+
+            <div class="container-fluid custom-primary --dark-green-neutral px-md-2 px-lg-1 px-highRes-3 pb-4 pb-lg-7vw">
+                <div class="row flex-column flex-md-row">
+                    <div class="col col-sm-12 col-md-4 mt-0 p-0 px-10px px-highRes-1">
+                        <div class="">
+                            <div class="">
+                                <p class="cust-font-7 text-secondary my-2 mt-lg-0 mb-lg-2vw">April 28</p>
+                                <p class="cust-font-5 mb-0 --body-font pe-xl-40pc">Public Sector Capabilities In Challenging Times</p>
+                            </div>
+
+                            <a href="/hapai-public/past-events-template.html" role="button" class="btn-icon mt-2 mt-lg-3vw mb-4 mb-md-0 pb-2 pb-highRes-4 border-bottom border-secondary">
+                                <p class="cust-font-7 --light-weight mb-0">Read more</p>
+                                <svg viewBox="0 0 20 20" fill="none" stroke="#EDECE6">
+                                    <path
+                                        d="M10.0287 19.0574C15.0151 19.0574 19.0574 15.0151 19.0574 10.0287C19.0574 5.04229 15.0151 1 10.0287 1C5.04229 1 1 5.04229 1 10.0287C1 15.0151 5.04229 19.0574 10.0287 19.0574Z"
+                                        stroke-miterlimit="10"
+                                    />
+                                    <path d="M8.51172 13.7119L12.7204 10.0288L8.51172 6.34204" stroke-miterlimit="10" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col col-sm-12 col-md-4 mt-0 p-0 px-10px px-highRes-1">
+                        <div class="">
+                            <div class="">
+                                <p class="cust-font-7 text-secondary my-2 mt-lg-0 mb-lg-2vw">April 29</p>
+                                <p class="cust-font-5 mb-0 --body-font pe-xl-40pc">Public Sector Capabilities In Challenging Times</p>
+                            </div>
+
+                            <a href="/hapai-public/past-events-template.html" role="button" class="btn-icon mt-2 mt-lg-3vw mb-4 mb-md-0 pb-2 pb-highRes-4 border-bottom border-secondary">
+                                <p class="cust-font-7 --light-weight mb-0">Read more</p>
+                                <svg viewBox="0 0 20 20" fill="none" stroke="#EDECE6">
+                                    <path
+                                        d="M10.0287 19.0574C15.0151 19.0574 19.0574 15.0151 19.0574 10.0287C19.0574 5.04229 15.0151 1 10.0287 1C5.04229 1 1 5.04229 1 10.0287C1 15.0151 5.04229 19.0574 10.0287 19.0574Z"
+                                        stroke-miterlimit="10"
+                                    />
+                                    <path d="M8.51172 13.7119L12.7204 10.0288L8.51172 6.34204" stroke-miterlimit="10" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col col-sm-12 col-md-4 mt-0 p-0 px-10px px-highRes-1">
+                        <div class="">
+                            <div class="">
+                                <p class="cust-font-7 text-secondary my-2 mt-lg-0 mb-lg-2vw">April 30</p>
+                                <p class="cust-font-5 mb-0 --body-font pe-xl-40pc">Public Sector Capabilities In Challenging Times</p>
+                            </div>
+
+                            <a href="/hapai-public/past-events-template.html" role="button" class="btn-icon mt-2 mt-lg-3vw mb-4 mb-md-0 pb-2 pb-highRes-4 border-bottom border-secondary">
+                                <p class="cust-font-7 --light-weight mb-0">Read more</p>
+                                <svg viewBox="0 0 20 20" fill="none">
+                                    <path
+                                        d="M10.0287 19.0574C15.0151 19.0574 19.0574 15.0151 19.0574 10.0287C19.0574 5.04229 15.0151 1 10.0287 1C5.04229 1 1 5.04229 1 10.0287C1 15.0151 5.04229 19.0574 10.0287 19.0574Z"
+                                        stroke-miterlimit="10"
+                                    />
+                                    <path d="M8.51172 13.7119L12.7204 10.0288L8.51172 6.34204" stroke-miterlimit="10" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col col-sm-12 mt-0 p-0 mt-md-50px mt-lg-4vw ms-lg-10px d-flex flex-column flex-sm-row">
+                        <a class="btn btn-secondary m-0" role="button" href="/hapai-public/upcoming-events">View Calendar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid px-1 px-highRes-3 py-4 py-lg-7vw custom-primary --dark-green-neutral border-top border-light">
+                <div class="row d-flex flex-column flex-md-row p-0 m-0">
+                    <div class="col-12 col-md-6 order-1 p-0 ps-md-10px"><h2 class="cust-font-2">Latest Insights</h2></div>
+                    <div class="col-12 col-md-6 order-3 order-md-2 p-0 d-flex align-items-md-end justify-content-md-end pe-md-10px">
+                        <a class="btn btn-secondary mt-70px m-md-0" role="button" href="/hapai-public/latest-insights">View All Insights</a>
+                    </div>
+                    <div class="row d-flex flex-column flex-md-row p-0 m-0 same-height-wrapper diff-heights order-2 order-md-3 pt-lg-5vw">
+                        <div class="col col-sm-12 col-md-4 p-0 m-0 pt-4 pt-lg-0 px-md-10px px-highRes-1 image-cnr cnr-hover-add">
+                            <a href="/hapai-public/resources-template.html" role="button">
+                                <div class="img-3-col-style pod d-flex flex-column justify-content-end mb-3 mb-lg-3vw">
+                                    <img src="images/placeholder-image.jpg" class="img-fit" alt="placeholder image" />
+                                    <div class="--w100">
+                                        <svg class="cnr-animation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 186 164" fill="none">
+                                            <path d="M40 147C28 159 8.66667 163 0.5 163.5H186V0.5C142.333 44.3333 52 135 40 147Z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="same-height col-sm-6 col-md-12">
+                                    <h3 class="cust-font-5 m-0 pb-2 pb-lg-2vw col-md-11 col-lg-10 col-xl-9">Lorem ipsum title</h3>
+                                    <p class="p-0 m-0 col-md-10 col-lg-9 cust-font-7 text-secondary">Date</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col col-sm-12 col-md-4 p-0 m-0 pt-4 pt-lg-0 px-md-10px px-highRes-1 image-cnr cnr-hover-add">
+                            <a href="/hapai-public/resources-template.html" role="button">
+                                <div class="img-3-col-style pod d-flex flex-column justify-content-end mb-3 mb-lg-3vw">
+                                    <img src="images/placeholder-image.jpg" class="img-fit" alt="placeholder image" />
+                                    <div class="--w100">
+                                        <svg class="cnr-animation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 186 164" fill="none">
+                                            <path d="M40 147C28 159 8.66667 163 0.5 163.5H186V0.5C142.333 44.3333 52 135 40 147Z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="same-height col-sm-6 col-md-12">
+                                    <h3 class="cust-font-5 m-0 pb-2 pb-lg-2vw col-md-11 col-lg-10 col-xl-9">Lorem ipsum title</h3>
+                                    <p class="p-0 m-0 col-md-10 col-lg-9 cust-font-7 text-secondary">Date</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col col-sm-12 col-md-4 p-0 m-0 pt-4 pt-lg-0 px-md-10px px-highRes-1 image-cnr cnr-hover-add">
+                            <a href="/hapai-public/resources-template.html" role="button">
+                                <div class="img-3-col-style pod d-flex flex-column justify-content-end mb-3 mb-lg-3vw">
+                                    <img src="images/placeholder-image.jpg" class="img-fit" alt="placeholder image" />
+                                    <div class="--w100">
+                                        <svg class="cnr-animation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 186 164" fill="none">
+                                            <path d="M40 147C28 159 8.66667 163 0.5 163.5H186V0.5C142.333 44.3333 52 135 40 147Z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="same-height col-sm-6 col-md-12">
+                                    <h3 class="cust-font-5 m-0 pb-2 pb-lg-2vw col-md-11 col-lg-10 col-xl-9">Lorem ipsum title</h3>
+                                    <p class="p-0 m-0 col-md-10 col-lg-9 cust-font-7 text-secondary">Date</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="px-1 px-md-2 px-highRes-4 py-4 py-lg-7vw bg-accent-yellow image-cnr cnr-constant">
+                <div class="d-flex flex-column flex-wrap flex-md-row flex-md-nowrap">
+
+                    <div class="p-0 col-md-6 mb-4 mb-md-0">
+                        <h2 class="cust-font-2 --balance">Is your organisation already a member?</h2>
+                    </div>
+
+                    <div class="p-0 col-sm-9 col-md-3 offset-md-2 d-flex flex-column align-items-start">
+                        <p>Most public sector agencies are corporate members of Hāpai Public. If your organisation is listed in our directory, you can get started by activating your membership.</p>
+                        <a class="btn btn-primary mt-2 mt-highRes-4" role="button">Become a member</a>
+                    </div>
+                </div>
+                <svg class="cnr-animation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 186 164" fill="none">
+                    <path d="M40 147C28 159 8.66667 163 0.5 163.5H186V0.5C142.333 44.3333 52 135 40 147Z" />
+                </svg>
+            </div>
+
+            <div class="px-1 px-md-2 px-highRes-4 pt-4 pb-3 pt-lg-7vw pb-lg-3vw">
+                <div class="p-0 col-md-8 col-xl-7">
+                    <h2 class="cust-font-4">Hāpai Public members experience career satisfaction through increased learning, deeper connections and having an impact on the future of the sector.</h2>
+                </div>
+            </div>
+
+            <div class="px-1 px-md-2 px-highRes-4">
+                <div class="custom-primary --light-green">
+                    <div class="px-1 px-md-2 px-highRes-4 py-2 py-md-3 py-highRes-5 d-flex flex-column flex-wrap flex-md-nowrap flex-md-row content-filter">
+                        <div class="col-12 col-md-5 d-flex flex-column justify-content-between">
+                            <div id="filter" class="d-flex flex-column align-items-start cust-font-5 side-buttons">
+                                <div>
+                                    <h3 class="cust-font-5"><button class="btn m-0 px-0 py-1 py-lg-2vw active" data-filter="one">Contribute to leading ideas and innovation</button></h3>
+                                </div>
+                                <div>
+                                    <h3 class="cust-font-5"><button class="btn m-0 px-0 py-1 py-lg-2vw" data-filter="two">Explore what it means to be a public servant</button></h3>
+                                </div>
+                                <div>
+                                    <h3 class="cust-font-5"><button class="btn m-0 px-0 py-1 py-lg-2vw" data-filter="three">Build your capabilities to move across and through the sector</button></h3>
+                                </div>
+                            </div>
+
+                            <div class="filter-wrapper-other animated">
+                                <div class="filter-item show one">
+                                    <div class="py-1 py-lg-2vw col-sm-9 col-md-10">
+                                        <p>
+                                            Our members are at the forefront of exploring innovation and sector change. Members come together to develop and examine ideas that can shape the future of the Public Sector.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="filter-item two">
+                                    <div class="py-1 py-lg-2vw col-sm-9 col-md-10">
+                                        <p>
+                                            We provide a forum for members to understand the principles, nuances and benefits of working in the public sector, as well as to build their network with like-minded professionals.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="filter-item three">
+                                    <div class="py-1 py-lg-2vw col-sm-9 col-md-10">
+                                        <p>
+                                            Our members learn transferable skills, have a deeper understanding of the whole sector and feel more equipped to do their best work, no matter where they move through their career.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col col-sm-12 col-md-6 offset-md-1 image-cnr cnr-constant responsive-hero filter-wrapper-other animated">
+                            <img src="images/placeholder-image.jpg" class="img-fit filter-item one show" alt="placeholder image" />
+                            <img src="images/test-2.jpg" class="img-fit two filter-item" alt="placeholder image" />
+                            <img src="images/test-3.jpg" class="img-fit three filter-item" alt="placeholder image" />
+                            <svg class="cnr-animation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 186 164" fill="none">
+                                <path d="M40 147C28 159 8.66667 163 0.5 163.5H186V0.5C142.333 44.3333 52 135 40 147Z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid px-1 px-md-2 px-highRes-4 pt-4 pb-3 pt-lg-7vw pb-lg-4vw">
+                <div class="p-0 col-md-8 col-xl-8">
+                    <h2 class="cust-font-2">See how we can help you grow your career in public service</h2>
+                </div>
+            </div>
+
+            <div class="container-fluid px-1 px-sm-10px px-md-1 px-highRes-3 pb-2 pb-lg-7vw">
+                <div class="row flex-column flex-sm-row same-height-wrapper">
+
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-4 m-0 p-0 mb-1 mb-lg-0 px-sm-10px px-highRes-1 image-cnr cnr-hover-add">
+                        <a href="/hapai-public/start-your-career" class="pod pod-full d-flex flex-column justify-content-end min-img-height-g1">
+                            <img src="images/test.jpg" class="img-fit" alt="placeholder image" />
+                            <div class="px-1 px-md-2 py-3 px-highRes-4 py-highRes-5">
+                                <div class="button-group same-height">
+                                    <h3 class="cust-font-4 text-light mb-2">Start your career</h3>
+                                    <p class="text-light m-0 col-10 col-xl-9 add-height">Gain skills to deepen your understanding of the sector.</p>
+                                </div>
+                            </div>
+                            <svg class="cnr-animation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 186 164" fill="none">
+                                <path d="M40 147C28 159 8.66667 163 0.5 163.5H186V0.5C142.333 44.3333 52 135 40 147Z" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-4 m-0 p-0 mb-1 mb-lg-0 px-sm-10px px-highRes-1 image-cnr cnr-hover-add">
+                        <a href="/hapai-public/grow-your-career" class="pod pod-full d-flex flex-column justify-content-end min-img-height-g1">
+                            <img src="images/test.jpg" class="img-fit" alt="placeholder image" />
+                            <div class="px-1 px-md-2 py-3 px-highRes-4 py-highRes-5">
+                                <div class="button-group same-height">
+                                    <h3 class="cust-font-4 text-light mb-2">Grow your career</h3>
+                                    <p class="text-light m-0 col-10 col-xl-9 add-height">Unleash your potential & engage with the bigger picture of public service.</p>
+                                </div>
+                            </div>
+                            <svg class="cnr-animation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 186 164" fill="none">
+                                <path d="M40 147C28 159 8.66667 163 0.5 163.5H186V0.5C142.333 44.3333 52 135 40 147Z" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-4 m-0 p-0 mb-1 mb-lg-0 px-sm-10px px-highRes-1 image-cnr cnr-hover-add">
+                        <a href="/hapai-public/member-stories" class="pod pod-full d-flex flex-column justify-content-end min-img-height-g1">
+                            <img src="images/test.jpg" class="img-fit" alt="placeholder image" />
+                            <div class="px-1 px-md-2 py-3 px-highRes-4 py-highRes-5">
+                                <div class="button-group same-height">
+                                    <h3 class="cust-font-4 text-light mb-2">Member stories</h3>
+                                    <p class="text-light m-0 col-10 col-xl-9 add-height">Learn how members made moves across the Public Sector.</p>
+                                </div>
+                            </div>
+                            <svg class="cnr-animation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 186 164" fill="none">
+                                <path d="M40 147C28 159 8.66667 163 0.5 163.5H186V0.5C142.333 44.3333 52 135 40 147Z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="px-1 px-md-2 px-highRes-4">
+                <div class="d-flex flex-column px-1 px-md-2 px-highRes-4 py-2 py-md-2vw custom-primary --orange image-cnr cnr-constant">
+                    <svg class="cnr-animation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 186 164" fill="none">
+                        <path d="M40 147C28 159 8.66667 163 0.5 163.5H186V0.5C142.333 44.3333 52 135 40 147Z" />
+                    </svg>
+
+                    <div class="col-12">
+                        <div class="d-flex flex-column align-items-end mb-1">
+                            <svg class="quote" viewBox="0 0 50 50" fill="none">
+                                <rect rx="25" width="50" height="50" fill="#122E2A" />
+                                <path
+                                    d="M14.8993 25.7884C15.7047 25.2905 16.5101 25.0415 17.3154 25.0415C18.604 25.0415 19.7315 25.5394 20.698 26.5353C21.6644 27.4758 22.1477 28.5823 22.1477 29.8548C22.1477 31.2932 21.6644 32.5104 20.698 33.5062C19.7852 34.5021 18.6577 35 17.3154 35C15.651 35 14.3356 34.3914 13.3691 33.1743C12.4564 31.9018 12 30.2974 12 28.361C12 21.9986 15.2483 17.545 21.745 15L21.9866 15.9129C17.3691 18.6238 15.0067 21.9156 14.8993 25.7884ZM28.7517 25.8714C29.557 25.3734 30.3893 25.1245 31.2483 25.1245C32.5369 25.1245 33.6376 25.5947 34.5503 26.5353C35.5168 27.4758 36 28.5823 36 29.8548C36 31.2932 35.5436 32.5104 34.6309 33.5062C33.7181 34.5021 32.5906 35 31.2483 35C29.5839 35 28.2685 34.3914 27.302 33.1743C26.3893 31.9018 25.9329 30.2974 25.9329 28.361C25.9329 21.9433 29.1544 17.4896 35.5973 15L35.8389 15.9129C31.2215 18.6238 28.8591 21.9433 28.7517 25.8714Z"
+                                    fill="#F29054"
+                                />
+                            </svg>
+                        </div>
+                        <div class="swiper home-slider">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide bg-success">
+                                    <p class="cust-font-5 col-md-8 offset-md-4">
+                                        “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. Vivamus interdum dictum convallis. Curabitur ac est sed mi imperdiet scelerisque elementum id ante. "
+                                    </p>
+                                    <div class="border-top border-primary mt-2 pt-2 mt-md-3 pt-md-3 mt-lg-3vw pt-lg-3vw">
+                                        <p class="cust-font-5 pb-10px">Jim Jimmy</p>
+                                        <p class="cust-font-7">Position here</p>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide bg-success">
+                                    <p class="cust-font-5 col-md-8 offset-md-4">
+                                        “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. Vivamus interdum dictum convallis. Curabitur ac est sed mi imperdiet scelerisque elementum id ante. Duis ornare, dui
+                                        non mattis tincidunt, eros ex vulputate odio, sed fermentum est mauris vel libero. Curabitur laoreet maximus consectetur. In mattis finibus odio, nec facilisis quam tempor auctor."
+                                    </p>
+                                    <div class="border-top border-primary mt-2 pt-2 mt-md-3 pt-md-3 mt-lg-3vw pt-lg-3vw">
+                                        <p class="cust-font-5 pb-10px">Tom Tommu</p>
+                                        <p class="cust-font-7">Position here</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-controls-wrapper mt-3">
+                        <div class="swiper-button-next">
+                            <svg viewBox="0 0 20 20" fill="none">
+                                <path
+                                    d="M10.0287 19.0574C15.0151 19.0574 19.0574 15.0151 19.0574 10.0287C19.0574 5.04229 15.0151 1 10.0287 1C5.04229 1 1 5.04229 1 10.0287C1 15.0151 5.04229 19.0574 10.0287 19.0574Z"
+                                    stroke-miterlimit="10"
+                                />
+                                <path d="M8.51172 13.7119L12.7204 10.0288L8.51172 6.34204" stroke-miterlimit="10" />
+                            </svg>
+                        </div>
+                        <div class="swiper-button-prev">
+                            <svg viewBox="0 0 20 20" fill="none">
+                                <path
+                                    d="M10.0299 1.0002C5.04347 1.0002 1.00118 5.04249 1.00118 10.0289C1.00118 15.0153 5.04347 19.0576 10.0299 19.0576C15.0163 19.0576 19.0586 15.0153 19.0586 10.0289C19.0586 5.04249 15.0163 1.0002 10.0299 1.0002Z"
+                                    stroke-miterlimit="10"
+                                />
+                                <path d="M11.5469 6.34598L7.3382 10.029L11.5469 13.7158" stroke-miterlimit="10" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+
+            <div class="px-1 px-md-2 px-highRes-4 pt-4 pt-lg-7vw pb-lg-3vw logo-wrapper">
+                <div class="d-flex flex-column flex-md-row flex-wrap flex-md-nowrap pb-4 pb-lg-4vw">
+                    <div class="col-12 col-md-3 mb-1 mb-md-0">
+                        <p class="cust-font-7">Foundation Partners</p>
+                    </div>
+                    <div class="col-12 col-md-8 offset-md-1 col-lg-9 offset-lg-0 d-flex flex-row flex-wrap ps-md-1 ps-lg-0">
+                        <a href="/partners#deloitte" class="col-12 col-sm-6 col-lg-3 mb-2 px-lg-2"><img src="images/deloitte_logo.svg" class="img-fluid" alt="Foundation partner, Deloitte" /></a>
+                        <a href="/partners#westpac" class="col-12 col-sm-6 col-lg-3 mb-2 px-lg-2"><img src="images/westpac_logo.svg" class="img-fluid" alt="Foundation partner, Westpac" /></a>
+                        <a href="/partners#skills" class="col-12 col-sm-6 col-lg-3 mb-2 px-lg-2"><img src="images/skills_logo.svg" class="img-fluid" alt="Foundation partner, Skills" /></a>
+                        <a href="/partners#russell-mcveagh" class="col-12 col-lg-3 col-sm-6 mb-2 px-lg-2"><img src="images/russell-mcveagh_logo.svg" class="img-fluid" alt="Foundation partner, Russel McVeagh" /></a>
+                    </div>
+                </div>
+
+                <div class="d-flex flex-column flex-md-row flex-wrap flex-md-nowrap pb-4 pb-lg-4vw">
+                    <div class="col-12 col-md-3 mb-1 mb-md-0">
+                        <p class="cust-font-7">Support Partners</p>
+                    </div>
+                    <div class="col-12 col-md-8 offset-md-1 col-lg-9 offset-lg-0 d-flex flex-row flex-wrap ps-md-1 ps-lg-0">
+                        <a href="/partners#martin-jenkins" class="col-12 col-lg-3 col-sm-6 mb-2 px-lg-2"><img src="images/martin-jenkins.svg" class="img-fluid" alt="Support Partner Martin Jenkins" /></a>
+                        <a href="/partners#victoria-uni" class="col-12 col-lg-3 col-sm-6 mb-2 px-lg-2"><img src="images/victoria-uni-logo.svg" class="img-fluid" alt="Support Partner Victoria University of Wellington" /></a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="container-fluid p-0 m-0 pt-4 pt-lg-7vw bg-primary">
+                <div class="d-flex flex-column flex-md-row">
+                    <div class="p-0 col-12 col-md-3 ps-1 ps-md-2 ps-highRes-4">
+                        <picture>
+                            <source media="(min-width: 3480px)" srcset="images/footer-icon_lg.svg" />
+                            <img class="m-0" src="images/footer-icon.svg" alt="Icon image pattern" />
+                        </picture>
+                    </div>
+
+                    <div class="p-0 col-12 col-md-9">
+                        <div class="col-12 px-1 px-md-2 ps-md-0 pe-highRes-4">
+                            <h2 class="cust-font-7 mt-2 mt-md-0 mb-4 mb-lg-4vw text-light">Get in touch</h2>
+                            <p class="m-0 text-light cust-font-2 mb-4 mb-lg-4vw">If you have a question or an idea about how Hāpai Public can best support you, get in touch. We’d love to hear from you.</p>
+                        </div>
+
+                        <div class="col-12 d-flex flex-column flex-md-row flex-wrap justify-content-between footer-nav-wrapper px-1 px-md-2 ps-md-0 pe-highRes-4 pb-4 pb-md-4vw">
+                            <ul class="mt-3 footer-nav m-0 p-0 d-flex flex-column flex-wrap flex-md-row justify-content-between">
+                                <li class="pb-3 pb-md-0 pe-1 pe-lg-2 pe-highRes-4"><a href="/hapai-public/member-benefits">Membership</a></li>
+                                <li class="pb-3 pb-md-0 pe-1 pe-lg-2 pe-highRes-4"><a href="/hapai-public/upcoming-events">Events</a></li>
+                                <li class="pb-3 pb-md-0 pe-1 pe-lg-2 pe-highRes-4"><a href="/hapai-public/public-sector-journal">Journal</a></li>
+                                <li class="pb-3 pb-md-0 pe-1 pe-lg-2 pe-highRes-4"><a href="/hapai-public/resources">Resources</a></li>
+                                <li class="pb-3 pb-md-0 pe-1 pe-lg-2 pe-highRes-4"><a href="/hapai-public/who-we-are">Who we are</a></li>
+                                <li class="pb-3 pb-md-0 pe-1 pe-lg-2 pe-highRes-4"><a href="/hapai-public/faqs">FAQs</a></li>
+                                <li class="pb-3 pb-md-0 pe-1 pe-lg-2 pe-highRes-4"><a href="/hapai-public/contact-us">Contact us</a></li>
+                            </ul>
+                            <ul class="mt-3 p-0 d-flex flex-row">
+                                <li class="me-1">
+                                    <a href="https://www.linkedin.com/company/ipanz-new-professionals/" target="_blank">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"
+                                            />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                                            <path
+                                                d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"
+                                            />
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-primary">
+                <img src="images/footer-banner.svg" class="footer-banner" alt="" />
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+        <script type="module" src="js/height-equalizer.js"></script>
+        <script type="module" src="js/masking.js"></script>
+        <script type="module" src="js/sliders.js"></script>
+        <script type="module" src="js/navigation.js"></script>
+    </body>
+</html>
