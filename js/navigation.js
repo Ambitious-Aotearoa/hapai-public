@@ -16,13 +16,13 @@ toggler.addEventListener('click', function () {
   burger.classList.toggle('cross')
 })
 
-function getNavHeight() {
-  var navHeight = $('nav').outerHeight()
-  console.log(navHeight)
-  $('.hero').css('padding-top', navHeight)
-}
-getNavHeight()
-window.addEventListener('resize', getNavHeight)
+// function getNavHeight() {
+//   var navHeight = $('nav').outerHeight()
+//   console.log(navHeight)
+//   $('.hero').css('padding-top', navHeight)
+// }
+// getNavHeight()
+// window.addEventListener('resize', getNavHeight)
 
 
       // Select the collapse element
