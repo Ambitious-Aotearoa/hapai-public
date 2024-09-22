@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/styles.css" />
     <title>Aspiring Senior Leaders</title>
   </head>
-  <body class="senior-leaders-page primary-nav">
+  <body class="senior-leaders-page">
     <nav class="navbar navbar-expand-navBreak p-0 fixed-top">
       <div class="container-fluid p-0">
         <div class="d-flex flex-row justify-content-between p-1 px-md-2 px-highRes-4 w-100 bg-change">
@@ -495,6 +495,8 @@
     <style>
       .no-scroll {
         overflow: hidden;
+        position: fixed;
+        width: 100%; /* To prevent layout shifts */
       }
       #navbarNavDropdown {
         overflow: scroll;
@@ -516,16 +518,24 @@
     <script type="module" src="js/sliders.js"></script>
     <script type="module" src="js/navigation.js"></script>
     <script>
+      // Select the collapse element
       const navCollapse = document.getElementById('navbarNavDropdown')
 
-      // When the collapse is shown, add the no-scroll class to the body
+      // Function to prevent touch scrolling
+      function preventTouchMove(e) {
+        e.preventDefault()
+      }
+
+      // When the collapse is shown, add the no-scroll class and disable touch scrolling
       navCollapse.addEventListener('shown.bs.collapse', function () {
         document.body.classList.add('no-scroll')
+        document.body.addEventListener('touchmove', preventTouchMove, { passive: false })
       })
 
-      // When the collapse is hidden, remove the no-scroll class from the body
+      // When the collapse is hidden, remove the no-scroll class and re-enable touch scrolling
       navCollapse.addEventListener('hidden.bs.collapse', function () {
         document.body.classList.remove('no-scroll')
+        document.body.removeEventListener('touchmove', preventTouchMove)
       })
     </script>
   </body>
