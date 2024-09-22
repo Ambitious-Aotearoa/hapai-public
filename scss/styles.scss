@@ -1998,9 +1998,20 @@ footer{
 
 ////---------NAVIGATION AND MODALS
 
+
+.no-scroll {
+    touch-action: none;
+    overflow: hidden;
+    width: 100%;
+}
+#navbarNavDropdown {
+    overflow: scroll;
+}
+
+
 nav{
     .navbar-collapse.bg-primary{
-        a:not(.btn-light){
+        a:not(.btn-light, .contact-nav p a){
             color: #526D52;
             &.dropdown-item{
                 color:$secondary;
@@ -2011,6 +2022,12 @@ nav{
         }
         p{
             color: $secondary;
+        }
+        .contact-nav p a{
+            color: $secondary;
+            &:hover{
+                color: $light;
+            }
         }
     }
 
@@ -2032,12 +2049,19 @@ nav{
 
     .navbar-toggler{
         border-width: 0;
+        height: 16px;
+        display: flex;
+        align-items: center;
     }
 
     .nav-item{
         .dropdown-item{
             font-size: 1.5rem;
         }
+    }
+
+    .nav-wrapper{
+        padding-bottom: 60px;
     }
 
 
@@ -2062,15 +2086,23 @@ nav{
             padding: 0;
             margin:0
         }
+
         .contact-nav{
             text-align: right;
+            padding-bottom: 0;
+        }
+
+        .nav-wrapper{
+            padding-bottom: 4vw;
+            margin-bottom: 0;
+        margin-top: auto;
         }
         
     }
 
     @include media-breakpoint-up(md){
         .dropdown-menu[data-bs-popper]{
-            bottom: 4vw;
+            bottom: 6vw;
         }
     }
 
@@ -2080,7 +2112,9 @@ nav{
                 padding-top: 1em;
             }
         }
+
     }
+
 
     @include media-breakpoint-up(highRes){
         .nav-item{
@@ -2088,6 +2122,9 @@ nav{
             .dropdown-item{
                 font-size: 4rem;
             }
+        }
+        .navbar-toggler{
+            height: 30px;
         }
     }
 }
@@ -2106,27 +2143,32 @@ nav{
         transition: height .3s ease;
     }
     .navbar-collapse.show{
-        min-height: calc(100vh - 80px);
+        height: 100vh;
+        max-height: calc(100vh - 80px);
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
         align-items: flex-start;
+        overflow-y: auto;
        .navbar-nav,
         .contact-nav{
             transition: opacity .01s ease;
             opacity: 1;
         }
     }
+
     .bg-change{
         background-color: $light;
+        .cta-wrapper{
+            align-items: center;
+            height: 100%;
+          }
     }
-    
+
+
     #logo{
         fill:$primary;
         width: 200px;
-        @include media-breakpoint-up(highRes){
-            width: 400px;
-        }
+
     }
 
     #burger{
@@ -2157,20 +2199,9 @@ nav{
                 transform: rotate(-45deg) translateY(-7px);
               }
         }
-
-        @include media-breakpoint-up(highRes){
-            width: 40px;
-            height: 30px; 
-            &.cross{
-                  .line-top {
-                    transform: rotate(45deg) translateY(7px);
-                  }
-                  .line-bottom {
-                    transform: rotate(-45deg) translateY(-7px);
-                  }
-            }
-        }
     }
+
+
 
 
     .bg-change, #logo,  #basket{
@@ -2182,9 +2213,7 @@ nav{
         stroke:$primary;
         stroke-width: 1.5;
         fill:none;
-        @include media-breakpoint-up(highRes){
-            width: 44px;
-        }
+
     }
 
 
@@ -2211,15 +2240,26 @@ nav{
         }
     }
 
-    @include media-breakpoint-up(md){
-        .navbar-collapse.show{
-            flex-direction: row;
-            justify-content: unset;
-            align-items: flex-end;
-        }
-    }
-
     @include media-breakpoint-up(highRes){
+        #logo{
+            width: 400px;
+        }
+        #burger{
+            width: 40px;
+            height: 30px; 
+            &.cross{
+                .line-top {
+                    transform: rotate(45deg) translateY(7px);
+                }
+                .line-bottom {
+                    transform: rotate(-45deg) translateY(-7px);
+                }
+            }
+        }
+        #basket{
+            width: 44px;
+        }
+
         .navbar-collapse.show{
             min-height: calc(100vh - 120px);
         }
@@ -2229,6 +2269,13 @@ nav{
 
 .primary-nav{
     .navbar{
+        #main-btn{
+            background-color: $light;
+            color: $primary;
+            &:hover{
+                background-color: $secondary;
+            }
+        }
         #basket{
             stroke:$light;
         }
@@ -2276,7 +2323,7 @@ nav{
 
 
 
-
+////modal pop out cart
 @mixin counter-btn($size) {
     padding:calc($size*0.8) calc($size*1.2);
     padding-bottom:$size;
@@ -2347,6 +2394,9 @@ nav{
         }
     }
 }
+
+
+////svg graphics
 
 .akoranga,
 .whanaungatanga,
