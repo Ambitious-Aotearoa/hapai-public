@@ -1995,6 +1995,13 @@ footer{
     z-index: 1030;
 }
 
+.hero{
+    padding-top: 80px;
+    @include media-breakpoint-up(lg){
+        padding-top: 130px;
+    }
+}
+
 
 ////---------NAVIGATION AND MODALS
 
@@ -2094,8 +2101,7 @@ nav{
 
         .nav-wrapper{
             padding-bottom: 12vw;
-            margin-bottom: 0;
-            margin-top: auto;
+
         }
         
     }
@@ -2114,9 +2120,12 @@ nav{
         }
         .nav-wrapper{
             padding-bottom: 6vw;
+            margin-bottom: 0;
+            margin-top: auto;
         }
 
     }
+
 
 
     @include media-breakpoint-up(highRes){
