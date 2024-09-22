@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/styles.css" />
     <title>Aspiring Senior Leaders</title>
   </head>
-  <body class="senior-leaders-page primary-nav">
+  <body class="senior-leaders-page yellow-nav">
     <nav class="navbar navbar-expand-navBreak p-0 fixed-top">
       <div class="container-fluid p-0">
         <div class="d-flex flex-row justify-content-between p-1 px-md-2 px-highRes-4 w-100 bg-change">
@@ -522,7 +522,7 @@
       const navCollapse = document.getElementById('navbarNavDropdown')
 
       // When the collapse is shown, add the no-scroll class to body and prevent touch scrolling outside navCollapse
-      navCollapse.addEventListener('shown.bs.collapse', function () {
+      navCollapse.addEventListener('show.bs.collapse', function () {
         document.body.classList.add('no-scroll')
       })
 
