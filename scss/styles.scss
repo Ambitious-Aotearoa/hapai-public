@@ -2093,9 +2093,9 @@ nav{
         }
 
         .nav-wrapper{
-            padding-bottom: 4vw;
+            padding-bottom: 12vw;
             margin-bottom: 0;
-        margin-top: auto;
+            margin-top: auto;
         }
         
     }
@@ -2111,6 +2111,9 @@ nav{
             .dropdown-item{
                 padding-top: 1em;
             }
+        }
+        .nav-wrapper{
+            padding-bottom: 6vw;
         }
 
     }
