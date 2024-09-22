@@ -55,7 +55,7 @@
               />
             </svg>
           </a>
-          <div class="d-flex">
+          <div class="d-flex cta-wrapper">
             <a id="main-btn" class="btn btn-primary d-none d-md-block m-0 me-1 me-highRes-2" role="button" href="/hapai-public/become-a-member">Join us</a>
 
             <svg viewBox="0 0 22 22" id="basket" class="me-1 me-highRes-2" role="button" data-bs-toggle="modal" data-bs-target="#cartSummary" aria-label="Shopping Basket">
@@ -78,7 +78,7 @@
 
         <div class="collapse navbar-collapse custom-primary bg-primary py-0 px-1 px-lg-2 px-highRes-4" id="navbarNavDropdown">
           <div class="nav-wrapper w-100 d-md-flex align-items-end">
-            <ul class="navbar-nav col-md-9 mb-md-4vw">
+            <ul class="navbar-nav col-md-9 ">
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle cust-font-2" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> About us </a>
                 <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
@@ -150,7 +150,7 @@
               </li>
             </ul>
 
-            <div class="contact-nav col-md-3 mt-2 mb-md-4vw">
+            <div class="contact-nav col-md-3 mt-2 ">
               <p class="m-0"><a href="tel:+6421493930">021 493 930</a></p>
               <p><a href="mailto:info@ipanz.co.nz">info@ipanz.co.nz</a></p>
               <p>
@@ -495,62 +495,12 @@
       </div>
     </main>
 
-    <style>
-      .no-scroll {
-        touch-action: none;
-        overflow: hidden;
-        width: 100%; /* To prevent layout shifts */
-      }
-      #navbarNavDropdown {
-        overflow: scroll;
-      }
-
-      .bg-change .d-flex {
-        align-items: center;
-      }
-      .navbar-toggler {
-        height: 16px;
-        display: flex;
-        align-items: center;
-      }
-      .navbar .navbar-collapse.show {
-        max-height: calc(100vh - 80px);
-        overflow-y: auto;
-      }
-      .contact-nav {
-        @media (max-width: 1023px) {
-          padding-bottom: 100px;
-        }
-      }
-
-      /* in css */
-      @media (min-width: 1024px) {
-        .navbar .navbar-collapse.show {
-          flex-direction: column;
-          justify-content: unset;
-          align-items: unset;
-        }
-      }
-    </style>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script type="module" src="js/height-equalizer.js"></script>
     <script type="module" src="js/sliders.js"></script>
     <script type="module" src="js/navigation.js"></script>
-    <script>
-      // Select the collapse element
-      const navCollapse = document.getElementById('navbarNavDropdown')
 
-      // When the collapse is shown, add the no-scroll class to body and prevent touch scrolling outside navCollapse
-      navCollapse.addEventListener('show.bs.collapse', function () {
-        document.body.classList.add('no-scroll')
-      })
-
-      // When the collapse is hidden, remove the no-scroll class and re-enable body touch scrolling
-      navCollapse.addEventListener('hidden.bs.collapse', function () {
-        document.body.classList.remove('no-scroll')
-      })
-    </script>
   </body>
 </html>
