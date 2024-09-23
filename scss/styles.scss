@@ -2110,6 +2110,10 @@ nav{
         .dropdown-menu[data-bs-popper]{
             bottom: 6vw;
         }
+        .nav-wrapper{
+            margin-bottom: 0;
+            margin-top: auto;
+        }
     }
 
     @include media-breakpoint-up(lg){
@@ -2118,11 +2122,7 @@ nav{
                 padding-top: 1em;
             }
         }
-        .nav-wrapper{
-            padding-bottom: 6vw;
-            margin-bottom: 0;
-            margin-top: auto;
-        }
+
 
     }
 
@@ -2169,6 +2169,7 @@ nav{
     }
 
     .bg-change{
+        align-items: center;
         background-color: $light;
         .cta-wrapper{
             align-items: center;
