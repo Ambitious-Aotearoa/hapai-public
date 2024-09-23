@@ -1582,17 +1582,17 @@ a:hover{
 .events-style-two{
     .zero-ten a{
         background-color: $custom-accent-blue;
-        background-image: url('/images/side-pattern-one.png');
+        background-image: url('/hapai-public/images/side-pattern-one.png');
     }
     .bg-organisation a,
     .ten-plus a{
         background-color: $success;
-        background-image: url('/images/side-pattern-one.png');
+        background-image: url('/hapai-public/images/side-pattern-one.png');
     }
     .bg-individual a,
     .all-levels a{
         background-color: $secondary;
-        background-image: url('/images/side-pattern-one.png');
+        background-image: url('/hapai-public/images/side-pattern-one.png');
         
     }
     a{
@@ -1785,9 +1785,7 @@ a:hover{
         justify-content: space-between;
     }
 }
-.home-page .swiper-slide{
-    justify-content: flex-end;
-}
+
 
 
 

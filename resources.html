@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="images/favicon.svg" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Resources</title>
+  </head>
+  <body class="resources-page">
+    <nav class="navbar navbar-expand-navBreak p-0 fixed-top">
+        <div class="container-fluid p-0">
+          <div class="d-flex flex-row justify-content-between p-1 px-md-2 px-highRes-4 w-100 bg-change">
+            <a class="navbar-brand" href="/hapai-public/">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190 28" id="logo">
+                <path
+                  d="M12.5071 12.0085C9.2502 13.069 6.19716 14.4901 3.23952 15.8597C2.12933 16.3749 1.06683 16.8686 0 17.3409V25.464C0.602803 25.2451 1.18826 25.0089 1.7607 24.7685C3.36095 24.0901 4.93518 23.356 6.45736 22.6476C9.3326 21.3123 12.0517 20.0501 14.8749 19.127C19.5195 17.6114 23.5397 17.4096 26.8356 18.5216V10.772C22.5422 9.89188 17.7328 10.2997 12.5071 12.0042V12.0085Z"
+                />
+                <path
+                  d="M12.5071 1.68294C9.2502 2.74341 6.19716 4.16452 3.23952 5.53412C2.12933 6.04932 1.06683 6.54306 0 7.01534V14.4043C1.06683 13.932 2.12933 13.4383 3.23952 12.9231C6.19282 11.5492 9.24587 10.1323 12.5071 9.07187C17.7371 7.3674 22.5422 6.95952 26.8356 7.83967V0.450733C22.5379 -0.429413 17.7328 -0.0215406 12.5071 1.68294Z"
+                />
+                <path d="M2.07728 3.08695C3.86401 2.25833 5.68977 1.41253 7.58491 0.626836V0H0V4.04867C0.715557 3.72238 1.42678 3.39178 2.07728 3.09125V3.08695Z" />
+                <path d="M26.8359 25.4683V21.3123L25.9772 21.0203C24.867 20.6468 23.6224 20.4536 22.2737 20.4536C21.3239 20.4536 20.3135 20.5481 19.251 20.7327V25.464H26.8402L26.8359 25.4683Z" />
+                <path
+                  d="M58.8493 21.9176H51.6156C51.8195 21.8876 53.1638 21.63 53.1638 18.6847V13.5154H44.794V18.6847C44.794 21.5742 46.0473 21.8919 46.2815 21.9176H39.0479C39.2517 21.8876 40.5917 21.63 40.5917 18.6847V5.92043C40.5917 3.12113 39.3081 2.74331 39.0479 2.6875H46.2815C46.0777 2.71755 44.794 3.03527 44.794 5.92043V10.8879H53.1638V5.92043C53.1638 3.09108 51.8802 2.74331 51.6156 2.6875H58.8493C58.6455 2.71755 57.3618 3.00521 57.3618 5.92043V18.6847C57.3618 21.5441 58.6151 21.8919 58.8493 21.9176Z"
+                />
+                <path
+                  d="M70.9528 22.5792C69.9337 22.4332 68.8799 21.5101 68.676 20.8189C67.9171 21.8278 66.1694 22.3473 64.5909 22.3473C62.171 22.3473 60.4189 20.9906 60.4189 18.8525C60.4189 16.5427 63.3939 14.6922 68.147 13.6833V12.5842C68.147 10.9097 67.5051 10.1026 66.2215 10.1026C64.734 10.1026 64.1225 10.884 64.1225 11.5452C64.1225 12.0088 64.3827 12.3523 64.7036 12.4983L61.0304 13.8851C60.8266 13.3956 60.6791 12.8461 60.6791 12.2664C60.6791 9.60883 63.6238 7.90435 66.5684 7.90435C70.4758 7.90435 71.8202 9.72475 71.8202 12.2664V17.6074C71.8202 19.342 72.6658 20.3209 74.1837 20.3209C74.2704 20.3209 74.4178 20.265 74.5046 20.265L70.9485 22.5749L70.9528 22.5792ZM61.9671 5.37125V3.63672H71.5036V5.37125H61.9671ZM68.1513 15.7098C65.1763 16.2851 63.923 17.3284 63.923 18.4532C63.923 19.3763 64.7123 20.0418 65.7878 20.0418C66.9544 20.0418 68.1513 19.2046 68.1513 17.8178V15.7098Z"
+                />
+                <path
+                  d="M81.5082 22.2613C80.4283 22.2613 79.4959 21.9737 79.0276 21.4799V24.1075C79.0276 26.7351 80.1638 27.0828 80.4587 27.1386H74.0707C74.2442 27.1086 75.324 26.851 75.324 24.1075V12.7901C75.324 10.3643 74.5087 9.96075 73.6891 9.96075H73.3682L78.7934 7.79688L78.8498 9.87488C79.7518 8.63409 81.3 7.9128 82.8439 7.9128C85.4416 7.9128 88.2084 9.93499 88.2084 14.6405C88.2084 19.3461 85.524 22.2613 81.4995 22.2613H81.5082ZM81.4778 10.7121C80.1074 10.7121 78.9712 11.9829 78.9712 13.8892V17.6717C78.9712 19.0284 79.7301 19.7497 81.1873 19.7497C83.1995 19.7497 84.249 17.8134 84.249 15.4477C84.249 12.7042 83.3469 10.7121 81.4778 10.7121Z"
+                />
+                <path
+                  d="M100.408 22.5791C99.3888 22.4332 98.3349 21.5101 98.1311 20.8188C97.3722 21.8278 95.6245 22.3473 94.0459 22.3473C91.6261 22.3473 89.874 20.9906 89.874 18.8525C89.874 16.5426 92.849 14.6922 97.602 13.6832V12.5841C97.602 10.9097 96.9602 10.1025 95.6765 10.1025C94.189 10.1025 93.5776 10.8839 93.5776 11.5451C93.5776 12.0088 93.8378 12.3523 94.1587 12.4982L90.4855 13.885C90.2817 13.3956 90.1342 12.846 90.1342 12.2664C90.1342 9.60878 93.0789 7.9043 96.0235 7.9043C99.9309 7.9043 101.275 9.7247 101.275 12.2664V17.6074C101.275 19.3419 102.121 20.3208 103.639 20.3208C103.725 20.3208 103.873 20.265 103.96 20.265L100.404 22.5748L100.408 22.5791ZM97.6064 15.7097C94.6314 16.285 93.3781 17.3283 93.3781 18.4532C93.3781 19.3763 94.1674 20.0417 95.2429 20.0417C96.4094 20.0417 97.6064 19.2045 97.6064 17.8178V15.7097Z"
+                />
+                <path
+                  d="M110.061 21.9179H103.413C103.617 21.8879 104.901 21.6303 104.901 18.8567V12.5927C104.901 10.3687 104.025 9.96509 103.209 9.96509H102.832L108.609 7.80122V18.861C108.609 21.5744 109.831 21.8922 110.066 21.9222L110.061 21.9179ZM106.501 6.41016C105.13 6.41016 104.224 5.45703 104.224 4.21624C104.224 2.97544 105.13 2.07812 106.501 2.07812C107.871 2.07812 108.778 3.00121 108.778 4.21624C108.778 5.43127 107.902 6.41016 106.501 6.41016Z"
+                />
+                <path
+                  d="M124.906 14.8421C123.974 14.8421 122.95 14.6961 122.313 14.4943V18.7105C122.313 21.5699 123.744 21.8876 124.004 21.9176H116.857C117.061 21.9176 118.375 21.66 118.375 18.7105V6.0063C118.375 3.14689 116.944 2.74331 116.653 2.6875H125.609C129.694 2.6875 131.997 5.46103 131.997 8.54799C131.997 12.0428 129.429 14.8421 124.91 14.8421H124.906ZM124.264 5.31506H122.308V11.841C122.863 12.0128 123.709 12.1587 124.468 12.1587C126.567 12.1587 127.734 10.7162 127.734 8.66391C127.734 6.72759 126.511 5.31506 124.264 5.31506Z"
+                />
+                <path
+                  d="M142.609 22.4633L142.578 20.3552C141.529 21.5702 139.777 22.3473 138.289 22.3473C135.692 22.3473 134.061 20.9048 134.061 17.5559V11.4335C134.061 8.66 132.457 8.40239 132.166 8.34229H137.795V16.7445C137.795 18.6507 138.524 19.5438 139.751 19.5438C141.269 19.5438 142.492 18.2171 142.492 16.5427V11.2317C142.492 8.63424 141.269 8.40239 141.035 8.34658H146.195V17.7019C146.195 19.9559 146.954 20.3294 147.769 20.3294H148.177L142.604 22.4676L142.609 22.4633Z"
+                />
+                <path
+                  d="M155.497 22.3214C152.696 22.3214 152.262 21.5142 151.269 21.5142C150.54 21.5142 149.985 21.862 149.577 22.3514V6.78785C149.577 4.07443 148.675 3.64079 147.799 3.64079H147.479L153.281 1.67871V9.64726C154.07 8.69412 155.497 7.91272 157.071 7.91272C159.782 7.91272 162.379 9.87481 162.379 14.5246C162.379 18.6247 159.639 22.3214 155.497 22.3214ZM155.792 10.7421C154.335 10.7421 153.255 12.0129 153.255 13.7732V17.7017C153.255 19.0283 154.07 19.7539 155.415 19.7539C157.457 19.7539 158.446 17.6759 158.446 15.2802C158.446 13.0262 157.544 10.7464 155.792 10.7464V10.7421Z"
+                />
+                <path d="M169.995 21.9176H163.373C163.576 21.8875 164.83 21.6299 164.83 18.8564V6.98944C164.83 4.24596 163.928 3.87244 163.021 3.87244H162.757L168.559 1.79443V18.8607C168.559 21.5183 169.696 21.8918 169.99 21.9219L169.995 21.9176Z" />
+                <path
+                  d="M177.198 21.9179H170.55C170.754 21.8879 172.037 21.6303 172.037 18.8567V12.5927C172.037 10.3687 171.161 9.96509 170.346 9.96509H169.969L175.745 7.80122V18.861C175.745 21.5744 176.968 21.8922 177.202 21.9222L177.198 21.9179ZM173.638 6.41016C172.267 6.41016 171.361 5.45703 171.361 4.21624C171.361 2.97544 172.267 2.07812 173.638 2.07812C175.008 2.07812 175.914 3.00121 175.914 4.21624C175.914 5.43127 175.038 6.41016 173.638 6.41016Z"
+                />
+                <path
+                  d="M184.34 22.3513C180.316 22.3513 178.156 19.5219 178.156 15.7094C178.156 10.918 181.335 7.9126 184.982 7.9126C187.693 7.9126 189.592 9.75876 189.709 12.3863L186.153 13.8031C186.27 13.5155 186.357 13.1377 186.357 12.7341C186.357 11.4332 185.659 10.5402 184.431 10.5402C182.771 10.5402 181.721 12.3004 181.721 14.5244C181.721 17.1219 183.122 19.6336 185.776 19.6336C187.177 19.6336 188.781 18.9123 190.004 17.4697C189.423 20.5867 186.882 22.3513 184.345 22.3513H184.34Z"
+                />
+              </svg>
+            </a>
+            <div class="d-flex cta-wrapper">
+              <a id="main-btn" class="btn btn-primary d-none d-md-block m-0 me-1 me-highRes-2" role="button" href="/hapai-public/become-a-member">Join us</a>
+  
+              <svg viewBox="0 0 22 22" id="basket" class="me-1 me-highRes-2" role="button" data-bs-toggle="modal" data-bs-target="#cartSummary" aria-label="Shopping Basket">
+                <path
+                  d="M1 1H2.30616C2.55218 1 2.67519 1 2.77418 1.04524C2.86142 1.08511 2.93535 1.14922 2.98715 1.22995C3.04593 1.32154 3.06333 1.44332 3.09812 1.68686L3.57143 5M3.57143 5L4.62332 12.7314C4.75681 13.7125 4.82355 14.2031 5.0581 14.5723C5.26478 14.8977 5.56108 15.1564 5.91135 15.3174C6.30886 15.5 6.80394 15.5 7.79411 15.5H16.352C17.2945 15.5 17.7658 15.5 18.151 15.3304C18.4905 15.1809 18.7818 14.9398 18.9923 14.6342C19.2309 14.2876 19.3191 13.8247 19.4955 12.8988L20.8191 5.94969C20.8812 5.62381 20.9122 5.46087 20.8672 5.3335C20.8278 5.22177 20.7499 5.12768 20.6475 5.06802C20.5308 5 20.365 5 20.0332 5H3.57143ZM9 20C9 20.5523 8.55228 21 8 21C7.44772 21 7 20.5523 7 20C7 19.4477 7.44772 19 8 19C8.55228 19 9 19.4477 9 20ZM17 20C17 20.5523 16.5523 21 16 21C15.4477 21 15 20.5523 15 20C15 19.4477 15.4477 19 16 19C16.5523 19 17 19.4477 17 20Z"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+  
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <svg id="burger" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 16">
+                  <line class="line-top" y1="1.25" x2="22" y2="1.25" stroke-width="1.5" />
+                  <line class="hide-me" y1="8.25" x2="12" y2="8.25" stroke-width="1.5" />
+                  <line class="line-bottom" y1="15.25" x2="22" y2="15.25" stroke-width="1.5" />
+                </svg>
+              </button>
+            </div>
+          </div>
+  
+          <div class="collapse navbar-collapse custom-primary bg-primary py-0 px-1 px-lg-2 px-highRes-4" id="navbarNavDropdown">
+            <div class="nav-wrapper w-100 d-md-flex align-items-end">
+              <ul class="navbar-nav col-md-9 ">
+                <li class="nav-item dropdown">
+  
+                  <a class="nav-link dropdown-toggle cust-font-2" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> About us </a>
+                  <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                    <li><a class="dropdown-item" href="/hapai-public/who-we-are">Who we are</a></li>
+                    <li><a class="dropdown-item" href="/hapai-public/what-we-do">What we do</a></li>
+                    <li><a class="dropdown-item" href="/hapai-public/our-governance">Our governance</a></li>
+                    <li><a class="dropdown-item" href="/hapai-public/our-identity">Our identity</a></li>
+                    <li><a class="dropdown-item" href="/hapai-public/faqs">FAQs</a></li>
+                  </ul>
+                  
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle cust-font-2" href="#" id="eventsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Events </a>
+                  <ul class="dropdown-menu" aria-labelledby="eventsDropdown">
+                    <li><a class="dropdown-item" href="/hapai-public/upcoming-events">Upcoming events</a></li>
+                    <li><a class="dropdown-item" href="/hapai-public/past-events">Past events</a></li>
+                    <li><a class="dropdown-item" href="/hapai-public/training-development-events">Training & development</a></li>
+                    <li><a class="dropdown-item" href="/hapai-public/signature-events">Signature events</a></li>
+                  </ul>
+                </li>
+  
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle cust-font-2" href="#" id="insightsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Insights </a>
+                  <ul class="dropdown-menu" aria-labelledby="insightsDropdown">
+                    <li><a class="dropdown-item" href="/hapai-public/resources">Resources</a></li>
+                    <li><a class="dropdown-item" href="/hapai-public/latest-insights">Perspectives</a></li>
+                    <li><a class="dropdown-item" href="/hapai-public/public-sector-journal">Public sector journal</a></li>
+                    <li><a class="dropdown-item" href="/hapai-public/why-public-service-matters">Why public services matter</a></li>
+                  </ul>
+                </li>
+  
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle cust-font-2" href="#" id="connectDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Connect </a>
+                  <ul class="dropdown-menu" aria-labelledby="connectDropdown">
+                    <li><a class="dropdown-item" href="/hapai-public/our-networks">Our networks</a></li>
+                    <li>
+                      <a class="dropdown-item" href="/hapai-public/our-networks-wellington">
+                        New professionals -<br />
+                        Whanganui-a-Tara-Wellington
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="/hapai-public/our-networks-auckland">
+                        New professionals - <br />
+                        Tāmakimakaurau Auckland
+                      </a>
+                    </li>
+                    <li><a class="dropdown-item" href="/hapai-public/our-networks-public-networks">Public networks</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle cust-font-2" href="#" id="careersDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Careers </a>
+                  <ul class="dropdown-menu" aria-labelledby="careersDropdown">
+                    <li><a class="dropdown-item" href="/hapai-public/start-your-career">Start your career</a></li>
+                    <li><a class="dropdown-item" href="/hapai-public/grow-your-career">Grow your career</a></li>
+                    <li><a class="dropdown-item" href="/hapai-public/member-stories">Member stories</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle cust-font-2" href="#" id="membershipDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Membership </a>
+                  <ul class="dropdown-menu" aria-labelledby="membershipDropdown">
+                    <li><a class="dropdown-item" href="/hapai-public/become-a-member">Become a member</a></li>
+                    <li><a class="dropdown-item" href="/hapai-public/member-directory">Member directory</a></li>
+                    <li><a class="dropdown-item" href="/hapai-public/new-professionals">Join new professionals</a></li>
+                    <li><a class="dropdown-item" href="/hapai-public/member-benefits.html">Member benefits</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item cust-font-2">
+                  <a class="nav-link" href="/hapai-public/contact-us.html">Contact us</a>
+                </li>
+              </ul>
+  
+              <div class="contact-nav col-md-3 mt-2 ">
+                <p class="m-0"><a href="tel:+6421493930">021 493 930</a></p>
+                <p><a href="mailto:info@ipanz.co.nz">info@ipanz.co.nz</a></p>
+                <p>
+                  Level 2, Rutherford House, <br />
+                  23 Lambton Quay, Wellington 6011
+                </p>
+                <a class="btn btn-light mb-2 mb-md-0 mt-2 mt-highRes-4" role="button" href="/hapai-public/become-a-member">Become a member</a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </nav>
+    <div class="modal" id="cartSummary" tabindex="-1" aria-labelledby="bookNow" aria-hidden="true" data-bs-keyboard="true">
+        <div class="modal-dialog modal-fullscreen modal-dialog-scrollable">
+            <div class="modal-content custom-primary --yellow">
+                <div class="modal-header d-flex flex-row justify-content-between px-1 py-2 p-highRes-2vw">
+                    <p class="cust-font-5" id="bookNow">Book Now</p>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body d-flex flex-column p-0 justify-content-between">
+                    <div class="p-1 p-highRes-2vw">
+                        <div class="cart-item pb-1 pb-lg-1vw mb-2 mb-lg-2vw">
+                            <h2 class="cust-font-5 --body-font mb-1 mb-lg-1vw">Cart Item title</h2>
+                            <p class="member m-0"><span>$000.00</span> Member</p>
+                            <p class="non-member m-0"><span>$000.00</span> Non-member</p>
+                            <div class="d-flex flex-row">
+                                <div class="cart-counter bg-primary" role="button">
+                                    <svg viewBox="0 0 8 8">
+                                        <path d="M0 4H8" />
+                                    </svg>
+                                </div>
+                                <div class="cart-counter" role="button">12</div>
+
+                                <div class="cart-counter bg-primary" role="button">
+                                    <svg viewBox="0 0 8 8">
+                                        <path d="M0 4H8" />
+                                        <path d="M4 0L4 8" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cart-item pb-1 pb-lg-1vw mb-2 mb-lg-2vw">
+                            <h2 class="cust-font-5 --body-font mb-1 mb-lg-1vw">Cart Item title</h2>
+                            <p class="member m-0"><span>$000.00</span> Member</p>
+                            <p class="non-member m-0"><span>$000.00</span> Non-member</p>
+                            <div class="d-flex flex-row">
+                                <div class="cart-counter bg-primary" role="button">
+                                    <svg viewBox="0 0 8 8">
+                                        <path d="M0 4H8" />
+                                    </svg>
+                                </div>
+                                <div class="cart-counter" role="button">12</div>
+
+                                <div class="cart-counter bg-primary" role="button">
+                                    <svg viewBox="0 0 8 8">
+                                        <path d="M0 4H8" />
+                                        <path d="M4 0L4 8" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cart-item pb-1 pb-lg-1vw mb-2 mb-lg-2vw">
+                            <h2 class="cust-font-5 --body-font mb-1 mb-lg-1vw">Cart Item title</h2>
+                            <p class="member m-0"><span>$000.00</span> Member</p>
+                            <p class="non-member m-0"><span>$000.00</span> Non-member</p>
+                            <div class="d-flex flex-row">
+                                <div class="cart-counter bg-primary" role="button">
+                                    <svg viewBox="0 0 8 8">
+                                        <path d="M0 4H8" />
+                                    </svg>
+                                </div>
+                                <div class="cart-counter" role="button">12</div>
+
+                                <div class="cart-counter bg-primary" role="button">
+                                    <svg viewBox="0 0 8 8">
+                                        <path d="M0 4H8" />
+                                        <path d="M4 0L4 8" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-row justify-content-between align-items-center p-1 p-highRes-2vw border-top border-primary">
+                        <p class="cust-font-5 --body-font">NZ$ 1400.00</p>
+                        <div class="btn btn-primary m-0" role="button">Add to cart</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main class="resource-page">
+      <div class="px-1 px-md-2 px-highRes-4 pb-2 pb-md-3 pb-lg-3vw hero">
+        <div class="d-flex flex-column flex-md-row flex-wrap flex-md-nowrap">
+          <div class="order-2 order-md-1 col col-sm-12 col-md-6 col-lg-7 image-cnr cnr-constant responsive-hero">
+            <img src="../images/placeholder-image.jpg" class="img-fit" alt="placeholder image" />
+            <svg class="cnr-animation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 186 164" fill="none">
+              <path d="M40 147C28 159 8.66667 163 0.5 163.5H186V0.5C142.333 44.3333 52 135 40 147Z" />
+            </svg>
+          </div>
+          <div class="order-1 order-md-2 px-md-3 pe-lg-4vw ps-lg-0 my-50px my-lg-4vw d-flex align-items-center col col-sm-12 col-md-6 col-lg-4 offset-lg-1">
+            <div>
+              <div>
+                <p class="cust-font-7 pb-50px pb-lg-4vw">Category</p>
+                <h1 class="cust-font-2 hero-font">Most Recent Resources Title</h1>
+                <div>
+                  <p class="mt-70px mt-lg-8vw mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi quas recusandae cupiditate perferendis quaerat rem fuga at in quo id reprehenderit voluptatibus deserunt fugit, provident rerum natus minus. Ipsam, sunt!</p>
+                  <a class="btn btn-primary" role="button" href="/hapai-public/resources-template">Read more</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid px-1 px-highRes-3 pt-4 pb-2 pt-md-4 pt-lg-7vw pb-lg-4vw custom-primary --yellow">
+        <div class="row d-flex flex-column flex-md-row p-0 m-0">
+          <div class="col-12 p-0 px-md-10px px-highRes-1"><h2 class="cust-font-2">All Resources</h2></div>
+
+          <div id="btnContainer" class="p-0 d-flex flex-row flex-wrap col-12 content-filter top-buttons pt-4 pt-lg-3vw col-12 p-0 px-md-10px px-highRes-1">
+            <div><button class="btn btn-light thin-pad active m-0" data-filter="all">Show all</button></div>
+            <div><button class="btn btn-light thin-pad m-0" data-filter="events">Events</button></div>
+            <div><button class="btn btn-light thin-pad m-0" data-filter="reports">Reports</button></div>
+            <div><button class="btn btn-light thin-pad m-0" data-filter="videos">Videos</button></div>
+            <div><button class="btn btn-light thin-pad m-0" data-filter="newsletters">Newsletters</button></div>
+            <div><button class="btn btn-light thin-pad m-0" data-filter="research">Research</button></div>
+          </div>
+
+          <div class="row d-flex flex-column flex-md-row p-0 m-0 same-height-wrapper-filter filter-wrapper">
+            <div class="filter-item col col-sm-12 col-md-4 p-0 m-0 py-2 py-lg-3vw px-md-10px px-highRes-1 image-cnr cnr-hover-add events">
+              <a href="" role="button">
+                <div class="img-3-col-style pod d-flex flex-column justify-content-end mb-3 mb-lg-3vw">
+                  <img src="/images/placeholder-image.jpg" class="img-fit" alt="placeholder image" />
+                  <div class="--w100">
+                    <svg class="cnr-animation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 186 164" fill="none">
+                      <path d="M40 147C28 159 8.66667 163 0.5 163.5H186V0.5C142.333 44.3333 52 135 40 147Z" />
+                    </svg>
+                  </div>
+                </div>
+                <p class="cust-font-7 m-0 mb-1 mb-lg-1vw col-md-11 col-lg-10 col-xl-9">Events</p>
+                <div class="same-height col-sm-9 col-md-12">
+                  <h3 class="cust-font-5 m-0 pb-2 pb-lg-2vw col-md-11 col-lg-10 col-xl-9">amet consectetur</h3>
+                  <p class="p-0 m-0 col-md-10 col-lg-9">Animi quas recusandae cupiditate perferendis quaerat rem fuga at in quo id reprehenderit voluptatibus deserunt fugit, provident rerum natus minus. Ipsam, sunt!</p>
+                </div>
+              </a>
+            </div>
+            <div class="filter-item col col-sm-12 col-md-4 p-0 m-0 py-2 py-lg-3vw px-md-10px px-highRes-1 image-cnr cnr-hover-add reports research">
+              <a href="" role="button">
+                <div class="img-3-col-style pod d-flex flex-column justify-content-end mb-3 mb-lg-3vw">
+                  <img src="/images/placeholder-image.jpg" class="img-fit" alt="placeholder image" />
+                  <div class="--w100">
+                    <svg class="cnr-animation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 186 164" fill="none">
+                      <path d="M40 147C28 159 8.66667 163 0.5 163.5H186V0.5C142.333 44.3333 52 135 40 147Z" />
+                    </svg>
+                  </div>
+                </div>
+                <p class="cust-font-7 m-0 mb-1 mb-lg-1vw col-md-11 col-lg-10 col-xl-9">Reports</p>
+                <div class="same-height col-sm-9 col-md-12">
+                  <h3 class="cust-font-5 m-0 pb-2 pb-lg-2vw col-md-11 col-lg-10 col-xl-9">Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur</h3>
+                  <p class="p-0 m-0 col-md-10 col-lg-9">orem ipsum dolor sit amet consectetur adipisicing elit. Animi quas recusandae cupiditate perferendis quaerat rem fuga at in quo id reprehenderit voluptatibus deserunt fugit, provident rerum natus minus. Ipsam, sunt!</p>
+                </div>
+              </a>
+            </div>
+            <div class="filter-item col col-sm-12 col-md-4 p-0 m-0 py-2 py-lg-3vw px-md-10px px-highRes-1 image-cnr cnr-hover-add videos">
+              <a href="" role="button">
+                <div class="img-3-col-style pod d-flex flex-column justify-content-end mb-3 mb-lg-3vw">
+                  <img src="/images/placeholder-image.jpg" class="img-fit" alt="placeholder image" />
+                  <div class="--w100">
+                    <svg class="cnr-animation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 186 164" fill="none">
+                      <path d="M40 147C28 159 8.66667 163 0.5 163.5H186V0.5C142.333 44.3333 52 135 40 147Z" />
+                    </svg>
+                  </div>
+                </div>
+                <p class="cust-font-7 m-0 mb-1 mb-lg-1vw col-md-11 col-lg-10 col-xl-9">Category</p>
+                <div class="same-height col-sm-9 col-md-12">
+                  <h3 class="cust-font-5 m-0 pb-2 pb-lg-2vw col-md-11 col-lg-10 col-xl-9">Lorem ipsum dolor sit amet consectetur</h3>
+                  <p class="p-0 m-0 col-md-10 col-lg-9">orem ipsum dolor sit amet consectetur adipisicing elit. Animi quas recusandae cupiditate perferendis quaerat rem fuga at in quo id reprehenderit voluptatibus deserunt fugit, provident rerum natus minus. Ipsam, sunt!</p>
+                </div>
+              </a>
+            </div>
+            <div class="filter-item col col-sm-12 col-md-4 p-0 m-0 py-2 py-lg-3vw px-md-10px px-highRes-1 image-cnr cnr-hover-add newsletters">
+              <a href="" role="button">
+                <div class="img-3-col-style pod d-flex flex-column justify-content-end mb-3 mb-lg-3vw">
+                  <img src="/images/placeholder-image.jpg" class="img-fit" alt="placeholder image" />
+                  <div class="--w100">
+                    <svg class="cnr-animation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 186 164" fill="none">
+                      <path d="M40 147C28 159 8.66667 163 0.5 163.5H186V0.5C142.333 44.3333 52 135 40 147Z" />
+                    </svg>
+                  </div>
+                </div>
+                <p class="cust-font-7 m-0 mb-1 mb-lg-1vw col-md-11 col-lg-10 col-xl-9">Newsletters</p>
+                <div class="same-height col-sm-9 col-md-12">
+                  <h3 class="cust-font-5 m-0 pb-2 pb-lg-2vw col-md-11 col-lg-10 col-xl-9">Lorem ipsum dolor sit amet consectetur</h3>
+                  <p class="p-0 m-0 col-md-10 col-lg-9">orem ipsum dolor sit amet consectetur adipisicing elit. Animi quas recusandae cupiditate perferendis quaerat rem fuga at in quo id reprehenderit voluptatibus deserunt fugit, provident rerum natus minus. Ipsam, sunt!</p>
+                </div>
+              </a>
+            </div>
+            <div class="filter-item col col-sm-12 col-md-4 p-0 m-0 py-2 py-lg-3vw px-md-10px px-highRes-1 image-cnr cnr-hover-add research">
+              <a href="" role="button">
+                <div class="img-3-col-style pod d-flex flex-column justify-content-end mb-3 mb-lg-3vw">
+                  <img src="/images/placeholder-image.jpg" class="img-fit" alt="placeholder image" />
+                  <div class="--w100">
+                    <svg class="cnr-animation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 186 164" fill="none">
+                      <path d="M40 147C28 159 8.66667 163 0.5 163.5H186V0.5C142.333 44.3333 52 135 40 147Z" />
+                    </svg>
+                  </div>
+                </div>
+                <p class="cust-font-7 m-0 mb-1 mb-lg-1vw col-md-11 col-lg-10 col-xl-9">Research</p>
+                <div class="same-height col-sm-9 col-md-12">
+                  <h3 class="cust-font-5 m-0 pb-2 pb-lg-2vw col-md-11 col-lg-10 col-xl-9">Lorem ipsum dolor sit amet consectetur</h3>
+                  <p class="p-0 m-0 col-md-10 col-lg-9">Animi quas recusandae cupiditate perferendis quaerat rem fuga at in quo id reprehenderit voluptatibus deserunt fugit, provident rerum natus minus. Ipsam, sunt!</p>
+                </div>
+              </a>
+            </div>
+            <div class="filter-item col col-sm-12 col-md-4 p-0 m-0 py-2 py-lg-3vw px-md-10px px-highRes-1 image-cnr cnr-hover-add research">
+              <a href="" role="button">
+                <div class="img-3-col-style pod d-flex flex-column justify-content-end mb-3 mb-lg-3vw">
+                  <img src="/images/placeholder-image.jpg" class="img-fit" alt="placeholder image" />
+                  <div class="--w100">
+                    <svg class="cnr-animation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 186 164" fill="none">
+                      <path d="M40 147C28 159 8.66667 163 0.5 163.5H186V0.5C142.333 44.3333 52 135 40 147Z" />
+                    </svg>
+                  </div>
+                </div>
+                <p class="cust-font-7 m-0 mb-1 mb-lg-1vw col-md-11 col-lg-10 col-xl-9">Research newsletters</p>
+                <div class="same-height col-sm-9 col-md-12">
+                  <h3 class="cust-font-5 m-0 pb-2 pb-lg-2vw col-md-11 col-lg-10 col-xl-9">amet consectetur</h3>
+                  <p class="p-0 m-0 col-md-10 col-lg-9">orem ipsum dolor sit amet consectetur adipisicing elit. Animi quas recusandae cupiditate perferendis quaerat rem fuga at in quo id reprehenderit voluptatibus deserunt fugit, provident rerum natus minus. Ipsam, sunt!</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="px-1 px-md-2 px-highRes-4 py-4 py-md-6vw">
+        <div class="d-flex flex-column flex-md-row flex-wrap flex-md-nowrap same-height-wrapper">
+          <div class="col col-sm-12 col-md-6 pe-1 pe-md-2 pe-highRes-4">
+            <div class="same-height">
+              <h2 class="cust-font-4 pb-1 pb-highRes-2 text-success">Advertise</h2>
+              <p class="col-lg-9 m-0">
+                Contact us to advertise in the newsletter: <br />
+                <a href="mailto:office@ipanz.org.nz">office@ipanz.org.nz</a>
+              </p>
+            </div>
+
+            <div><a class="btn btn-outline-primary mt-1 mt-lg-1vw" href="/hapai-public/contact-us" role="button">Contact us</a></div>
+          </div>
+          <div class="col col-sm-12 col-md-6 ps-md-2 ps-highRes-4 mt-4 mt-md-0">
+            <div class="same-height">
+              <h2 class="cust-font-4 pb-1 pb-highRes-2 text-success">Stay in the loop</h2>
+              <p class="col-lg-9 m-0">Follow Hāpai Public on LinkedIn to receive regular posts on the latest happenings in the public sector.</p>
+            </div>
+            <div>
+              <a role="button" class="btn-icon mt-1 mt-lg-1vw btn-linkedin" href="https://www.linkedin.com/company/ipanz-new-professionals/" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41 42" fill="none" class="bi-linkedin">
+                  <path
+                    d="M20.4 0.657349C23.2174 0.657349 25.8261 1.17909 28.3304 2.27474C30.8348 3.31822 32.9739 4.77909 34.8522 6.65735C36.7304 8.53561 38.1913 10.6747 39.2348 13.1791C40.2783 15.6834 40.8522 18.2921 40.8522 21.1095C40.8522 23.9269 40.3304 26.5878 39.2348 29.04C38.1391 31.4921 36.7304 33.6834 34.8522 35.5095C32.9739 37.3878 30.8348 38.8486 28.3304 39.8921C25.8261 40.9356 23.2174 41.5095 20.4 41.5095C17.5826 41.5095 14.9217 40.9878 12.4696 39.8921C10.0174 38.8486 7.82609 37.3878 6 35.5095C4.17391 33.6313 2.66087 31.4921 1.61739 29.04C0.573913 26.5878 0 23.9269 0 21.1095C0 18.2921 0.521739 15.6834 1.61739 13.1791C2.66087 10.6747 4.12174 8.53561 6 6.65735C7.87826 4.77909 10.0174 3.31822 12.4696 2.27474C14.9217 1.23126 17.5826 0.657349 20.4 0.657349ZM12.6261 15.8921C13.3565 15.8921 13.9826 15.6834 14.4522 15.2139C14.9217 14.7443 15.1304 14.2226 15.1304 13.5965C15.1304 12.9182 14.8696 12.3443 14.4 11.9269C13.9304 11.5095 13.4087 11.3008 12.6783 11.3008C11.9478 11.3008 11.3217 11.5095 10.8522 11.9269C10.3826 12.3443 10.1739 12.9182 10.1739 13.5965C10.1739 14.2226 10.3826 14.7443 10.8522 15.2139C11.2696 15.6313 11.8957 15.8921 12.6261 15.8921ZM14.8174 17.6139H10.4348V30.7617H14.8174V17.6139ZM30.6261 23.2486C30.6261 21.2139 30.1565 19.7008 29.2174 18.7617C28.2783 17.8226 27.0783 17.3008 25.6174 17.3008C24.4174 17.3008 23.5304 17.5617 22.9565 18.0313C22.3826 18.553 21.9652 19.0226 21.6522 19.4921V17.6139H17.2696V30.7617H21.6522V22.8313C21.6522 22.8313 21.6522 22.466 21.7565 22.3617C21.913 21.9443 22.1739 21.5791 22.5391 21.2139C22.9043 20.9008 23.3739 20.6921 24 20.6921C24.7826 20.6921 25.3565 20.953 25.6696 21.5269C25.9826 22.1008 26.1913 22.8313 26.1913 23.666V30.6573H30.5739V23.1443L30.6261 23.2486ZM21.6 19.5443C21.6 19.5443 21.6 19.4921 21.6522 19.4921L21.6 19.5443Z"
+                  />
+                </svg>
+                <p class="m-0 ms-1 ms-highRes-3">@New Professionals’ Network</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+        <div class="container-fluid p-0 m-0 pt-4 pt-lg-7vw bg-primary">
+          <div class="d-flex flex-column flex-md-row">
+            <div class="p-0 col-12 col-md-3 ps-1 ps-md-2 ps-highRes-4">
+              <picture>
+                <source media="(min-width: 3480px)" srcset="images/footer-icon_lg.svg" />
+                <img class="m-0" src="images/footer-icon.svg" alt="Icon image pattern" />
+              </picture>
+            </div>
+  
+            <div class="p-0 col-12 col-md-9">
+              <div class="col-12 px-1 px-md-2 ps-md-0 pe-highRes-4">
+                <h2 class="cust-font-7 mt-2 mt-md-0 mb-4 mb-lg-4vw text-light">Get in touch</h2>
+                <p class="m-0 text-light cust-font-2 mb-4 mb-lg-4vw">If you have a question or an idea about how Hāpai Public can best support you, get in touch. We’d love to hear from you.</p>
+              </div>
+  
+              <div class="col-12 d-flex flex-column flex-md-row flex-wrap justify-content-between footer-nav-wrapper px-1 px-md-2 ps-md-0 pe-highRes-4 pb-4 pb-md-4vw">
+                <ul class="mt-3 footer-nav m-0 p-0 d-flex flex-column flex-wrap flex-md-row justify-content-between">
+                  <li class="pb-3 pb-md-0 pe-1 pe-lg-2 pe-highRes-4"><a href="/hapai-public/member-benefits">Membership</a></li>
+                  <li class="pb-3 pb-md-0 pe-1 pe-lg-2 pe-highRes-4"><a href="/hapai-public/upcoming-events">Events</a></li>
+                  <li class="pb-3 pb-md-0 pe-1 pe-lg-2 pe-highRes-4"><a href="/hapai-public/public-sector-journal">Journal</a></li>
+                  <li class="pb-3 pb-md-0 pe-1 pe-lg-2 pe-highRes-4"><a href="/hapai-public/resources">Resources</a></li>
+                  <li class="pb-3 pb-md-0 pe-1 pe-lg-2 pe-highRes-4"><a href="/hapai-public/who-we-are">Who we are</a></li>
+                  <li class="pb-3 pb-md-0 pe-1 pe-lg-2 pe-highRes-4"><a href="/hapai-public/faqs">FAQs</a></li>
+                  <li class="pb-3 pb-md-0 pe-1 pe-lg-2 pe-highRes-4"><a href="/hapai-public/contact-us">Contact us</a></li>
+                </ul>
+                <ul class="mt-3 p-0 d-flex flex-row">
+                  <li class="me-1">
+                    <a href="https://www.linkedin.com/company/ipanz-new-professionals/" target="_blank" aria-label="Linkedin">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                        <path
+                          d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16" aria-label="facebook">
+                        <path
+                          d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="bg-primary">
+          <img src="images/footer-banner.svg" class="footer-banner" alt="" />
+        </div>
+      </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script type="module" src="js/filter.js"></script>
+    <script type="module" src="js/navigation.js"></script>
+  </body>
+</html>
