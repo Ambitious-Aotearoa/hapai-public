@@ -2073,6 +2073,10 @@ nav{
 
 
     @include media-breakpoint-up(md){
+
+        .navbar-nav{
+            position: relative;
+        }
         .nav-item{
             padding-top: .5rem;
             .dropdown-item{
@@ -2082,17 +2086,17 @@ nav{
         .dropdown{
             position: unset;
         }
-        // .dropdown-menu.show{
-        //     position: absolute;
-        // }
+        .dropdown-menu.show{
+            position: absolute;
+        }
     
-        // .dropdown-menu[data-bs-popper]{
-        //     top: unset;
-        //     bottom: 15vw;
-        //     left: 40%;
-        //     padding: 0;
-        //     margin:0
-        // }
+        .dropdown-menu[data-bs-popper]{
+            top: unset;
+            bottom: 0;
+            left: 50%;
+            padding: 0;
+            margin:0
+        }
 
         .contact-nav{
             text-align: right;
@@ -2116,10 +2120,12 @@ nav{
         .nav-wrapper{
             padding-bottom: 12vw;
         }
-        // .dropdown-menu[data-bs-popper]{
-        //     bottom: 12vw;
-        // }
+    }
 
+    @include media-breakpoint-up(xl){
+        .nav-wrapper{
+            padding-bottom: 4vw;
+        }
     }
 
 
