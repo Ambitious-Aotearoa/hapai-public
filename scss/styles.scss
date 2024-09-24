@@ -294,7 +294,7 @@ p {
     }
   }
 
-li{
+li:not(.nav-item, .dropdown-menu li){
     a {
         white-space: nowrap;
       &:hover {
@@ -2024,15 +2024,23 @@ footer{
 
 nav{
     .navbar-collapse.bg-primary{
-        a:not(.btn-light, .contact-nav p a){
+        .nav-item{
+            display: flex;
+        }
+        .nav-link{
             color: #526D52;
-            &.dropdown-item{
-                color:$secondary;
-                &:hover{
-                    color: #526D52;
-                }
+            &:hover{
+                color: $secondary;
             }
         }
+
+        .dropdown-item{
+            color:$secondary;
+            &:hover{
+                color: #526D52;
+            }
+        }
+
         p{
             color: $secondary;
         }
