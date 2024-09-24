@@ -1,6 +1,18 @@
 $(document).ready(function() {
-    var insertedLetters = {};
+    
+    ////Sort Items alphabetically
+    var items = $('ul.column-count li').get(); 
+    items.sort(function(a, b) {
+      return $(a).text().localeCompare($(b).text());
+    });
+    $.each(items, function(i, li) {
+      $('ul.column-count ').append(li);
+    });
 
+    
+
+    ////Add category header
+    var insertedLetters = {};
     $('ul.column-count li').each(function() {
         var firstLetter = $(this).text().trim().charAt(0).toUpperCase();
         if (!insertedLetters[firstLetter]) {
@@ -9,6 +21,9 @@ $(document).ready(function() {
         }
     });
 
+
+
+    ////Filter for categories
     $('ul.list-filter li').click(function() {
         $('ul.list-filter li').removeClass('active');
         $(this).addClass('active');
