@@ -1848,6 +1848,32 @@ a:hover{
 
 }
 
+.member-directory-page {
+
+    ul.list-filter li{
+        cursor: pointer;
+        transition: color .2s ease-in-out;
+        &.active,
+        &:hover{
+            color:$secondary
+        }
+    
+    }
+    ul.column-count{
+       
+        li{
+            margin-bottom: 1rem;
+        }
+        .letter-heading{
+            color: $success;
+        }
+        @include media-breakpoint-up(md){
+            column-count: 2;
+            column-gap: 4vw;
+        }
+    }
+}
+
 
 //modals
 #team{
