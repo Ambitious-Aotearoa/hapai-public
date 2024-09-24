@@ -261,6 +261,7 @@ $modal-content-border-radius:0;
 ///general custom
 body{
     position: relative;
+    font-size:1rem;
 }
 .row{
     margin:0;
@@ -493,7 +494,7 @@ $ch7: 1rem;
 
 @include media-breakpoint-up(lg){
     .cust-font-1{
-        font-size:6vw;
+        font-size:6.5vw;
     }
     .cust-font-2{
         &.hero-font{
@@ -909,7 +910,7 @@ a:hover{
 
 
 .home-hero{
-    min-height: 80vh;
+    min-height: 100vh;
     @include media-breakpoint-up(sm){
         min-height:80vw;
 
@@ -1589,17 +1590,17 @@ a:hover{
 .events-style-two{
     .zero-ten a{
         background-color: $custom-accent-blue;
-        background-image: url('/hapai-public/images/side-pattern-one.png');
+        background-image: url(../images/side-pattern-one.png);
     }
     .bg-organisation a,
     .ten-plus a{
         background-color: $success;
-        background-image: url('/hapai-public/images/side-pattern-one.png');
+        background-image: url(../images/side-pattern-one.png);
     }
     .bg-individual a,
     .all-levels a{
         background-color: $secondary;
-        background-image: url('/hapai-public/images/side-pattern-one.png');
+        background-image: url(../images/side-pattern-one.png);
         
     }
     a{
@@ -2050,9 +2051,6 @@ footer{
 
 nav{
     .navbar-collapse.bg-primary{
-        .nav-item{
-            display: flex;
-        }
         .nav-link{
             color: #526D52;
             &:hover{
@@ -2113,7 +2111,9 @@ nav{
 
 
     @include media-breakpoint-up(md){
-
+        .nav-item{
+            display: flex;
+        }
         .navbar-nav{
             position: relative;
         }
