@@ -294,7 +294,14 @@ p {
     }
   }
 
-
+li{
+    a {
+        white-space: nowrap;
+      &:hover {
+        border-bottom: 1px solid;
+      }
+    }
+}
 
   
 
@@ -2286,9 +2293,6 @@ nav{
         #main-btn{
             background-color: $light;
             color: $primary;
-            &:hover{
-                background-color: $secondary;
-            }
         }
         #basket{
             stroke:$light;
@@ -2495,4 +2499,28 @@ nav{
       }
 }
 
+#identity-banner,
+#roc-grotesk,
+#founders-grotesk,
+#tobias-light,
+#identity{
+    width: 100%;
+    height: auto;
+    fill: $primary;
+    position: relative;
+}
+#roc-grotesk,
+#founders-grotesk{
+    width: 30%;
+}
 
+
+    @include media-breakpoint-up(highRes){
+    #tobias-light{
+        width: 466px;
+    } 
+    #founders-grotesk,
+    #roc-grotesk{
+        width: 100px;
+    }
+}
