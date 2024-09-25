@@ -259,6 +259,11 @@ $modal-content-border-radius:0;
 
 
 ///general custom
+
+
+html{
+    scroll-behavior: unset !important;
+}
 body{
     position: relative;
     font-size:1rem;
@@ -1299,36 +1304,35 @@ a:hover{
 }
 
 
-.filter-wrapper-other{
-    position: relative;
-    
-    .filter-item {
-        visibility: hidden;
-        opacity: 0;
-        position: absolute;
-        top: 0;
-        left: 0;
-        transform: translateY(20px);  /* Starting point for transition */
-        transition: opacity 0.4s ease, transform 0.4s ease, visibility 0s 0.4s;  /* Delays visibility change after the transition ends */
-        
-        &.show {
-            position: relative;
-            visibility: visible;
-            display: flex;
-            opacity: 1;
-            transform: translateY(0);  /* End point for transition */
-            transition: opacity 0.4s ease, transform 0.4s ease;  /* Transition in sync with opacity */
-            
-            &.img-fit {
-                position: absolute;
-                top: 0;
-                left: 0;
-                transform: scale(1);  /* Add scale effect for images */
-                transition: opacity 0.4s ease, transform 0.4s ease, visibility 0s;
-            }
+
+.masking-trigger{
+    overflow:hidden;
+
+    .mask-img.one{
+        z-index: 3;
+    }
+    .mask-img.two{
+        z-index: 2;
+    }
+
+    .mask-img.three{
+        z-index: 1;
+    }
+
+    .mask-item{
+        overflow: hidden;
+        position: relative;
+    }
+
+    .filter-hero{
+        overflow:hidden;
+        min-height: 60vw;
+        @include media-breakpoint-up(md){
+            min-height: calc(90vh - 80px);
         }
     }
 }
+
 
 
 .same-height-wrapper-filter .filter-wrapper{
