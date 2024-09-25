@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
               end:'bottom top',
               invalidateOnRefresh: true,
             // toggleActions: 'play none none reverse',
-              markers: marker,
+            //   markers: marker,
             },
         })
 
