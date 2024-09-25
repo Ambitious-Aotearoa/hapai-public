@@ -16,3 +16,18 @@ $(document).ready(function () {
     navCollapse.on('hidden.bs.collapse', () => $('body').removeClass('no-scroll'));
   });
   
+
+//   $(document).ready(function () {
+//     $('.downwards a').on('click', function (event) {
+//       if (this.hash !== '') {
+//         event.preventDefault()
+//         const target = $(this.hash)
+//         $('html, body').animate(
+//           {
+//             scrollTop: target.offset().top - 80,
+//           },
+//           800
+//         )
+//       }
+//     })
+//   })

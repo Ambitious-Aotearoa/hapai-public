@@ -248,12 +248,14 @@
                 </div>
             </div>
         </header>
+
+
         <main>
             <div class="container-fluid px-1 px-highRes-3 hero">
                 <div class="row flex-column flex-sm-row">
                     <div class="col-12 col-md-4 py-lg-5vw d-flex flex-column justify-content-center p-0 pt-4 pt-md-0">
                         <p class="cust-font-7 pb-50px pb-lg-4vw m-0 --balance col-xl-10">Institute of public professionals aotearoa new zealand</p>
-                        <h1 class="cust-font-1 hero-font --pretty p-0 m-0 me-md-n4 me-lg-n6vw">Promoting a stronger public sector</h1>
+                        <h1 class="cust-font-1 hero-font --pretty p-0 m-0 me-md-n4 me-lg-n4vw">Promoting a stronger public sector</h1>
                         <div>
                             <a class="btn btn-outline-primary mt-70px mt-lg-8vw" role="button">Activate your membership</a>
                         </div>
@@ -598,7 +600,6 @@
                 </div>
             </div>
 
-
             <div class="container-fluid px-1 px-highRes-3 py-4 py-lg-7vw custom-primary --dark-green-neutral border-top border-light">
                 <div class="row d-flex flex-column flex-md-row p-0 m-0">
                     <div class="col-12 col-md-6 order-1 p-0 ps-md-10px"><h2 class="cust-font-2">Insights & Resources</h2></div>
@@ -672,7 +673,7 @@
                 <svg class="cnr-animation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 186 164" fill="none">
                     <path d="M40 147C28 159 8.66667 163 0.5 163.5H186V0.5C142.333 44.3333 52 135 40 147Z" />
                 </svg>
-            </div> 
+            </div>
 
             <div class="px-1 px-md-2 px-highRes-4 pt-4 pb-3 pt-lg-7vw pb-lg-3vw">
                 <div class="p-0 col-md-8 col-xl-7">
@@ -680,46 +681,47 @@
                 </div>
             </div>
 
-            <div class="px-1 px-md-2 px-highRes-4 ">
-                <div class="custom-primary --light-green   masking-trigger">
-                    <div class="px-1 px-md-2 px-highRes-4 py-2 py-md-3 py-highRes-5 d-flex flex-column flex-wrap flex-md-nowrap flex-md-row">
-
-                            <div class="col-12 col-md-5 d-flex flex-column justify-content-between mask-wrapper">
+            <div class="px-1 px-md-2 px-highRes-4">
+                <div class="custom-primary --light-green">
+                    <div class="px-1 px-md-2 px-highRes-4 py-2 py-md-3 py-highRes-5 d-flex flex-column flex-wrap flex-md-nowrap flex-md-row content-filter">
+                        <div class="col-12 col-md-5 d-flex flex-column justify-content-between">
+                            <div id="filter" class="d-flex flex-column align-items-start cust-font-5 side-buttons">
                                 <div>
-                                    <div class="mask-item one mb-1 mb-lg-1vw">
-                                        <h3 class="cust-font-5 w-100 border-light border-bottom py-1">Contribute to leading ideas and innovation</h3>
-                                        <div class="py-1 py-lg-2vw col-sm-9 col-md-10">
-                                            <p>Our members are at the forefront of exploring innovation and sector change. Members come together to develop and examine ideas that can shape the future of the Public Sector.</p>
-                                        </div>
-                                    </div>
-    
-                                    <div class="mask-item two mb-1 mb-lg-1vw">
-                                        <h3 class="cust-font-5 w-100 border-light border-bottom py-1">Explore what it means to be a public servant</h3>
-        
-                                        <div class="py-1 py-lg-2vw col-sm-9 col-md-10">
-                                            <p>We provide a forum for members to understand the principles, nuances and benefits of working in the public sector, as well as to build their network with like-minded professionals.</p>
-                                        </div>
-                                    </div>
-    
-                                    <div class="mask-item three mb-1 mb-lg-1vw">
-                                        <h3 class="cust-font-5 w-100 border-light border-bottom py-1">Build your capabilities to move across and through the sector</h3>
-                                        <div class="py-1 py-lg-2vw col-sm-9 col-md-10">
-                                            <p>Our members learn transferable skills, have a deeper understanding of the whole sector and feel more equipped to do their best work, no matter where they move through their career.</p>
-                                        </div>
-                                    </div>
+                                    <h3 class="cust-font-5"><button class="btn m-0 px-0 py-1 py-lg-2vw active" data-filter="one">Contribute to leading ideas and innovation</button></h3>
                                 </div>
-                                <div class="btn-wrapper mb-2 mb-md-0">
-                                    <a class="btn btn-primary mt-70px mt-lg-8vw" role="button">Join us</a>
+                                <div>
+                                    <h3 class="cust-font-5"><button class="btn m-0 px-0 py-1 py-lg-2vw" data-filter="two">Explore what it means to be a public servant</button></h3>
+                                </div>
+                                <div>
+                                    <h3 class="cust-font-5"><button class="btn m-0 px-0 py-1 py-lg-2vw" data-filter="three">Build your capabilities to move across and through the sector</button></h3>
                                 </div>
                             </div>
 
+                            <div class="filter-wrapper-other animated">
+                                <div class="filter-item show one">
+                                    <div class="py-1 py-lg-2vw col-sm-9 col-md-10">
+                                        <p>Our members are at the forefront of exploring innovation and sector change. Members come together to develop and examine ideas that can shape the future of the Public Sector.</p>
+                                    </div>
+                                </div>
 
-                        
+                                <div class="filter-item two">
+                                    <div class="py-1 py-lg-2vw col-sm-9 col-md-10">
+                                        <p>We provide a forum for members to understand the principles, nuances and benefits of working in the public sector, as well as to build their network with like-minded professionals.</p>
+                                    </div>
+                                </div>
 
-                        <div class="col col-sm-12 col-md-6 offset-md-1 image-cnr cnr-constant filter-hero">
-                            <img src="images/placeholder-image.jpg" class="img-fit mask-img one show" alt="placeholder image" />
-                            <img src="images/test-2.jpg" class="img-fit two mask-img" alt="placeholder image" />
-                            <img src="images/test-3.jpg" class="img-fit three mask-img" alt="placeholder image" />
+                                <div class="filter-item three">
+                                    <div class="py-1 py-lg-2vw col-sm-9 col-md-10">
+                                        <p>Our members learn transferable skills, have a deeper understanding of the whole sector and feel more equipped to do their best work, no matter where they move through their career.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col col-sm-12 col-md-6 offset-md-1 image-cnr cnr-constant responsive-hero filter-wrapper-other animated">
+                            <img src="images/placeholder-image.jpg" class="img-fit filter-item one show" alt="placeholder image" />
+                            <img src="images/test-2.jpg" class="img-fit two filter-item" alt="placeholder image" />
+                            <img src="images/test-3.jpg" class="img-fit three filter-item" alt="placeholder image" />
                             <svg class="cnr-animation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 186 164" fill="none">
                                 <path d="M40 147C28 159 8.66667 163 0.5 163.5H186V0.5C142.333 44.3333 52 135 40 147Z" />
                             </svg>
@@ -924,10 +926,6 @@
                 <img src="images/footer-banner.svg" class="footer-banner" alt="" />
             </div>
         </footer>
-
-
-        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
