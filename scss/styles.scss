@@ -792,7 +792,7 @@ button{
         transform-origin: bottom right;
         transform: scale(1);
         transition: transform .2s ease-in-out;
-        z-index: 2;
+        z-index: 5;
 
         @include media-breakpoint-up(md){
             &.right-m{
@@ -1328,6 +1328,7 @@ a:hover{
         min-height: 60vw;
         @include media-breakpoint-up(md){
             min-height: calc(90vh - 80px);
+            max-height: calc(90vh - 80px);
         }
     }
 }
