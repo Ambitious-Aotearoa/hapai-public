@@ -1327,8 +1327,8 @@ a:hover{
         overflow:hidden;
         min-height: 60vw;
         @include media-breakpoint-up(md){
-            min-height: calc(90vh - 80px);
-            max-height: calc(90vh - 80px);
+            min-height: calc(90vh - 80px - 6vw);
+            max-height: calc(90vh - 80px - 6vw);
         }
     }
 }
