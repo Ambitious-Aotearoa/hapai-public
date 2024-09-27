@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
               anticipatePin: 1,
               scrub: 1,
               start: 'top top+=' + navHeight,
-              end:'bottom top',
+              end:'+=500%',
               invalidateOnRefresh: true,
             // toggleActions: 'play none none reverse',
             //   markers: marker,
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         gsap.set('.mask-wrapper',{ yPercent:10})
 
         if ($('.btn-wrapper').length) {
-            gsap.set('.btn-wrapper', { yPercent: 200 });
+            gsap.set('.btn-wrapper', { yPercent: 200, opacity:0 });
         }
 
         gsap.set('.mask-item.three  p',{ opacity:0})
@@ -49,40 +49,43 @@ document.addEventListener("DOMContentLoaded", (event) => {
         tl.addLabel("start");
         tl.to('.mask-wrapper',{ yPercent:0, ease: "circ.out", duration:3}, "start")
 
-        tl.addLabel("second", 6);
+        tl.addLabel("second", 100);
+        tl.to('.mask-item.one', 10,{height:firstHeight, ease: "circ.out"},"second")
+        tl.to('.mask-item.one p', 4,{opacity:0, yPercent:-50}, "second-=1")
         tl.to('.mask-item.two', 4,{height:'auto', ease: "circ.out"},"second")
-        tl.to('.mask-item.one', 6,{height:firstHeight, ease: "circ.out"},"second")
-        tl.to('.mask-img.one', { scale:1.2, opacity:0},"second")
-        tl.to('.mask-item.one p', 0.5 ,{opacity:0}, "second")
-        tl.to('.mask-item.two p', {opacity:1}, "second+=0.5")
+        tl.to('.mask-item.two p', 4,{opacity:1}, "second+=0.5")
+        tl.to('.mask-img.one', 2,{ scale:1.2, opacity:0},"second")
+
+     
        
-        tl.addLabel("three", 24);
-        tl.to('.mask-item.three', 6,{height:'auto',  ease: "circ.out"},"three")
-        tl.to('.mask-item.two', 6,{height:secondHeight,  ease: "circ.out"},"three")
-        tl.to('.mask-img.two',{ scale:1.2, opacity:0},"three")
-        tl.to('.mask-item.two p', 0.5, {opacity:0}, "three")
-        tl.to('.mask-item.three p', {opacity:1}, "three+=0.5")
+        tl.addLabel("three", 200);
+        tl.to('.mask-item.two', 10,{height:secondHeight,  ease: "circ.out"},"three")
+        tl.to('.mask-item.two p', 4,{opacity:0, yPercent:-50}, "three-=1")
+        tl.to('.mask-item.three', 4,{height:'auto',  ease: "circ.out"},"three")
+        tl.to('.mask-item.three p', 4, {opacity:1}, "three+=0.5")
+        tl.to('.mask-img.two',2, { scale:1.2, opacity:0},"three")
 
        
         if ($('.btn-wrapper').length && !$('.mask-item.four').length) {
-            tl.addLabel("end", 42);
-            tl.to('.btn-wrapper', 4, { yPercent: 0 }, "end");
+            tl.addLabel("end", 300);
+            tl.to('.btn-wrapper', 1, { yPercent: 0, opacity:1 }, "end");
         }
 
 
 
         if ($('.mask-item.four').length) {
-            tl.addLabel("four", 42);
-            tl.to('.mask-item.four', 6,{height:'auto',  ease: "circ.out"},"four")
-            tl.to('.mask-item.three', 6,{height:secondHeight,  ease: "circ.out"},"four")
-            tl.to('.mask-img.three',{ scale:1.2, opacity:0},"four")
-            tl.to('.mask-item.three p', 0.5, {opacity:0}, "four")
-            tl.to('.mask-item.four p', {opacity:1}, "four+=0.5")
-            tl.addLabel("end", 54);
+            tl.addLabel("four", 300);
+
+            tl.to('.mask-item.three', 10,{height:secondHeight,  ease: "circ.out"},"four")
+            tl.to('.mask-item.three p', 4, {opacity:0, yPercent:-50}, "four-=1")
+            tl.to('.mask-item.four', 4,{height:'auto',  ease: "circ.out"},"four")
+            tl.to('.mask-item.four p', 4,{opacity:1}, "four+=0.5")
+            tl.to('.mask-img.three',2, { scale:1.2, opacity:0},"four")
+
+
+            tl.addLabel("end", 320);
             tl.to('.btn-wrapper', 4, { yPercent: 0 }, "end");
         }
-
-
     }
 
 
