@@ -1327,10 +1327,22 @@ a:hover{
         overflow:hidden;
         min-height: 60vw;
         @include media-breakpoint-up(md){
+            min-height: calc(90vh - 6vw);
+            max-height: calc(90vh - 6vw);
+        }
+    }
+}
+
+.what-we-do-page,
+.home-page{
+    .filter-hero{
+        overflow:hidden;
+        min-height: 60vw;
+        @include media-breakpoint-up(md){
             min-height: calc(90vh - 80px - 6vw);
             max-height: calc(90vh - 80px - 6vw);
         }
-    }
+    } 
 }
 
 
