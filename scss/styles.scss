@@ -67,6 +67,7 @@ $new-spacer:(
     7vw:7vw,
     10px:10px,
     50px:50px,
+    55px:55px,
     70px:70px,
 );
 
@@ -1884,16 +1885,56 @@ a:hover{
         }
     }
     
-    @include media-breakpoint-up(md){
-        .swiper-controls-wrapper{
+
+    .swiper-controls-wrapper{
+        .swiper-button-prev,
+        .swiper-button-next {
+           top:60px;
+            svg {
+                width: 50px;
+                height: 50px;
+            }
+
+            @include media-breakpoint-up(md){
+                top:-25px;
+            }
+
+            @include media-breakpoint-up(highRes){
+                top:-50px;
+                svg {
+                    width: 100px;
+                    height: 100px;
+                }
+            }
+        }
+
+
+        .swiper-button-next{
+            right:unset;
+            left:70px;
+        }
+        .swiper-button-prev{
+            right:unset;
+            left:0vw
+        }
+
+        @include media-breakpoint-up(highRes){
             .swiper-button-next{
-                right:unset;
-                left:40px;
+                left:140px;
             }
-            .swiper-button-prev{
-                right:unset;
-                left:0vw
-            }
+        }
+    }
+
+
+    .swiper-slide{
+        .get-height .cust-font-5{
+            font-weight:700 ;
+        }
+        .cust-font-7{
+            font-weight:400
+        }
+        @include media-breakpoint-up(md){
+            justify-content: flex-end;
         }
     }
 
