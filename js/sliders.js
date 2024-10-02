@@ -76,7 +76,6 @@ var swiper = new Swiper(".past-events-slider", {
 function getHeight(){
     var getHeight = $('.swiper-slide-visible .get-height').outerHeight(true);
     $('.swiper-controls-wrapper').css('top', -getHeight);
-    console.log(getHeight)
 }
 
 getHeight()
