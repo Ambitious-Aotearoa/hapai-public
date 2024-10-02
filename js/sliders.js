@@ -70,3 +70,15 @@ var swiper = new Swiper(".past-events-slider", {
 //     e.preventDefault();
 //     e.stopImmediatePropagation();
 //   });
+
+
+
+function getHeight(){
+    var getHeight = $('.swiper-slide-visible .get-height').outerHeight(true);
+    $('.swiper-controls-wrapper').css('top', -getHeight);
+    console.log(getHeight)
+}
+
+getHeight()
+window.addEventListener('resize', getHeight)
+
