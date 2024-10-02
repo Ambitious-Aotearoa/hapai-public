@@ -160,9 +160,11 @@ $accordion-border-color:$custom-dark-grey;
 $accordion-border-width:0;
 $accordion-padding-x:0;
 $accordion-padding-y:0;
-$accordion-button-icon:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' stroke='#{$accordion-icon-color}' fill='none'><path d='M-0.00390625 10H10.4989V20.5028'/><path d='M21 10L10.4972 10L10.4972 -0.502773'/></svg>");
-$accordion-button-active-icon:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' stroke='#{$accordion-icon-color}' fill='none'><path d='M3.07422 2.5752L10.5008 10.0018L3.07422 17.4284'/><path d='M17.9258 17.4268L10.4992 10.0002L17.9258 2.5736'/></svg>");
+// $accordion-button-icon:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' stroke='#{$accordion-icon-color}' fill='none'><path d='M-0.00390625 10H10.4989V20.5028'/><path d='M21 10L10.4972 10L10.4972 -0.502773'/></svg>");
+// $accordion-button-active-icon:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' stroke='#{$accordion-icon-color}' fill='none'><path d='M3.07422 2.5752L10.5008 10.0018L3.07422 17.4284'/><path d='M17.9258 17.4268L10.4992 10.0002L17.9258 2.5736'/></svg>");
 
+$accordion-button-icon:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' stroke='#122E2A' fill='none'><path d='M-0.00390625 10H10.4989V20.5028'/><path d='M21 10L10.4972 10L10.4972 -0.502773'/></svg>");
+$accordion-button-active-icon:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' stroke='#122E2A' fill='none'><path d='M3.07422 2.5752L10.5008 10.0018L3.07422 17.4284'/><path d='M17.9258 17.4268L10.4992 10.0002L17.9258 2.5736'/></svg>");
 
 
 
@@ -1302,6 +1304,21 @@ a:hover{
     }
 }
 
+.filter-wrapper-other{
+        .filter-item{
+            display: none;
+            &.show {
+                display: flex;
+                flex-direction: column;
+                a{
+                    width:100%;
+                }
+            }
+        }
+}
+
+
+
 
 .masking-trigger{
     overflow:hidden;
@@ -1506,6 +1523,7 @@ a:hover{
             width: 100%;
         }
         border-bottom-width:1px;
+
         .accordion-button{
             text-wrap: balance;
                 align-items: flex-start;
@@ -1536,7 +1554,21 @@ a:hover{
             border-color: $custom-dark-grey
         }
     }
+    &#other{
+        .accordion-item{
+            background-color:transparent;
+            border-bottom-color: $primary;
+            &:last-of-type{
+                border-bottom-width:0;
+            }
+            button{
+                background-color:transparent; 
+            }
+        }
+    }
 }
+
+
 
 .events-style{
     .large-cust-font{
