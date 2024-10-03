@@ -1392,6 +1392,11 @@ a:hover{
             margin-right: 0;
         }
     }
+    &.other{
+        .same-height{
+            justify-content: flex-start;
+        }
+    }
 }
 
 
