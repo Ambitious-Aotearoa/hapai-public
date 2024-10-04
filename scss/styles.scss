@@ -1416,7 +1416,11 @@ a:hover{
 // Partners logos
 .logo-wrapper{
     img{
+        width: 85%;
         max-width: 200px;
+    }
+    @include media-breakpoint-up(sm){
+        width: 100%;
     }
     @include media-breakpoint-up(highRes){
         img{
