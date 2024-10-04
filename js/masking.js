@@ -46,11 +46,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
     mm.add('(max-width: 1365px)', () => {
         gsap.set(".animated-section .--blue", {top:'unset'});
         gsap.set(".animated-section .--yellow", {top:'unset'});
-        ScrollTrigger.refresh()
     })
 
     mm.add('(min-width: 1366px)', () => {
-        ScrollTrigger.refresh()
         maskingAnimation()
     })
  
