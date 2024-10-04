@@ -40,26 +40,26 @@ document.addEventListener("DOMContentLoaded", (event) => {
         tl.to(".animated-section .--blue", {top:0, duration:2}, 'start');
         tl.addLabel("middle");
         tl.to(".animated-section .--yellow", {top:0, duration:2}, 'middle+=2');
-        tl.addLabel("end");
-        tl.to(".animated-section .--yellow", {position:'fixed'}, 'end+=2');
+        // tl.addLabel("end");
+        // tl.to(".animated-section .--yellow", {position:'fixed'}, 'end+=2');
     }
     
 
-    mm.add('(max-width: 1023px)', () => {
+    mm.add('(max-width: 1300px)', () => {
         gsap.set(".animated-section .--blue", {top:'unset'});
-        gsap.set(".animated-section .--yellow", {top:'unset', position:'relative'});
+        gsap.set(".animated-section .--yellow", {top:'unset'});
         ScrollTrigger.refresh()
     })
 
-    mm.add('(min-width: 1024px)', () => {
+    mm.add('(min-width: 1301px)', () => {
         ScrollTrigger.refresh()
         maskingAnimation()
     })
 
 
-    window.addEventListener('resize', () => {
-        ScrollTrigger.refresh(); // Refresh ScrollTrigger to ensure everything is recalculated
-    });
+    // window.addEventListener('resize', () => {
+    //     ScrollTrigger.refresh(); // Refresh ScrollTrigger to ensure everything is recalculated
+    // });
  
 })
 
