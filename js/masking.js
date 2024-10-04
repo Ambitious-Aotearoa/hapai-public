@@ -53,11 +53,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
         ScrollTrigger.refresh()
         maskingAnimation()
     })
-
-
-    window.addEventListener('resize', () => {
-        ScrollTrigger.refresh();
-    });
  
 })
 
