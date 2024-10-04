@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
               start: 'top top+=' + navHeight,
               end: "+=300%",
               invalidateOnRefresh: true,
-                // toggleActions: 'play none none reverse',
+                toggleActions: 'play none none reverse',
             //   markers: marker,
             },
         })
