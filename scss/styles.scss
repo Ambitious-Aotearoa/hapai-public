@@ -2661,7 +2661,7 @@ nav{
 .animated-section{
     position: relative;
     overflow: hidden;
-    @include media-breakpoint-up(md){
+    @include media-breakpoint-up(lg){
         .custom-primary{
             height: calc(100vh - 80px);
         }
