@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
               end: "+=300%",
               invalidateOnRefresh: true,
                 // toggleActions: 'play none none reverse',
-              markers: marker,
+            //   markers: marker,
             },
         })
 
