@@ -2542,14 +2542,21 @@ nav{
 .akoranga,
 .whanaungatanga,
 .kaitiakitanga{
-&.sm{
-    width: 100px;
-    height: 100px;
-    @include media-breakpoint-up(highRes){
-            width: 200px;
-            height: 200px;
+    width: 100%;
+    &.sm{
+        width: 100px;
+        height: 100px;
+        @include media-breakpoint-up(highRes){
+                width: 200px;
+                height: 200px;
+        }
     }
-}
+    @include media-breakpoint-up(md){
+        &.height{
+            width: auto;
+            height: 100%;
+        }
+    }
 }
 
 .kaitiakitanga{
@@ -2647,5 +2654,25 @@ nav{
     #founders-grotesk,
     #roc-grotesk{
         width: 100px;
+    }
+}
+
+
+.animated-section{
+    position: relative;
+    overflow: hidden;
+    @include media-breakpoint-up(md){
+        .custom-primary{
+            height: calc(100vh - 80px);
+        }
+
+        .--yellow,
+        .--blue{
+            position: absolute;
+            width: 100%;
+            min-height: calc(100vh - 80px);
+            top: 100%;
+            left: 0;
+        }
     }
 }
