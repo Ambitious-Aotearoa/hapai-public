@@ -2128,7 +2128,10 @@ footer{
 .hero{
     padding-top: 80px;
     @include media-breakpoint-up(lg){
-        padding-top: 20px;
+        padding-top: 98px;
+    }
+    @include media-breakpoint-up(highRes){
+        padding-top: 120px;
     }
 }
 
