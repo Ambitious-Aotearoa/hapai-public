@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    var navHeight = 0;
+
     // Add click event listener to the buttons
     $('#filter button').on('click', function() {
         $('#filter button').removeClass('active');
