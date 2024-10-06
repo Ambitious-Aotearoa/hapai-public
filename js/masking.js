@@ -12,8 +12,6 @@ $(document).ready(function() {
 });
 
 
-
-
 document.addEventListener("DOMContentLoaded", (event) => {
     gsap.registerPlugin(ScrollTrigger)
     let mm = gsap.matchMedia()
@@ -31,28 +29,76 @@ document.addEventListener("DOMContentLoaded", (event) => {
               start: 'top top+=' + navHeight,
               end: "+=300%",
               invalidateOnRefresh: true,
-                // toggleActions: 'play none none reverse',
-            //   markers: marker,
+              pinSpacing: false,
+            toggleActions: "play pause resume reset",
+              markers: marker,
             },
         })
 
         tl.addLabel("start");
-        tl.to(".animated-section .--blue", {top:0, duration:2}, 'start');
-        tl.addLabel("middle");
-        tl.to(".animated-section .--yellow", {top:0, duration:2}, 'middle+=2');
+        tl.to(".animated-section .--blue", {yPercent:-100, duration:2}, 'start');
+        tl.to(".animated-section .--yellow", {yPercent:-100, duration:2}, 'start');
+        tl.addLabel("end");
+        tl.to(".animated-section .--yellow", {yPercent:-200, duration:2}, 'end');
+
+        // tl.addLabel("middle");
+        // tl.to(".animated-section .--yellow", {top:0, duration:2}, 'middle+=2');
     }
     
 
-    mm.add('(max-width: 1365px)', () => {
-        gsap.set(".animated-section .--blue", {top:'unset'});
-        gsap.set(".animated-section .--yellow", {top:'unset'});
-    })
+    // mm.add('(max-width: 1365px)', () => {
+    //     gsap.set(".animated-section .--blue", {top:'unset'});
+    //     gsap.set(".animated-section .--yellow", {top:'unset'});
+    // })
 
     mm.add('(min-width: 1366px)', () => {
         maskingAnimation()
     })
  
 })
+
+
+
+
+// document.addEventListener("DOMContentLoaded", (event) => {
+//     gsap.registerPlugin(ScrollTrigger)
+//     let mm = gsap.matchMedia()
+//     var navHeight = $('nav').outerHeight();
+//     var marker = { startColor: 'green', endColor: 'red', fontSize: '18px', fontWeight: 'bold', indent: 20, zIndex: 2000 }
+
+//     function maskingAnimation(){
+//         let tl = gsap.timeline({
+//             defaults: {ease: 'none' },
+//             scrollTrigger: {
+//               trigger: '.animated-section',
+//               pin: true,
+//               anticipatePin: 1,
+//               scrub: 1,
+//               start: 'top top+=' + navHeight,
+//               end: "+=300%",
+//               invalidateOnRefresh: true,
+//                 // toggleActions: 'play none none reverse',
+//             //   markers: marker,
+//             },
+//         })
+
+//         tl.addLabel("start");
+//         tl.to(".animated-section .--blue", {top:0, duration:2}, 'start');
+//         tl.addLabel("middle");
+//         tl.to(".animated-section .--yellow", {top:0, duration:2}, 'middle+=2');
+//     }
+    
+
+//     mm.add('(max-width: 1365px)', () => {
+//         gsap.set(".animated-section .--blue", {top:'unset'});
+//         gsap.set(".animated-section .--yellow", {top:'unset'});
+//     })
+
+//     mm.add('(min-width: 1366px)', () => {
+//         maskingAnimation()
+//     })
+ 
+// })
 
 // document.addEventListener("DOMContentLoaded", (event) => {
 //     gsap.registerPlugin(ScrollTrigger)
