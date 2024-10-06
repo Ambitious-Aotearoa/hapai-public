@@ -35,23 +35,23 @@ document.addEventListener("DOMContentLoaded", (event) => {
             },
         })
 
+
         tl.addLabel("start");
         tl.to(".animated-section .--blue", {yPercent:-100, duration:2}, 'start');
         tl.to(".animated-section .--yellow", {yPercent:-100, duration:2}, 'start');
         tl.addLabel("end");
         tl.to(".animated-section .--yellow", {yPercent:-200, duration:2}, 'end');
-
-        // tl.addLabel("middle");
-        // tl.to(".animated-section .--yellow", {top:0, duration:2}, 'middle+=2');
     }
-    
 
-    // mm.add('(max-width: 1365px)', () => {
-    //     gsap.set(".animated-section .--blue", {top:'unset'});
-    //     gsap.set(".animated-section .--yellow", {top:'unset'});
-    // })
+    mm.add('(max-width: 1365px)', () => {
+        ScrollTrigger.refresh()
+        var addMargin = $('.animated-section .custom-primary.--yellow')
+        addMargin.css('margin-bottom', '0')
+    })
 
     mm.add('(min-width: 1366px)', () => {
+        var addMargin = $('.animated-section .custom-primary.--yellow')
+        addMargin.css('margin-bottom', 'calc(100vh + 80px + 5vw)')
         maskingAnimation()
     })
  
