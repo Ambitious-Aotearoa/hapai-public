@@ -43,13 +43,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
         tl.to(".animated-section .--yellow", {yPercent:-200, duration:2}, 'end');
     }
 
-    mm.add('(max-width: 1365px)', () => {
+    mm.add('(max-width: 1023px)', () => {
         ScrollTrigger.refresh()
         var addMargin = $('.animated-section .custom-primary.--yellow')
         addMargin.css('margin-bottom', '0')
     })
 
-    mm.add('(min-width: 1366px)', () => {
+    mm.add('(min-width: 1024px)', () => {
         var addMargin = $('.animated-section .custom-primary.--yellow')
         addMargin.css('margin-bottom', 'calc(100vh + 80px + 5vw)')
         maskingAnimation()
