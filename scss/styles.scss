@@ -137,7 +137,8 @@ $grid-breakpoints: (
 
 $cust-grid-breakpoints:(
     highRes:3480px,
-    navBreak:10000px
+    navBreak:10000px,
+    btnsBreak:600px
 );
 
 $grid-breakpoints:map-merge($grid-breakpoints, $cust-grid-breakpoints);
@@ -633,7 +634,8 @@ $ch7: 1rem;
         border-top-left-radius: 0;
         transition: all .2s ease-in-out;
     }
-    @include media-breakpoint-down(sm){
+
+    @include media-breakpoint-down(btnsBreak){
         width: 100%;
     }
 }
