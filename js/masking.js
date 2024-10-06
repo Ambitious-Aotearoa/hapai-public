@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+    if ($('#filter button').length){
     // Add click event listener to the buttons
     $('#filter button').on('click', function() {
         $('#filter button').removeClass('active');
@@ -9,6 +10,8 @@ $(document).ready(function() {
         $('.filter-wrapper-other .filter-item.' + filterValue).addClass('show');
         
     });
+    }
+
 });
 
 
@@ -48,7 +51,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
     })
 
     mm.add('(min-width: 1024px)', () => {
-        maskingAnimation()
+
+        if ($('.animated-section').length){
+            maskingAnimation()
+        }
+       
     })
  
 })
