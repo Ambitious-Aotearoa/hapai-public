@@ -1528,13 +1528,12 @@ a:hover{
         text-transform: unset;
         text-align: left;
         line-height: inherit;
-        transition: all .2s ease-in;
+        transition: font-weight .3s ease-in-out;
         &.active{
-            transition: all .2s ease-in;
             font-weight: bold;
         }
         &:hover{
-            transition: all .2s ease-in;
+            transition: font-weight .3s ease-in-out;
             font-weight: bold;
         }
     }
