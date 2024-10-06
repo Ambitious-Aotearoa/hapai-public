@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
               start: 'top top+=' + navHeight,
               end: "+=300%",
               invalidateOnRefresh: true,
-              pinSpacing: false,
+            //   pinSpacing: false,
             toggleActions: "play pause resume reset",
             //   markers: marker,
             },
@@ -45,13 +45,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     mm.add('(max-width: 1023px)', () => {
         ScrollTrigger.refresh()
-        var addMargin = $('.animated-section .custom-primary.--yellow')
-        addMargin.css('margin-bottom', '0')
     })
 
     mm.add('(min-width: 1024px)', () => {
-        var addMargin = $('.animated-section .custom-primary.--yellow')
-        addMargin.css('margin-bottom', 'calc(100vh + 80px + 5vw)')
         maskingAnimation()
     })
  
