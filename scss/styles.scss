@@ -1370,6 +1370,9 @@ a:hover{
 
 
 
+
+
+
 .same-height-wrapper-filter .filter-wrapper{
     .filter-item{
         justify-content: space-between;
@@ -1523,8 +1526,14 @@ a:hover{
         text-transform: unset;
         text-align: left;
         line-height: inherit;
+        transition: all .2s ease-in;
         &.active{
-            font-family:$heading-font-bold;
+            transition: all .2s ease-in;
+            font-weight: bold;
+        }
+        &:hover{
+            transition: all .2s ease-in;
+            font-weight: bold;
         }
     }
    }
@@ -1871,8 +1880,9 @@ a:hover{
     }
 }
 
-.home-page{
 
+
+.home-page{
     .image-cnr{
         position: relative;
     }
@@ -1972,6 +1982,7 @@ a:hover{
         }
     }
 }
+
 
 
 //modals
@@ -2676,6 +2687,7 @@ nav{
         position: relative;
     }
     @include media-breakpoint-up(md){
+        height: calc(100vh - 80px);
         .custom-primary{
             height: calc(100vh - 80px);
             z-index: 0;
