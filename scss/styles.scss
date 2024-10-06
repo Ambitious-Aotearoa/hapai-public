@@ -2675,7 +2675,7 @@ nav{
     .custom-primary{
         position: relative;
     }
-    @include media-breakpoint-up(lg){
+    @include media-breakpoint-up(md){
         .custom-primary{
             height: calc(100vh - 80px);
             z-index: 0;
