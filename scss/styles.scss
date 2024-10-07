@@ -894,6 +894,9 @@ a:hover{
     &.img-top{
         object-position: 50% 0%; 
     }
+    &.img-right{
+        object-position: 100% 50%; 
+    }
     @include media-breakpoint-up(sm){
         height:100%;
     }
