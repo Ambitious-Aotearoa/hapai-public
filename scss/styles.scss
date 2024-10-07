@@ -891,6 +891,9 @@ a:hover{
     &.index-negative{
         z-index: -1; 
     }
+    &.img-top{
+        object-position: 50% 0%; 
+    }
     @include media-breakpoint-up(sm){
         height:100%;
     }
@@ -1983,6 +1986,16 @@ a:hover{
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
 
 
 
