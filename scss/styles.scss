@@ -518,6 +518,13 @@ $ch7: 1rem;
             font-size:$ch4;
         }
     }
+
+    p, a:not(.btn, .nav-link), li, input, label, .form-control, button .btn{
+        font-size:calc($font-size-base*1.2);
+    }
+    [class*="cust-font"] a{
+        font-size:inherit
+    }
 }
 @include media-breakpoint-up(xl){
     .cust-font-2{
@@ -544,12 +551,7 @@ $ch7: 1rem;
     .cust-font-7{
         font-size:calc($ch7*1);
     }
-    p, a:not(.btn, .nav-link), li, input, label, .form-control, button .btn{
-        font-size:calc($font-size-base*1.2);
-    }
-    [class*="cust-font"] a{
-        font-size:inherit
-    }
+
     
 }
 
