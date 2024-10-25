@@ -136,9 +136,10 @@ $grid-breakpoints: (
 );
 
 $cust-grid-breakpoints:(
+    btnsBreak:600px,
     highRes:3480px,
     navBreak:10000px,
-    btnsBreak:600px
+
 );
 
 $grid-breakpoints:map-merge($grid-breakpoints, $cust-grid-breakpoints);
