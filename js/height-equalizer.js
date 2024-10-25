@@ -11,15 +11,15 @@ function updateElementHeights() {
   const width = window.innerWidth
 
   // Helper function to apply the correct column layout
-  function handleWrapper(wrapper, desktopCols, tabletCols) {
-    if (width >= DESKTOP_WIDTH) {
-      adjustHeights(wrapper, selectors, desktopCols) // Apply desktop columns
-    } else if (width >= TABLET_WIDTH) {
-      adjustHeights(wrapper, selectors, tabletCols) // Apply tablet columns
-    } else {
-      resetElementHeights(wrapper, selectors.join(', ')) // Reset for mobile
-    }
-  }
+//   function handleWrapper(wrapper, desktopCols, tabletCols) {
+//     if (width >= DESKTOP_WIDTH) {
+//       adjustHeights(wrapper, selectors, desktopCols) // Apply desktop columns
+//     } else if (width >= TABLET_WIDTH) {
+//       adjustHeights(wrapper, selectors, tabletCols) // Apply tablet columns
+//     } else {
+//       resetElementHeights(wrapper, selectors.join(', ')) // Reset for mobile
+//     }
+//   }
 
   // For 2 columns on tablet and 3 columns on desktop
   const wrappers2To3 = document.querySelectorAll('.same-height-wrapper-2-3col')
