@@ -120,6 +120,7 @@ $body-color: $custom-dark;
 $form-floating-height: 3em;
 $form-floating-input-padding-t:2em;
 $form-floating-input-padding-b:1.5em;
+
 // Include functions first
 
 @import "bootstrap/scss/functions";
@@ -180,6 +181,7 @@ $new-colors:(
     "accent-yellow":$custom-accent-yellow,
     "custom-grey":$custom-light-grey,
     "custom-dark-grey":$custom-dark-grey,
+    "cust-neutral":$custom-neutral
 );
 
 $theme-colors:map-merge($theme-colors, $new-colors);
@@ -369,7 +371,7 @@ li:not(.nav-item, .dropdown-menu li){
 
 // forms
 .style-1{
-    input, textarea{
+    input, textarea, select{
         border-width: 0;
         border-bottom-width: 1px;
         border-radius:0;
@@ -379,12 +381,16 @@ li:not(.nav-item, .dropdown-menu li){
         &:focus-visible{
             outline-color:$secondary
         }
+
+    }
+
+    input[type="checkbox"]{
+        border-width:1px;
     }
     .form-control{
         // height:3em !important;
         margin-top: 1em;
     }
-
 }
 
 
@@ -2715,3 +2721,74 @@ nav{
         
     }
 }
+
+
+.form-pages{
+    min-height: 100vh;
+    .logo-nav{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        a{
+            width: 230px;
+           #logo{
+                fill: $primary;
+            }
+            #footer-logo{
+                fill: $custom-accent-yellow;
+            }
+        }
+    }
+
+    .help-wrapper{
+        p{
+            color:$custom-dark-grey
+        }
+    }
+
+    input[type="date"] {
+       margin-top:0
+      }
+
+      .form-tab {
+        display: none;
+      }
+
+      #prevBtn{
+        visibility:hidden;
+      }
+
+      input.invalid {
+        border-bottom: 1px solid red; /* Highlight invalid inputs with a red border */
+      }
+
+
+    .step {
+        height:.5em;
+        width: .5em;
+        margin: 0 .1em;
+        background-color: #07332A;
+        border: none;  
+        border-radius: 50%;
+        display: inline-block;
+        opacity: 0.5;
+      }
+      
+      .step.active {
+        opacity: 1;
+      }
+
+      @include media-breakpoint-up(highRes){
+        .logo-nav{
+            a{
+                width: 460px;
+            }
+        }
+    }
+}
+
+
+
+
+
+  
