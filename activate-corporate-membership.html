@@ -86,11 +86,25 @@
                         <label for="first-name">First Name*</label>
                     </div>
                     <div class="form-floating mb-1 mb-lg-1vw col-12 col-md-6">
-                        <input type="tel" class="form-control" id="last-name" placeholder="Last Name" required />
+                        <input type="text" class="form-control" id="last-name" placeholder="Last Name" required />
                         <label for="last-name">Last Name*</label>
                     </div>
 
-                    <div class="form-floating mb-1 mb-lg-1vw col-12">
+                    <div class="form-floating mb-1 mb-lg-1vw col-12 col-lg-6 pe-md-10px">
+                        <input type="email" class="form-control" id="customer-email" placeholder="name@example.com" required />
+                        <label for="customer-email">Email address*</label>
+                    </div>
+                    <div class="form-floating mb-1 mb-lg-1vw col-12 col-lg-6 ">
+                        <input type="tel" class="form-control" id="customer-phone" placeholder="Phone" required />
+                        <label for="customer-phone">Phone*</label>
+                    </div>
+
+                    <div class="form-floating mb-1 mb-lg-1vw col-12 col-md-6 pe-md-10px">
+                        <input type="text" class="form-control" id="customer-organisation" placeholder="Organisation" required />
+                        <label for="customer-organisation">Organisation*</label>
+                    </div>
+
+                    <div class="form-floating mb-1 mb-lg-1vw col-12 col-md-6">
                         <input type="text" class="form-control" id="customer-title" placeholder="Job Title" required />
                         <label for="customer-title">Job Title*</label>
                     </div>
@@ -104,27 +118,19 @@
                         <p class="mb-0">Not sure if your organisation is a member? Check here.</p>
                     </div>
 
-                    <div class="mb-1 mb-lg-1vw col-12 col-lg-6 pe-md-10px d-flex flex-column justify-content-end">
-                        <label for="customer-organisation">Organisation*</label>
-                        <select class="form-select" id="customer-organisation" aria-label="Member organisations">
-                            <option selected>Select Organisation</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
+                    <div class="form-floating mb-1 mb-lg-1vw col-12 col-md-6 pe-md-10px">
+                        <input type="password" class="form-control" id="customer-password" placeholder="Password" required />
+                        <label for="customer-password">Password*</label>
                     </div>
-
-                    <div class="form-floating mb-1 mb-lg-1vw col-12 col-lg-6">
-                        <input type="email" class="form-control" id="customer-email" placeholder="name@example.com" required />
-                        <label for="customer-email">Email address*</label>
+                    <div class="form-floating mb-1 mb-lg-1vw col-12 col-md-6">
+                        <input type="password" class="form-control" id="customer-password-validate" placeholder="Re-enter password" required />
+                        <label for="customer-password-validate">Re-enter password*</label>
                     </div>
-                    <div class="form-floating mb-1 mb-lg-1vw col-12 col-lg-6 pe-md-10px">
-                        <input type="tel" class="form-control" id="customer-phone" placeholder="Phone" required />
-                        <label for="customer-phone">Phone*</label>
-                    </div>
-                    <div class="mb-1 mb-lg-1vw col-12 col-lg-6 d-flex flex-column justify-content-end">
-                        <label for="customer-dob">DOB*</label>
-                        <input type="date" class="form-control" id="customer-dob" placeholder="DOB" required />
+                    <div class="form-check">
+                        <div class=" ps-10px">
+                            <input type="checkbox" class="form-check-input single-select" id="rememberMe" name="remember Me" value="rememberMe" />
+                            <label class="form-check-label" for="rememberMe">Remember me</label>
+                        </div>
                     </div>
                 </div>
 
@@ -132,18 +138,14 @@
                     <p class="cust-font-7 col-12 mb-2 mb-md-2vw">Membership Application Preferences</p>
                     <div class="col-12">
                         <fieldset>
-                            <legend class="col-12 mb-2 mb-md-2vw">Region</legend>
+                            <legend class="col-12 mb-2 mb-md-2vw">Workplace location</legend>
                             <div class="form-check">
                                 <input type="checkbox" class="form-check-input single-select" id="auckland" name="location" value="Auckland" />
-                                <label class="form-check-label" for="auckland">Auckland</label>
-                            </div>
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input single-select" id="christchurch" name="location" value="Christchurch" />
-                                <label class="form-check-label" for="christchurch">Christchurch</label>
+                                <label class="form-check-label" for="auckland">Tāmaki Makaurau Auckland</label>
                             </div>
                             <div class="form-check">
                                 <input type="checkbox" class="form-check-input single-select" id="wellington" name="location" value="Wellington" />
-                                <label class="form-check-label" for="wellington">Wellington</label>
+                                <label class="form-check-label" for="wellington">Te Whanganui-a-Tara Wellington</label>
                             </div>
                             <div class="form-check">
                                 <input type="checkbox" class="form-check-input single-select" id="other" name="location" value="Other" />
@@ -152,40 +154,35 @@
                         </fieldset>
                     </div>
 
-                    <div class="col-12 mt-2 mt-md-2vw border-top border-primary">
+                    <div class="col-12 mt-2 mt-md-2vw border-top border-primary help-wrapper">
                         <fieldset>
-                            <legend class="col-12 my-2 my-md-2vw">Interests</legend>
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="communicationsMarketing" name="interests" value="Communications & Marketing" />
-                                <label class="form-check-label" for="communicationsMarketing">Communications / Marketing</label>
+                            <legend class="col-12 mt-2 mt-md-2vw">Do you want to sign up to Hāpai Public New Professionals Network?</legend>
+                            <p class="mb-1 mb-md-1vw">This is for all kaimahi in, or with the Aotearoa New Zealand public service, who are in their first ten years working and would like to know more about how it all works.</p>
+                            <div class="d-flex flex-row px-10px">
+                                <div class="form-check pe-3">
+                                    <input type="checkbox" class="form-check-input single-select" id="yes" name="yes-sign-up" value="yes" />
+                                    <label class="form-check-label" for="yes">Yes</label>
+                                </div>
+                                <div class="form-check ">
+                                    <input type="checkbox" class="form-check-input single-select" id="no" name="no-sign-up" value="no"/>
+                                    <label class="form-check-label" for="no">No</label>
+                                </div>
                             </div>
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="newsletter" name="interests" value="Hapai Public Newsletter" />
-                                <label class="form-check-label" for="newsletter">Hapai Public Newsletter</label>
-                            </div>
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="hr" name="interests" value="Human Resources" />
-                                <label class="form-check-label" for="hr">Human Resources</label>
-                            </div>
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="legal" name="interests" value="Legal" />
-                                <label class="form-check-label" for="legal">Legal</label>
-                            </div>
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="newProfessionals" name="interests" value="New Professionals" />
-                                <label class="form-check-label" for="newProfessionals">New Professionals</label>
-                            </div>
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="newProfessionalsAuckland" name="interests" value="New Professionals Auckland" />
-                                <label class="form-check-label" for="newProfessionalsAuckland">New Professionals Auckland</label>
-                            </div>
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="policy" name="interests" value="Policy" />
-                                <label class="form-check-label" for="policy">Policy</label>
-                            </div>
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="trainingEvents" name="interests" value="Training Events" />
-                                <label class="form-check-label" for="trainingEvents">Training Events</label>
+                        </fieldset>
+                    </div>
+
+                    <div class="col-12 ">
+                        <fieldset>
+                            <legend class="col-12 mt-2 mt-md-2vw mb-1 mb-md-1vw">Do you want to opt out of receiving communications from Hāpai Public?</legend>
+                            <div class="d-flex flex-row px-10px">
+                                <div class="form-check pe-3">
+                                    <input type="checkbox" class="form-check-input single-select" id="yes" name="yes-opt-out" value="yes opt me out" />
+                                    <label class="form-check-label" for="yes">Yes</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input single-select" id="no" name="no-dont-opt-out" value="no do not opt me out"/>
+                                    <label class="form-check-label" for="no">No</label>
+                                </div>
                             </div>
                         </fieldset>
                     </div>
