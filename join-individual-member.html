@@ -132,15 +132,15 @@
                         <fieldset>
                             <legend class="col-12 mb-2 mb-md-2vw">Workplace location</legend>
                             <div class="form-check">
-                                <input type="checkbox" class="form-check-input single-select" id="auckland" name="location" value="Auckland" />
+                                <input type="radio" class="form-check-input single-select" id="auckland" name="location"  />
                                 <label class="form-check-label" for="auckland">Tāmaki Makaurau Auckland</label>
                             </div>
                             <div class="form-check">
-                                <input type="checkbox" class="form-check-input single-select" id="wellington" name="location" value="Wellington" />
+                                <input type="radio" class="form-check-input single-select" id="wellington" name="location"  />
                                 <label class="form-check-label" for="wellington">Te Whanganui-a-Tara Wellington</label>
                             </div>
                             <div class="form-check">
-                                <input type="checkbox" class="form-check-input single-select" id="other" name="location" value="Other" />
+                                <input type="radio" class="form-check-input single-select" id="other" name="location" />
                                 <label class="form-check-label" for="other">Other</label>
                             </div>
                         </fieldset>
@@ -152,11 +152,11 @@
                             <p class="mb-1 mb-md-1vw">This is for all kaimahi in, or with the Aotearoa New Zealand public service, who are in their first ten years working and would like to know more about how it all works.</p>
                             <div class="d-flex flex-row px-10px">
                                 <div class="form-check pe-3">
-                                    <input type="checkbox" class="form-check-input single-select" id="yes-sign-up" name="yes-sign-up" value="yes" />
+                                    <input type="radio" class="form-check-input single-select" id="yes-sign-up" name="sign-up"  />
                                     <label class="form-check-label" for="yes-sign-up">Yes</label>
                                 </div>
                                 <div class="form-check ">
-                                    <input type="checkbox" class="form-check-input single-select" id="no-sign-up" name="no-sign-up" value="no"/>
+                                    <input type="radio" class="form-check-input single-select" id="no-sign-up" name="sign-up" />
                                     <label class="form-check-label" for="no-sign-up">No</label>
                                 </div>
                             </div>
@@ -168,11 +168,11 @@
                             <legend class="col-12 mt-2 mt-md-2vw mb-1 mb-md-1vw">Do you want to opt out of receiving communications from Hāpai Public?</legend>
                             <div class="d-flex flex-row px-10px">
                                 <div class="form-check pe-3">
-                                    <input type="checkbox" class="form-check-input single-select" id="yes-communication" name="yes-opt-out" value="yes opt me out" />
+                                    <input type="radio" class="form-check-input single-select" id="yes-communication" name="opt-out"  />
                                     <label class="form-check-label" for="yes-communication">Yes</label>
                                 </div>
                                 <div class="form-check">
-                                    <input type="checkbox" class="form-check-input single-select" id="no-communicatio" name="no-dont-opt-out" value="no do not opt me out"/>
+                                    <input type="radio" class="form-check-input single-select" id="no-communicatio" name="opt-out" />
                                     <label class="form-check-label" for="no-communicatio">No</label>
                                 </div>
                             </div>
@@ -219,28 +219,6 @@
                             <p class="cust-font-4">$92.00</p>
                         </div>
                     </div>
-
-                    <div class="col-12 mt-2 mt-md-2vw  d-flex flex-column flex-md-row flex-md-wrap">
-                        <p class="col-12 my-2 my-md-2vw">Payment Method</p>
-
-                        <div class="form-floating mb-1 mb-lg-1vw col-12 col-md-6 pe-md-10px">
-                            <input type="text" class="form-control" id="customer-cc-name" placeholder="Cardholder name" required />
-                            <label for="customer-cc-name">Cardholder name*</label>
-                        </div>
-
-                        <div class="form-floating mb-1 mb-lg-1vw col-12 col-md-6">
-                            <input type="text" class="form-control" id="customer-cc-number" placeholder="Creditcard number" required />
-                            <label for="customer-cc-number">Card number*</label>
-                        </div>
-                        <div class="form-floating mb-1 mb-lg-1vw col-12 col-md-6 pe-md-10px">
-                            <input type="text" class="form-control" id="cust-cc-expire" placeholder="First Name" required />
-                            <label for="cust-cc-expire">Expiry Date*</label>
-                        </div>
-                        <div class="form-floating mb-1 mb-lg-1vw col-12 col-md-6">
-                            <input type="tel" class="form-control" id="cvv" placeholder="CVV" required />
-                            <label for="cvv">CVC</label>
-                        </div>
-                    </div>
                 </div>
 
                 <div class="d-flex flex-row justify-content-between align-items-center mt-2 mt-md-2vw">
@@ -253,7 +231,7 @@
                         <span class="step"></span>
                     </div>
                     <div>
-                        <button type="button" id="nextBtn" onclick="nextPrev(1)" class="btn btn-primary mt-0 nextBtn">Next</button>
+                        <button type="button" id="paynow" onclick="nextPrev(1)" class="btn btn-primary mt-0 nextBtn">Next</button>
                     </div>
                 </div>
             </form>

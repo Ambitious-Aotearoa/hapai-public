@@ -90,24 +90,27 @@
                         <label for="last-name">Last Name*</label>
                     </div>
 
+                   
                     <div class="form-floating mb-1 mb-lg-1vw col-12 col-lg-6 pe-md-10px">
-                        <input type="email" class="form-control" id="customer-email" placeholder="name@example.com" required />
-                        <label for="customer-email">Email address*</label>
-                    </div>
-                    <div class="form-floating mb-1 mb-lg-1vw col-12 col-lg-6 ">
                         <input type="tel" class="form-control" id="customer-phone" placeholder="Phone" required />
                         <label for="customer-phone">Phone*</label>
                     </div>
-
-                    <div class="form-floating mb-1 mb-lg-1vw col-12 col-md-6 pe-md-10px">
-                        <input type="text" class="form-control" id="customer-organisation" placeholder="Organisation" required />
-                        <label for="customer-organisation">Organisation*</label>
-                    </div>
-
-                    <div class="form-floating mb-1 mb-lg-1vw col-12 col-md-6">
+                     <div class="form-floating mb-1 mb-lg-1vw col-12 col-md-6">
                         <input type="text" class="form-control" id="customer-title" placeholder="Job Title" required />
                         <label for="customer-title">Job Title*</label>
                     </div>
+
+                    <div class="form-floating mb-1 mb-lg-1vw col-12 d-flex flex-column justify-content-end">
+                        <label for="customer-organisation">Organisation</label>
+                        <select class="form-select py-0 mt-3 mt-highRes-6" aria-label="Default select example" id="organisation">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                    </div>
+
+                   
 
                     <div class="help-wrapper mb-1 mb-md-1vw">
                         <p class="mb-0">
@@ -116,6 +119,11 @@
                         </p>
 
                         <p class="mb-0 mt-1">Not sure if your organisation is a member? <a href="/hapai-public/member-directory.html">Check here.</a></p>
+                    </div>
+
+                    <div class="form-floating mb-1 mb-lg-1vw col-12">
+                        <input type="email" class="form-control" id="customer-email" placeholder="name@example.com" required />
+                        <label for="customer-email">Email address*</label>
                     </div>
 
                     <div class="form-floating mb-1 mb-lg-1vw col-12 col-md-6 pe-md-10px">
@@ -140,15 +148,15 @@
                         <fieldset>
                             <legend class="col-12 mb-2 mb-md-2vw">Workplace location</legend>
                             <div class="form-check">
-                                <input type="checkbox" class="form-check-input single-select" id="auckland" name="location" value="Auckland" />
+                                <input type="radio" class="form-check-input single-select" id="auckland" name="location"  />
                                 <label class="form-check-label" for="auckland">Tāmaki Makaurau Auckland</label>
                             </div>
                             <div class="form-check">
-                                <input type="checkbox" class="form-check-input single-select" id="wellington" name="location" value="Wellington" />
+                                <input type="radio" class="form-check-input single-select" id="wellington" name="location"  />
                                 <label class="form-check-label" for="wellington">Te Whanganui-a-Tara Wellington</label>
                             </div>
                             <div class="form-check">
-                                <input type="checkbox" class="form-check-input single-select" id="other" name="location" value="Other" />
+                                <input type="radio" class="form-check-input single-select" id="other" name="location" />
                                 <label class="form-check-label" for="other">Other</label>
                             </div>
                         </fieldset>
@@ -161,11 +169,11 @@
                             <p class="mb-1 mb-md-1vw">This is for all kaimahi in, or with the Aotearoa New Zealand public service, who are in their first ten years working and would like to know more about how it all works.</p>
                             <div class="d-flex flex-row px-10px">
                                 <div class="form-check pe-3">
-                                    <input type="checkbox" class="form-check-input single-select" id="yes-sign-up" name="yes-sign-up" value="yes" />
+                                    <input type="radio" class="form-check-input single-select" id="yes-sign-up" name="sign-up" />
                                     <label class="form-check-label" for="yes-sign-up">Yes</label>
                                 </div>
                                 <div class="form-check ">
-                                    <input type="checkbox" class="form-check-input single-select" id="no-sign-up" name="no-sign-up" value="no"/>
+                                    <input type="radio" class="form-check-input single-select" id="no-sign-up" name="sign-up" />
                                     <label class="form-check-label" for="no-sign-up">No</label>
                                 </div>
                             </div>
@@ -177,11 +185,11 @@
                             <legend class="col-12 mt-2 mt-md-2vw mb-1 mb-md-1vw">Do you want to opt out of receiving communications from Hāpai Public?</legend>
                             <div class="d-flex flex-row px-10px">
                                 <div class="form-check pe-3">
-                                    <input type="checkbox" class="form-check-input single-select" id="yes-communication" name="yes-opt-out" value="yes opt me out" />
+                                    <input type="radio" class="form-check-input single-select" id="yes-communication" name="opt-out"  />
                                     <label class="form-check-label" for="yes-communication">Yes</label>
                                 </div>
                                 <div class="form-check">
-                                    <input type="checkbox" class="form-check-input single-select" id="no-communicatio" name="no-dont-opt-out" value="no do not opt me out"/>
+                                    <input type="radio" class="form-check-input single-select" id="no-communication" name="opt-out" />
                                     <label class="form-check-label" for="no-communicatio">No</label>
                                 </div>
                             </div>
