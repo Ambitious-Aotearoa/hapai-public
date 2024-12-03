@@ -263,7 +263,7 @@
           <div class="p-0 mt-4 mt-lg-4vw col col-sm-12 col-md-5 offset-md-1 d-flex flex-column justify-content-end">
             <ul class="p-0 m-0 list-unstyled border-style">
               <li>
-                <p class="cust-font-7">Date</p>
+                <p class="cust-font-7">Dates</p>
                 <div>
                   <p>14 August 2025</p>
                 </div>
@@ -287,12 +287,12 @@
                   <p>Non-Member - $580.00 + GST</p>
                 </div>
               </li>
-              <!-- <li>
-                <p class="cust-font-7">Info</p>
+              <li>
+                <p class="cust-font-7">More Info</p>
                 <div>
-                  <p><a href="/">Info PDF</a></p>
+                  <p><a href="">N/A</a></p>
                 </div>
-              </li> -->
+              </li>
             </ul>
             <div><a class="btn btn-secondary" role="button" href="/hapai-public/login.html">Login to register</a></div>
           </div>
@@ -362,7 +362,9 @@
                   <p class="cust-font-7 m-0">Share</p>
                 </li>
                 <li class="me-10px me-highRes-1">
-                  <a href="https://www.linkedin.com/company/ipanz-new-professionals/" target="_blank" class="btn-linkedin">
+                  <a class="btn-linkedin --yellow"
+                  href="http://www.linkedin.com/shareArticle?mini=true&url=&title=&summary=&source=" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(document.URL) + '&title=' + encodeURIComponent(document.title)); return false;"
+                  >
                     <svg viewBox="0 0 40 40">
                       <circle cx="20" cy="20" r="19" />
                       <path
@@ -371,9 +373,14 @@
                     </svg>
                   </a>
                 </li>
-
+          
                 <li class="me-10px me-highRes-1">
-                  <a href="" class="btn-share">
+                  <a href="" class="btn-share --yellow"
+                    href=""
+                    title="Share via Email"
+                    onclick="window.location.href = 'mailto:?subject=' + encodeURIComponent(document.title) + '&body=' + encodeURIComponent(document.URL); return false;">
+          
+                  
                     <svg viewBox="0 0 40 40" class="other">
                       <circle cx="20" cy="20" r="19" />
                       <path
