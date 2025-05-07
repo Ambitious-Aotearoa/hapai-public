@@ -28680,6 +28680,10 @@ nav .navbar-toggler {
     stroke-width: 1.5;
     fill: none;
 }
+.navbar #schbtn {
+    fill: #122e2a;
+}
+
 .navbar.nav-change .bg-change {
     background-color: #122e2a;
     transition: background-color .2s ease-in-out;
@@ -28690,6 +28694,9 @@ nav .navbar-toggler {
 }
 .navbar.nav-change .bg-change #basket {
     stroke: #f9f6ee;
+}
+.navbar.nav-change .bg-change #schbtn {
+    fill: #f9f6ee;
 }
 .navbar.nav-change .bg-change #logo {
     fill: #f9f6ee;
